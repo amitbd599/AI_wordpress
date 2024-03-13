@@ -85,7 +85,7 @@ function facontech_breadcrumb_func()
         <?php if (!empty($breadcrumb_switch)): ?>
             <!-- Breadcrumb Section Start -->
             <section class="breadcrumb" data-background="./assets/img/bg-image/05_bg-image.jpg">
-                <div class="auto-container">
+                <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <div class="breadcrumb-inner">

@@ -435,17 +435,10 @@ input[type="color"] {
   }
 }
 
-.auto-container {
-  position: static;
-  max-width: var(--container-width);
-  padding: 0px 30px;
-  margin: 0 auto;
-  width: 100%;
-}
 @media only screen and (min-width: 576px) and (max-width: 767px),
   only screen and (min-width: 400px) and (max-width: 575px),
   (max-width: 399px) {
-  .auto-container {
+  .container {
     padding: 0px 15px;
   }
 }
@@ -3915,6 +3908,10 @@ input[type="color"] {
   visibility: visible;
   top: 100%;
 }
+.header-info {
+  display: flex;
+  gap: 40px;
+}
 .header-info .info-item span {
   font-size: 12px;
   display: inline-block;
@@ -3924,6 +3921,7 @@ input[type="color"] {
 .header-info .info-item p {
   font-size: 14px;
   color: var(--common-white);
+  font-weight: 600;
 }
 .header-info .info-item-right {
   margin-right: 40px;

@@ -269,7 +269,7 @@ function _header_top_fields($fields)
         'settings' => 'facontech_phone_num',
         'label' => esc_html__('Phone Number', 'facontech'),
         'section' => 'header_top_setting',
-        'default' => esc_html__('+(088) 234 567 899', 'facontech'),
+        'default' => esc_html__('(786) 686 350', 'facontech'),
         'priority' => 10,
     ];
 
@@ -295,10 +295,10 @@ function _header_top_fields($fields)
 
     $fields[] = [
         'type' => 'text',
-        'settings' => 'facontech_address_url',
-        'label' => esc_html__('Address URL', 'facontech'),
+        'settings' => 'facontech_office_hour',
+        'label' => esc_html__('Office Hour', 'facontech'),
         'section' => 'header_top_setting',
-        'default' => esc_html__('https://goo.gl/maps/qzqY2PAcQwUz1BYN9', 'facontech'),
+        'default' => esc_html__('09:00am-6:00pm', 'facontech'),
         'priority' => 10,
     ];
 
@@ -368,14 +368,6 @@ function _header_social_fields($fields)
         'priority' => 10,
     ];
 
-    $fields[] = [
-        'type' => 'text',
-        'settings' => 'facontech_topbar_youtube_url',
-        'label' => esc_html__('Youtube Url', 'facontech'),
-        'section' => 'header_social',
-        'default' => esc_html__('#', 'facontech'),
-        'priority' => 10,
-    ];
 
 
     return $fields;
