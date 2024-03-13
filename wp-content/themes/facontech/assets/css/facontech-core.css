@@ -3915,6 +3915,19 @@ input[type="color"] {
   visibility: visible;
   top: 100%;
 }
+.header-info .info-item span {
+  font-size: 12px;
+  display: inline-block;
+  font-weight: 600;
+  color: #777777;
+}
+.header-info .info-item p {
+  font-size: 14px;
+  color: var(--common-white);
+}
+.header-info .info-item-right {
+  margin-right: 40px;
+}
 
 .header-area-2 {
   background: var(--common-body-1);

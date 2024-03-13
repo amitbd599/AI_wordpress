@@ -409,7 +409,7 @@ function _header_header_fields($fields)
         'label' => esc_html__('Header Logo', 'facontech'),
         'description' => esc_html__('Upload Your Logo.', 'facontech'),
         'section' => 'section_header_logo',
-        'default' => get_template_directory_uri() . '/assets/img/logo/logo.png',
+        'default' => get_template_directory_uri() . '/assets/img/common/logo-white.png',
     ];
 
     $fields[] = [
@@ -418,7 +418,7 @@ function _header_header_fields($fields)
         'label' => esc_html__('Header Secondary Logo', 'facontech'),
         'description' => esc_html__('Header Logo Black', 'facontech'),
         'section' => 'section_header_logo',
-        'default' => get_template_directory_uri() . '/assets/img/logo/logo-2.png',
+        'default' => get_template_directory_uri() . '/assets/img/common/logo-black.png',
     ];
 
     $fields[] = [

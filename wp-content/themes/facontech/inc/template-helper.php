@@ -98,8 +98,8 @@ function facontech_header_logo()
 { ?>
     <?php
     $facontech_logo_on = function_exists('get_field') ? get_field('is_enable_sec_logo') : NULL;
-    $facontech_logo = get_template_directory_uri() . '/assets/img/logo/logo.png';
-    $facontech_logo_black = get_template_directory_uri() . '/assets/img/logo/logo-white.png';
+    $facontech_logo = get_template_directory_uri() . '/assets/img/common/logo-white.png';
+    $facontech_logo_black = get_template_directory_uri() . '/assets/img/common/logo-black.png';
 
     $facontech_site_logo = get_theme_mod('logo', $facontech_logo);
     $facontech_secondary_logo = get_theme_mod('seconday_logo', $facontech_logo_black);

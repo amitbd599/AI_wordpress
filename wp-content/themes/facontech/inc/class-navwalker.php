@@ -51,7 +51,7 @@ if (!class_exists('Eduker_Navwalker_Class')) {
             }
             $indent = str_repeat($t, $depth);
             // Default class to add to the file.
-            $classes = ['submenu'];
+            $classes = ['sub-menu'];
             /**
              * Filters the CSS class(es) applied to a menu list element.
              *

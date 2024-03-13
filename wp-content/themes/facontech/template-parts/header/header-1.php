@@ -10,6 +10,8 @@
 
 // info
 $facontech_topbar_switch = get_theme_mod('facontech_topbar_switch', false);
+$facontech_phone_num = get_theme_mod('facontech_phone_num', __('786 686 350 36', 'facontech'));
+
 $facontech_mail_id = get_theme_mod('facontech_mail_id', __('info@educal.com', 'facontech'));
 $facontech_address = get_theme_mod('facontech_address', __('Moon ave, New York, 2020 NY US', 'facontech'));
 $facontech_address_url = get_theme_mod('facontech_address_url', __('https://goo.gl/maps/qzqY2PAcQwUz1BYN9', 'facontech'));
@@ -36,49 +38,16 @@ $facontech_menu_col = $facontech_header_right ? 'col-xxl-7 col-xl-7 col-lg-8 d-n
          <div class="col-xl-3 col-lg-2 col-md-6 col-6">
             <div class="logo-area">
                <div class="logo">
-                  <a href="index-1.html"><img class="img-fluid" src="assets/img/common/logo-white.png" alt=""></a>
+                  <?php facontech_header_logo() ?>
                </div>
             </div>
          </div>
-         <div class="col-xl-7 col-lg-7 col-md-6 col-6">
+         <div class="col-xl-7 col-lg-6 col-md-6 col-6">
             <div class="menu-area menu-padding">
                <div class="main-menu">
                   <nav id="mobile-menu">
-                     <ul>
-                        <li class="has-dropdown"><a href="index-1.html">Home</a>
-                           <ul class="sub-menu">
-                              <li class="active"><a href="index-1.html">Home One</a></li>
-                              <li><a href="index-2.html">Home Two</a></li>
-                              <li><a href="index-3.html">Home Three</a></li>
-                           </ul>
-                        </li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li class="has-dropdown"><a href="#">Pages</a>
-                           <ul class="sub-menu">
+                     <?php facontech_header_menu(); ?>
 
-                              <li><a href="team.html">Team</a></li>
-                              <li><a href="project.html">Project</a></li>
-                              <li><a href="project-details.html">Project Details</a></li>
-                              <li><a href="service.html">Service</a></li>
-                              <li><a href="service-details.html">Service Details</a></li>
-                              <li><a href="pricing.html">Pricing</a></li>
-                              <li><a href="review.html">Review</a></li>
-                              <li><a href="faq.html">FAQ</a></li>
-                              <li><a href="404.html">404 Page</a></li>
-                           </ul>
-                        </li>
-                        <li class="has-dropdown"><a href="blog-grid.html">Blog</a>
-                           <ul class="sub-menu">
-                              <li><a href="blog-grid.html">Blog-Grid</a></li>
-                              <li>
-                                 <a href="blog-grid-sidebar.html">Blog-Grid Sidebar</a>
-                              </li>
-                              <li><a href="blog-list.html">Blog-List</a></li>
-                              <li><a href="blog-details.html">Blog Details</a></li>
-                           </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
-                     </ul>
                   </nav>
                </div>
             </div>
@@ -87,11 +56,17 @@ $facontech_menu_col = $facontech_header_right ? 'col-xxl-7 col-xl-7 col-lg-8 d-n
                      class="fal fa-bars"></i></a>
             </div>
          </div>
-         <div class="col-xl-2 col-lg-3 d-none d-lg-block">
-            <div class="d-adjust">
-               <a class="default-btn" href="contact.html">
-                  Try It Free Now
-               </a>
+         <div class="col-xl-2 col-lg-4 d-none d-lg-block">
+            <div class="d-adjust justify-content-end d-flex">
+               <div class="header-info ">
+                  <div class="info-item ">
+                     <span>Phone Number</span>
+                     <p class="mb-0"><a href="tel:<?php echo esc_attr($facontech_phone_num); ?>">
+                           <?php echo esc_html($facontech_phone_num); ?>
+                        </a></p>
+                  </div>
+
+               </div>
             </div>
 
          </div>

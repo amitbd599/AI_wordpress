@@ -47,7 +47,6 @@ if (!function_exists('facontech_setup')):
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus([
             'main-menu' => esc_html__('Main Menu', 'facontech'),
-            'category-menu' => esc_html__('Category Menu', 'facontech'),
             'footer-menu' => esc_html__('Footer Menu', 'facontech'),
         ]);
 
