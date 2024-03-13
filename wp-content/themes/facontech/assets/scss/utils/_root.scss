@@ -1,0 +1,47 @@
+@use "colors" as *;
+@use "typography" as *;
+
+:root {
+  // Custom Container
+  --container-width: 1140px;
+  --small-container-width: 1000px;
+  --large-container-width: 1550px;
+
+  /**
+    @font family declaration
+    */
+  @each $ff, $shades in $font-family {
+    @each $shade, $value in $shades {
+      --#{$ff}-#{$shade}: #{$value};
+    }
+  }
+
+  /**
+    @color declaration
+    */
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --#{$color}-#{$shade}: #{$value};
+    }
+  }
+
+  /**
+    @font weight declaration
+    */
+
+  @each $fw, $shades in $font-scale {
+    @each $shade, $value in $shades {
+      --#{$fw}-#{$shade}: #{$value};
+    }
+  }
+
+  /**
+    @font size declaration
+    */
+
+  @each $fz, $shades in $font-size {
+    @each $shade, $value in $shades {
+      --#{$fz}-#{$shade}: #{$value};
+    }
+  }
+}

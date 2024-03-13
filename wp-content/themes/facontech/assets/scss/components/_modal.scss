@@ -1,0 +1,178 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/* 06. Modal
+/*----------------------------------------*/
+
+/* 01. ========= search-modal ========== */
+.search-box {
+  background: rgb(0 0 0 / 77%);
+  .close {
+    color: #fff;
+    top: 50px;
+    right: 50px;
+    position: absolute;
+    font-size: 50px;
+    @include transition(0.3s);
+    &:hover {
+      transform: rotate(90deg);
+      color: var(--theme-1);
+    }
+  }
+
+  .modal-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%) !important;
+    border: none;
+    outline: 0;
+  }
+
+  .modal-dialog .modal-content {
+    background: 0 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+  }
+
+  .modal-dialog .modal-content form {
+    max-width: 650px;
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+
+  .modal-dialog .modal-content form input {
+    display: block;
+    width: 500px;
+    height: 60px;
+    border: none;
+    border-radius: 30px;
+    color: #111;
+    padding: 3px 0 0 25px;
+  }
+
+  .modal-dialog .modal-content form button {
+    position: absolute;
+    right: 6px;
+    margin-bottom: 3px;
+    font-size: 18px;
+    color: var(--theme-1);
+    border: none;
+    cursor: pointer;
+    top: 5px;
+    background: var(--common-body-1);
+    width: 50px;
+    height: 50px;
+    border-radius: 60px;
+  }
+}
+
+//  sidebar-right
+
+.sidebar-right {
+  background: rgb(0 0 0 / 77%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  transform: translateX(100%);
+  @include transition(0.5s);
+  @media #{$lg, $md, $sm, $xs, $xss} {
+    display: none;
+  }
+
+  .wrapper {
+    position: fixed;
+    right: 0;
+    width: 400px;
+    min-height: 100vh;
+    background: var(--common-white);
+    padding: 40px;
+    overflow-y: scroll;
+    height: 100%;
+    .title {
+      margin-top: 10px;
+      .logo {
+        width: 220px;
+      }
+      p {
+        margin-top: 20px;
+        color: var(--text-p-1);
+        margin-bottom: 0;
+        font-size: 15px;
+      }
+    }
+    .intro-text {
+      margin-top: 30px;
+      .title-text {
+        h3 {
+          font-size: 20px;
+          color: var(--text-h);
+          line-height: normal;
+        }
+      }
+      .img-file {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        img {
+          border-radius: 5px;
+        }
+      }
+      p {
+        margin-top: 0px;
+        color: var(--text-p-1);
+        margin-bottom: 0;
+        font-size: 15px;
+      }
+      ul {
+        li {
+          color: var(--text-p-1);
+          font-size: 16px;
+          margin: 5px;
+          i {
+            font-size: 16px;
+            color: var(--text-p-1);
+          }
+        }
+      }
+    }
+    .close-icon {
+      background: var(--common-body-1);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      i {
+        color: var(--theme-1);
+        font-size: 30px;
+
+        @include transition(0.3s);
+        &:hover {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+  &.sidebar-opened {
+    transform: translateX(0);
+  }
+}
+
+.modal-open {
+  padding-right: 0 !important;
+}

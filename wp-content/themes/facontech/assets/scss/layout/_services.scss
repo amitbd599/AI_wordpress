@@ -1,0 +1,792 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/* 14. Services
+/*----------------------------------------*/
+
+.service-section {
+  background: var(--common-body-1);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 120px 0;
+  min-height: auto;
+  &.one {
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+    .section-title-shape-one {
+      margin-bottom: 60px;
+    }
+
+    .section-wrapper {
+      position: relative;
+      margin-bottom: 30px;
+      transition: all 0.2s linear;
+      z-index: 9;
+      .wrapper-inner {
+        background: var(--common-white);
+        padding: 25px 20px;
+        border-radius: 5px;
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        .img-file {
+          width: 60px;
+          height: 60px;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .text-file {
+          width: 80%;
+          h3 {
+            font-size: 20px;
+            font-weight: var(--fw-800);
+            line-height: 1.2;
+            color: var(--text-h);
+            transition: all 0.1s linear !important;
+            &:hover {
+              color: var(--theme-1);
+            }
+          }
+          p {
+            font-size: 15px;
+            color: var(--text-p-1);
+            margin: 0;
+          }
+        }
+      }
+      &:hover {
+        border-radius: 5px;
+        animation: pulse 1.5s;
+      }
+    }
+    .inner-btn {
+      margin-top: 15px;
+    }
+    .shape-image {
+      .shape-1 {
+        top: 24px;
+        left: 0;
+        z-index: -1;
+        img {
+          width: 140px;
+        }
+      }
+      .shape-2 {
+        top: 8%;
+        right: 20%;
+        z-index: -1;
+        animation: animationFramesOne 25s linear infinite;
+        -webkit-animation: animationFramesOne 25s linear infinite;
+        img {
+          width: 50px;
+        }
+      }
+      .shape-3 {
+        top: 8%;
+        left: 20%;
+        z-index: -1;
+        animation: animationFramesOne 35s linear infinite;
+        -webkit-animation: animationFramesOne 35s linear infinite;
+        img {
+          width: 20px;
+        }
+      }
+      .shape-4 {
+        bottom: 15%;
+        left: 20%;
+        z-index: -1;
+        animation: animationFramesOne 35s linear infinite;
+        -webkit-animation: animationFramesOne 35s linear infinite;
+        img {
+          width: 50px;
+        }
+      }
+      .shape-5 {
+        bottom: 26%;
+        right: 15px;
+        z-index: -1;
+        -webkit-animation: slide-top 10s linear 0.3s infinite alternate-reverse
+          both;
+        animation: slide-top 10s linear 0.3s infinite alternate-reverse both;
+        img {
+          width: 80px;
+        }
+        @media #{$md, $sm, $xs, $xss} {
+          bottom: 2%;
+        }
+      }
+      .shape-6 {
+        top: 10%;
+        left: 15px;
+        z-index: -1;
+        animation: animationFramesOne 45s linear 0.5s infinite;
+        -webkit-animation: animationFramesOne 45s linear 0.5s infinite;
+        img {
+          width: 40px;
+        }
+      }
+      .shape-7 {
+        bottom: 20%;
+        left: 39px;
+        z-index: -1;
+        img {
+          width: auto;
+        }
+        @media #{$md, $sm, $xs, $xss} {
+          bottom: 7%;
+          left: 10px;
+        }
+      }
+    }
+    &.single-row {
+      overflow: hidden;
+      background-image: none !important;
+      .shape-image-file {
+        .shape-img-1 {
+          left: -12px;
+          top: 8%;
+          z-index: -1;
+          @media #{$lg, $md, $sm, $xs, $xss} {
+            top: 0;
+          }
+
+          img {
+            width: 60px;
+          }
+        }
+        .shape-img-2 {
+          top: -24px;
+          right: -28px;
+          z-index: -1;
+          img {
+            width: 100px;
+          }
+        }
+        .shape-img-3 {
+          top: 13%;
+          right: 14%;
+          z-index: -1;
+          -webkit-animation: scale-down-center 15s linear infinite
+            alternate-reverse both;
+          animation: scale-down-center 15s linear infinite alternate-reverse
+            both;
+          img {
+            width: 120px;
+          }
+        }
+        .shape-img-4 {
+          bottom: 21%;
+          right: 20px;
+          z-index: -1;
+          -webkit-animation: slide-top 10s linear 0.3s infinite
+            alternate-reverse both;
+          animation: slide-top 10s linear 0.3s infinite alternate-reverse both;
+          img {
+            width: 40px;
+          }
+        }
+        .shape-img-5 {
+          bottom: 40px;
+          left: -28px;
+          z-index: -1;
+          img {
+            width: 200px;
+          }
+        }
+        .shape-img-6 {
+          top: 74px;
+          right: 42%;
+          z-index: -1;
+          animation: animationFramesOne 45s linear infinite reverse;
+          -webkit-animation: animationFramesOne 45s linear infinite reverse;
+          img {
+            width: 30px;
+          }
+        }
+        .shape-img-7 {
+          top: 74px;
+          right: 42%;
+          z-index: -1;
+          animation: animationFramesOne 55s linear infinite;
+          -webkit-animation: animationFramesOne 55s linear infinite;
+          img {
+            width: 25px;
+          }
+        }
+        .shape-img-8 {
+          top: 26px;
+          right: 54%;
+          z-index: -1;
+          img {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+  &.two {
+    background: var(--common-body-2);
+    z-index: 9;
+    overflow: hidden;
+    padding: 120px 0;
+    min-height: auto;
+    position: relative;
+
+    .section-title-shape-one {
+      margin-bottom: 60px;
+    }
+    .section-wrapper {
+      margin-bottom: 30px;
+      overflow: hidden;
+      .wrapper-inner {
+        background: var(--common-body-1);
+        padding: 30px 25px;
+        border-radius: 5px;
+        text-align: center;
+        position: relative;
+        @include transition(0.3s);
+
+        .img-file {
+          width: 80px;
+          height: 80px;
+          overflow: hidden;
+          margin: auto;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @include transition(0.3s);
+          }
+        }
+        .text-file {
+          margin: auto;
+          h3 {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: var(--fw-800);
+            line-height: 1.2;
+            color: var(--common-white);
+            transition: all 0.1s linear !important;
+            &:hover {
+              color: var(--theme-1);
+            }
+          }
+          p {
+            font-size: 15px;
+            color: var(--text-p-2);
+            margin: 0;
+          }
+        }
+
+        &:hover {
+          transform: translateY(-10px);
+
+          .img-file {
+            img {
+              transform: rotateY(180deg);
+            }
+          }
+        }
+      }
+    }
+    .inner-btn {
+      margin-top: 20px;
+    }
+
+    .shape-img {
+      .shape-1 {
+        left: 4px;
+        top: -2px;
+        width: 100px;
+        z-index: -1;
+      }
+      .shape-2 {
+        right: 40px;
+        top: 24px;
+        width: 50px;
+        z-index: -1;
+      }
+      .shape-3 {
+        right: 230px;
+        bottom: 80px;
+        width: 21px;
+        z-index: -1;
+        animation: trigger 6s linear infinite;
+      }
+
+      .shape-5 {
+        right: 570px;
+        top: 24px;
+        width: 34px;
+        z-index: -1;
+        animation: animationFramesOne 30s linear infinite reverse backwards;
+        -webkit-animation: animationFramesOne 30s linear infinite reverse
+          backwards;
+      }
+      .shape-6 {
+        left: 342px;
+        top: 184px;
+        width: 20px;
+        z-index: -1;
+        animation: trigger 6s linear infinite reverse;
+        @media #{$md, $sm, $xs, $xss} {
+          left: 50px;
+          top: 184px;
+        }
+      }
+      .shape-7 {
+        right: 287px;
+        top: 95px;
+        width: 161px;
+        z-index: -1;
+        @media #{$lg} {
+          right: 246px;
+          top: 42px;
+        }
+        @media #{$md, $sm, $xs, $xss} {
+          right: 140px;
+          top: 50px;
+          width: 150px;
+        }
+        @media #{$md, $sm, $xs, $xss} {
+          right: 39px;
+        }
+      }
+      .shape-8 {
+        left: -10px;
+        bottom: -6px;
+        width: 180px;
+        z-index: -1;
+        transform: rotate(90deg);
+        opacity: 0.3;
+      }
+      .shape-9 {
+        left: 548px;
+        bottom: 30px;
+        width: 80px;
+        z-index: -1;
+      }
+      .shape-10 {
+        left: 140px;
+        top: 42px;
+        width: 22px;
+        z-index: -1;
+        animation: animationFramesOne 50s linear infinite;
+        -webkit-animation: animationFramesOne 50s linear infinite;
+      }
+    }
+  }
+  &.three {
+    background: var(--common-body-3);
+    z-index: 9;
+    overflow: hidden;
+    padding: 120px 0;
+    min-height: auto;
+    position: relative;
+
+    .section-title-shape-one {
+      margin-bottom: 60px;
+    }
+
+    .swiper {
+      .swiper-wrapper {
+        .inner-wrapper {
+          background: var(--common-white);
+          box-shadow: 0px 3px 10px 0px rgba(41, 45, 194, 0.08);
+          border-radius: 5px;
+          margin: 20px 0;
+          .img-file {
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            position: relative;
+            img {
+              @include transition(0.4s);
+              @media #{$sm, $xs, $xss} {
+                width: 100%;
+              }
+            }
+          }
+          .text-file {
+            padding: 30px 20px;
+            position: relative;
+            overflow: hidden;
+            z-index: 9;
+            .title {
+              font-size: 20px;
+              font-weight: 800;
+              line-height: 1.2;
+              text-transform: capitalize;
+              color: var(--text-h);
+              @media #{$sm, $xs, $xss} {
+                font-size: 22px;
+              }
+              a {
+                @include transition(0.2s);
+                position: relative;
+              }
+              &:hover {
+                a {
+                  color: var(--theme-1);
+                }
+              }
+            }
+            p {
+              color: var(--text-p-1);
+              margin: 0;
+            }
+            .link {
+              margin-top: 10px;
+              font-size: 16px;
+              font-weight: 600;
+              color: var(--text-h);
+              @include transition(0.2s);
+              a {
+                position: relative;
+                &::after {
+                  position: absolute;
+                  font-family: "Font Awesome 5 Pro";
+                  content: "\f324";
+                  font-size: 14px;
+                  right: -19px;
+                  top: -1px;
+                }
+              }
+            }
+
+            .shape-overlay {
+              position: absolute;
+              left: 0;
+              top: 0;
+              z-index: -1;
+              opacity: 0.6;
+              transform: translateX(-100%);
+              @include transition(0.3s);
+              @media #{$sm, $xs, $xss} {
+                display: none;
+              }
+            }
+          }
+          &:hover {
+            .text-file {
+              &::after {
+                transform: translateY(0);
+              }
+            }
+            .link {
+              color: var(--theme-1);
+            }
+            .shape-overlay {
+              transform: translateX(0);
+            }
+          }
+        }
+      }
+    }
+    .inner-btn {
+      margin-top: 60px;
+    }
+
+    .shape-img {
+      .shape-1 {
+        top: -4px;
+        left: 0;
+        z-index: -1;
+      }
+      .shape-2 {
+        right: 0;
+        bottom: 0;
+        width: 160px;
+        z-index: -1;
+        transform: rotate(180deg);
+      }
+      .shape-3 {
+        right: 284px;
+        top: 110px;
+        width: 200px;
+        z-index: -1;
+        animation: trigger 6s linear infinite;
+
+        @media #{$md, $sm, $xs, $xss} {
+          right: 188px;
+          top: 70px;
+        }
+      }
+      .shape-4 {
+        right: 43px;
+        top: 65px;
+        width: 80px;
+        z-index: -1;
+      }
+
+      .shape-5 {
+        right: 570px;
+        top: 24px;
+        width: 34px;
+        z-index: -1;
+        animation: animationFramesOne 30s linear infinite reverse backwards;
+        -webkit-animation: animationFramesOne 30s linear infinite reverse
+          backwards;
+      }
+      .shape-6 {
+        left: 342px;
+        top: 184px;
+        width: 20px;
+        z-index: -1;
+        animation: trigger 6s linear infinite reverse;
+      }
+      .shape-7 {
+        right: 287px;
+        top: 95px;
+        width: 161px;
+        z-index: -1;
+      }
+      .shape-8 {
+        left: -10px;
+        bottom: -6px;
+        width: 180px;
+        z-index: -1;
+        transform: rotate(90deg);
+        opacity: 0.3;
+      }
+      .shape-9 {
+        left: 548px;
+        bottom: 30px;
+        width: 80px;
+        z-index: -1;
+      }
+      .shape-10 {
+        left: 140px;
+        top: 42px;
+        width: 22px;
+        z-index: -1;
+        animation: animationFramesOne 50s linear infinite;
+        -webkit-animation: animationFramesOne 50s linear infinite;
+      }
+    }
+  }
+}
+
+// Service Details Section
+
+.service-details-section {
+  background: var(--common-body-1);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 9;
+  .right-wrapper {
+    @media #{$lg, $md, $sm, $xs, $xss} {
+      margin-top: 30px;
+      padding-left: 0 !important;
+    }
+
+    .title {
+      font-size: 26px;
+    }
+  }
+  .left-wrapper {
+    @media #{$lg, $md, $sm, $xs, $xss} {
+      padding-left: 0 !important;
+    }
+    .img-file {
+      border-radius: 8px;
+      overflow: hidden;
+      img {
+        @media #{$lg, $md, $sm, $xs, $xss} {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .question-field {
+    padding-right: 20px;
+    .title {
+      font-size: 26px;
+    }
+    ul {
+      li {
+        font-size: 15px;
+        padding-left: 20px;
+        margin-bottom: 7px;
+        position: relative;
+        &::after {
+          position: absolute;
+          left: 0;
+          top: 0;
+          font-family: "Font Awesome 5 Pro";
+          font-weight: 900;
+          content: "\f324";
+          font-size: 13px;
+          margin-top: 1px;
+        }
+      }
+    }
+  }
+
+  .faq-inner {
+    position: relative;
+    z-index: 9;
+    @media #{$lg, $md, $sm, $xs, $xss} {
+      padding-left: 0 !important;
+      margin-top: 30px;
+    }
+    .intro {
+      margin-top: 15px;
+      h3 {
+        font-size: 18px;
+        line-height: 1.2;
+        font-weight: var(--fw-600);
+      }
+    }
+    .faq-list {
+      margin-top: 15px;
+      .accordion {
+        .accordion-item {
+          margin-bottom: 16px;
+          border-radius: 5px;
+          overflow: hidden;
+          .accordion-header {
+            .accordion-button {
+              padding: 15px 35px 15px 16px;
+              font-size: 15px !important;
+              line-height: 25px;
+
+              font-weight: 600;
+              background: var(--theme-1);
+              color: var(--common-white);
+              &.collapsed {
+                background: var(--common-white);
+                color: var(--text-h);
+              }
+              &:focus {
+                z-index: 3;
+                border-color: transparent;
+                outline: 0;
+                box-shadow: none !important;
+              }
+              &::after {
+                flex-shrink: 0;
+                width: 1.25rem;
+                height: 1.25rem;
+                margin-left: auto;
+                font-family: "Font Awesome 5 Pro";
+                font-weight: 900;
+                content: "\2b";
+                background-image: none;
+                transform: none;
+                position: absolute;
+                right: 10px;
+                top: 15px;
+              }
+              &:not(.collapsed)::after {
+                font-family: "Font Awesome 5 Pro";
+                font-weight: 900;
+                content: "\f068";
+                background-image: none;
+                transform: none;
+                position: absolute;
+                right: 10px;
+                top: 15px;
+              }
+            }
+          }
+          .accordion-collapse {
+            background: var(--common-white);
+            color: var(--text-p-1);
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  .shape-image-file {
+    .shape-img-1 {
+      left: -12px;
+      top: 8%;
+      z-index: -1;
+      @media #{$lg, $md, $sm, $xs, $xss} {
+        top: 10px;
+      }
+
+      img {
+        width: 60px;
+      }
+    }
+    .shape-img-2 {
+      top: -24px;
+      right: -28px;
+      z-index: -1;
+      img {
+        width: 100px;
+      }
+    }
+    .shape-img-3 {
+      top: 13%;
+      right: 14%;
+      z-index: -1;
+      -webkit-animation: scale-down-center 15s linear infinite alternate-reverse
+        both;
+      animation: scale-down-center 15s linear infinite alternate-reverse both;
+      img {
+        width: 120px;
+      }
+    }
+    .shape-img-4 {
+      bottom: 21%;
+      right: 20px;
+      z-index: -1;
+      -webkit-animation: slide-top 10s linear 0.3s infinite alternate-reverse
+        both;
+      animation: slide-top 10s linear 0.3s infinite alternate-reverse both;
+      img {
+        width: 40px;
+      }
+      @media #{$lg, $md, $sm, $xs, $xss} {
+        display: none;
+      }
+    }
+    .shape-img-5 {
+      bottom: 40px;
+      left: -28px;
+      z-index: -1;
+      img {
+        width: 200px;
+      }
+    }
+    .shape-img-6 {
+      top: 74px;
+      right: 42%;
+      z-index: -1;
+      animation: animationFramesOne 45s linear infinite reverse;
+      -webkit-animation: animationFramesOne 45s linear infinite reverse;
+      img {
+        width: 30px;
+      }
+    }
+    .shape-img-7 {
+      top: 74px;
+      right: 42%;
+      z-index: -1;
+      animation: animationFramesOne 55s linear infinite;
+      -webkit-animation: animationFramesOne 55s linear infinite;
+      img {
+        width: 25px;
+      }
+    }
+    .shape-img-8 {
+      top: 26px;
+      right: 54%;
+      z-index: -1;
+      img {
+        width: 200px;
+      }
+    }
+  }
+}

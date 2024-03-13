@@ -1,0 +1,326 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/* 23. Pricing
+/*----------------------------------------*/
+
+.price-section {
+  position: relative;
+  &.one {
+    background: var(--common-body-2);
+    padding: 120px 0;
+    z-index: 9;
+    overflow: hidden;
+    .price-body {
+      z-index: 9;
+      .price-inner {
+        background: var(--common-gd);
+        padding: 40px 30px;
+        border-radius: 10px;
+        margin-top: 60px;
+        .price {
+          display: flex;
+          justify-content: center;
+          gap: 5px;
+          border-bottom: 1px solid var(--border-3);
+          h4 {
+            font-size: 22px;
+            font-weight: var(--fw-600);
+          }
+          h2 {
+            font-size: 40px;
+            font-weight: var(--fw-600);
+          }
+          h5 {
+            font-size: 12px;
+            font-weight: var(--fw-600);
+            margin-top: 14px;
+          }
+        }
+        .plan {
+          margin-top: 20px;
+          text-align: center;
+          h2 {
+            font-size: 30px;
+            font-weight: var(--fw-800);
+            color: var(--theme-1);
+          }
+          .list {
+            ul {
+              li {
+                font-size: 16px;
+                margin-bottom: 10px;
+                &.deep {
+                  color: var(--text-p-1);
+                }
+              }
+            }
+          }
+        }
+        &.down {
+          margin-top: 100px;
+          background: var(--common-body-1);
+          @media #{$md, $sm, $xs, $xss} {
+            margin-top: 60px;
+          }
+          &:hover {
+            animation: pulse 2s;
+            @media #{$md, $sm, $xs, $xss} {
+              animation: none;
+            }
+          }
+        }
+      }
+    }
+    .shape-image {
+      .shape-1 {
+        left: 15px;
+        bottom: 8%;
+        width: 60px;
+        z-index: -1;
+        -webkit-animation: slide-top 10s linear 0.3s infinite alternate-reverse
+          both;
+        animation: slide-top 10s linear 0.3s infinite alternate-reverse both;
+        @media #{$md, $sm, $xs, $xss} {
+          display: none;
+        }
+      }
+      .shape-2 {
+        left: 15px;
+        top: 38%;
+        width: 30px;
+        z-index: -1;
+        animation: animationFramesOne 35s linear 0.6s infinite;
+        -webkit-animation: animationFramesOne 35s linear 0.6s infinite;
+      }
+      .shape-3 {
+        left: 44%;
+        top: 10%;
+        width: 40px;
+        z-index: -1;
+        animation: animationFramesOne 25s linear 0.8s infinite;
+        -webkit-animation: animationFramesOne 25s linear 0.8s infinite;
+      }
+      .shape-4 {
+        right: 20%;
+        top: 18%;
+        width: 50px;
+        z-index: -1;
+        animation: animationFramesOne 45s linear 0.8s infinite;
+        -webkit-animation: animationFramesOne 45s linear 0.8s infinite;
+      }
+      .shape-5 {
+        right: 3%;
+        top: 31%;
+        width: 20px;
+        z-index: -1;
+      }
+      .shape-6 {
+        right: 23%;
+        top: 10%;
+        width: 40px;
+        z-index: -1;
+        -webkit-animation: scale-down-center 5s linear infinite
+          alternate-reverse both;
+        animation: scale-down-center 5s linear infinite alternate-reverse both;
+        @media #{$md, $sm, $xs, $xss} {
+          top: 8%;
+        }
+        @media #{$xs, $xss} {
+          top: 4%;
+          right: 10%;
+        }
+      }
+      .shape-7 {
+        right: 0;
+        bottom: 10px;
+        width: 220px;
+        z-index: -1;
+        opacity: 0.6;
+      }
+      .shape-8 {
+        top: 7px;
+        right: 6%;
+        width: 80px;
+        z-index: -1;
+      }
+      .shape-9 {
+        bottom: 30%;
+        right: 15px;
+        width: 30px;
+        z-index: -1;
+        -webkit-animation: slide-top 20s linear 0.6s infinite alternate-reverse
+          both;
+        animation: slide-top 20s linear 0.6s infinite alternate-reverse both;
+      }
+      .shape-10 {
+        top: 13%;
+        right: 56%;
+        width: 150px;
+        z-index: -1;
+        @media #{$lg, $md, $sm, $xs, $xss} {
+          right: 46%;
+        }
+        @media #{$md, $sm, $xs, $xss} {
+          right: 36%;
+          top: 4%;
+        }
+        @media #{$xss} {
+          right: 30%;
+          top: 3%;
+        }
+      }
+    }
+  }
+  &.two {
+    background: var(--common-white);
+    padding: 120px 0;
+    z-index: 9;
+    overflow: hidden;
+    .price-body {
+      z-index: 9;
+      .price-inner {
+        background: #f0fdf4;
+        box-shadow: 0px 3px 10px 0px rgba(41, 45, 194, 0.08);
+        padding: 40px 30px;
+        border-radius: 10px;
+        margin-top: 60px;
+        .price {
+          display: flex;
+          justify-content: center;
+          gap: 5px;
+          border-bottom: 1px solid var(--border-2);
+          h4 {
+            font-size: 22px;
+            color: var(--text-h);
+            font-weight: var(--fw-600);
+          }
+          h2 {
+            font-size: 40px;
+            color: var(--text-h);
+            font-weight: var(--fw-600);
+          }
+          h5 {
+            color: var(--text-h);
+            font-size: 12px;
+            font-weight: var(--fw-600);
+            margin-top: 14px;
+          }
+        }
+        .plan {
+          margin-top: 20px;
+          text-align: center;
+
+          h2 {
+            color: var(--text-h);
+            font-size: 30px;
+            font-weight: var(--fw-800);
+            color: var(--text-h);
+          }
+          .list {
+            ul {
+              li {
+                font-size: 16px;
+                margin-bottom: 10px;
+                color: var(--text-p-1);
+                &.deep {
+                  color: var(--text-p-1);
+                }
+              }
+            }
+          }
+        }
+        &.down {
+          margin-top: 100px;
+          background: var(--common-white);
+          -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+          -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 3px 10px 0px rgba(41, 45, 194, 0.08);
+          .price {
+            border-bottom: 1px solid var(--border-1);
+          }
+          &:hover {
+            // animation: pulse 2s;
+          }
+          @media #{$md, $sm, $xs, $xss} {
+            margin-top: 60px;
+          }
+        }
+        .inner-btn {
+          margin-top: 20px;
+        }
+      }
+    }
+    .shape-image {
+      .shape-2 {
+        left: 15px;
+        top: 38%;
+        width: 30px;
+        z-index: -1;
+        animation: animationFramesOne 35s linear 0.6s infinite;
+        -webkit-animation: animationFramesOne 35s linear 0.6s infinite;
+      }
+      .shape-3 {
+        left: 54%;
+        top: 10%;
+        width: 20px;
+        z-index: -1;
+        animation: animationFramesOne 25s linear 0.8s infinite;
+        -webkit-animation: animationFramesOne 25s linear 0.8s infinite;
+      }
+      .shape-4 {
+        right: 20%;
+        top: 18%;
+        width: 50px;
+        z-index: -1;
+        animation: animationFramesOne 45s linear 0.8s infinite;
+        -webkit-animation: animationFramesOne 45s linear 0.8s infinite;
+      }
+      .shape-5 {
+        right: 3%;
+        top: 31%;
+        width: 20px;
+        z-index: -1;
+      }
+      .shape-6 {
+        right: 3%;
+        top: 10%;
+        width: 60px;
+        z-index: -1;
+      }
+      .shape-7 {
+        right: -10px;
+        bottom: -42px;
+        width: 183px;
+        z-index: -1;
+        opacity: 0.6;
+        transform: rotate(180deg);
+      }
+
+      .shape-9 {
+        bottom: 30%;
+        right: 15px;
+        width: 30px;
+        z-index: -1;
+        -webkit-animation: slide-top 20s linear 0.6s infinite alternate-reverse
+          both;
+        animation: slide-top 20s linear 0.6s infinite alternate-reverse both;
+      }
+      .shape-10 {
+        top: 13%;
+        left: 430px;
+        width: 150px;
+        z-index: -1;
+        @media #{$md, $sm} {
+          top: 98px;
+          left: 340px;
+        }
+        @media #{$xs, $xss} {
+          top: 50px;
+          left: 218px;
+        }
+      }
+    }
+  }
+}

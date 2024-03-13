@@ -1,0 +1,305 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/* 27. Counter
+/*----------------------------------------*/
+
+.counter-section {
+  &.one {
+    padding: 120px 0;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 9;
+
+    &::after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: #000000d9;
+      z-index: -1;
+    }
+    .award-part {
+      position: relative;
+      background: var(--common-body-1);
+      padding: 40px 30px;
+      z-index: 9;
+      border-radius: 5px;
+      overflow: hidden;
+      .title {
+        h2 {
+          font-size: 30px;
+          line-height: 1.2;
+          color: var(--common-white);
+          @media #{$sm, $xs, $xss} {
+            font-size: 22px;
+          }
+        }
+      }
+      .inner-btn {
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+
+        @media #{ $md, $sm, $xs, $xss} {
+          justify-content: flex-start;
+          margin-top: 12px;
+        }
+      }
+      .overlay-text {
+        h1 {
+          position: absolute;
+          font-size: 100px;
+          font-weight: 800;
+          top: 20px;
+          left: 28px;
+          z-index: -1;
+          opacity: 0.6;
+          font-family: var(--ff-body);
+          background: linear-gradient(180deg, #243949 0%, #00151e 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+        }
+      }
+      .shape-img {
+        .shape-1 {
+          width: 70px;
+          right: 25%;
+          top: 50%;
+          z-index: -1;
+          -webkit-animation: rotate-in-center 16s linear 0.4s infinite reverse
+            backwards;
+          animation: rotate-in-center 16s linear 0.4s infinite reverse backwards;
+          @media #{$sm, $xs, $xss} {
+            width: 53px;
+            right: 23%;
+            top: 54%;
+          }
+        }
+        .shape-2 {
+          width: 30px;
+          right: 45%;
+          top: 5%;
+          z-index: -1;
+          animation: animationFramesOne 25s linear infinite;
+          -webkit-animation: animationFramesOne 25s linear infinite;
+        }
+        .shape-3 {
+          width: 15px;
+          right: 23%;
+          top: 9%;
+          @media #{$sm, $xs, $xss} {
+            right: 10px;
+            top: 40%;
+          }
+        }
+        .shape-4 {
+          width: 26px;
+          right: 11%;
+          bottom: 12%;
+          -webkit-animation: scale-down-center 5s linear infinite
+            alternate-reverse both;
+          animation: scale-down-center 5s linear infinite alternate-reverse both;
+        }
+      }
+    }
+
+    .inner-wrapper {
+      .left-wrapper {
+        margin-top: 70px;
+        .title-des {
+          h2 {
+            font-size: 30px;
+            line-height: 1.2;
+            text-transform: capitalize;
+          }
+          p {
+            margin-top: 15px;
+          }
+        }
+        .list {
+          margin-top: 20px;
+          padding-left: 15px;
+          ul {
+            li {
+              display: flex;
+              gap: 10px;
+              align-items: flex-start;
+              margin-bottom: 8px;
+              i {
+                margin-top: 6px;
+                color: var(--theme-1);
+              }
+            }
+          }
+          .inner-btn {
+            justify-content: flex-start;
+            margin-top: 25px;
+          }
+        }
+      }
+      .right-wrapper {
+        margin-top: 70px;
+        padding-left: 25px;
+        @media #{$lg} {
+          padding-left: 0;
+        }
+        @media #{$md, $sm, $xs, $xss} {
+          padding-left: 0;
+          display: flex;
+          justify-content: center;
+        }
+
+        .item {
+          background: linear-gradient(180deg, #243949 0%, #00151e 100%);
+          box-shadow: 0px 4.8px 24.4px -6px rgba(19, 16, 34, 0.1),
+            0px 4px 13px -2px rgba(19, 16, 34, 0.06);
+          border-radius: 10px;
+          padding: 25px 20px;
+          text-align: center;
+          width: 220px;
+          @media #{$xs, $xss} {
+            width: 240px;
+          }
+          .count-body {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            h2 {
+              font-size: 50px;
+              font-weight: 800;
+              line-height: 1.2;
+            }
+            h4 {
+              font-size: 40px;
+              font-weight: 800;
+              color: var(--theme-1);
+              margin-top: 8px;
+              line-height: initial;
+              margin-bottom: 0;
+            }
+          }
+          .text {
+            h3 {
+              font-size: 18px;
+              line-height: 1.2;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+    }
+    .shape-img {
+      .shape-5 {
+        left: 15px;
+        bottom: 30%;
+        width: 65px;
+        -webkit-animation: slide-top 10s linear 0.3s infinite alternate-reverse
+          both;
+        animation: slide-top 10s linear 0.3s infinite alternate-reverse both;
+        @media #{$sm, $xs, $xss} {
+          display: none;
+        }
+      }
+      .shape-6 {
+        left: 40px;
+        top: 3%;
+        width: 36px;
+        z-index: 0;
+        animation: animationFramesOne 35s linear 0.6s infinite;
+        -webkit-animation: animationFramesOne 35s linear 0.6s infinite;
+      }
+      .shape-7 {
+        right: 40px;
+        bottom: 44%;
+        width: 32px;
+        z-index: 0;
+        -webkit-animation: slide-top 15s linear 0.3s infinite alternate-reverse
+          both;
+        animation: slide-top 15s linear 0.3s infinite alternate-reverse both;
+        @media #{$sm, $xs, $xss} {
+          animation: none;
+          right: 40px;
+          bottom: 38%;
+        }
+      }
+      .shape-8 {
+        right: 30px;
+        bottom: 12%;
+        width: 60px;
+        z-index: 0;
+        @media #{$sm, $xs, $xss} {
+          bottom: 34px;
+          right: auto;
+          left: 12px;
+        }
+      }
+    }
+  }
+  &.two {
+    background: var(--common-body-1);
+    padding: 60px 0;
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .wrapper {
+      .middle {
+        @media #{$md, $sm, $xs, $xss} {
+          justify-content: center !important;
+        }
+      }
+      @media #{$md, $sm, $xs, $xss} {
+        text-align: center;
+      }
+      h2 {
+        font-size: 50px;
+        line-height: 1.2;
+        color: var(--theme-1);
+        margin: 0;
+      }
+      h3 {
+        font-size: 40px;
+        line-height: 1.2;
+        margin: 0;
+      }
+      h4 {
+        font-size: 22px;
+        line-height: 1.2;
+      }
+    }
+    &.white {
+      background: var(--common-body-1);
+      .wrapper {
+        text-align: center;
+      }
+    }
+  }
+  .shape-img {
+    .shape-1 {
+      right: -2px;
+      top: -2px;
+      width: 70px;
+    }
+    .shape-2 {
+      left: 10px;
+      top: 160px;
+      width: 52px;
+      animation: trigger 6s linear infinite;
+
+      @media #{$lg, $md, $sm, $xs, $xss} {
+        left: 10px;
+        bottom: 10px;
+        top: auto;
+      }
+    }
+  }
+}

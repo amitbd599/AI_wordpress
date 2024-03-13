@@ -1,0 +1,45 @@
+// font url
+
+$font-url: "https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,800&family=Orbitron:wght@400;500;600;700;800;900&display=swap";
+
+// font family
+$font-family: (
+  ff: (
+    body: "'Nunito Sans', sans-serif",
+    heading: "'Orbitron', sans-serif",
+    p: "'Nunito Sans', sans-serif",
+    fontawesome: '"Font Awesome 6 Pro"',
+  ),
+);
+
+// font weight
+$font-scale: (
+  fw: (
+    normal: normal,
+    200: 200,
+    300: 300,
+    400: 400,
+    500: 500,
+    600: 600,
+    700: 700,
+    800: 800,
+    900: 900,
+  ),
+);
+
+// font size
+$font-size: (
+  fz: (
+    body: 14px,
+    p1: 16px,
+    p2: 14px,
+    h1: 65px,
+    h2: 40px,
+    h3: 30px,
+    h4: 28px,
+    h5: 26px,
+    h6: 26px,
+    st1: 22px,
+    st2: 16px,
+  ),
+);

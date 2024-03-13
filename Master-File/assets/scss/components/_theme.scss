@@ -1,0 +1,361 @@
+@use "../utils" as *;
+
+/*-----------------------------------------------------------------------------------
+
+    Theme Name: FaconTech - AI Technology & IT Solutions HTML Template
+    Author: themesoft69
+    Description: FaconTech - AI Technology & IT Solutions HTML Template
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+/************ TABLE OF CONTENTS ***************
+
+    01. THEME DEFAULT CSS
+    02. Spacing
+	03. Buttons
+	04. Carousel
+	05. Backtotop
+	06. Modal
+	07. Section-title
+	08. Animation
+	09. Preloader
+	10. Common
+	11. Header
+	12. Meanmenu
+	13. Slider
+	14. Services
+	15. About
+	16. Projects
+	17. Testimonial
+	18. Team
+	19. Review
+	20. Widget
+	21. Blog
+	22. Breadcrumb
+	23. Pricing
+	24. Faq
+	25. Contact
+	26. Sidebar
+	27. Counter
+	28. Newsletter
+	29. 404
+	30. Footer
+
+
+**********************************************/
+
+/*----------------------------------------*/
+/*  01. THEME DEFAULT CSS START
+/*----------------------------------------*/
+
+@import url($font-url);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/*---------------------------------
+    typography css start
+---------------------------------*/
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fz-body);
+  font-weight: normal;
+  color: var(--text-p-2);
+  line-height: 26px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-heading);
+  color: var(--common-white);
+  margin-top: 0px;
+  font-weight: var(--fw-700);
+  line-height: 1.4;
+  @include transition(0.3s);
+}
+
+h1 {
+  font-size: var(--fz-h1);
+  // line-height: 80px;
+}
+
+h2 {
+  font-size: var(--fz-h2);
+  // line-height: 50px;
+}
+
+h3 {
+  font-size: var(--fz-h3);
+  // line-height: 45px;
+}
+
+h4 {
+  font-size: var(--fz-h4);
+  // line-height: 44px;
+}
+
+h5 {
+  font-size: var(--fz-h5);
+  // line-height: 36px;
+}
+
+h6 {
+  font-size: var(--fz-h6);
+  // line-height: 30px;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  font-family: var(--ff-p);
+  font-size: 16px;
+  font-weight: var(--fw-normal);
+  color: var(--text-p-2);
+  margin-bottom: 16px;
+  line-height: 26px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a:focus,
+.button:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+a:focus,
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+a,
+button {
+  color: inherit;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0;
+  border: 0;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+
+input {
+  outline: none;
+}
+
+input[type="color"] {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  border-radius: 50%;
+}
+
+*::-moz-selection {
+  background: var(--theme-1);
+  color: var(--common-white);
+  text-shadow: none;
+}
+::-moz-selection {
+  background: var(--theme-1);
+  color: var(--common-white);
+  text-shadow: none;
+}
+::selection {
+  background: var(--theme-1);
+  color: var(--common-white);
+  text-shadow: none;
+}
+
+*::-moz-placeholder {
+  color: var(--common-black);
+  font-size: var(--fz-body);
+  opacity: 1;
+}
+*::placeholder {
+  color: var(--common-black);
+  font-size: var(--fz-body);
+  opacity: 1;
+}
+
+/*---------------------------------
+    common classes css start
+---------------------------------*/
+
+.w-img {
+  & img {
+    width: 100%;
+  }
+}
+
+.m-img {
+  & img {
+    max-width: 100%;
+  }
+}
+
+.fix {
+  overflow: hidden;
+}
+.clear {
+  clear: both;
+}
+
+.f-left {
+  float: left;
+}
+.f-right {
+  float: right;
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+
+.z-index-11 {
+  z-index: 11;
+}
+
+.overflow-y-visible {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.p-relative {
+  position: relative;
+}
+.p-absolute {
+  position: absolute;
+}
+
+.include-bg {
+  @include background();
+}
+.b-radius {
+  border-radius: 6px;
+}
+
+.d-adjust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.por {
+  position: relative;
+}
+.poa {
+  position: absolute;
+}
+.theme-color {
+  color: var(--theme-1);
+}
+
+/*----------------------------------------
+    Body Overlay
+-----------------------------------------*/
+
+.body-overlay {
+  background-color: rgba($color: var(--common-black), $alpha: 0.5);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  @include transition(0.3s);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.body-overlay.opened {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*----------------------------------------
+    Progress Wrap
+-----------------------------------------*/
+
+.progress-wrap {
+  @media #{$xs} {
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+.large-container {
+  position: static;
+  max-width: var(--large-container-width);
+  padding: 0px 15px;
+  margin: 0 auto;
+  width: 100%;
+  @media #{$lg, $md, $sm, $xs, $xss} {
+    padding: 0px 30px;
+  }
+}
+
+.auto-container {
+  position: static;
+  max-width: var(--container-width);
+  padding: 0px 30px;
+  margin: 0 auto;
+  width: 100%;
+  @media #{$sm, $xs, $xss} {
+    padding: 0px 15px;
+  }
+}
+
+.small-container {
+  position: static;
+  max-width: var(--small-container-width);
+  padding: 0px 15px;
+  margin: 0 auto;
+  width: 100%;
+}

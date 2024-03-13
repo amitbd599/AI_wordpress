@@ -1,0 +1,521 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/* 17. Testimonial
+/*----------------------------------------*/
+
+.testimonial-section {
+  position: relative;
+  &.one {
+    background: var(--common-body-1);
+    padding: 120px 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 9;
+    overflow: hidden;
+    .section-title-shape-one {
+      margin-bottom: 60px;
+    }
+    .swiper {
+      z-index: 9;
+      &.testimonial-one {
+        .swiper-wrapper {
+          .swiper-slide {
+            @media #{$xs, $xss} {
+              padding: 0 12px;
+            }
+            .inner-wrapper {
+              background: var(--common-gd);
+              border-radius: 10px;
+              padding: 40px 40px;
+              @media #{$md, $sm, $xs, $xss} {
+                padding: 30px 30px;
+              }
+              @media #{$sm, $xs, $xss} {
+                margin-top: 30px;
+              }
+
+              .intro-body {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                @media #{$md, $sm, $xs, $xss} {
+                  display: block;
+                }
+
+                .img-file {
+                  width: 80px;
+                  height: 80px;
+                  overflow: hidden;
+                  border-radius: 100%;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                  }
+                }
+                .text-file {
+                  h3 {
+                    font-size: 22px;
+                    font-weight: var(--fw-600);
+                    margin: 0px;
+                    line-height: normal;
+                    text-transform: capitalize;
+                  }
+                  h5 {
+                    font-size: 14px;
+                    font-weight: var(fw-normal);
+                    line-height: normal;
+                    margin: 0;
+                    margin-top: 5px;
+                    text-transform: capitalize;
+                  }
+                  @media #{$md, $sm, $xs, $xss} {
+                    margin-top: 20px;
+                  }
+                }
+              }
+              .review {
+                margin-top: 20px;
+                position: relative;
+                p {
+                  font-size: 15px;
+                  margin: 0;
+                }
+                .star {
+                  margin-top: 20px;
+                  display: flex;
+                  gap: 5px;
+                  i {
+                    color: #f7d800;
+                  }
+                }
+                .shape {
+                  display: flex;
+                  justify-content: flex-end;
+                  position: absolute;
+                  top: -88px;
+                  right: 0;
+                  @media #{$md, $sm, $xs, $xss} {
+                    top: -160px;
+                    right: 25px;
+                  }
+                  i {
+                    font-size: 60px;
+                    color: var(--common-white);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .shape-image {
+      .shape-1 {
+        left: 20px;
+        top: 20%;
+        width: 30px;
+        z-index: -1;
+        -webkit-animation: slide-top 10s linear 0.3s infinite alternate-reverse
+          both;
+        animation: slide-top 10s linear 0.3s infinite alternate-reverse both;
+        @media #{$xs,$xss} {
+          left: 17px;
+          top: 5%;
+          width: 24px;
+          animation: none;
+        }
+      }
+      .shape-2 {
+        right: 26px;
+        top: 49%;
+        width: 18px;
+        z-index: -1;
+      }
+      .shape-3 {
+        right: 98px;
+        bottom: 9%;
+        width: 36px;
+        z-index: -1;
+        animation: animationFramesOne 25s linear 0.8s infinite;
+        -webkit-animation: animationFramesOne 25s linear 0.8s infinite;
+      }
+      .shape-4 {
+        left: 18%;
+        top: 13%;
+        width: 50px;
+        z-index: -1;
+        -webkit-animation: scale-down-center 5s linear infinite
+          alternate-reverse both;
+        animation: scale-down-center 5s linear infinite alternate-reverse both;
+
+        @media #{$xs,$xss} {
+          left: 36%;
+          top: 5%;
+          animation: rotate-in-center 16s linear 0.4s infinite reverse backwards;
+        }
+      }
+      .shape-5 {
+        right: 18%;
+        top: 13%;
+        width: 130px;
+        z-index: -1;
+        animation: animationFramesOne 60s linear 0.8s infinite;
+        -webkit-animation: animationFramesOne 60s linear 0.8s infinite;
+        opacity: 0.5;
+      }
+      .shape-6 {
+        right: 42%;
+        top: 5%;
+        width: 24px;
+        z-index: -1;
+        animation: animationFramesOne 40s linear 0.8s infinite alternate-reverse
+          forwards;
+        -webkit-animation: animationFramesOne 40s linear 0.8s infinite
+          alternate-reverse forwards;
+      }
+    }
+  }
+  &.two {
+    background: var(--common-body-1);
+    padding: 120px 0 150px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 9;
+    overflow: hidden;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      background: #000d16d9;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .section-title-shape-one {
+      margin-bottom: 70px;
+      z-index: 9;
+      position: relative;
+    }
+    .swiper {
+      z-index: 9;
+      &.testimonial-one {
+        .swiper-wrapper {
+          .swiper-slide {
+            @media #{$xs, $xss} {
+              padding: 0 12px;
+            }
+            .inner-wrapper {
+              background: var(--common-gd);
+              border-radius: 10px;
+              padding: 40px 40px;
+              @media #{$md, $xs, $xss} {
+                padding: 30px 30px;
+              }
+
+              .intro-body {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                .img-file {
+                  width: 80px;
+                  height: 80px;
+                  overflow: hidden;
+                  border-radius: 10px;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                  }
+                }
+                .text-file {
+                  h3 {
+                    font-size: 22px;
+                    font-weight: var(--fw-600);
+                    margin: 0px;
+                    line-height: 1.2;
+                    text-transform: capitalize;
+                    margin-bottom: 12px;
+                    @media #{$md} {
+                      font-size: 20px;
+                    }
+                  }
+                  h5 {
+                    font-size: 14px;
+                    font-weight: var(fw-normal);
+                    line-height: normal;
+                    margin: 0;
+                    margin-top: 5px;
+                    text-transform: capitalize;
+                  }
+                }
+              }
+              .review {
+                margin-top: 20px;
+                position: relative;
+                padding-left: 95px;
+                @media #{$md,$xs, $xss} {
+                  padding-left: 0;
+                }
+                p {
+                  font-size: 15px;
+                  margin: 0;
+                }
+                .star {
+                  margin-top: 20px;
+                  display: flex;
+                  gap: 5px;
+                  i {
+                    color: #f7d800;
+                  }
+                }
+                .shape {
+                  display: flex;
+                  justify-content: flex-end;
+                  position: absolute;
+                  top: 0;
+                  left: 14px;
+                  i {
+                    font-size: 60px;
+                    color: var(--common-white);
+                  }
+                  @media #{$md, $xs, $xss} {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .arrow-2 {
+      top: auto;
+      position: absolute;
+      left: 50%;
+      bottom: -82px;
+      gap: 15px;
+      display: flex;
+      transform: translateX(-50%);
+      justify-content: center;
+    }
+    .shape-image {
+      .shape-1 {
+        left: 20px;
+        top: 20%;
+        width: 30px;
+        z-index: 0;
+        -webkit-animation: slide-top 10s linear 0.3s infinite alternate-reverse
+          both;
+        animation: slide-top 10s linear 0.3s infinite alternate-reverse both;
+      }
+      .shape-2 {
+        right: 26px;
+        top: 49%;
+        width: 18px;
+        z-index: 0;
+      }
+      .shape-3 {
+        right: 98px;
+        bottom: 9%;
+        width: 36px;
+        z-index: 0;
+        animation: animationFramesOne 25s linear 0.8s infinite;
+        -webkit-animation: animationFramesOne 25s linear 0.8s infinite;
+      }
+      .shape-4 {
+        left: 18%;
+        top: 13%;
+        width: 80px;
+        z-index: 0;
+        -webkit-animation: scale-down-center 5s linear infinite
+          alternate-reverse both;
+        animation: scale-down-center 5s linear infinite alternate-reverse both;
+        @media #{$sm, $xs, $xss} {
+          left: auto;
+          right: 40px;
+          top: 25px;
+        }
+      }
+      .shape-5 {
+        right: 18%;
+        top: 13%;
+        width: 70px;
+        z-index: 0;
+        animation: animationFramesOne 60s linear 0.8s infinite;
+        -webkit-animation: animationFramesOne 60s linear 0.8s infinite;
+        opacity: 1;
+        @media #{$sm, $xs, $xss} {
+          right: 15%;
+          top: 20%;
+        }
+      }
+      .shape-6 {
+        right: 42%;
+        top: 5%;
+        width: 24px;
+        z-index: 0;
+        animation: animationFramesOne 40s linear 0.8s infinite alternate-reverse
+          forwards;
+        -webkit-animation: animationFramesOne 40s linear 0.8s infinite
+          alternate-reverse forwards;
+      }
+      .shape-7 {
+        left: 7px;
+        bottom: -5px;
+        width: 120px;
+        z-index: 0;
+      }
+    }
+  }
+
+  &.three {
+    background: var(--common-body-3);
+    padding: 120px 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 9;
+    overflow: hidden;
+    .section-title-shape-one {
+      margin-bottom: 70px;
+    }
+    .swiper {
+      z-index: 9;
+      &.testimonial-two {
+        .swiper-wrapper {
+          .swiper-slide {
+            @media #{$xs, $xss} {
+              padding: 0 12px;
+            }
+            .inner-wrapper {
+              background: var(--common-body-3);
+              box-shadow: 0px 3px 10px 0px rgba(41, 45, 194, 0.08);
+              margin: 20px 0;
+              border-radius: 8px;
+              padding: 20px 20px;
+              .intro-body {
+                margin-top: 20px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                .img-file {
+                  width: 60px;
+                  height: 60px;
+                  overflow: hidden;
+                  border-radius: 8px;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                  }
+                }
+                .text-file {
+                  h3 {
+                    font-size: 20px;
+                    line-height: 1.2;
+                    color: var(--text-h);
+                    font-weight: var(--fw-600);
+                    margin: 0px;
+                    line-height: normal;
+                    text-transform: capitalize;
+                  }
+                  h5 {
+                    font-size: 14px;
+                    color: var(--text-p-1);
+                    font-weight: var(fw-normal);
+                    line-height: normal;
+                    margin: 0;
+                    margin-top: 5px;
+                    text-transform: capitalize;
+                  }
+                }
+              }
+              .review {
+                margin-top: 80px;
+                position: relative;
+                p {
+                  color: var(--text-p-1);
+                  font-size: 15px;
+                  margin: 0;
+                }
+
+                .shape {
+                  left: 0;
+                  display: flex;
+                  justify-content: flex-end;
+                  position: absolute;
+                  top: -80px;
+                  i {
+                    font-size: 80px;
+                    color: var(--grey-1);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .shape-image {
+      .shape-1 {
+        left: -3px;
+        top: -2px;
+        z-index: -1;
+        width: 140px;
+      }
+      .shape-2 {
+        right: 26px;
+        top: 49%;
+        width: 18px;
+        z-index: -1;
+      }
+      .shape-3 {
+        right: 98px;
+        bottom: 9%;
+        width: 60px;
+        z-index: -1;
+        animation: animationFramesOne 25s linear 0.8s infinite;
+        -webkit-animation: animationFramesOne 25s linear 0.8s infinite;
+      }
+      .shape-4 {
+        left: 18%;
+        top: 13%;
+        width: 50px;
+        z-index: -1;
+        animation: rotate-in-center 12s linear 0s infinite reverse;
+        @media #{$sm, $xs, $xss} {
+          right: 50px;
+          top: 10%;
+          left: auto;
+        }
+      }
+      .shape-5 {
+        right: 18%;
+        top: 13%;
+        width: 130px;
+        z-index: -1;
+        animation: animationFramesOne 60s linear 0.8s infinite;
+        -webkit-animation: animationFramesOne 60s linear 0.8s infinite;
+        opacity: 0.5;
+      }
+      .shape-6 {
+        right: 42%;
+        top: 5%;
+        width: 24px;
+        z-index: -1;
+        animation: animationFramesOne 40s linear 0.8s infinite alternate-reverse
+          forwards;
+        -webkit-animation: animationFramesOne 40s linear 0.8s infinite
+          alternate-reverse forwards;
+      }
+    }
+  }
+}

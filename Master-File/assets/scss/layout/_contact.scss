@@ -1,0 +1,247 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/* 25. Contact
+/*----------------------------------------*/
+
+.contact-section {
+  background: var(--common-body-1);
+  z-index: 9;
+  padding: 120px 0 0;
+  position: relative;
+  overflow: hidden;
+  .section-title-shape-one {
+    margin-bottom: 30px;
+  }
+
+  .contact-form {
+    .form-author,
+    .form-email,
+    .form-web,
+    .form-comment {
+      padding-right: 20px;
+      width: 100%;
+      @media #{$md, $sm, $xs, $xss} {
+        padding-right: 0;
+      }
+
+      label {
+        display: block;
+      }
+      input {
+        width: 100%;
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 15px;
+      }
+    }
+
+    .form-comment {
+      textarea {
+        width: 100%;
+        height: 200px;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        &:focus-visible {
+          outline: none !important;
+        }
+      }
+    }
+
+    .form-submit {
+      margin-top: 20px;
+    }
+    .required {
+      color: red;
+    }
+  }
+  .appointment {
+    margin-top: 15px;
+    @media #{$md, $sm, $xs, $xss} {
+      margin-top: 50px;
+    }
+
+    .title {
+      h4 {
+        font-size: 22px;
+        line-height: normal;
+      }
+      p {
+        font-size: 15px;
+      }
+    }
+    .table {
+      thead {
+        tr {
+          th {
+            color: var(--common-white);
+            background: var(--theme-1);
+            font-size: 16px;
+            font-weight: 800;
+          }
+        }
+      }
+      tbody {
+        tr {
+          th,
+          td {
+            color: var(--common-white);
+          }
+        }
+      }
+    }
+  }
+
+  .location-tag {
+    margin-top: 80px;
+    @media #{$md, $sm, $xs, $xss} {
+      margin-top: 30px;
+    }
+    .item {
+      background: var(--common-white);
+      padding: 30px 20px;
+      border-radius: 8px;
+      text-align: center;
+      @include transition(0.2s);
+      cursor: pointer;
+      @media #{$md, $sm, $xs, $xss} {
+        margin-top: 30px;
+      }
+      .icon {
+        i {
+          color: var(--theme-1);
+          font-size: 50px;
+          @include transition(0.2s);
+        }
+      }
+      .view {
+        margin-top: 16px;
+        h3 {
+          font-size: 20px;
+          font-weight: 700;
+          line-height: normal;
+          color: var(--text-h);
+          @include transition(0.2s);
+        }
+        p {
+          font-size: 15px;
+          color: var(--text-p-1);
+          margin-bottom: 0;
+          @include transition(0.2s);
+        }
+      }
+      &:hover {
+        background: var(--theme-1);
+        .icon {
+          i {
+            color: var(--common-white);
+          }
+        }
+        .view {
+          h3,
+          p {
+            color: var(--common-white);
+          }
+        }
+      }
+    }
+  }
+  .contact-map {
+    margin-top: 60px;
+    iframe {
+      width: 100%;
+      height: 450px;
+    }
+  }
+
+  .shape-image-file {
+    .shape-img-1 {
+      left: -12px;
+      top: 8%;
+      z-index: -1;
+      @media #{$lg, $md, $sm, $xs, $xss} {
+        top: 30px;
+      }
+
+      img {
+        width: 60px;
+      }
+    }
+    .shape-img-2 {
+      top: -24px;
+      right: -28px;
+      z-index: -1;
+      img {
+        width: 100px;
+      }
+    }
+    .shape-img-3 {
+      top: 13%;
+      right: 14%;
+      z-index: -1;
+      -webkit-animation: scale-down-center 15s linear infinite alternate-reverse
+        both;
+      animation: scale-down-center 15s linear infinite alternate-reverse both;
+      img {
+        width: 120px;
+      }
+    }
+    .shape-img-4 {
+      bottom: 21%;
+      right: 20px;
+      z-index: -1;
+      -webkit-animation: slide-top 10s linear 0.3s infinite alternate-reverse
+        both;
+      animation: slide-top 10s linear 0.3s infinite alternate-reverse both;
+      @media #{$md, $sm, $xs, $xss} {
+        display: none;
+      }
+      img {
+        width: 40px;
+      }
+    }
+    .shape-img-5 {
+      bottom: 40px;
+      left: -28px;
+      z-index: -1;
+      img {
+        width: 200px;
+      }
+    }
+    .shape-img-6 {
+      top: 74px;
+      right: 42%;
+      z-index: -1;
+      animation: animationFramesOne 45s linear infinite reverse;
+      -webkit-animation: animationFramesOne 45s linear infinite reverse;
+      img {
+        width: 30px;
+      }
+    }
+    .shape-img-7 {
+      top: 74px;
+      right: 42%;
+      z-index: -1;
+      animation: animationFramesOne 55s linear infinite;
+      -webkit-animation: animationFramesOne 55s linear infinite;
+      img {
+        width: 25px;
+      }
+    }
+    .shape-img-8 {
+      top: 26px;
+      right: 54%;
+      z-index: -1;
+      @media #{$xs, $xss} {
+        top: 70px;
+        right: 25%;
+      }
+
+      img {
+        width: 200px;
+      }
+    }
+  }
+}

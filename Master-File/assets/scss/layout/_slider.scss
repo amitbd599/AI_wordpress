@@ -1,0 +1,717 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/* 13. Slider
+/*----------------------------------------*/
+
+// Hero Slider 1
+
+.hero-slider {
+  &.one {
+    .swiper {
+      .swiper-wrapper {
+        position: relative;
+        .item-slider {
+          height: auto;
+          position: relative;
+          padding: 80px 0;
+          .slide-bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            z-index: 0;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            -webkit-transition: all 10s cubic-bezier(0, 0, 0.2, 1);
+            transition: all 10s cubic-bezier(0, 0, 0.2, 1);
+            mix-blend-mode: multiply;
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background: rgb(0 0 0 / 48%);
+              z-index: 9;
+            }
+          }
+
+          .slider-content-inner {
+            position: relative;
+            z-index: 9;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            @media #{$lg} {
+              padding: 0 140px;
+              text-align: center;
+            }
+            @media #{ $md} {
+              padding: 0 80px;
+              text-align: center;
+            }
+            @media #{$sm, $xs, $xss} {
+              padding: 0;
+              text-align: center;
+            }
+            .slider-title {
+              font-size: var(--fz-h2);
+              text-transform: capitalize;
+              font-weight: var(--fw-800);
+              @media #{$xs, $xss} {
+                font-size: 30px;
+                line-height: 40px;
+              }
+            }
+            .description {
+              margin-top: 20px;
+            }
+            .inner-btn {
+              margin-top: 20px;
+            }
+          }
+          .slider-content-inner-right {
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 435px;
+            @media #{$lg, $md, $sm, $xs, $xss} {
+              display: none;
+            }
+            .img-wrapper {
+              position: relative;
+              z-index: 9;
+              height: 100%;
+              overflow: hidden;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+          &.swiper-slide-active {
+            .slide-bg {
+              transform: scale(1.2);
+            }
+            .slider-content-inner {
+              .slider-title {
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation-name: heroSliderAnimation;
+                animation-name: heroSliderAnimation;
+                -webkit-animation-delay: 0.5s;
+                animation-delay: 0.5s;
+                -webkit-animation-duration: 0.5s;
+                animation-duration: 0.5s;
+              }
+              .description {
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation-name: heroSliderAnimation;
+                animation-name: heroSliderAnimation;
+                -webkit-animation-delay: 0.8s;
+                animation-delay: 0.8s;
+                -webkit-animation-duration: 0.5s;
+                animation-duration: 0.5s;
+              }
+              .inner-btn {
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation-name: heroSliderAnimation;
+                animation-name: heroSliderAnimation;
+                -webkit-animation-delay: 1s;
+                animation-delay: 1s;
+                -webkit-animation-duration: 0.5s;
+                animation-duration: 0.5s;
+              }
+            }
+            .slider-content-inner-right {
+              .img-wrapper {
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation-name: heroSliderAnimation;
+                animation-name: heroSliderAnimation;
+                -webkit-animation-delay: 0.8s;
+                animation-delay: 0.8s;
+                -webkit-animation-duration: 0.6s;
+                animation-duration: 0.6s;
+              }
+            }
+          }
+        }
+      }
+      .shape-image {
+        .inner-shape-1 {
+          z-index: 9;
+          top: 50px;
+          left: 10px;
+
+          img {
+            width: 60px;
+          }
+          @media #{$sm, $xs, $xss} {
+            display: none;
+          }
+        }
+        .inner-shape-2 {
+          z-index: 9;
+          top: 40px;
+          left: 550px;
+          -webkit-animation: rotate-in-center 12s linear 0s infinite reverse
+            backwards;
+          animation: rotate-in-center 12s linear 0s infinite reverse backwards;
+          img {
+            width: 40px;
+          }
+        }
+        .inner-shape-3 {
+          z-index: 9;
+          top: 70px;
+          left: 710px;
+          -webkit-animation: scale-down-center 5s linear infinite
+            alternate-reverse both;
+          animation: scale-down-center 5s linear infinite alternate-reverse both;
+
+          img {
+            width: 50px;
+          }
+          @media #{$lg, $md, $sm, $xs, $xss} {
+            top: 19px;
+            left: 740px;
+          }
+        }
+        .inner-shape-4 {
+          z-index: 9;
+          bottom: 74px;
+          left: 104px;
+          -webkit-animation: rotate-in-center 16s linear 0.4s infinite reverse
+            backwards;
+          animation: rotate-in-center 16s linear 0.4s infinite reverse backwards;
+          img {
+            width: 20px;
+          }
+          @media #{$xs, $xss} {
+            left: 50px;
+          }
+        }
+        .inner-shape-5 {
+          z-index: 9;
+          bottom: 74px;
+          left: 54%;
+          -webkit-animation: rotate-in-center 12s linear 0s infinite reverse
+            backwards;
+          animation: rotate-in-center 12s linear 0s infinite reverse backwards;
+          img {
+            width: 40px;
+          }
+          @media #{$lg, $md, $sm, $xs, $xss} {
+            display: none;
+          }
+        }
+        .inner-shape-6 {
+          z-index: 9;
+          bottom: 100px;
+          left: 36%;
+          img {
+            width: 50px;
+          }
+          @media #{$md, $sm, $xs, $xss} {
+            bottom: 45px;
+            left: 23%;
+          }
+          @media #{$sm, $xs, $xss} {
+            bottom: 35px;
+            right: 20%;
+            left: auto;
+          }
+        }
+        .inner-shape-7 {
+          z-index: 9;
+          right: 9%;
+          top: 10%;
+          -webkit-animation: slide-right 10s linear 0.3s infinite
+            alternate-reverse both;
+          animation: slide-right 10s linear 0.3s infinite alternate-reverse both;
+          img {
+            width: 15px;
+          }
+        }
+        .inner-shape-8 {
+          z-index: 9;
+          right: 3%;
+          bottom: 18%;
+          -webkit-animation: slide-top 12s linear 0.6s infinite
+            alternate-reverse both;
+          animation: slide-top 12s linear 0.6s infinite alternate-reverse both;
+          img {
+            width: 45px;
+          }
+          @media #{$lg, $md} {
+            animation: none;
+          }
+          @media #{$sm, $xs, $xss} {
+            display: none;
+          }
+        }
+        .inner-shape-9 {
+          z-index: 9;
+          right: 10%;
+          bottom: 15%;
+          -webkit-animation: slide-right 15s linear 1s infinite
+            alternate-reverse both;
+          animation: slide-right 15s linear 1s infinite alternate-reverse both;
+          img {
+            width: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  &.two {
+    .swiper {
+      .swiper-wrapper {
+        position: relative;
+        z-index: 9;
+        height: 700px;
+
+        .item-slider {
+          height: auto;
+          position: relative;
+          padding: 80px 0;
+          padding-top: 200px;
+          .slide-bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            z-index: 0;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            -webkit-transition: all 10s cubic-bezier(0, 0, 0.2, 1);
+            transition: all 10s cubic-bezier(0, 0, 0.2, 1);
+            mix-blend-mode: multiply;
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background: rgb(0 0 0 / 48%);
+              z-index: 9;
+            }
+          }
+
+          .slider-content-inner {
+            position: relative;
+            z-index: 9;
+            width: 100%;
+            height: 100%;
+            .sub-title {
+              font-size: 20px;
+              color: var(--theme-1);
+            }
+            .slider-title {
+              font-size: 46px;
+              text-transform: capitalize;
+              font-weight: var(--fw-800);
+              @media #{$xs, $xss} {
+                font-size: 30px;
+              }
+            }
+            .description {
+              margin-top: 20px;
+            }
+            .inner-btn {
+              margin-top: 20px;
+            }
+
+            &.middle {
+              max-width: 750px;
+              margin: auto;
+              text-align: center;
+            }
+          }
+          .slider-content-inner-right {
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 435px;
+            .img-wrapper {
+              position: relative;
+              z-index: 9;
+              height: 100%;
+              overflow: hidden;
+              @media #{$md, $sm, $xs, $xss} {
+                display: none;
+              }
+              img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                @media #{$lg, $md, $sm, $xs, $xss} {
+                  height: auto;
+                }
+              }
+            }
+          }
+          &.swiper-slide-active {
+            .slide-bg {
+              transform: scale(1.2);
+            }
+            .slider-content-inner {
+              .sub-title {
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation-name: heroSliderAnimation;
+                animation-name: heroSliderAnimation;
+                -webkit-animation-delay: 0.5s;
+                animation-delay: 0.5s;
+                -webkit-animation-duration: 0.5s;
+                animation-duration: 0.5s;
+              }
+              .slider-title {
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation-name: heroSliderAnimation;
+                animation-name: heroSliderAnimation;
+                -webkit-animation-delay: 0.8s;
+                animation-delay: 0.8s;
+                -webkit-animation-duration: 0.8s;
+                animation-duration: 0.8s;
+              }
+              .description {
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation-name: heroSliderAnimation;
+                animation-name: heroSliderAnimation;
+                -webkit-animation-delay: 1.2s;
+                animation-delay: 1.2s;
+                -webkit-animation-duration: 1.2s;
+                animation-duration: 1.2s;
+              }
+              .inner-btn {
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation-name: heroSliderAnimation;
+                animation-name: heroSliderAnimation;
+                -webkit-animation-delay: 1.6s;
+                animation-delay: 1.6s;
+                -webkit-animation-duration: 1.6s;
+                animation-duration: 1.6s;
+              }
+            }
+            .slider-content-inner-right {
+              .img-wrapper {
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation-name: heroSliderAnimation;
+                animation-name: heroSliderAnimation;
+                -webkit-animation-delay: 0.8s;
+                animation-delay: 0.8s;
+                -webkit-animation-duration: 0.8s;
+                animation-duration: 0.8s;
+              }
+            }
+          }
+        }
+      }
+      .shape-image {
+        .inner-shape-1 {
+          z-index: 9;
+          bottom: 30px;
+          left: 10px;
+          -webkit-animation: slide-top 10s linear 0.3s infinite
+            alternate-reverse both;
+          animation: slide-top 10s linear 0.3s infinite alternate-reverse both;
+          img {
+            width: 60px;
+          }
+          @media #{$lg, $md, $sm, $xs, $xss} {
+            display: none;
+          }
+        }
+        .inner-shape-2 {
+          z-index: 9;
+          top: 152px;
+          left: 490px;
+          -webkit-animation: rotate-in-center 12s linear 0s infinite reverse
+            backwards;
+          animation: rotate-in-center 12s linear 0s infinite reverse backwards;
+          img {
+            width: 40px;
+          }
+          @media #{$lg, $md, $sm, $xs, $xss} {
+            top: 130px;
+            left: 70px;
+          }
+        }
+        .inner-shape-3 {
+          z-index: 9;
+          top: 109px;
+          right: 431px;
+          -webkit-animation: rotate-in-center 12s linear 0s infinite backwards;
+          animation: rotate-in-center 12s linear 0s infinite reverse;
+
+          img {
+            width: 50px;
+          }
+          @media #{$md, $sm} {
+            top: 94px;
+            right: 220px;
+          }
+          @media #{$xs, $xss} {
+            right: 80px;
+          }
+        }
+        .inner-shape-4 {
+          z-index: 9;
+          bottom: 23px;
+          left: 247px;
+          img {
+            width: 150px;
+          }
+          @media #{$md} {
+            bottom: -24px;
+            left: 0;
+          }
+          @media #{$sm, $xs, $xss} {
+            display: none;
+          }
+        }
+        .inner-shape-5 {
+          z-index: 9;
+          bottom: 40px;
+          left: 54%;
+          -webkit-animation: rotate-in-center 12s linear 0s infinite reverse
+            backwards;
+          animation: rotate-in-center 12s linear 0s infinite reverse backwards;
+          img {
+            width: 40px;
+          }
+          @media #{$md} {
+            bottom: 36px;
+            left: 65%;
+          }
+          @media #{$sm, $xs, $xss} {
+            display: none;
+          }
+        }
+        .inner-shape-6 {
+          z-index: 9;
+          bottom: 60px;
+          left: 36%;
+          -webkit-animation: slide-right 10s linear 0.3s infinite
+            alternate-reverse both;
+          animation: slide-right 10s linear 0.3s infinite alternate-reverse both;
+          img {
+            width: 30px;
+          }
+          @media #{$sm, $xs, $xss} {
+            display: none;
+          }
+        }
+        .inner-shape-7 {
+          z-index: 9;
+          right: 9%;
+          top: 20%;
+          -webkit-animation: slide-right 10s linear 0.3s infinite
+            alternate-reverse both;
+          animation: slide-right 10s linear 0.3s infinite alternate-reverse both;
+          img {
+            width: 60px;
+          }
+        }
+        .inner-shape-8 {
+          z-index: 9;
+          right: 3%;
+          bottom: 18%;
+          -webkit-animation: slide-top 12s linear 0.6s infinite
+            alternate-reverse both;
+          animation: slide-top 12s linear 0.6s infinite alternate-reverse both;
+          img {
+            width: 45px;
+          }
+          @media #{$lg, $md, $sm, $xs, $xss} {
+            display: none;
+          }
+        }
+        .inner-shape-9 {
+          z-index: 9;
+          right: 10%;
+          bottom: 15%;
+          -webkit-animation: slide-right 15s linear 1s infinite
+            alternate-reverse both;
+          animation: slide-right 15s linear 1s infinite alternate-reverse both;
+          img {
+            width: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hero-section {
+  background: var(--common-body-1);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 9;
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #0000005c;
+    z-index: -1;
+  }
+  .wrapper {
+    z-index: 9;
+    position: relative;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    h3 {
+      font-size: 22px;
+      line-height: 32px;
+      color: var(--theme-1);
+    }
+    h2 {
+      margin-top: 20px;
+      font-size: 50px;
+      line-height: 1.2;
+      text-transform: capitalize;
+      font-weight: var(--fw-800);
+      @media #{ $sm} {
+        font-size: 45px;
+      }
+      @media #{$xs, $xss} {
+        font-size: 40px;
+      }
+    }
+    p {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    .inner-btn {
+      margin-top: 20px;
+    }
+  }
+
+  .shape-img {
+    .shape-1 {
+      left: 35%;
+      top: 36px;
+      width: 30px;
+      z-index: 0;
+      animation: animationFramesOne 55s linear infinite reverse;
+      -webkit-animation: animationFramesOne 55s linear infinite reverse;
+    }
+    .shape-2 {
+      left: 50%;
+      top: 36px;
+      width: 20px;
+      z-index: 0;
+      animation: animationFramesOne 55s linear infinite;
+      -webkit-animation: animationFramesOne 55s linear infinite;
+    }
+    .shape-3 {
+      right: 30%;
+      top: 86px;
+      width: 20px;
+      z-index: 0;
+      -webkit-animation: rotate-in-center 12s linear 0s infinite reverse
+        backwards;
+      animation: rotate-in-center 12s linear 0s infinite reverse backwards;
+      @media #{$md, $sm, $xs, $xss} {
+        left: 12%;
+        top: 28px;
+      }
+    }
+    .shape-4 {
+      right: 30%;
+      top: 50%;
+      width: 60px;
+      z-index: 0;
+      animation: animationFramesOne 30s linear infinite;
+      -webkit-animation: animationFramesOne 30s linear infinite;
+    }
+    .shape-5 {
+      left: 30%;
+      top: 50%;
+      width: 30px;
+      z-index: 0;
+      animation: animationFramesOne 30s linear infinite reverse backwards;
+      -webkit-animation: animationFramesOne 30s linear infinite reverse
+        backwards;
+    }
+    .shape-6 {
+      left: 30%;
+      bottom: 8%;
+      width: 30px;
+      z-index: 0;
+      animation: slide-right 15s linear 1s infinite alternate-reverse both;
+    }
+    .shape-7 {
+      left: 0;
+      bottom: 1%;
+      width: 190px;
+      z-index: 0;
+    }
+    .shape-8 {
+      right: 110px;
+      bottom: 6%;
+      width: 100px;
+      z-index: 0;
+      animation: trigger 6s linear infinite;
+      @media #{$sm, $xs, $xss} {
+        right: 3px;
+        bottom: 20px;
+        width: 75px;
+      }
+    }
+    .shape-9 {
+      right: 16%;
+      top: 6%;
+      width: 55px;
+      z-index: 0;
+      animation: trigger 6s linear infinite;
+    }
+    .shape-10 {
+      right: 17%;
+      top: 19%;
+      width: 41px;
+      z-index: 0;
+      animation: trigger 6s linear infinite;
+    }
+    .shape-11 {
+      left: 199px;
+      bottom: 28%;
+      width: 45px;
+      z-index: 0;
+      animation: trigger 6s linear infinite;
+    }
+  }
+}

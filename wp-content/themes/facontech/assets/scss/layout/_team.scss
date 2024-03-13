@@ -1,0 +1,690 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/* 18. Team
+/*----------------------------------------*/
+
+.team-section {
+  padding: 120px 0;
+  position: relative;
+  z-index: 9;
+  &.one {
+    background: var(--common-body-2);
+    .section-title-shape-one {
+      margin-bottom: 60px;
+    }
+    .swiper {
+      z-index: 9;
+      &.team-one {
+        .swiper-wrapper {
+          .swiper-slide {
+            .inner-wrapper {
+              @media #{$xs, $xss} {
+                padding: 0 12px;
+              }
+              .img-file {
+                position: relative;
+                border-radius: 10px;
+                overflow: hidden;
+                img {
+                  width: 100%;
+                }
+                .shape-overlay {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: transparent;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  transition: all 0.3s linear;
+                  .inner-data {
+                    margin-top: 70px;
+                    @media #{$sm, $xs, $xss} {
+                      margin-top: 120px;
+                    }
+                    h3 {
+                      font-size: 20px;
+                      font-weight: var(--fw-600);
+                      margin: 0;
+                      margin-bottom: 15px;
+                      transition: all 0.4s linear;
+                      transform: translateX(-200%);
+                    }
+                    p {
+                      font-size: 14px;
+                      line-height: 1.5;
+                      margin-bottom: 0;
+                      transition: all 0.4s linear;
+                      transform: translateX(200%);
+                    }
+                    .social {
+                      justify-content: center;
+                      transform: translateY(500%);
+                    }
+                  }
+                }
+                &:hover {
+                  .shape-overlay {
+                    background: #000000ba;
+                    .inner-data {
+                      h3,
+                      p {
+                        transform: translateX(0);
+                      }
+                      .social {
+                        transform: translateY(0);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .team-version-one-pagination {
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .shape-image {
+      .shape-img-1 {
+        left: 15px;
+        top: 30%;
+        z-index: -1;
+        -webkit-animation: slide-top 10s linear 0.3s infinite alternate-reverse
+          both;
+        animation: slide-top 10s linear 0.3s infinite alternate-reverse both;
+        @media #{$md, $sm ,$xs, $xss} {
+          display: none;
+        }
+        img {
+          width: 50px;
+        }
+      }
+      .shape-img-2 {
+        right: 30%;
+        top: 20%;
+        z-index: -1;
+        animation: animationFramesOne 25s linear infinite;
+        -webkit-animation: animationFramesOne 25s linear infinite;
+        img {
+          width: 60px;
+        }
+      }
+      .shape-img-3 {
+        right: 50%;
+        top: 25%;
+        z-index: -1;
+        animation: animationFramesOne 35s linear infinite;
+        -webkit-animation: animationFramesOne 35s linear infinite;
+        img {
+          width: 20px;
+        }
+      }
+      .shape-img-4 {
+        right: 5%;
+        top: 20%;
+        z-index: -1;
+        -webkit-animation: rotate-in-center 12s linear 0s infinite reverse
+          backwards;
+        animation: rotate-in-center 12s linear 0s infinite reverse backwards;
+        img {
+          width: 30px;
+        }
+      }
+      .shape-img-5 {
+        left: 5%;
+        bottom: 20%;
+        z-index: -1;
+        animation: animationFramesOne 25s linear infinite;
+        -webkit-animation: animationFramesOne 25s linear infinite;
+        img {
+          width: 30px;
+        }
+      }
+      .shape-img-6 {
+        right: 15px;
+        bottom: 8%;
+        z-index: -1;
+
+        img {
+          width: 60px;
+        }
+      }
+      .shape-img-7 {
+        left: -2px;
+        bottom: -22px;
+        z-index: -1;
+
+        img {
+          width: 100px;
+        }
+      }
+      .shape-img-8 {
+        right: 39%;
+        top: 6%;
+        z-index: -1;
+
+        img {
+          width: 55px;
+        }
+      }
+      .shape-img-9 {
+        right: 58%;
+        top: 10%;
+        z-index: -1;
+        @media #{$lg, $md, $sm ,$xs, $xss} {
+          right: 49%;
+          top: 15%;
+        }
+        @media #{$md, $sm ,$xs, $xss} {
+          right: 34%;
+        }
+
+        img {
+          width: 130px;
+        }
+      }
+    }
+    &.single-row {
+      overflow: hidden;
+      .inner-wrapper {
+        margin-bottom: 30px;
+        .img-file {
+          position: relative;
+          border-radius: 10px;
+          overflow: hidden;
+          .shape-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s linear;
+            .inner-data {
+              margin-top: 70px;
+              h3 {
+                font-size: 20px;
+                font-weight: var(--fw-600);
+                margin: 0;
+                margin-bottom: 15px;
+                transition: all 0.4s linear;
+                transform: translateX(-200%);
+              }
+              p {
+                font-size: 14px;
+                line-height: 1.5;
+                margin-bottom: 0;
+                transition: all 0.4s linear;
+                transform: translateX(200%);
+              }
+              .social {
+                justify-content: center;
+                transform: translateY(500%);
+              }
+            }
+          }
+          &:hover {
+            .shape-overlay {
+              background: #000000ba;
+              .inner-data {
+                h3,
+                p {
+                  transform: translateX(0);
+                }
+                .social {
+                  transform: translateY(0);
+                }
+              }
+            }
+          }
+        }
+      }
+      .pagination {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        ul {
+          display: flex;
+          gap: 12px;
+          align-items: center;
+          justify-content: center;
+          li {
+            a {
+              width: 35px;
+              height: 35px;
+              background: linear-gradient(180deg, #243949 0%, #00151e 100%);
+              border-radius: 5px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-weight: 600;
+              &:hover {
+                animation: pulse-small 0.8s;
+                color: var(--theme-1);
+              }
+              &.active {
+                color: var(--theme-1);
+              }
+            }
+          }
+        }
+      }
+      .shape-image-file {
+        .shape-img-1 {
+          left: -12px;
+          top: 8%;
+          z-index: -1;
+          img {
+            width: 60px;
+          }
+        }
+        .shape-img-2 {
+          top: -24px;
+          right: -28px;
+          z-index: -1;
+          img {
+            width: 100px;
+          }
+        }
+        .shape-img-3 {
+          top: 13%;
+          right: 14%;
+          z-index: -1;
+          -webkit-animation: scale-down-center 15s linear infinite
+            alternate-reverse both;
+          animation: scale-down-center 15s linear infinite alternate-reverse
+            both;
+          img {
+            width: 120px;
+          }
+        }
+        .shape-img-4 {
+          bottom: 21%;
+          right: 20px;
+          z-index: -1;
+          -webkit-animation: slide-top 10s linear 0.3s infinite
+            alternate-reverse both;
+          animation: slide-top 10s linear 0.3s infinite alternate-reverse both;
+          img {
+            width: 40px;
+          }
+        }
+        .shape-img-5 {
+          bottom: 40px;
+          left: -28px;
+          z-index: -1;
+          img {
+            width: 200px;
+          }
+        }
+        .shape-img-6 {
+          top: 74px;
+          right: 42%;
+          z-index: -1;
+          animation: animationFramesOne 45s linear infinite reverse;
+          -webkit-animation: animationFramesOne 45s linear infinite reverse;
+          img {
+            width: 30px;
+          }
+        }
+        .shape-img-7 {
+          top: 74px;
+          right: 42%;
+          z-index: -1;
+          animation: animationFramesOne 55s linear infinite;
+          -webkit-animation: animationFramesOne 55s linear infinite;
+          img {
+            width: 25px;
+          }
+        }
+        .shape-img-8 {
+          top: 26px;
+          right: 54%;
+          z-index: -1;
+          img {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  &.two {
+    overflow: hidden;
+    background: var(--common-body-3);
+    .section-title-shape-one {
+      margin-bottom: 60px;
+    }
+
+    .inner-wrapper {
+      @media #{$md, $sm, $xs, $xss} {
+        margin-bottom: 30px;
+      }
+
+      .img-file {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        img {
+          @media #{$sm, $xs, $xss} {
+            width: 100%;
+          }
+        }
+        .shape-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 70px;
+          background: #000000ba;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s linear;
+          .inner-data {
+            .social {
+              justify-content: center;
+              margin-top: 5px;
+            }
+          }
+        }
+        &:hover {
+          .shape-overlay {
+            background: #000000ba;
+          }
+        }
+      }
+      .text-file {
+        margin-top: 20px;
+        text-align: center;
+        h3 {
+          font-size: 20px;
+          line-height: 1.2;
+          font-weight: var(--fw-800);
+          margin: 0;
+          color: var(--text-h);
+          transition: all 0.4s linear;
+        }
+        p {
+          font-size: 18px;
+          text-transform: capitalize;
+          line-height: 1.5;
+          margin-bottom: 0;
+          transition: all 0.4s linear;
+          color: var(--text-h);
+        }
+      }
+    }
+
+    .shape-image {
+      .shape-img-1 {
+        left: 15px;
+        top: 30%;
+        z-index: -1;
+        -webkit-animation: slide-top 10s linear 0.3s infinite alternate-reverse
+          both;
+        animation: slide-top 10s linear 0.3s infinite alternate-reverse both;
+        img {
+          width: 50px;
+        }
+      }
+      .shape-img-2 {
+        right: 30%;
+        top: 20%;
+        z-index: -1;
+        animation: animationFramesOne 25s linear infinite;
+        -webkit-animation: animationFramesOne 25s linear infinite;
+        img {
+          width: 20px;
+        }
+      }
+      .shape-img-3 {
+        right: 50%;
+        top: 25%;
+        z-index: -1;
+        animation: animationFramesOne 35s linear infinite;
+        -webkit-animation: animationFramesOne 35s linear infinite;
+        img {
+          width: 20px;
+        }
+      }
+      .shape-img-4 {
+        right: 5%;
+        top: 20%;
+        z-index: -1;
+        -webkit-animation: rotate-in-center 12s linear 0s infinite reverse
+          backwards;
+        animation: rotate-in-center 12s linear 0s infinite reverse backwards;
+        img {
+          width: 60px;
+        }
+      }
+
+      .shape-img-6 {
+        right: -334px;
+        bottom: -120px;
+        z-index: -1;
+
+        img {
+          width: 520px;
+        }
+      }
+
+      .shape-img-8 {
+        right: 39%;
+        top: 6%;
+        z-index: -1;
+        @media #{$md, $sm, $xs, $xss} {
+          right: 11%;
+          top: 3%;
+        }
+
+        img {
+          width: 55px;
+        }
+      }
+      .shape-img-9 {
+        right: 68%;
+        top: 10%;
+        z-index: -1;
+        @media #{$md} {
+          right: 75%;
+          top: 5%;
+        }
+        @media #{$sm, $xs, $xss} {
+          right: 43%;
+          top: 3%;
+        }
+        @media #{$xs, $xss} {
+          right: auto;
+          top: 1%;
+          left: 6%;
+        }
+
+        img {
+          width: 130px;
+        }
+      }
+    }
+    &.single-row {
+      overflow: hidden;
+      .inner-wrapper {
+        margin-bottom: 30px;
+        .img-file {
+          position: relative;
+          border-radius: 10px;
+          overflow: hidden;
+          .shape-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s linear;
+            .inner-data {
+              margin-top: 70px;
+              h3 {
+                font-size: 20px;
+                font-weight: var(--fw-600);
+                margin: 0;
+                transition: all 0.4s linear;
+                transform: translateX(-140%);
+              }
+              p {
+                font-size: 14px;
+                line-height: 1.5;
+                margin-bottom: 0;
+                transition: all 0.4s linear;
+                transform: translateX(140%);
+              }
+              .social {
+                justify-content: center;
+                transform: translateY(337%);
+              }
+            }
+          }
+          &:hover {
+            .shape-overlay {
+              background: #000000ba;
+              .inner-data {
+                h3,
+                p {
+                  transform: translateX(0);
+                }
+                .social {
+                  transform: translateY(0);
+                }
+              }
+            }
+          }
+        }
+      }
+      .pagination {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        ul {
+          display: flex;
+          gap: 12px;
+          align-items: center;
+          justify-content: center;
+          li {
+            a {
+              width: 35px;
+              height: 35px;
+              background: linear-gradient(180deg, #243949 0%, #00151e 100%);
+              border-radius: 5px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-weight: 600;
+              &:hover {
+                animation: pulse-small 0.8s;
+                color: var(--theme-1);
+              }
+              &.active {
+                color: var(--theme-1);
+              }
+            }
+          }
+        }
+      }
+      .shape-image-file {
+        .shape-img-1 {
+          left: -12px;
+          top: 8%;
+          z-index: -1;
+          img {
+            width: 60px;
+          }
+        }
+        .shape-img-2 {
+          top: -24px;
+          right: -28px;
+          z-index: -1;
+          img {
+            width: 100px;
+          }
+        }
+        .shape-img-3 {
+          top: 13%;
+          right: 14%;
+          z-index: -1;
+          -webkit-animation: scale-down-center 15s linear infinite
+            alternate-reverse both;
+          animation: scale-down-center 15s linear infinite alternate-reverse
+            both;
+          img {
+            width: 120px;
+          }
+        }
+        .shape-img-4 {
+          bottom: 21%;
+          right: 20px;
+          z-index: -1;
+          -webkit-animation: slide-top 10s linear 0.3s infinite
+            alternate-reverse both;
+          animation: slide-top 10s linear 0.3s infinite alternate-reverse both;
+          img {
+            width: 40px;
+          }
+        }
+        .shape-img-5 {
+          bottom: 40px;
+          left: -28px;
+          z-index: -1;
+          img {
+            width: 200px;
+          }
+        }
+        .shape-img-6 {
+          top: 74px;
+          right: 42%;
+          z-index: -1;
+          animation: animationFramesOne 45s linear infinite reverse;
+          -webkit-animation: animationFramesOne 45s linear infinite reverse;
+          img {
+            width: 30px;
+          }
+        }
+        .shape-img-7 {
+          top: 74px;
+          right: 42%;
+          z-index: -1;
+          animation: animationFramesOne 55s linear infinite;
+          -webkit-animation: animationFramesOne 55s linear infinite;
+          img {
+            width: 25px;
+          }
+        }
+        .shape-img-8 {
+          top: 26px;
+          right: 54%;
+          z-index: -1;
+          img {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+}

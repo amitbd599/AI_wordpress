@@ -1,0 +1,190 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/* 19. Review
+/*----------------------------------------*/
+
+.review-section {
+  background: var(--common-body-1);
+  z-index: 9;
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+  .review-inner {
+    padding: 0 5px;
+    margin-bottom: 60px;
+    .review-box {
+      background: var(--common-body-2);
+      position: relative;
+      padding: 30px 30px;
+      border-radius: 8px;
+      .icons {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        i {
+          color: #f7dd00;
+        }
+      }
+      .review-text {
+        p {
+          font-size: 16px;
+          margin-top: 15px;
+          margin-bottom: 0;
+        }
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        left: 34px;
+        bottom: -22px;
+        -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+        background: #00151e;
+        width: 24px;
+        height: 24px;
+        z-index: 9;
+      }
+    }
+    .profile {
+      margin-top: 40px;
+      display: flex;
+      gap: 18px;
+      .img-file {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .text-file {
+        h4 {
+          font-size: 20px;
+          line-height: normal;
+        }
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+  .pagination {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    ul {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      li {
+        a {
+          width: 35px;
+          height: 35px;
+          background: linear-gradient(180deg, #243949 0%, #00151e 100%);
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 600;
+          &:hover {
+            animation: pulse-small 0.8s;
+            color: var(--theme-1);
+          }
+          &.active {
+            color: var(--theme-1);
+          }
+        }
+      }
+    }
+  }
+
+  .shape-image {
+    .shape-img-1 {
+      left: -12px;
+      top: 8%;
+      z-index: -1;
+      @media #{$lg, $md, $sm, $xs, $xss} {
+        left: -12px;
+        top: 25px;
+      }
+
+      img {
+        width: 60px;
+      }
+    }
+    .shape-img-2 {
+      top: -24px;
+      right: -28px;
+      z-index: -1;
+      img {
+        width: 100px;
+      }
+    }
+    .shape-img-3 {
+      top: 13%;
+      right: 14%;
+      z-index: -1;
+      -webkit-animation: scale-down-center 15s linear infinite alternate-reverse
+        both;
+      animation: scale-down-center 15s linear infinite alternate-reverse both;
+      img {
+        width: 120px;
+      }
+    }
+    .shape-img-4 {
+      bottom: 21%;
+      right: 20px;
+      z-index: -1;
+      -webkit-animation: slide-top 10s linear 0.3s infinite alternate-reverse
+        both;
+      animation: slide-top 10s linear 0.3s infinite alternate-reverse both;
+      @media #{$lg, $md, $sm, $xs, $xss} {
+        bottom: 0;
+      }
+      img {
+        width: 40px;
+      }
+    }
+    .shape-img-5 {
+      bottom: 40px;
+      left: -28px;
+      z-index: -1;
+      img {
+        width: 200px;
+      }
+    }
+    .shape-img-6 {
+      top: 74px;
+      right: 42%;
+      z-index: -1;
+      animation: animationFramesOne 45s linear infinite reverse;
+      -webkit-animation: animationFramesOne 45s linear infinite reverse;
+      img {
+        width: 30px;
+      }
+    }
+    .shape-img-7 {
+      top: 74px;
+      right: 42%;
+      z-index: -1;
+      animation: animationFramesOne 55s linear infinite;
+      -webkit-animation: animationFramesOne 55s linear infinite;
+      img {
+        width: 25px;
+      }
+    }
+    .shape-img-8 {
+      top: 26px;
+      right: 54%;
+      z-index: -1;
+      img {
+        width: 200px;
+      }
+    }
+  }
+}

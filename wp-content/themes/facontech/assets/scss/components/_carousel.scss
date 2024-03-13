@@ -1,0 +1,152 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  04. Carousel
+/*----------------------------------------*/
+
+// slider button
+.hero-button {
+  font-size: 20px;
+  background: linear-gradient(180deg, #243949 0%, #00151e 100%);
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  color: var(--common-white);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 9;
+  text-align: center;
+  top: 50%;
+  margin: 0px;
+  vertical-align: middle;
+  transition: all 0.2s linear;
+
+  &::after {
+    display: none;
+  }
+  &:hover {
+    background: linear-gradient(90deg, #243949 0%, #00151e 100%);
+  }
+  &.swiper-button-prev {
+    left: 15px;
+    transition: all 0.2s linear;
+    &:hover {
+      left: 10px;
+    }
+    @media #{$xs, $xss} {
+      display: none;
+    }
+  }
+  &.swiper-button-next {
+    right: 15px;
+    transition: all 0.2s linear;
+    &:hover {
+      right: 10px;
+    }
+    @media #{$xs, $xss} {
+      display: none;
+    }
+  }
+}
+
+// Pagination buttons
+
+.pagination-button-design-one {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    background: #fff;
+    opacity: 1;
+    display: inline-block;
+    transition: all 0.1s linear;
+
+    &.swiper-pagination-bullet-active {
+      border-radius: 2px;
+      width: 16px;
+      background: var(--theme-1);
+    }
+  }
+}
+
+// Arrow buttons Up
+
+.arrow {
+  position: absolute;
+  right: -10px;
+  top: -60px;
+  gap: 15px;
+  display: flex;
+  justify-content: flex-end;
+  .testimonialOne-button {
+    background: var(--common-gd);
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media #{$sm, $xs, $xss} {
+      margin-top: 20px;
+    }
+
+    i {
+      transition: all 0.2s linear;
+    }
+    &:hover {
+      animation: pulse-small 0.8s;
+      i {
+        color: var(--theme-1);
+      }
+    }
+    &::after {
+      display: none;
+    }
+  }
+  &.white {
+    .testimonialOne-button {
+      background: var(--theme-1);
+      box-shadow: 0px 3px 10px 0px rgba(41, 45, 194, 0.08);
+      i {
+        color: var(--common-white);
+      }
+    }
+  }
+}
+
+.arrow-2 {
+  position: absolute;
+  right: -10px;
+  top: -60px;
+  gap: 20px;
+  display: flex;
+  justify-content: flex-end;
+  .testimonialOne-button {
+    background: var(--common-gd);
+    width: 45px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      transition: all 0.2s linear;
+    }
+    &:hover {
+      animation: pulse-small 0.8s;
+      i {
+        color: var(--theme-1);
+      }
+    }
+    &::after {
+      display: none;
+    }
+  }
+}

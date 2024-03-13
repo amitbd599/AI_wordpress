@@ -1,0 +1,178 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/* 26. Sidebar
+/*----------------------------------------*/
+
+// sidebar
+
+.sidebar__area {
+  position: fixed;
+  right: -485px;
+  top: 0;
+  width: 465px;
+  height: 100%;
+  background: var(--common-body-2);
+  overflow-y: scroll;
+  -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -moz-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  z-index: 9999;
+  @media #{$xs} {
+    width: 320px;
+  }
+  @media #{$xss} {
+    width: 300px;
+  }
+  &.sidebar-opened {
+    right: 0px;
+  }
+
+  .mobile-footer {
+    margin-top: 20px;
+    .follow {
+      .title {
+        h3 {
+          font-size: 18px;
+          line-height: 1.2;
+        }
+      }
+      .social {
+        margin-top: 10px;
+      }
+    }
+    .contact {
+      margin-top: 20px;
+      .title {
+        h3 {
+          font-size: 18px;
+          line-height: 1.2;
+        }
+      }
+      ul {
+        li {
+          margin-bottom: 8px;
+          display: flex;
+          align-items: flex-start;
+          i {
+            font-size: 18px;
+            padding-right: 6px;
+            padding-top: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  .sidebar__wrapper {
+    position: relative;
+    padding: 45px;
+    background: var(--tp-grey-5);
+    @media #{$sm, $xs, $xss} {
+      padding: 25px;
+    }
+  }
+  .sidebar__close {
+    position: absolute;
+    top: 35px;
+    right: 45px;
+    @media #{$xs, $xss} {
+      top: 20px;
+      right: 20px;
+    }
+    .sidebar__close-btn {
+      display: inline-block;
+      font-size: 16px;
+      height: 45px;
+      width: 45px;
+      line-height: 1.2;
+      background: var(--theme-1);
+      color: #fff;
+      border-radius: 50%;
+      @include transition(0.3s);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        animation: pulse-small 1s;
+        transform: rotate(90deg);
+      }
+    }
+  }
+  .sidebar-logo {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ebebeb;
+    img {
+      width: 250px;
+      @media #{$xs} {
+        width: 220px;
+      }
+      @media #{$xss} {
+        width: 220px;
+      }
+    }
+  }
+  .sidebar__search {
+    position: relative;
+    & input {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      padding-right: 20px;
+      background: transparent;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #ebebeb;
+      font-size: 16px;
+      color: var(--tp-heading-primary);
+      &::placeholder {
+        color: var(--tp-grey-2);
+      }
+      &:focus {
+        border-color: var(--tp-heading-primary);
+      }
+    }
+    & button {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      @include transform(translateY(-50%));
+      font-size: 14px;
+      color: var(--tp-grey-2);
+      transition: 0.3s;
+      &:hover {
+        color: var(--tp-heading-primary);
+      }
+    }
+  }
+}
+
+.side-menu-icon i {
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  position: relative;
+  top: 5px;
+}
+// overlay
+.body-overlay {
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  @include transition(0.3s);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.body-overlay.opened {
+  opacity: 1;
+  visibility: visible;
+}

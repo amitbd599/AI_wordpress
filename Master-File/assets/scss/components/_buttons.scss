@@ -1,0 +1,68 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  03. Buttons
+/*----------------------------------------*/
+
+.default-btn {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--common-white);
+  padding: 15px 20px;
+  line-height: 1;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 1;
+  text-transform: capitalize;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: var(--theme-1);
+  display: inline-block;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -40px;
+    width: 10px;
+    height: 100px;
+    background-color: #ffffff;
+    opacity: 0.5;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    transform: rotate(45deg);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: -40px;
+    width: 10px;
+    height: 100px;
+    background-color: #ffffff;
+    opacity: 0.5;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    transform: rotate(45deg);
+  }
+  &.active {
+    background-color: var(--common-white);
+    color: var(--theme-1);
+    &:hover {
+      color: var(--common-white);
+      background-color: var(--theme-1);
+    }
+  }
+  &:hover {
+    color: var(--common-white);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    &::before {
+      left: 200px;
+    }
+    &::after {
+      right: 200px;
+    }
+  }
+}

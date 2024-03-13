@@ -1,0 +1,474 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/* 24. Faq
+/*----------------------------------------*/
+
+.faq-section {
+  &.one {
+    background: var(--common-body-2);
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 9;
+    .img-file {
+      @media #{$lg, $md, $sm, $xs, $xss} {
+        margin-top: 70px;
+        text-align: center;
+      }
+    }
+    .faq-inner {
+      margin-top: 110px;
+      z-index: 9;
+      position: relative;
+      @media #{$sm, $xs, $xss} {
+        margin-top: 60px;
+      }
+      .icon-shape {
+        width: 80px;
+        height: 80px;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        @media #{$md, $sm, $xs, $xss} {
+          display: none;
+        }
+      }
+      .intro {
+        margin-top: 15px;
+        h3 {
+          font-size: 18px;
+          line-height: 1.2;
+          font-weight: var(--fw-600);
+        }
+      }
+      .faq-list {
+        margin-top: 15px;
+        .accordion {
+          .accordion-item {
+            margin-bottom: 16px;
+            border-radius: 5px;
+            overflow: hidden;
+            .accordion-header {
+              .accordion-button {
+                padding: 15px 35px 15px 16px;
+                font-size: 15px !important;
+                line-height: 25px;
+
+                font-weight: 600;
+                background: var(--theme-1);
+                color: var(--common-white);
+                &.collapsed {
+                  background: var(--common-white);
+                  color: var(--text-h);
+                }
+                &:focus {
+                  z-index: 3;
+                  border-color: transparent;
+                  outline: 0;
+                  box-shadow: none !important;
+                }
+                &::after {
+                  flex-shrink: 0;
+                  width: 1.25rem;
+                  height: 1.25rem;
+                  margin-left: auto;
+                  font-family: "Font Awesome 5 Pro";
+                  font-weight: 900;
+                  content: "\2b";
+                  background-image: none;
+                  transform: none;
+                  position: absolute;
+                  right: 10px;
+                  top: 15px;
+                }
+                &:not(.collapsed)::after {
+                  font-family: "Font Awesome 5 Pro";
+                  font-weight: 900;
+                  content: "\f068";
+                  background-image: none;
+                  transform: none;
+                  position: absolute;
+                  right: 10px;
+                  top: 15px;
+                }
+              }
+            }
+            .accordion-collapse {
+              background: var(--common-white);
+              color: var(--text-p-1);
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+    .shape-image {
+      .shape-img-1 {
+        left: -12px;
+        top: 8%;
+        z-index: -1;
+        img {
+          width: 60px;
+        }
+        @media #{$lg, $md, $sm, $xs, $xss} {
+          top: 30px;
+        }
+      }
+      .shape-img-2 {
+        top: -24px;
+        right: -28px;
+        z-index: -1;
+        img {
+          width: 100px;
+        }
+      }
+      .shape-img-3 {
+        top: 13%;
+        right: 14%;
+        z-index: -1;
+        -webkit-animation: scale-down-center 15s linear infinite
+          alternate-reverse both;
+        animation: scale-down-center 15s linear infinite alternate-reverse both;
+        img {
+          width: 120px;
+        }
+        @media #{$md, $sm, $xs, $xss} {
+          display: none;
+        }
+      }
+      .shape-img-4 {
+        bottom: 21%;
+        right: 20px;
+        z-index: -1;
+        -webkit-animation: slide-top 10s linear 0.3s infinite alternate-reverse
+          both;
+        animation: slide-top 10s linear 0.3s infinite alternate-reverse both;
+        img {
+          width: 40px;
+        }
+        @media #{$md, $sm, $xs, $xss} {
+          display: none;
+        }
+      }
+      .shape-img-5 {
+        bottom: 7px;
+        left: -28px;
+        z-index: -1;
+        img {
+          width: 300px;
+        }
+      }
+      .shape-img-6 {
+        top: 74px;
+        right: 42%;
+        z-index: -1;
+        animation: animationFramesOne 45s linear infinite reverse;
+        -webkit-animation: animationFramesOne 45s linear infinite reverse;
+        img {
+          width: 30px;
+        }
+      }
+      .shape-img-7 {
+        top: 74px;
+        right: 42%;
+        z-index: -1;
+        animation: animationFramesOne 55s linear infinite;
+        -webkit-animation: animationFramesOne 55s linear infinite;
+        img {
+          width: 25px;
+        }
+      }
+      .shape-img-8 {
+        top: 85px;
+        right: 54%;
+        z-index: -1;
+        img {
+          width: 200px;
+          @media #{$md, $sm, $xs, $xss} {
+            width: 150px;
+          }
+        }
+
+        @media #{$md, $sm} {
+          top: 90px;
+          right: 36%;
+        }
+        @media #{$xs, $xss} {
+          top: 40px;
+        }
+      }
+    }
+
+    &.two {
+      .img-file {
+        border-radius: 8px;
+        overflow: hidden;
+        width: 750px;
+        height: 800px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .faq-inner {
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+        height: 100%;
+        width: 100%;
+        .section-title-shape-one {
+          margin-bottom: 30px;
+        }
+        .faq-list {
+          background: var(--common-gd);
+          padding: 50px 50px;
+          border-radius: 8px;
+          width: 100%;
+          @media #{$sm, $xs, $xss} {
+            padding: 30px 20px;
+          }
+        }
+      }
+      .shape-image {
+        .shape-1 {
+          left: 11px;
+          bottom: 20px;
+          width: 190px;
+        }
+        .shape-2 {
+          right: 260px;
+          top: 53px;
+          width: 80px;
+          animation: trigger 8s linear infinite;
+          @media #{$sm, $xs, $xss} {
+            right: 47px;
+            top: 15px;
+            width: 70px;
+          }
+        }
+        .shape-3 {
+          right: 260px;
+          bottom: 70px;
+          width: 65px;
+          animation: rotate-in-center 12s linear 0s infinite reverse backwards;
+          @media #{$sm, $xs, $xss} {
+            right: 80px;
+            bottom: 46px;
+            width: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  &.three {
+    background: var(--common-body-2);
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 9;
+    .img-file {
+      position: absolute;
+      top: -300px;
+      right: -9px;
+      animation: rotate-in-center 22s linear 0s infinite reverse backwards;
+      @media #{$md, $sm, $xs, $xss} {
+        display: none;
+      }
+    }
+    .support {
+      margin-top: 267px;
+      background: var(--common-white);
+      padding: 30px;
+      border-radius: 5px;
+      @media #{$md, $sm, $xs, $xss} {
+        margin-top: 40px;
+      }
+      h2 {
+        font-size: 26px;
+        line-height: 1.2;
+        font-weight: 800;
+        color: var(--text-h);
+      }
+      p {
+        margin-top: 10px;
+        line-height: 1.2;
+        color: var(--text-p-1);
+      }
+      span {
+        display: block;
+        color: var(--text-p-1);
+      }
+      .inner-btn {
+        margin-top: 20px;
+        justify-content: flex-start;
+      }
+    }
+    .faq-inner {
+      margin-top: 40px;
+      position: relative;
+      z-index: 9;
+
+      .intro {
+        margin-top: 15px;
+        h3 {
+          font-size: 22px;
+          line-height: 1.2;
+          font-weight: var(--fw-600);
+        }
+      }
+      .faq-list {
+        margin-top: 15px;
+        .accordion {
+          .accordion-item {
+            margin-bottom: 16px;
+            border-radius: 5px;
+            overflow: hidden;
+            .accordion-header {
+              .accordion-button {
+                padding: 15px 35px 15px 16px;
+                font-size: 15px !important;
+                line-height: 25px;
+
+                font-weight: 600;
+                background: var(--theme-1);
+                color: var(--common-white);
+                &.collapsed {
+                  background: var(--common-white);
+                  color: var(--text-h);
+                }
+                &:focus {
+                  z-index: 3;
+                  border-color: transparent;
+                  outline: 0;
+                  box-shadow: none !important;
+                }
+                &::after {
+                  flex-shrink: 0;
+                  width: 1.25rem;
+                  height: 1.25rem;
+                  margin-left: auto;
+                  font-family: "Font Awesome 5 Pro";
+                  font-weight: 900;
+                  content: "\2b";
+                  background-image: none;
+                  transform: none;
+                  position: absolute;
+                  right: 10px;
+                  top: 15px;
+                }
+                &:not(.collapsed)::after {
+                  font-family: "Font Awesome 5 Pro";
+                  font-weight: 900;
+                  content: "\f068";
+                  background-image: none;
+                  transform: none;
+                  position: absolute;
+                  right: 10px;
+                  top: 15px;
+                }
+              }
+            }
+            .accordion-collapse {
+              background: var(--common-white);
+              color: var(--text-p-1);
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+    .shape-image {
+      .shape-img-1 {
+        left: -12px;
+        top: 8%;
+        z-index: -1;
+        @media #{$md, $sm, $xs, $xss} {
+          left: -12px;
+          top: 40px;
+        }
+
+        img {
+          width: 80px;
+          @media #{$md, $sm, $xs, $xss} {
+            width: 100px;
+          }
+        }
+      }
+      .shape-img-2 {
+        right: -2px;
+        bottom: 28px;
+        z-index: -1;
+        opacity: 0.6;
+        img {
+          width: 230px;
+        }
+      }
+
+      .shape-img-3 {
+        top: 13%;
+        right: 14%;
+        z-index: -1;
+        -webkit-animation: scale-down-center 15s linear infinite
+          alternate-reverse both;
+        animation: scale-down-center 15s linear infinite alternate-reverse both;
+        img {
+          width: 120px;
+        }
+      }
+      .shape-img-4 {
+        bottom: 21%;
+        right: 20px;
+        z-index: -1;
+        -webkit-animation: slide-top 10s linear 0.3s infinite alternate-reverse
+          both;
+        animation: slide-top 10s linear 0.3s infinite alternate-reverse both;
+        img {
+          width: 40px;
+        }
+      }
+      .shape-img-5 {
+        bottom: 7px;
+        left: -28px;
+        z-index: -1;
+        img {
+          width: 300px;
+        }
+      }
+      .shape-img-6 {
+        top: 74px;
+        right: 42%;
+        z-index: -1;
+        animation: animationFramesOne 45s linear infinite reverse;
+        -webkit-animation: animationFramesOne 45s linear infinite reverse;
+
+        img {
+          width: 30px;
+        }
+      }
+      .shape-img-7 {
+        top: 74px;
+        right: 42%;
+        z-index: -1;
+        animation: animationFramesOne 55s linear infinite;
+        -webkit-animation: animationFramesOne 55s linear infinite;
+        img {
+          width: 25px;
+        }
+      }
+      .shape-img-8 {
+        top: 85px;
+        left: 520px;
+        z-index: -1;
+        img {
+          width: 200px;
+        }
+      }
+    }
+  }
+}

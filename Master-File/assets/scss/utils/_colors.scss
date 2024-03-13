@@ -1,0 +1,35 @@
+$colors: (
+  "common": (
+    "white": #ffffff,
+    "black": #000,
+    "black-2": #24292d,
+    "body-1": #000c14,
+    "body-2": #00151e,
+    "body-3": #f8f9fa,
+    "gd": linear-gradient(180deg, #243949 0%, #00151e 100%),
+  ),
+  "grey": (
+    1: #c5c5c5,
+    2: #aeaeae,
+    3: #acacac,
+    4: #999999,
+    5: #f7f7f7,
+    6: #b7b7b7,
+    7: #a6aeb5,
+    8: #edf2f6,
+  ),
+  "text": (
+    "h": #0a0a0a,
+    "p-1": #616161,
+    "p-2": #f9f9f9,
+  ),
+  "theme": (
+    1: #13c4a1,
+    2: #02f3f7,
+  ),
+  "border": (
+    1: #ededed,
+    2: #e9e9e9,
+    3: #424242,
+  ),
+);
