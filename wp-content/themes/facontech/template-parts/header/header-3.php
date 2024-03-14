@@ -15,6 +15,12 @@ $facontech_mail_id = get_theme_mod('facontech_mail_id', __('info@facontech.com',
 $facontech_address = get_theme_mod('facontech_address', __('Moon ave, New York, 2020 NY US', 'facontech'));
 $facontech_address_url = get_theme_mod('facontech_address_url', __('https://goo.gl/maps/qzqY2PAcQwUz1BYN9', 'facontech'));
 
+// social 
+$facontech_topbar_fb_url = get_theme_mod('facontech_topbar_fb_url', __('#', 'facontech'));
+$facontech_topbar_twitter_url = get_theme_mod('facontech_topbar_twitter_url', __('#', 'facontech'));
+$facontech_topbar_linkedin_url = get_theme_mod('facontech_topbar_linkedin_url', __('#', 'facontech'));
+$facontech_topbar_instagram_url = get_theme_mod('facontech_topbar_instagram_url', __('#', 'facontech'));
+
 // contact button
 $facontech_button_text = get_theme_mod('facontech_button_text', __('Contact Us', 'facontech'));
 $facontech_button_link = get_theme_mod('facontech_button_link', __('#', 'facontech'));
