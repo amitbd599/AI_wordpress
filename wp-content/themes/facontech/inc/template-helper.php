@@ -39,6 +39,36 @@ function facontech_check_header()
 add_action('facontech_header_style', 'facontech_check_header', 10);
 
 
+
+function facontech_header_search()
+{
+    ?>
+    <div class="modal fade search-box" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="fa-sharp fa-regular fa-xmark"></i></span>
+        </button>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="get" action="<?php print esc_url(home_url('/')); ?>">
+                    <input type="text" name="s" placeholder="<?php echo esc_attr__("Search here...", "facontech") ?>?"
+                        value="<?php echo esc_attr(get_search_query()) ?> ">
+                    <button type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <?php
+}
+
+add_action('facontech_before_main_content', 'facontech_header_search', 10);
+
+
+
+
+
+
 /**
  * [facontech_header_lang description]
  * @return [type] [description]

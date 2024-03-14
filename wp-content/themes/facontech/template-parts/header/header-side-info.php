@@ -10,7 +10,7 @@
 
 $facontech_side_hide = get_theme_mod('facontech_side_hide', false);
 $facontech_search = get_theme_mod('facontech_search', false);
-$facontech_side_logo = get_theme_mod('facontech_side_logo', get_template_directory_uri() . '/assets/img/logo/logo.png');
+$facontech_side_logo = get_theme_mod('facontech_side_logo', get_template_directory_uri() . '/assets/img/common/logo-white.png');
 $facontech_extra_about_text = get_theme_mod('facontech_extra_about_text', __('But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and will give you a complete account of the system and expound the actual teachings of the great explore', 'facontech'));
 
 $facontech_extra_map = get_theme_mod('facontech_extra_map', __('#', 'facontech'));
@@ -30,13 +30,15 @@ $facontech_extra_email = get_theme_mod('facontech_extra_email', __('support@mail
       </div>
       <div class="sidebar__content">
          <div class="sidebar-logo mb-40 mt-40">
-            <a href="index-1.html">
-               <img src="assets/img/common/logo-white.png" alt="logo">
+            <a href="<?php echo esc_url(home_url("/")) ?>">
+               <img src="<?php echo esc_url($facontech_side_logo); ?>"
+                  alt="<?php echo esc_attr__("logo", "facontech") ?>">
             </a>
          </div>
          <div class="sidebar__search mb-25">
-            <form action="#">
-               <input type="text" placeholder="What are you searching for?">
+            <form method="get" action="<?php print esc_url(home_url('/')); ?>">
+               <input type="text" name="s" placeholder="<?php echo esc_attr__("Search here...", "facontech") ?>?"
+                  value="<?php echo esc_attr(get_search_query()) ?> ">
                <button type="submit"><i class="far fa-search"></i></button>
             </form>
          </div>
@@ -64,28 +66,27 @@ $facontech_extra_email = get_theme_mod('facontech_extra_email', __('support@mail
             </div>
             <div class="contact">
                <div class="title">
-                  <h3>Contact Us:</h3>
+                  <h3>
+                     <?php echo esc_html($facontech_contact_title); ?>
+                  </h3>
                </div>
                <ul>
                   <li>
                      <i class="fa-sharp fa-solid fa-location-dot"></i>
-                     1739 Kincheloe Road
-                     Portland, OR 97205
+                     <?php echo esc_html($facontech_extra_address); ?>
                   </li>
                   <li>
                      <i class="fa-solid fa-envelope"></i>
-                     info@demo.com
+                     <?php echo esc_html($facontech_extra_email); ?>
                   </li>
                   <li>
                      <i class="fa-solid fa-phone"></i>
-                     +88 632-528-(859)
+                     <?php echo esc_html($facontech_extra_phone); ?>
                   </li>
-                  <li>
-                     <i class="fa-regular fa-globe"></i>
-                     themesoft69.com
-                  </li>
+
                </ul>
             </div>
+
          </div>
 
       </div>

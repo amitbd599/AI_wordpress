@@ -450,7 +450,7 @@ function _header_side_fields($fields)
         'label' => esc_html__('Logo Side', 'facontech'),
         'description' => esc_html__('Logo Side', 'facontech'),
         'section' => 'header_side_setting',
-        'default' => get_template_directory_uri() . '/assets/img/logo/logo.png',
+        'default' => get_template_directory_uri() . '/assets/img/common/logo-white.png',
     ];
     $fields[] = [
         'type' => 'textarea',
@@ -476,7 +476,7 @@ function _header_side_fields($fields)
         'settings' => 'facontech_contact_title',
         'label' => esc_html__('Contact Title', 'facontech'),
         'section' => 'header_side_setting',
-        'default' => esc_html__('Contact Title', 'facontech'),
+        'default' => esc_html__('Contact Info', 'facontech'),
         'priority' => 10,
     ];
     $fields[] = [

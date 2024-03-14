@@ -139,21 +139,3 @@ function facontech_breadcrumb_func()
 
 add_action('facontech_before_main_content', 'facontech_breadcrumb_func');
 
-// facontech_search_form
-function facontech_search_form()
-{
-    ?>
-    <div class="search-wrapper p-relative transition-3 d-none">
-        <div class="search-form transition-3">
-            <form method="get" action="<?php print esc_url(home_url('/')); ?>">
-                <input type="search" name="s" value="<?php print esc_attr(get_search_query()) ?>"
-                    placeholder="<?php print esc_attr__('Enter Your Keyword', 'facontech'); ?>">
-                <button type="submit" class="search-btn"><i class="far fa-search"></i></button>
-            </form>
-            <a href="javascript:void(0);" class="search-close"><i class="far fa-times"></i></a>
-        </div>
-    </div>
-    <?php
-}
-
-add_action('facontech_before_main_content', 'facontech_search_form');
