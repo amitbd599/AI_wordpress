@@ -71,9 +71,9 @@ function facontech_breadcrumb_func()
 
         // get_theme_mod
         $bg_img = get_theme_mod('breadcrumb_bg_img');
-        $facontech_breadcrumb_shape_switch = get_theme_mod('facontech_breadcrumb_shape_switch', true);
         $breadcrumb_info_switch = get_theme_mod('breadcrumb_info_switch', true);
         $breadcrumb_switch = get_theme_mod('breadcrumb_switch', true);
+        $facontech_breadcrumb_bg_color = get_theme_mod('facontech_breadcrumb_bg_color', true);
 
         if ($hide_bg_img && empty($_GET['s'])) {
             $bg_img = '';
@@ -84,17 +84,24 @@ function facontech_breadcrumb_func()
         <!-- page title area start -->
         <?php if (!empty($breadcrumb_switch)): ?>
             <!-- Breadcrumb Section Start -->
-            <section class="breadcrumb" data-background="./assets/img/bg-image/05_bg-image.jpg">
+            <section class="breadcrumb <?php print esc_attr($breadcrumb_class); ?>"
+                data-background="<?php print esc_attr($bg_img); ?>">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div class="breadcrumb-inner">
-                                <h2>Blog Grid</h2>
-                                <div class="link-shape">
-                                    <a href="index-1.html">Home</a> /
-                                    <span>Blog Grid</span>
+                            <?php if (!empty($breadcrumb_info_switch)): ?>
+                                <div class="breadcrumb-inner">
+                                    <h2>Blog Grid</h2>
+                                    <div class="link-shape">
+                                        <?php if (function_exists('bcn_display')) {
+                                            bcn_display();
+                                        } ?>
+                                    </div>
+                                    <h6>
+                                        <?php echo wp_kses_post($title); ?>
+                                    </h6>
                                 </div>
-                            </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -109,28 +116,7 @@ function facontech_breadcrumb_func()
 
             </section>
             <!-- Breadcrumb Section End -->
-            <section
-                class="d-none breadcrumb__area include-bg pt-150 pb-150 breadcrumb__overlay <?php print esc_attr($breadcrumb_class); ?>"
-                data-background="<?php print esc_attr($bg_img); ?>">
-                <div class="container">
-                    <div class="row">
-                        <?php if (!empty($breadcrumb_info_switch)): ?>
-                            <div class="col-xxl-12">
-                                <div class="breadcrumb__content text-center p-relative z-index-1">
-                                    <h3 class="breadcrumb__title">
-                                        <?php echo wp_kses_post($title); ?>
-                                    </h3>
-                                    <div class="breadcrumb__list">
-                                        <?php if (function_exists('bcn_display')) {
-                                            bcn_display();
-                                        } ?>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </section>
+
         <?php endif; ?>
         <!-- page title area end -->
         <?php

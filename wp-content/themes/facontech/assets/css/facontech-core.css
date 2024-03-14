@@ -11645,7 +11645,11 @@ input[type="color"] {
 .breadcrumb .breadcrumb-inner .link-shape span {
   font-size: 16px;
   font-weight: 600;
-  color: var(--theme-1);
+  color: var(--common-white);
+}
+.breadcrumb .breadcrumb-inner .link-shape span.dvr {
+  margin: 0 8px;
+  font-size: 14px;
 }
 .breadcrumb .shape-img .shape-1 {
   right: 115px;
