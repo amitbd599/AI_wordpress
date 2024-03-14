@@ -454,10 +454,48 @@ function _header_side_fields($fields)
     ];
     $fields[] = [
         'type' => 'textarea',
-        'settings' => 'facontech_extra_about_text',
+        'settings' => 'facontech_extra_text',
         'label' => esc_html__('Side Description Text', 'facontech'),
         'section' => 'header_side_setting',
-        'default' => esc_html__('But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and will give you a complete account of the system and expound the actual teachings of the great explore', 'facontech'),
+        'default' => esc_html__('Oracle Cloud Infrastructure (OCI) AI Services is a collection of services with prebuilt machine learning models that make it easier for developers to apply AI to applications and business operations.', 'facontech'),
+        'priority' => 10,
+    ];
+
+    $fields[] = [
+        'type' => 'repeater',
+        'label' => esc_html__('Gallery Repeater', 'facontech'),
+        'section' => 'header_side_setting',
+        'row_label' => [
+            'type' => 'text',
+            'value' => esc_html__('Client', 'facontech')
+        ],
+        'button_label' => esc_html__('Add New Photo', 'facontech'),
+        'settings' => 'facontech_gallery',
+        'fields' => [
+            'image_client' => [
+                'type' => 'image',
+                'label' => esc_html__('Gallery Image', 'facontech'),
+                'description' => esc_attr__('Upload Gallery Image', 'facontech')
+            ]
+        ]
+
+    ];
+
+    $fields[] = [
+        'type' => 'textarea',
+        'settings' => 'facontech_extra_about_text',
+        'label' => esc_html__('About Text', 'facontech'),
+        'section' => 'header_side_setting',
+        'default' => esc_html__(' Most people focus on the results of AI. For those of us who like to look under the hood, there are
+        four foundational elements to understand: categorization, classification, machine learning, and collaborative filtering.', 'facontech'),
+        'priority' => 10,
+    ];
+    $fields[] = [
+        'type' => 'text',
+        'settings' => 'facontech_extra_map_title',
+        'label' => esc_html__('Map Title', 'facontech'),
+        'section' => 'header_side_setting',
+        'default' => esc_html__('Need To Location', 'facontech'),
         'priority' => 10,
     ];
 
@@ -466,7 +504,7 @@ function _header_side_fields($fields)
         'settings' => 'facontech_extra_map',
         'label' => esc_html__('Map Address Iframe', 'facontech'),
         'section' => 'header_side_setting',
-        'default' => esc_html__('#', 'facontech'),
+        'default' => esc_html__('https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29176.030811137334!2d90.3883827!3d23.924917699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1605272373598!5m2!1sen!2sbd', 'facontech'),
         'priority' => 10,
     ];
 
@@ -480,15 +518,25 @@ function _header_side_fields($fields)
         'priority' => 10,
     ];
     $fields[] = [
-        'type' => 'textarea',
+        'type' => 'text',
         'settings' => 'facontech_extra_address',
         'label' => esc_html__('Office Address', 'facontech'),
         'section' => 'header_side_setting',
         'default' => esc_html__('12/A, Mirnada City Tower, NYC', 'facontech'),
         'priority' => 10,
     ];
+
+
     $fields[] = [
-        'type' => 'textarea',
+        'type' => 'text',
+        'settings' => 'facontech_extra_email',
+        'label' => esc_html__('Email ID', 'facontech'),
+        'section' => 'header_side_setting',
+        'default' => esc_html__('info@weblearnbd.net', 'facontech'),
+        'priority' => 10,
+    ];
+    $fields[] = [
+        'type' => 'text',
         'settings' => 'facontech_extra_phone',
         'label' => esc_html__('Phone Number', 'facontech'),
         'section' => 'header_side_setting',
@@ -496,14 +544,7 @@ function _header_side_fields($fields)
         'priority' => 10,
     ];
 
-    $fields[] = [
-        'type' => 'textarea',
-        'settings' => 'facontech_extra_email',
-        'label' => esc_html__('Email ID', 'facontech'),
-        'section' => 'header_side_setting',
-        'default' => esc_html__('info@weblearnbd.net', 'facontech'),
-        'priority' => 10,
-    ];
+
     return $fields;
 }
 add_filter('kirki/fields', '_header_side_fields');

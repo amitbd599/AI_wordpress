@@ -151,4 +151,5 @@ $facontech_menu_col = $facontech_header_right ? 'col-xxl-7 col-xl-7 col-lg-8 d-n
 
 
 
+<?php get_template_part('template-parts/header/header-side-info-header-2'); ?>
 <?php get_template_part('template-parts/header/header-side-info'); ?>

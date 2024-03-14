@@ -36,10 +36,7 @@ $facontech_extra_email = get_theme_mod('facontech_extra_email', __('support@mail
       </div>
       <div class="sidebar__content">
          <div class="sidebar-logo mb-40 mt-40">
-            <a href="<?php echo esc_url(home_url("/")) ?>">
-               <img src="<?php echo esc_url($facontech_side_logo); ?>"
-                  alt="<?php echo esc_attr__("logo", "facontech") ?>">
-            </a>
+            <?php facontech_header_logo() ?>
          </div>
          <?php if (!empty($facontech_search)): ?>
             <div class="sidebar__search mb-25">
