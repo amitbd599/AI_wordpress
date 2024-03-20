@@ -60,11 +60,11 @@ function facontech_breadcrumb_func()
     }
 
     $is_breadcrumb = function_exists('get_field') ? get_field('is_it_invisible_breadcrumb', $_id) : '';
-    if (!empty($_GET['s'])) {
+    if (!empty ($_GET['s'])) {
         $is_breadcrumb = null;
     }
 
-    if (empty($is_breadcrumb) && $breadcrumb_show == 1) {
+    if (empty ($is_breadcrumb) && $breadcrumb_show == 1) {
 
         $bg_img_from_page = function_exists('get_field') ? get_field('breadcrumb_background_image', $_id) : '';
         $hide_bg_img = function_exists('get_field') ? get_field('hide_breadcrumb_background_image', $_id) : '';
@@ -75,31 +75,31 @@ function facontech_breadcrumb_func()
         $breadcrumb_switch = get_theme_mod('breadcrumb_switch', true);
         $facontech_breadcrumb_bg_color = get_theme_mod('facontech_breadcrumb_bg_color', true);
 
-        if ($hide_bg_img && empty($_GET['s'])) {
+        if ($hide_bg_img && empty ($_GET['s'])) {
             $bg_img = '';
         } else {
-            $bg_img = !empty($bg_img_from_page) ? $bg_img_from_page['url'] : $bg_img;
+            $bg_img = !empty ($bg_img_from_page) ? $bg_img_from_page['url'] : $bg_img;
         } ?>
 
         <!-- page title area start -->
-        <?php if (!empty($breadcrumb_switch)): ?>
+        <?php if (!empty ($breadcrumb_switch)): ?>
             <!-- Breadcrumb Section Start -->
             <section class="breadcrumb <?php print esc_attr($breadcrumb_class); ?>"
                 data-background="<?php print esc_attr($bg_img); ?>">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <?php if (!empty($breadcrumb_info_switch)): ?>
+                            <?php if (!empty ($breadcrumb_info_switch)): ?>
                                 <div class="breadcrumb-inner">
-                                    <h2>Blog Grid</h2>
+                                    <h2>
+                                        <?php echo wp_kses_post($title); ?>
+                                    </h2>
                                     <div class="link-shape">
                                         <?php if (function_exists('bcn_display')) {
                                             bcn_display();
                                         } ?>
                                     </div>
-                                    <h6>
-                                        <?php echo wp_kses_post($title); ?>
-                                    </h6>
+
                                 </div>
                             <?php endif; ?>
                         </div>

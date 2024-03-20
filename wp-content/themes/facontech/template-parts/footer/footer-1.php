@@ -17,10 +17,10 @@ $facontech_footer_bg_color_from_page = function_exists('get_field') ? get_field(
 $footer_bg_color = get_theme_mod('facontech_footer_bg_color');
 
 // bg image
-$bg_img = !empty($facontech_footer_bg_url_from_page['url']) ? $facontech_footer_bg_url_from_page['url'] : $footer_bg_img;
+$bg_img = !empty ($facontech_footer_bg_url_from_page['url']) ? $facontech_footer_bg_url_from_page['url'] : $footer_bg_img;
 
 // bg color
-$bg_color = !empty($facontech_footer_bg_color_from_page) ? $facontech_footer_bg_color_from_page : $footer_bg_color;
+$bg_color = !empty ($facontech_footer_bg_color_from_page) ? $facontech_footer_bg_color_from_page : $footer_bg_color;
 
 
 // footer_columns
@@ -47,10 +47,10 @@ switch ($footer_columns) {
         $footer_class[3] = 'col-xl-4 col-lg-6';
         break;
     case '4':
-        $footer_class[1] = 'col-lg-3 col-md-6 col-sm-7';
-        $footer_class[2] = 'col-lg-3 col-md-3 col-sm-5';
-        $footer_class[3] = 'col-lg-3 col-md-3 col-sm-5';
-        $footer_class[4] = 'col-lg-3 col-md-6 col-sm-7';
+        $footer_class[1] = 'col-xl-4 col-lg-6 col-md-12 col-sm-12';
+        $footer_class[2] = 'col-xl-3 col-lg-6 col-md-6 col-sm-6';
+        $footer_class[3] = 'col-xl-2 col-lg-6 col-md-6 col-sm-6';
+        $footer_class[4] = 'col-xl-3 col-lg-6 col-md-8 col-sm-12';
         break;
     default:
         $footer_class = 'col-xl-3 col-lg-3 col-md-6';
@@ -59,31 +59,30 @@ switch ($footer_columns) {
 
 ?>
 
-<!-- footer area start -->
 
-<footer>
-    <div class="footer__area">
+
+
+<!-- <footer>
+    <div class="footer-section one">
         <?php if (is_active_sidebar('footer-1') or is_active_sidebar('footer-2') or is_active_sidebar('footer-3') or is_active_sidebar('footer-4')): ?>
-            <div class="footer__top grey-bg-4 pt-95 pb-45" data-bg-color="<?php print esc_attr($bg_color); ?>"
-                data-top-space="<?php print esc_attr($facontech_footer_top_space); ?>px"
-                data-background="<?php print esc_url($bg_img); ?>">
+            <div>
                 <div class="container">
                     <div class="row">
                         <?php
                         if ($footer_columns < 4) {
-                            print '<div class="col-lg-3 col-md-6 col-sm-7">';
+                            print '<div class="col-lg-5 col-md-6 col-12">';
                             dynamic_sidebar('footer-1');
                             print '</div>';
 
-                            print '<div class=col-lg-3 col-md-3 col-sm-5">';
+                            print '<div class=col-lg-2 col-md-6 col-12">';
                             dynamic_sidebar('footer-2');
                             print '</div>';
 
-                            print '<div class="col-lg-3 col-md-3 col-sm-5">';
+                            print '<div class="col-lg-2 col-md-6 col-12">';
                             dynamic_sidebar('footer-3');
                             print '</div>';
 
-                            print '<div class="col-lg-3 col-md-6 col-sm-7">';
+                            print '<div class="col-lg-3 col-md-6 col-12">';
                             dynamic_sidebar('footer-4');
                             print '</div>';
                         } else {
@@ -117,4 +116,67 @@ switch ($footer_columns) {
             </div>
         </div>
     </div>
+</footer> -->
+
+<!-- footer start -->
+<footer>
+    <div class="footer__area-2 " data-background="assets/img/footer/footer-bg.jpg">
+        <?php if (is_active_sidebar('footer-1') or is_active_sidebar('footer-2') or is_active_sidebar('footer-3') or is_active_sidebar('footer-4')): ?>
+            <div class="pt-100">
+                <div class="container">
+                    <div class="row">
+                        <?php
+                        if ($footer_columns < 4) {
+                            print '<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">';
+                            dynamic_sidebar('footer-1');
+                            print '</div>';
+
+                            print '<div class=col-xl-3 col-lg-6 col-md-6 col-sm-6">';
+                            dynamic_sidebar('footer-2');
+                            print '</div>';
+
+                            print '<div class="col-xl-2 col-lg-6 col-md-6 col-sm-6">';
+                            dynamic_sidebar('footer-3');
+                            print '</div>';
+
+                            print '<div class="col-xl-3 col-lg-6 col-md-8 col-sm-12">';
+                            dynamic_sidebar('footer-4');
+                            print '</div>';
+                        } else {
+                            for ($num = 1; $num <= $footer_columns; $num++) {
+                                if (!is_active_sidebar('footer-' . $num)) {
+                                    continue;
+                                }
+                                print '<div class="' . esc_attr($footer_class[$num]) . '">';
+                                dynamic_sidebar('footer-' . $num);
+                                print '</div>';
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+
+        <?php endif; ?>
+        <div class="footer__copyright-2 black-bg pt-25 pb-25 mt-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                        <div class="footer__copyright-text">
+                            <p>Copyright & Design By <a href="#">ThemePure</a> - 2022</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                        <div class="footer__copyright-links text-sm-end">
+                            <a href="#">Fb.</a>
+                            <a href="#">Tw.</a>
+                            <a href="#">Yt.</a>
+                            <a href="#">Ln.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
+<!-- footer end -->

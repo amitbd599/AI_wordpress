@@ -34,9 +34,9 @@ function facontech_widgets_init()
             'name' => sprintf(esc_html__('Footer %1$s', 'facontech'), $num),
             'id' => 'footer-' . $num,
             'description' => sprintf(esc_html__('Footer column %1$s', 'facontech'), $num),
-            'before_widget' => '<div id="%1$s" class="footer__widget footer-col-' . $num . ' mb-50 %2$s">',
+            'before_widget' => '<div id="%1$s" class="footer-wrapper one footer-col-' . $num . ' mb-50 %2$s">',
             'after_widget' => '</div>',
-            'before_title' => '<h3 class="footer__widget-title">',
+            'before_title' => '<h3 class="footer__widget-title title">',
             'after_title' => '</h3>',
         ]);
     }
@@ -49,7 +49,7 @@ function facontech_widgets_init()
                 'name' => sprintf(esc_html__('Footer Style 2 : %1$s', 'facontech'), $num),
                 'id' => 'footer-2-' . $num,
                 'description' => sprintf(esc_html__('Footer Style 2 : %1$s', 'facontech'), $num),
-                'before_widget' => '<div id="%1$s" class="footer__widget footer__widget-2 footer-col-2-' . $num . ' mb-50 %2$s">',
+                'before_widget' => '<div id="%1$s" class="footer__widget footer-default-widget footer__col-' . $num . ' mb-50 %2$s">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="footer__widget-title">',
                 'after_title' => '</h3>',
