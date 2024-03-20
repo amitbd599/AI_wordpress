@@ -62,67 +62,13 @@ switch ($footer_columns) {
 
 
 
-<!-- <footer>
-    <div class="footer-section one">
-        <?php if (is_active_sidebar('footer-1') or is_active_sidebar('footer-2') or is_active_sidebar('footer-3') or is_active_sidebar('footer-4')): ?>
-            <div>
-                <div class="container">
-                    <div class="row">
-                        <?php
-                        if ($footer_columns < 4) {
-                            print '<div class="col-lg-5 col-md-6 col-12">';
-                            dynamic_sidebar('footer-1');
-                            print '</div>';
-
-                            print '<div class=col-lg-2 col-md-6 col-12">';
-                            dynamic_sidebar('footer-2');
-                            print '</div>';
-
-                            print '<div class="col-lg-2 col-md-6 col-12">';
-                            dynamic_sidebar('footer-3');
-                            print '</div>';
-
-                            print '<div class="col-lg-3 col-md-6 col-12">';
-                            dynamic_sidebar('footer-4');
-                            print '</div>';
-                        } else {
-                            for ($num = 1; $num <= $footer_columns; $num++) {
-                                if (!is_active_sidebar('footer-' . $num)) {
-                                    continue;
-                                }
-                                print '<div class="' . esc_attr($footer_class[$num]) . '">';
-                                dynamic_sidebar('footer-' . $num);
-                                print '</div>';
-                            }
-                        }
-                        ?>
-                    </div>
-                </div>
-            </div>
-        <?php endif; ?>
-        <div class="footer__bottom grey-bg-4">
-            <div class="container">
-                <div class="footer__bottom-inner">
-                    <div class="row">
-                        <div class="col-xxl-12">
-                            <div class="footer__copyright text-center">
-                                <p>
-                                    <?php print facontech_copyright_text(); ?>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer> -->
 
 <!-- footer start -->
 <footer>
     <div class="footer__area-2 " data-background="assets/img/footer/footer-bg.jpg">
         <?php if (is_active_sidebar('footer-1') or is_active_sidebar('footer-2') or is_active_sidebar('footer-3') or is_active_sidebar('footer-4')): ?>
-            <div class="pt-100">
+            <div class="pt-100" data-bg-color="<?php echo esc_attr($bg_color) ?>"
+                data-background="<?php echo esc_url($bg_img) ?>">
                 <div class="container">
                     <div class="row">
                         <?php
@@ -163,15 +109,14 @@ switch ($footer_columns) {
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                         <div class="footer__copyright-text">
-                            <p>Copyright & Design By <a href="#">ThemePure</a> - 2022</p>
+                            <p>
+                                <?php echo facontech_copyright_text(); ?>
+                            </p>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                         <div class="footer__copyright-links text-sm-end">
-                            <a href="#">Fb.</a>
-                            <a href="#">Tw.</a>
-                            <a href="#">Yt.</a>
-                            <a href="#">Ln.</a>
+                            <?php facontech_footer_social_profiles(); ?>
                         </div>
                     </div>
                 </div>

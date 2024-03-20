@@ -329,33 +329,3 @@ input[type="color"] {
     bottom: 15px;
   }
 }
-
-.large-container {
-  position: static;
-  max-width: var(--large-container-width);
-  padding: 0px 15px;
-  margin: 0 auto;
-  width: 100%;
-  @media #{$lg, $md, $sm, $xs, $xss} {
-    padding: 0px 30px;
-  }
-}
-
-.container {
-  position: static;
-  max-width: var(--container-width);
-  padding: 0px 30px;
-  margin: 0 auto;
-  width: 100%;
-  @media #{$sm, $xs, $xss} {
-    padding: 0px 15px;
-  }
-}
-
-.small-container {
-  position: static;
-  max-width: var(--small-container-width);
-  padding: 0px 15px;
-  margin: 0 auto;
-  width: 100%;
-}

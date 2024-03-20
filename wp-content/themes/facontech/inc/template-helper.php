@@ -17,11 +17,11 @@ function facontech_check_header()
     $facontech_header_style = function_exists('get_field') ? get_field('header_style') : NULL;
     $facontech_default_header_style = get_theme_mod('choose_default_header', 'header-style-1');
 
-    if ($facontech_header_style == 'header-style-1' && empty($_GET['s'])) {
+    if ($facontech_header_style == 'header-style-1' && empty ($_GET['s'])) {
         get_template_part('template-parts/header/header-1');
-    } elseif ($facontech_header_style == 'header-style-2' && empty($_GET['s'])) {
+    } elseif ($facontech_header_style == 'header-style-2' && empty ($_GET['s'])) {
         get_template_part('template-parts/header/header-2');
-    } elseif ($facontech_header_style == 'header-style-3' && empty($_GET['s'])) {
+    } elseif ($facontech_header_style == 'header-style-3' && empty ($_GET['s'])) {
         get_template_part('template-parts/header/header-3');
     } else {
 
@@ -103,7 +103,7 @@ function facontech_language_list()
 
     $mar = '';
     $languages = apply_filters('wpml_active_languages', NULL, 'orderby=id&order=desc');
-    if (!empty($languages)) {
+    if (!empty ($languages)) {
         $mar = '<ul>';
         foreach ($languages as $lan) {
             $active = $lan['active'] == 1 ? 'active' : '';
@@ -135,7 +135,7 @@ function facontech_header_logo()
     $facontech_secondary_logo = get_theme_mod('seconday_logo', $facontech_logo_black);
     ?>
 
-    <?php if (!empty($facontech_logo_on)): ?>
+    <?php if (!empty ($facontech_logo_on)): ?>
         <a class="secondary-logo" href="<?php print esc_url(home_url('/')); ?>">
             <img src="<?php print esc_url($facontech_secondary_logo); ?>"
                 alt="<?php print esc_attr__('logo', 'facontech'); ?>" />
@@ -171,7 +171,7 @@ function facontech_mobile_logo()
 
     ?>
 
-    <?php if (!empty($facontech_mobile_logo_hide)): ?>
+    <?php if (!empty ($facontech_mobile_logo_hide)): ?>
         <div class="side__logo mb-25">
             <a class="sideinfo-logo" href="<?php print esc_url(home_url('/')); ?>">
                 <img src="<?php print esc_url($facontech_site_logo); ?>"
@@ -197,28 +197,28 @@ function facontech_header_social_profiles()
     $facontech_topbar_youtube_url = get_theme_mod('facontech_topbar_youtube_url', __('#', 'facontech'));
     ?>
     <ul>
-        <?php if (!empty($facontech_topbar_fb_url)): ?>
+        <?php if (!empty ($facontech_topbar_fb_url)): ?>
             <li><a href="<?php print esc_url($facontech_topbar_fb_url); ?>"><span><i class="fab fa-facebook-f"></i></span></a>
             </li>
         <?php endif; ?>
 
-        <?php if (!empty($facontech_topbar_twitter_url)): ?>
+        <?php if (!empty ($facontech_topbar_twitter_url)): ?>
             <li><a href="<?php print esc_url($facontech_topbar_twitter_url); ?>"><span><i class="fab fa-twitter"></i></span></a>
             </li>
         <?php endif; ?>
 
-        <?php if (!empty($facontech_topbar_instagram_url)): ?>
+        <?php if (!empty ($facontech_topbar_instagram_url)): ?>
             <li><a href="<?php print esc_url($facontech_topbar_instagram_url); ?>"><span><i
                             class="fab fa-instagram"></i></span></a></li>
         <?php endif; ?>
 
-        <?php if (!empty($facontech_topbar_linkedin_url)): ?>
+        <?php if (!empty ($facontech_topbar_linkedin_url)): ?>
             <li><a href="<?php print esc_url($facontech_topbar_linkedin_url); ?>"><span><i
                             class="fab fa-linkedin"></i></span></a>
             </li>
         <?php endif; ?>
 
-        <?php if (!empty($facontech_topbar_youtube_url)): ?>
+        <?php if (!empty ($facontech_topbar_youtube_url)): ?>
             <li><a href="<?php print esc_url($facontech_topbar_youtube_url); ?>"><span><i class="fab fa-youtube"></i></span></a>
             </li>
         <?php endif; ?>
@@ -237,7 +237,7 @@ function facontech_footer_social_profiles()
     ?>
 
     <ul>
-        <?php if (!empty($facontech_footer_fb_url)): ?>
+        <?php if (!empty ($facontech_footer_fb_url)): ?>
             <li>
                 <a href="<?php print esc_url($facontech_footer_fb_url); ?>">
                     <i class="fab fa-facebook-f"></i>
@@ -245,7 +245,7 @@ function facontech_footer_social_profiles()
             </li>
         <?php endif; ?>
 
-        <?php if (!empty($facontech_footer_twitter_url)): ?>
+        <?php if (!empty ($facontech_footer_twitter_url)): ?>
             <li>
                 <a href="<?php print esc_url($facontech_footer_twitter_url); ?>">
                     <i class="fab fa-twitter"></i>
@@ -253,7 +253,7 @@ function facontech_footer_social_profiles()
             </li>
         <?php endif; ?>
 
-        <?php if (!empty($facontech_footer_instagram_url)): ?>
+        <?php if (!empty ($facontech_footer_instagram_url)): ?>
             <li>
                 <a href="<?php print esc_url($facontech_footer_instagram_url); ?>">
                     <i class="fab fa-instagram"></i>
@@ -261,7 +261,7 @@ function facontech_footer_social_profiles()
             </li>
         <?php endif; ?>
 
-        <?php if (!empty($facontech_footer_linkedin_url)): ?>
+        <?php if (!empty ($facontech_footer_linkedin_url)): ?>
             <li>
                 <a href="<?php print esc_url($facontech_footer_linkedin_url); ?>">
                     <i class="fab fa-linkedin"></i>
@@ -269,7 +269,7 @@ function facontech_footer_social_profiles()
             </li>
         <?php endif; ?>
 
-        <?php if (!empty($facontech_footer_youtube_url)): ?>
+        <?php if (!empty ($facontech_footer_youtube_url)): ?>
             <li>
                 <a href="<?php print esc_url($facontech_footer_youtube_url); ?>">
                     <i class="fab fa-youtube"></i>
@@ -409,7 +409,7 @@ function facontech_check_footer()
 // facontech_copyright_text
 function facontech_copyright_text()
 {
-    print get_theme_mod('facontech_copyright', esc_html__('© 2022 Eduker, All Rights Reserved. Design By Theme Pure', 'facontech'));
+    print get_theme_mod('facontech_copyright', esc_html__('© 2024 Facontech, All Rights Reserved. Design By Themesoft69', 'facontech'));
 }
 
 
@@ -457,7 +457,7 @@ if (!function_exists('facontech_pagination')) {
             $pagination['base'] = user_trailingslashit(trailingslashit(remove_query_arg('s', get_pagenum_link(1))) . 'page/%#%/', 'paged');
         }
 
-        if (!empty($wp_query->query_vars['s'])) {
+        if (!empty ($wp_query->query_vars['s'])) {
             $pagination['add_args'] = ['s' => get_query_var('s')];
         }
 
@@ -513,7 +513,7 @@ function facontech_custom_color()
 
     wp_enqueue_style('facontech-custom', FACONTECH_THEME_CSS_DIR . 'facontech-custom.css', []);
 
-    if (!empty($theme_color_1)) {
+    if (!empty ($theme_color_1)) {
         $custom_css = '';
         $custom_css .= "html:root{
             --tp-theme-1: " . $theme_color_1 . ";

@@ -1121,5 +1121,45 @@ blockquote cite::before {
 }
 
 /* Footer custom css */
-.footer-default-widget {
+.footer-default-widget ul li {
+  list-style: none;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+.footer-default-widget ul li a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #b4b8bb;
+  position: relative;
+}
+.footer-default-widget ul li a::before {
+  position: absolute;
+  content: "";
+  left: auto;
+  right: 0;
+  bottom: 0;
+  background-color: var(--theme-1);
+  width: 0;
+  height: 1px;
+  top: 20px;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+.footer-default-widget ul li:hover > a::before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+.footer-default-widget ul#menu-main-links li {
+  width: 50%;
+  float: left;
+}
+
+.footer__post .footer__post-item:not(:last-child) {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #edf2f64f;
 }

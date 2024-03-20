@@ -30,7 +30,7 @@
   &__widget {
     &-title {
       font-size: 18px;
-      color: var(--tp-common-white);
+      color: var(--common-white);
       margin-bottom: 40px;
     }
     &-content {
@@ -49,13 +49,13 @@
         }
         & a {
           font-size: 16px;
-          font-weight: var(--tp-fw-sbold);
+          font-weight: 600;
           color: #b4b8bb;
           position: relative;
           &::before {
             position: absolute;
             content: "";
-            background: var(--tp-theme-1);
+            background: var(--theme-1);
             width: 5px;
             height: 2px;
             left: -10px;
@@ -68,7 +68,7 @@
         }
         &:hover > a {
           margin-left: 10px;
-          color: var(--tp-common-white);
+          color: var(--common-white);
           &::before {
             visibility: visible;
             opacity: 1;
@@ -90,14 +90,13 @@
       & ul {
         & li {
           & a {
-            font-weight: var(--tp-fw-regular);
             &::before {
               position: absolute;
               content: "";
               left: auto;
               right: 0;
               bottom: 0;
-              background: var(--tp-common-white);
+              background: var(--common-white);
               width: 0;
               height: 1px;
               top: 20px;
@@ -131,13 +130,13 @@
         line-height: 60px;
         padding-left: 45px;
         padding-right: 150px;
-        background: var(--tp-common-white);
+        background: var(--common-white);
         border: none;
         @include box-shadow(0px 2px 4px 0px rgba(2, 0, 40, 0.08));
         @include border-radius(4px);
         &::placeholder {
           font-weight: 500;
-          color: var(--tp-border-3);
+          color: var(--border-3);
         }
         &:focus {
           border: none;
@@ -153,8 +152,8 @@
         right: 0;
         font-size: 15px;
         font-weight: 700;
-        color: var(--tp-common-white);
-        background: var(--tp-theme-1);
+        color: var(--common-white);
+        background: var(--theme-1);
         height: 60px;
         line-height: 60px;
         text-align: center;
@@ -166,10 +165,10 @@
           right: 30px;
           transform: translateY(-50%);
           font-size: 14px;
-          color: var(--tp-theme-1);
+          color: var(--theme-1);
           font-weight: 700;
           &-df {
-            color: var(--tp-common-white);
+            color: var(--common-white);
           }
         }
       }
@@ -181,7 +180,7 @@
       &-df {
         & input {
           background: #2c3137;
-          color: var(--tp-common-white);
+          color: var(--common-white);
           padding-right: 120px;
         }
       }
@@ -192,8 +191,8 @@
       display: flex;
       & span {
         font-size: 14px;
-        font-weight: var(--tp-fw-sbold);
-        color: var(--tp-common-white);
+        font-weight: 600;
+        color: var(--common-white);
         margin-right: 20px;
       }
     }
@@ -203,7 +202,7 @@
         margin-right: 15px;
         color: #727980;
         &:hover {
-          color: var(--tp-common-white);
+          color: var(--common-white);
         }
       }
     }
@@ -217,8 +216,8 @@
         font-size: 16px;
         margin-bottom: 0;
         & a {
-          font-weight: var(--tp-fw-sbold);
-          color: var(--tp-theme-1);
+          font-weight: 600;
+          color: var(--theme-1);
         }
       }
       @media #{$xs} {
@@ -228,8 +227,8 @@
     &-links {
       & a {
         font-size: 16px;
-        font-weight: var(--tp-fw-sbold);
-        color: var(--tp-heading-primary);
+        font-weight: 600;
+        color: var(--common-white);
         margin-right: 45px;
         transition: 0.3s;
         @media #{$sm} {
@@ -239,7 +238,23 @@
           margin-right: 0;
         }
         &:hover {
-          color: var(--tp-theme-1);
+          color: var(--theme-1);
+        }
+      }
+      ul {
+        display: flex;
+        gap: 10px;
+        justify-content: end;
+        align-items: center;
+        & li {
+          & a {
+            padding: 5px;
+            font-size: 18px;
+            transition: all 0.2s linear;
+            &:hover {
+              color: var(--theme-1);
+            }
+          }
         }
       }
     }
@@ -248,8 +263,8 @@
         & p {
           color: #9ca2a9;
           & a {
-            font-weight: var(--tp-fw-sbold);
-            color: var(--tp-common-white);
+            font-weight: 600;
+            color: var(--common-white);
           }
         }
         @media #{$xs} {
@@ -268,7 +283,7 @@
             margin-right: 0;
           }
           &:hover {
-            color: var(--tp-theme-1);
+            color: var(--theme-1);
           }
         }
       }
@@ -295,23 +310,29 @@
       &-image {
         & img {
           border-radius: 10px;
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+          margin-right: 75px;
         }
       }
       &-content {
-        margin-left: 20px;
+        margin-left: 0;
         & span {
-          font-size: 16px;
+          font-size: 14px;
           color: #8b929b;
           display: inline-block;
-          margin-bottom: 10px;
+          margin-bottom: 8px;
         }
-        & h5 {
+        & p {
           font-size: 16px;
-          color: var(--tp-common-white);
+          font-weight: 600;
+          color: var(--common-white);
           line-height: 26px;
           margin-bottom: 0;
+          transition: all 0.3s ease-out 0s;
           &:hover {
-            color: var(--tp-theme-1);
+            color: var(--theme-1);
           }
         }
       }
@@ -348,7 +369,6 @@
       position: absolute;
       left: 20px;
       top: 18px;
-      font-family: var(--tp-ff-fontawesome);
     }
     & input {
       width: 100%;
@@ -356,13 +376,13 @@
       line-height: 60px;
       padding-left: 45px;
       padding-right: 150px;
-      background: var(--tp-common-white);
+      background: var(--common-white);
       border: none;
       @include box-shadow(0px 2px 4px 0px rgba(2, 0, 40, 0.08));
       @include border-radius(4px);
       &::placeholder {
         font-weight: 500;
-        color: var(--tp-border-3);
+        color: var(--border-3);
       }
       &:focus {
         border: none;
@@ -378,8 +398,8 @@
       right: 0;
       font-size: 15px;
       font-weight: 700;
-      color: var(--tp-common-white);
-      background: var(--tp-theme-1);
+      color: var(--common-white);
+      background: var(--theme-1);
       height: 60px;
       line-height: 60px;
       text-align: center;
