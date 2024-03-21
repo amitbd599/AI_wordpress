@@ -28,7 +28,7 @@ function facontech_customizer_panels_sections($wp_customize)
     $wp_customize->add_section('header_top_setting', [
         'title' => esc_html__('Header Info Setting', 'facontech'),
         'description' => '',
-        'priority' => 10,
+        'priority' => 1,
         'capability' => 'edit_theme_options',
         'panel' => 'facontech_customizer',
     ]);
@@ -36,31 +36,21 @@ function facontech_customizer_panels_sections($wp_customize)
     $wp_customize->add_section('header_social', [
         'title' => esc_html__('Header Social', 'facontech'),
         'description' => '',
-        'priority' => 11,
+        'priority' => 2,
         'capability' => 'edit_theme_options',
         'panel' => 'facontech_customizer',
     ]);
-
-    $wp_customize->add_section('section_header_logo', [
-        'title' => esc_html__('Header Setting', 'facontech'),
-        'description' => '',
-        'priority' => 12,
-        'capability' => 'edit_theme_options',
-        'panel' => 'facontech_customizer',
-    ]);
-
-    $wp_customize->add_section('blog_setting', [
-        'title' => esc_html__('Blog Setting', 'facontech'),
-        'description' => '',
-        'priority' => 13,
-        'capability' => 'edit_theme_options',
-        'panel' => 'facontech_customizer',
-    ]);
-
     $wp_customize->add_section('header_side_setting', [
         'title' => esc_html__('Side Info', 'facontech'),
         'description' => '',
-        'priority' => 14,
+        'priority' => 3,
+        'capability' => 'edit_theme_options',
+        'panel' => 'facontech_customizer',
+    ]);
+    $wp_customize->add_section('section_header_logo', [
+        'title' => esc_html__('Header Setting', 'facontech'),
+        'description' => '',
+        'priority' => 4,
         'capability' => 'edit_theme_options',
         'panel' => 'facontech_customizer',
     ]);
@@ -68,7 +58,18 @@ function facontech_customizer_panels_sections($wp_customize)
     $wp_customize->add_section('breadcrumb_setting', [
         'title' => esc_html__('Breadcrumb Setting', 'facontech'),
         'description' => '',
-        'priority' => 15,
+        'priority' => 5,
+        'capability' => 'edit_theme_options',
+        'panel' => 'facontech_customizer',
+    ]);
+
+
+
+
+    $wp_customize->add_section('blog_setting', [
+        'title' => esc_html__('Blog Setting', 'facontech'),
+        'description' => '',
+        'priority' => 6,
         'capability' => 'edit_theme_options',
         'panel' => 'facontech_customizer',
     ]);
@@ -76,7 +77,7 @@ function facontech_customizer_panels_sections($wp_customize)
     $wp_customize->add_section('blog_setting', [
         'title' => esc_html__('Blog Setting', 'facontech'),
         'description' => '',
-        'priority' => 16,
+        'priority' => 7,
         'capability' => 'edit_theme_options',
         'panel' => 'facontech_customizer',
     ]);
@@ -84,7 +85,14 @@ function facontech_customizer_panels_sections($wp_customize)
     $wp_customize->add_section('footer_setting', [
         'title' => esc_html__('Footer Settings', 'facontech'),
         'description' => '',
-        'priority' => 16,
+        'priority' => 8,
+        'capability' => 'edit_theme_options',
+        'panel' => 'facontech_customizer',
+    ]);
+    $wp_customize->add_section('footer_social', [
+        'title' => esc_html__('Footer Social', 'facontech'),
+        'description' => '',
+        'priority' => 9,
         'capability' => 'edit_theme_options',
         'panel' => 'facontech_customizer',
     ]);
@@ -92,7 +100,7 @@ function facontech_customizer_panels_sections($wp_customize)
     $wp_customize->add_section('color_setting', [
         'title' => esc_html__('Color Setting', 'facontech'),
         'description' => '',
-        'priority' => 17,
+        'priority' => 10,
         'capability' => 'edit_theme_options',
         'panel' => 'facontech_customizer',
     ]);
@@ -100,50 +108,32 @@ function facontech_customizer_panels_sections($wp_customize)
     $wp_customize->add_section('404_page', [
         'title' => esc_html__('404 Page', 'facontech'),
         'description' => '',
-        'priority' => 18,
+        'priority' => 11,
         'capability' => 'edit_theme_options',
         'panel' => 'facontech_customizer',
     ]);
 
-    $wp_customize->add_section('tutor_course_settings', [
-        'title' => esc_html__('Tutor Course Settings ', 'facontech'),
-        'description' => '',
-        'priority' => 19,
-        'capability' => 'edit_theme_options',
-        'panel' => 'facontech_customizer',
-    ]);
+
 
     $wp_customize->add_section('event_settings', [
         'title' => esc_html__('Event Settings ', 'facontech'),
         'description' => '',
-        'priority' => 19,
+        'priority' => 12,
         'capability' => 'edit_theme_options',
         'panel' => 'facontech_customizer',
     ]);
 
-    $wp_customize->add_section('learndash_course_settings', [
-        'title' => esc_html__('Learndash Course Settings ', 'facontech'),
-        'description' => '',
-        'priority' => 20,
-        'capability' => 'edit_theme_options',
-        'panel' => 'facontech_customizer',
-    ]);
+
 
     $wp_customize->add_section('typo_setting', [
         'title' => esc_html__('Typography Setting', 'facontech'),
         'description' => '',
-        'priority' => 21,
+        'priority' => 13,
         'capability' => 'edit_theme_options',
         'panel' => 'facontech_customizer',
     ]);
 
-    $wp_customize->add_section('tutor_course_settings', [
-        'title' => esc_html__('Tutor Course Settings ', 'facontech'),
-        'description' => '',
-        'priority' => 23,
-        'capability' => 'edit_theme_options',
-        'panel' => 'facontech_customizer',
-    ]);
+
 }
 
 add_action('customize_register', 'facontech_customizer_panels_sections');
@@ -373,6 +363,54 @@ function _header_social_fields($fields)
     return $fields;
 }
 add_filter('kirki/fields', '_header_social_fields');
+
+/*
+Header Social
+ */
+function _footer_social_fields($fields)
+{
+    // header section social
+    $fields[] = [
+        'type' => 'text',
+        'settings' => 'facontech_footer_fb_url',
+        'label' => esc_html__('Facebook footer url', 'facontech'),
+        'section' => 'footer_social',
+        'default' => esc_html__('#', 'facontech'),
+        'priority' => 11,
+    ];
+
+    $fields[] = [
+        'type' => 'text',
+        'settings' => 'facontech_footer_twitter_url',
+        'label' => esc_html__('Twitter footer url', 'facontech'),
+        'section' => 'footer_social',
+        'default' => esc_html__('#', 'facontech'),
+        'priority' => 11,
+    ];
+
+    $fields[] = [
+        'type' => 'text',
+        'settings' => 'facontech_footer_linkedin_url',
+        'label' => esc_html__('Linkedin footer url', 'facontech'),
+        'section' => 'footer_social',
+        'default' => esc_html__('#', 'facontech'),
+        'priority' => 11,
+    ];
+
+    $fields[] = [
+        'type' => 'text',
+        'settings' => 'facontech_footer_instagram_url',
+        'label' => esc_html__('Instagram footer url', 'facontech'),
+        'section' => 'footer_social',
+        'default' => esc_html__('#', 'facontech'),
+        'priority' => 11,
+    ];
+
+
+
+    return $fields;
+}
+add_filter('kirki/fields', '_footer_social_fields');
 
 /*
 Header Settings
@@ -885,142 +923,9 @@ function facontech_404_fields($fields)
 }
 add_filter('kirki/fields', 'facontech_404_fields');
 
-// course_settings
-function facontech_learndash_fields($fields)
-{
-
-    $fields[] = [
-        'type' => 'number',
-        'settings' => 'facontech_learndash_post_number',
-        'label' => esc_html__('Learndash Post Per page', 'facontech'),
-        'section' => 'learndash_course_settings',
-        'default' => 6,
-        'priority' => 10,
-    ];
-
-    $fields[] = [
-        'type' => 'select',
-        'settings' => 'facontech_learndash_order',
-        'label' => esc_html__('Post Order', 'facontech'),
-        'section' => 'learndash_course_settings',
-        'default' => 'DESC',
-        'placeholder' => esc_html__('Select an option...', 'facontech'),
-        'priority' => 10,
-        'multiple' => 1,
-        'choices' => [
-            'ASC' => esc_html__('ASC', 'facontech'),
-            'DESC' => esc_html__('DESC', 'facontech'),
-        ],
-    ];
-
-    $fields[] = [
-        'type' => 'switch',
-        'settings' => 'facontech_learndash_related',
-        'label' => esc_html__('Show Related?', 'facontech'),
-        'section' => 'learndash_course_settings',
-        'default' => 1,
-        'priority' => 10,
-        'choices' => [
-            'on' => esc_html__('Enable', 'facontech'),
-            'off' => esc_html__('Disable', 'facontech'),
-        ],
-    ];
-
-    return $fields;
-
-}
-
-if (class_exists('SFWD_LMS')) {
-    add_filter('kirki/fields', 'facontech_learndash_fields');
-}
 
 
-// tutor_course_settings
-function facontech_tutor_course_fields($fields)
-{
-    $fields[] = [
-        'type' => 'switch',
-        'settings' => 'facontech_tutor_course_details_author_meta_switch',
-        'label' => esc_html__('Tutor Course Details Author Meta', 'facontech'),
-        'section' => 'tutor_course_settings',
-        'default' => '1',
-        'priority' => 10,
-        'choices' => [
-            'on' => esc_html__('Enable', 'facontech'),
-            'off' => esc_html__('Disable', 'facontech'),
-        ],
-    ];
 
-    $fields[] = [
-        'type' => 'switch',
-        'settings' => 'facontech_tutor_course_details_payment_switch',
-        'label' => esc_html__('Tutor Course Details Payment', 'facontech'),
-        'section' => 'tutor_course_settings',
-        'default' => '1',
-        'priority' => 10,
-        'choices' => [
-            'on' => esc_html__('Enable', 'facontech'),
-            'off' => esc_html__('Disable', 'facontech'),
-        ],
-    ];
-
-    $fields[] = [
-        'type' => 'switch',
-        'settings' => 'facontech_tutor_course_desc_tab_switch',
-        'label' => esc_html__('Tutor Course Description Tab Swicher', 'facontech'),
-        'section' => 'tutor_course_settings',
-        'default' => '1',
-        'priority' => 10,
-        'choices' => [
-            'on' => esc_html__('Enable', 'facontech'),
-            'off' => esc_html__('Disable', 'facontech'),
-        ],
-    ];
-
-    $fields[] = [
-        'type' => 'switch',
-        'settings' => 'facontech_tutor_course_curriculum_tab_switch',
-        'label' => esc_html__('Tutor Course Curriculum Tab Swicher', 'facontech'),
-        'section' => 'tutor_course_settings',
-        'default' => '1',
-        'priority' => 10,
-        'choices' => [
-            'on' => esc_html__('Enable', 'facontech'),
-            'off' => esc_html__('Disable', 'facontech'),
-        ],
-    ];
-
-    $fields[] = [
-        'type' => 'switch',
-        'settings' => 'facontech_tutor_course_reviews_tab_switch',
-        'label' => esc_html__('Tutor Course Reviews Tab Swicher', 'facontech'),
-        'section' => 'tutor_course_settings',
-        'default' => '1',
-        'priority' => 10,
-        'choices' => [
-            'on' => esc_html__('Enable', 'facontech'),
-            'off' => esc_html__('Disable', 'facontech'),
-        ],
-    ];
-
-    $fields[] = [
-        'type' => 'switch',
-        'settings' => 'facontech_tutor_course_instructor_tab_switch',
-        'label' => esc_html__('Tutor Course Instructor Tab Swicher', 'facontech'),
-        'section' => 'tutor_course_settings',
-        'default' => '1',
-        'priority' => 10,
-        'choices' => [
-            'on' => esc_html__('Enable', 'facontech'),
-            'off' => esc_html__('Disable', 'facontech'),
-        ],
-    ];
-    return $fields;
-}
-
-if (function_exists('tutor')) {
-    add_filter('kirki/fields', 'facontech_tutor_course_fields');
-}
 
 /**
  * Added Event Fields

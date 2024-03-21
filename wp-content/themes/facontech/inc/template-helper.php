@@ -233,7 +233,7 @@ function facontech_footer_social_profiles()
     $facontech_footer_twitter_url = get_theme_mod('facontech_footer_twitter_url', __('#', 'facontech'));
     $facontech_footer_instagram_url = get_theme_mod('facontech_footer_instagram_url', __('#', 'facontech'));
     $facontech_footer_linkedin_url = get_theme_mod('facontech_footer_linkedin_url', __('#', 'facontech'));
-    $facontech_footer_youtube_url = get_theme_mod('facontech_footer_youtube_url', __('#', 'facontech'));
+
     ?>
 
     <ul>
@@ -269,13 +269,7 @@ function facontech_footer_social_profiles()
             </li>
         <?php endif; ?>
 
-        <?php if (!empty ($facontech_footer_youtube_url)): ?>
-            <li>
-                <a href="<?php print esc_url($facontech_footer_youtube_url); ?>">
-                    <i class="fab fa-youtube"></i>
-                </a>
-            </li>
-        <?php endif; ?>
+
     </ul>
     <?php
 }
@@ -356,20 +350,6 @@ function facontech_footer_menu()
 }
 
 
-/**
- * [facontech_category_menu description]
- * @return [type] [description]
- */
-function facontech_category_menu()
-{
-    wp_nav_menu([
-        'theme_location' => 'category-menu',
-        'menu_class' => 'cat-submenu m-0',
-        'container' => '',
-        'fallback_cb' => 'Eduker_Navwalker_Class::fallback',
-        'walker' => new Eduker_Navwalker_Class,
-    ]);
-}
 
 /**
  *

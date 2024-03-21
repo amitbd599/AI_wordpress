@@ -1163,3 +1163,55 @@ blockquote cite::before {
   margin-bottom: 20px;
   border-bottom: 1px solid #edf2f64f;
 }
+
+.footer__area-2 .border-b {
+  border-bottom: 1px solid #edf2f64f;
+}
+.footer-area .border-b {
+  border-bottom: 1px solid #edf2f64f;
+}
+
+.footer__subscribe-form-2 input {
+  background: #2c3137;
+}
+
+.black-bg-2 {
+  background: #24292d;
+}
+
+.footer-3-widget ul li {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.footer-3-widget ul li a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #b4b8bb;
+  position: relative;
+  transition: all 0.3s ease-out 0s;
+}
+.footer-3-widget ul li a::before {
+  position: absolute;
+  content: "";
+  background: var(--theme-1);
+  width: 5px;
+  height: 2px;
+  left: -10px;
+  right: 0;
+  top: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.footer-3-widget ul li:hover > a {
+  margin-left: 10px;
+  color: var(--common-white);
+}
+
+.footer-3-widget ul li:hover > a::before {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s;
+}

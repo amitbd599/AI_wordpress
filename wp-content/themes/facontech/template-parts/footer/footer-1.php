@@ -60,15 +60,11 @@ switch ($footer_columns) {
 ?>
 
 
-
-
-
 <!-- footer start -->
 <footer>
-    <div class="footer__area-2 " data-background="assets/img/footer/footer-bg.jpg">
+    <div class="footer__area-2 ">
         <?php if (is_active_sidebar('footer-1') or is_active_sidebar('footer-2') or is_active_sidebar('footer-3') or is_active_sidebar('footer-4')): ?>
-            <div class="pt-100" data-bg-color="<?php echo esc_attr($bg_color) ?>"
-                data-background="<?php echo esc_url($bg_img) ?>">
+            <div class="pt-100 border-b">
                 <div class="container">
                     <div class="row">
                         <?php
@@ -104,7 +100,7 @@ switch ($footer_columns) {
             </div>
 
         <?php endif; ?>
-        <div class="footer__copyright-2 black-bg pt-25 pb-25 mt-50">
+        <div class="footer__copyright-2 black-bg pt-25 pb-25 ">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">

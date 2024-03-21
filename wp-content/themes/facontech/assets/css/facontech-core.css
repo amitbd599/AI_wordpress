@@ -11509,7 +11509,8 @@ input[type=color] {
   position: absolute;
   left: 20px;
   top: 18px;
-  font-family: var(--tp-ff-fontawesome);
+  font-family: "Font Awesome 5 Pro";
+  color: var(--text-p-1);
 }
 .footer__subscribe-form input {
   width: 100%;
@@ -11518,6 +11519,7 @@ input[type=color] {
   padding-left: 45px;
   padding-right: 150px;
   background: var(--common-white);
+  color: var(--text-p-1);
   border: none;
   -webkit-box-shadow: 0px 2px 4px 0px rgba(2, 0, 40, 0.08);
   -moz-box-shadow: 0px 2px 4px 0px rgba(2, 0, 40, 0.08);
@@ -11532,7 +11534,7 @@ input[type=color] {
 }
 .footer__subscribe-form input::placeholder {
   font-weight: 500;
-  color: var(--border-3);
+  color: var(--text-p-1);
 }
 .footer__subscribe-form input:focus {
   border: none;
@@ -11565,7 +11567,7 @@ input[type=color] {
   right: 30px;
   transform: translateY(-50%);
   font-size: 14px;
-  color: var(--theme-1);
+  color: var(--common-white);
   font-weight: 700;
 }
 .footer__subscribe-form .s-button-2-df {

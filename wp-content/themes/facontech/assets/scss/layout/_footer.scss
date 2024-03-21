@@ -122,7 +122,8 @@
         position: absolute;
         left: 20px;
         top: 18px;
-        font-family: var(--tp-ff-fontawesome);
+        font-family: "Font Awesome 5 Pro";
+        color: var(--text-p-1);
       }
       & input {
         width: 100%;
@@ -131,12 +132,13 @@
         padding-left: 45px;
         padding-right: 150px;
         background: var(--common-white);
+        color: var(--text-p-1);
         border: none;
         @include box-shadow(0px 2px 4px 0px rgba(2, 0, 40, 0.08));
         @include border-radius(4px);
         &::placeholder {
           font-weight: 500;
-          color: var(--border-3);
+          color: var(--text-p-1);
         }
         &:focus {
           border: none;
@@ -165,7 +167,7 @@
           right: 30px;
           transform: translateY(-50%);
           font-size: 14px;
-          color: var(--theme-1);
+          color: var(--common-white);
           font-weight: 700;
           &-df {
             color: var(--common-white);
