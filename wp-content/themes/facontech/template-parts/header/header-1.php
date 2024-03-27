@@ -75,7 +75,7 @@ $facontech_menu_col = $facontech_header_right ? 'col-xl-7 col-lg-6 col-md-6 col-
                      <?php if (!empty($facontech_mail_id)): ?>
                         <div class="info-item ">
                            <span>
-                              <?php echo esc_html__("Phone Number", "facontech") ?>
+                              <?php echo esc_html__("Mail ID", "facontech") ?>
                            </span>
                            <p class="mb-0"><a href="tel:<?php echo esc_attr($facontech_mail_id); ?>">
                                  <?php echo esc_html($facontech_mail_id); ?>

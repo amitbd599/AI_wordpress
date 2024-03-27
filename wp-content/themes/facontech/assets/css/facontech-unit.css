@@ -1215,3 +1215,7 @@ blockquote cite::before {
   opacity: 1;
   transition: 0.3s;
 }
+.header-info {
+  display: flex;
+  gap: 30px;
+}

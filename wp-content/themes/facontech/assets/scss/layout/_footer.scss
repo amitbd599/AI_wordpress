@@ -162,9 +162,10 @@
         padding: 0 35px;
         @include border-radius(0 4px 4px 0);
         &-2 {
+          padding: 16px 20px;
           position: absolute;
           top: 50%;
-          right: 30px;
+          right: 1px;
           transform: translateY(-50%);
           font-size: 14px;
           color: var(--common-white);

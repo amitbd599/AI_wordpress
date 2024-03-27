@@ -25,10 +25,47 @@
       }
 
       .img-file {
+        position: relative;
         border-radius: 8px 8px 0 0;
         overflow: hidden;
         img {
           width: 100%;
+        }
+        & .vide-button-3 {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          text-align: center;
+          margin: 0 auto;
+          left: 0;
+          right: 0;
+          & a {
+            width: 120px;
+            height: 120px;
+            background: var(--common-white);
+            border-radius: 50%;
+            color: var(--theme-1);
+            transition: 0.3s;
+            display: inline-block;
+            box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.04);
+            line-height: 120px;
+            text-align: center;
+            font-size: 20px;
+            &::before {
+              position: absolute;
+              content: "";
+              width: 120px;
+              height: 120px;
+              background: #ffffff;
+              border-radius: 50%;
+              z-index: -1;
+              animation: pulse 2s infinite;
+              left: 0;
+              right: 0;
+              text-align: center;
+              margin: 0 auto;
+            }
+          }
         }
       }
       .text-file {
@@ -130,7 +167,7 @@
       }
     }
     .inner-btn {
-      margin-top: 70px;
+      margin-top: 25px;
       @media #{$md,$sm, $xs, $xss} {
         margin-top: 20px;
       }
@@ -328,6 +365,9 @@
         margin-bottom: 50px;
         &::after {
           display: none;
+        }
+        iframe {
+          width: 100%;
         }
         .text-file {
           padding: 20px 0;

@@ -14,9 +14,11 @@ $facontech_blog_btn_switch = get_theme_mod('facontech_blog_btn_switch', true);
 ?>
 
 <?php if (!empty($facontech_blog_btn_switch)): ?>
-    <div class="postbox__read-more">
-        <a href="<?php the_permalink(); ?>" class="tp-btn">
-            <?php print esc_html($facontech_blog_btn); ?>
-        </a>
+    <div class="inner-btn">
+        <div>
+            <a class="default-btn" href="<?php the_permalink(); ?>">
+                <?php print esc_html($facontech_blog_btn); ?>
+            </a>
+        </div>
     </div>
 <?php endif; ?>

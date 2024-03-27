@@ -19,10 +19,10 @@ $footer_top_space = get_theme_mod('facontech_footer_top_space');
 $footer_copyright_switch = get_theme_mod('footer_copyright_switch', false);
 
 // bg image
-$bg_img = !empty ($facontech_footer_bg_url_from_page['url']) ? $facontech_footer_bg_url_from_page['url'] : $footer_bg_img;
+$bg_img = !empty($facontech_footer_bg_url_from_page['url']) ? $facontech_footer_bg_url_from_page['url'] : $footer_bg_img;
 
 // bg color
-$bg_color = !empty ($facontech_footer_bg_color_from_page) ? $facontech_footer_bg_color_from_page : $footer_bg_color;
+$bg_color = !empty($facontech_footer_bg_color_from_page) ? $facontech_footer_bg_color_from_page : $footer_bg_color;
 
 
 
@@ -110,7 +110,7 @@ switch ($footer_columns) {
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                         <div class="footer__copyright-text">
                             <p>
-                                <?php echo facontech_copyright_text(); ?>
+                                <?php echo facontech_copyright_text(); ?> footer_2
                             </p>
                         </div>
                     </div>

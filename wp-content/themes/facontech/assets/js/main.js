@@ -130,6 +130,24 @@
       },
     });
   }
+  //! 03. Gallery One
+  if (jQuery(".gallery__slider").length > 0) {
+    var gallery__slider = new Swiper(".gallery__slider", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      slidesPerGroup: 1,
+      loop: true,
+      speed: 1000,
+      autoplay: {
+        delay: 6000,
+      },
+      pagination: {
+        el: ".team-version-one-pagination",
+        type: "bullets",
+        clickable: true,
+      },
+    });
+  }
 
   //! 04. Counter Js
   $(".counter").counterUp({

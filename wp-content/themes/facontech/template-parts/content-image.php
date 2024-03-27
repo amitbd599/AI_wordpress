@@ -36,30 +36,34 @@ if (is_single()): ?>
         </div>
     </article>
 <?php else: ?>
-
-    <article id="post-<?php the_ID(); ?>" <?php post_class('postbox__item format-image mb-50'); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('format-image'); ?>>
         <?php if (has_post_thumbnail()): ?>
-            <div class="postbox__thumb">
+            <div class="img-file">
                 <a href="<?php the_permalink(); ?>">
-                    <?php the_post_thumbnail('full', ['class' => 'img-responsive']); ?>
+                    <?php the_post_thumbnail('full', ['class' => 'img-fluid']); ?>
                 </a>
             </div>
         <?php endif; ?>
-        <div class="postbox__content">
+
+        <div class="text-file">
             <!-- blog meta -->
             <?php get_template_part('template-parts/blog/blog-meta'); ?>
 
-            <h3 class="postbox__title">
-                <a href="<?php the_permalink(); ?>">
-                    <?php the_title(); ?>
-                </a>
-            </h3>
-            <div class="postbox__text">
-                <?php the_excerpt(); ?>
-            </div>
+            <div class="title">
+                <h2><a href="<?php the_permalink(); ?>">
+                        <?php the_title(); ?>
+                    </a>
+                </h2>
+                <p>
+                    <?php the_excerpt(); ?>
+                </p>
+                <!-- blog btn -->
+                <?php get_template_part('template-parts/blog/blog-btn'); ?>
 
-            <!-- blog btn -->
-            <?php get_template_part('template-parts/blog/blog-btn'); ?>
+
+            </div>
         </div>
     </article>
+
+
 <?php endif; ?>

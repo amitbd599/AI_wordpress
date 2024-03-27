@@ -49,8 +49,45 @@ if (is_single()): ?>
     </article>
 <?php else: ?>
 
+    <article id="post-<?php the_ID(); ?>" <?php post_class('format-standard'); ?>>
+        <?php if (!empty($gallery_images)): ?>
+            <div class="swiper swiper-container gallery__slider">
+                <div class="swiper-wrapper">
+                    <?php foreach ($gallery_images as $key => $image): ?>
+                        <div class="postbox__slider-item swiper-slide">
+                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <div class="postbox-nav">
+                    <button class="postbox-slider-button-next"><i class="fal fa-arrow-right"></i></button>
+                    <button class="postbox-slider-button-prev"><i class="fal fa-arrow-left"></i></button>
+                </div>
+            </div>
+        <?php endif; ?>
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class('postbox__item format-gallery mb-50'); ?>>
+        <div class="text-file">
+            <!-- blog meta -->
+            <?php get_template_part('template-parts/blog/blog-meta'); ?>
+
+            <div class="title">
+                <h2><a href="<?php the_permalink(); ?>">
+                        <?php the_title(); ?>
+                    </a>
+                </h2>
+                <p>
+                    <?php the_excerpt(); ?>
+                </p>
+                <!-- blog btn -->
+                <?php get_template_part('template-parts/blog/blog-btn'); ?>
+
+
+            </div>
+        </div>
+    </article>
+
+
+    <article id="post-<?php the_ID(); ?>" <?php post_class('postbox__item format-gallery mb-50 d-none'); ?>>
         <?php if (!empty($gallery_images)): ?>
             <div class="postbox__thumb postbox__slider swiper-container w-img p-relative">
                 <div class="swiper-wrapper">
