@@ -28,6 +28,7 @@
         position: relative;
         border-radius: 8px 8px 0 0;
         overflow: hidden;
+        margin-top: 45px;
         img {
           width: 100%;
         }
@@ -415,6 +416,42 @@
             .inner-btn {
               margin-top: 25px;
             }
+          }
+        }
+        .postbox-slider-button-prev {
+          position: absolute;
+          left: 30px;
+          top: 50%;
+          padding: 16px;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+          z-index: 1;
+          font-size: 30px;
+          color: var(--common-white);
+          transition: all 0.3s linear;
+          &:hover {
+            color: var(--theme-1);
+          }
+        }
+        .postbox-slider-button-next {
+          position: absolute;
+          right: 30px;
+          top: 50%;
+          padding: 16px;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+          z-index: 1;
+          font-size: 30px;
+          color: var(--common-white);
+          transition: all 0.3s linear;
+          &:hover {
+            color: var(--theme-1);
           }
         }
       }

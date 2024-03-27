@@ -131,20 +131,19 @@
     });
   }
   //! 03. Gallery One
-  if (jQuery(".gallery__slider").length > 0) {
-    var gallery__slider = new Swiper(".gallery__slider", {
+  if (jQuery(".gallery-slider").length > 0) {
+    var gallery__slider = new Swiper(".gallery-slider", {
       slidesPerView: 1,
-      spaceBetween: 0,
+      spaceBetween: 20,
       slidesPerGroup: 1,
       loop: true,
       speed: 1000,
       autoplay: {
         delay: 6000,
       },
-      pagination: {
-        el: ".team-version-one-pagination",
-        type: "bullets",
-        clickable: true,
+      navigation: {
+        nextEl: ".postbox-slider-button-next",
+        prevEl: ".postbox-slider-button-prev",
       },
     });
   }
