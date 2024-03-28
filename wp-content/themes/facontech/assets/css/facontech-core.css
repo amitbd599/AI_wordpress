@@ -9317,6 +9317,10 @@ input[type=color] {
 .blog-section.details .wrapper .article-content .meta ul li a {
   color: var(--common-white);
 }
+.blog-section.details .wrapper .article-content .intro .item {
+  display: inline-block;
+  margin-right: 10px;
+}
 .blog-section.details .wrapper .article-content .inner-text {
   margin-top: 15px;
 }

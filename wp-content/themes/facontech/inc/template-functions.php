@@ -37,12 +37,14 @@ add_filter('body_class', 'facontech_body_classes');
 /**
  * Get tags.
  */
+
+
 function facontech_get_tag()
 {
     $html = '';
     if (has_tag()) {
-        $html .= '<div class="tp-post-tag"><span>' . esc_html__('Post Tags : ', 'facontech') . '</span>';
-        $html .= get_the_tag_list('', ' ', '');
+        $html .= '<div class="blog-tags"><span> <i class="fas fa-bookmark"></i> </span>';
+        $html .= get_the_tag_list('', ' , ', '');
         $html .= '</div>';
     }
     return $html;

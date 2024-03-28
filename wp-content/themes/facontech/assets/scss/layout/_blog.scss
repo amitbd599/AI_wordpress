@@ -986,6 +986,12 @@
             }
           }
         }
+        .intro {
+          .item {
+            display: inline-block;
+            margin-right: 10px;
+          }
+        }
         .inner-text {
           margin-top: 15px;
           img {
