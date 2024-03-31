@@ -9,9 +9,11 @@
 
 if (is_single()): ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class('format-standard '); ?>>
-        <div class="blog-image">
-            <?php the_post_thumbnail('full', ['class' => 'img-responsive']); ?>
-        </div>
+        <?php if (has_post_thumbnail()): ?>
+            <div class="blog-image">
+                <?php the_post_thumbnail('full', ['class' => 'img-responsive']); ?>
+            </div>
+        <?php endif; ?>
         <div class="article-content">
             <!-- blog meta -->
             <?php get_template_part('template-parts/blog/blog-meta'); ?>
@@ -36,25 +38,9 @@ if (is_single()): ?>
             </div>
             <div class="blog-footer">
                 <?php print facontech_get_tag(); ?>
-                <div class="social">
-                    <ul>
-                        <li><a href="#">
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </a></li>
-                        <li><a href="#">
-                                <i class="fa-brands fa-twitter"></i>
-                            </a></li>
-                        <li><a href="#">
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </a></li>
-                        <li><a href="#">
-                                <i class="fa-brands fa-pinterest"></i>
-                            </a></li>
-                        <li><a href="#">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a></li>
-                    </ul>
-                </div>
+
+                <!-- social share -->
+                <?php get_template_part('template-parts/blog/blog-social-share'); ?>
             </div>
         </div>
     </article>

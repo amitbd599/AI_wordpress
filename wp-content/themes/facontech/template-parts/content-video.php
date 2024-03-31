@@ -12,25 +12,33 @@ $facontech_video_url = function_exists('get_field') ? get_field('formate_style')
 if (is_single()):
     ?>
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class('postbox__item format-video mb-50'); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('format-video '); ?>>
         <?php if (has_post_thumbnail()): ?>
-            <div class="postbox__thumb postbox__video w-img p-relative">
-                <?php the_post_thumbnail('full', ['class' => 'img-responsive']); ?>
+            <div class="img-file">
+
+                <?php the_post_thumbnail('full', ['class' => 'img-fluid']); ?>
 
                 <?php if (!empty($facontech_video_url)): ?>
-                    <a href="<?php print esc_url($facontech_video_url); ?>" class="play-btn pulse-btn popup-video"><i
-                            class="fas fa-play"></i></a>
+                    <div class="vide-button vide-button-3">
+                        <a href="<?php echo esc_url($facontech_video_url); ?>" class="popup-video"><i
+                                class="fa-solid fa-play"></i></a>
+                    </div>
                 <?php endif; ?>
             </div>
-        <?php endif; ?>
 
-        <div class="postbox__content">
+        <?php endif; ?>
+        <div class="article-content">
             <!-- blog meta -->
             <?php get_template_part('template-parts/blog/blog-meta'); ?>
-            <h3 class="postbox__title">
-                <?php the_title(); ?>
-            </h3>
-            <div class="postbox__text">
+
+            <div class="title mt-20">
+                <h2>
+                    <?php the_title(); ?>
+                </h2>
+            </div>
+
+
+            <div class="inner-text">
                 <?php the_content(); ?>
                 <?php
                 wp_link_pages([
@@ -41,7 +49,11 @@ if (is_single()):
                 ]);
                 ?>
             </div>
-            <?php print facontech_get_tag(); ?>
+            <div class="blog-footer">
+                <?php print facontech_get_tag(); ?>
+                <!-- social share -->
+                <?php get_template_part('template-parts/blog/blog-social-share'); ?>
+            </div>
         </div>
     </article>
 

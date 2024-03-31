@@ -35,39 +35,109 @@ img {
 
 /*comments list */
 .blog-coment-title h2 {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 600;
   margin-bottom: 20px;
+  margin-top: 30px;
 }
 .comments-avatar {
   float: left;
 }
 .comments-avatar img {
   margin-right: 15px;
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 50%;
 }
 .comments-text {
   overflow: hidden;
 }
+.comments-text .avatar-name h5 {
+  font-size: 18px;
+  line-height: normal;
+}
+.comments-text .avatar-name span {
+  display: block;
+  font-size: 14px;
+  line-height: normal;
+  padding-bottom: 16px;
+}
+
+.comments-replay {
+  padding-top: 8px;
+  padding-bottom: 12px;
+}
+.post-comments .comments-box {
+  border-bottom: 1px solid var(--border-3);
+  padding-bottom: 26px;
+}
+.post-comments .latest-comments > ul > :not(li:first-child) {
+  padding-top: 32px;
+}
+.post-comments .children .children .children {
+  padding-top: 0;
+}
+.post-comments .children .children .children .comments-box {
+  padding-top: 32px;
+}
+.post-comments .children .children .children .children .comments-box {
+  padding-bottom: 0;
+}
+.comments-replay a {
+  border-radius: 50px;
+  transition: all 0.2s linear;
+  background: #f7f7f7;
+  font-size: 15px;
+  color: var(--text-h);
+  padding: 8px 18px;
+  font-weight: 600;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.comments-replay a:hover {
+  background: var(--theme-1);
+  color: var(--common-white);
+}
 .comments-text h3 {
   margin-bottom: 10px;
 }
-.latest-comments ul li .children {
+.latest-comments ul li .children .comments-box {
   margin-left: 60px;
   margin-top: 0;
+  padding-top: 32px;
 }
 .latest-comments ul li .children li {
   margin-top: 10px;
 }
+
 #cancel-comment-reply-link {
-  color: #3e6de7;
+  color: var(--theme-1);
   margin-left: 8px;
   font-size: 16px;
 }
 /*comments form*/
 .comment-reply-title {
-  font-size: 26px;
   font-weight: 600;
   margin-bottom: 20px;
+  font-size: 18px;
+  line-height: normal;
+}
+.comment-form .postbox__comment-input input {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+.comment-form .postbox__comment-input textarea {
+  width: 100%;
+  height: 200px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
 }
 .comment-form-cookies-consent {
   display: none;

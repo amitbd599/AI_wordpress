@@ -15,11 +15,11 @@ if (post_password_required()) {
 ?>
 
 <?php if (have_comments() || comments_open()): ?>
-    <div id="comments" class="blog-post-comment">
+    <div id="comments" class="post-comments mb-55">
 
         <?php if (get_comments_number() >= 1): ?>
-            <div class="post-comments mb-70">
-                <div class="blog-coment-title">
+            <div class="post-comments ">
+                <div class="blog-coment-title comments">
 
                     <?php
                     $comment_no = number_format_i18n(get_comments_number());
@@ -29,7 +29,7 @@ if (post_password_required()) {
                     ?>
 
                 </div>
-                <div class="latest-comments mb-65">
+                <div class="latest-comments mb-30">
                     <ul>
                         <?php
                         wp_list_comments([
@@ -50,7 +50,7 @@ if (post_password_required()) {
                     <h1 class="screen-reader-text">
                         <?php esc_html_e('Comment navigation', 'facontech'); ?>
                     </h1>
-                    <div class="row">
+                    <div class="row ">
                         <div class="col-md-6">
                             <div class="nav-previous ">
                                 <?php previous_comments_link(esc_html__('&larr; Older ', 'facontech')); ?>
@@ -65,7 +65,7 @@ if (post_password_required()) {
                     <div class="clearfix"></div>
                 </nav><!-- #comment-nav-below -->
             </div>
-        <?php endif; // check for comment navigation  ?>
+        <?php endif; // check for comment navigation              ?>
 
 
         <?php
@@ -84,9 +84,9 @@ if (post_password_required()) {
         $aria_req = ($req ? " aria-required='true'" : '');
 
         $fields = array(
-            'author' => '<div class="row"><div class="col-md-6"><div class="postbox__comment-input"><input placeholder="' . esc_attr__('Enter Name', 'facontech') . '" id="author" class="tp-form-control" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' /></div></div>',
-            'email' => '<div class="col-md-6"><div class="postbox__comment-input"><input placeholder="' . esc_attr__('Enter Email', 'facontech') . '" id="email" name="email" class="tp-form-control" type="email" value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' /></div></div>',
-            'url' => '<div class="col-md-12"><div class="postbox__comment-input"><input placeholder="' . esc_attr__('Enter Website', 'facontech') . '" id="url" name="url" class="tp-form-control" type="url" value="' . esc_attr($commenter['comment_author_url']) . '" size="30" /></div></div></div>'
+            'author' => '<div class="row"><div class="col-md-6 pb-20"><div class="postbox__comment-input"><input placeholder="' . esc_attr__('Enter Name', 'facontech') . '" id="author" class="tp-form-control" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' /></div></div>',
+            'email' => '<div class="col-md-6 pb-20"><div class="postbox__comment-input"><input placeholder="' . esc_attr__('Enter Email', 'facontech') . '" id="email" name="email" class="tp-form-control" type="email" value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' /></div></div>',
+            'url' => '<div class="col-md-12 pb-20"><div class="postbox__comment-input"><input placeholder="' . esc_attr__('Enter Website', 'facontech') . '" id="url" name="url" class="tp-form-control" type="url" value="' . esc_attr($commenter['comment_author_url']) . '" size="30" /></div></div></div>'
         );
 
         if (is_user_logged_in()) {
@@ -104,7 +104,7 @@ if (post_password_required()) {
                 <div class="clearfix"></div>
             </div>
         ',
-            'submit_button' => '<div class="col-xl-12"><button class="tp-btn" type="submit">' . esc_html__('Post Comment', 'facontech') . ' </button></div>',
+            'submit_button' => '<div class="col-xl-12"><button class="tp-btn default-btn" type="submit">' . esc_html__('Post Comment', 'facontech') . ' </button></div>',
             /** This filter is documented in wp-includes/link-template.php */
             'must_log_in' => '
             <p class="must-log-in">
@@ -117,7 +117,7 @@ if (post_password_required()) {
             </p>',
             'id_form' => 'commentform',
             'id_submit' => 'submit',
-            'class_submit' => 'tp-btn',
+            'class_submit' => 'tp-btn default-btn',
             'title_reply' => esc_html__('Leave a Reply', 'facontech'),
             'title_reply_to' => esc_html__('Leave a Reply to %s', 'facontech'),
             'cancel_reply_link' => esc_html__('Cancel reply', 'facontech'),
