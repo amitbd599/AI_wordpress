@@ -799,6 +799,7 @@ blockquote cite::before {
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
+  line-height: 20px;
 }
 .blog_sidebar__widget .footer__post-item-image {
   float: left;
@@ -812,6 +813,7 @@ blockquote cite::before {
   display: block;
   min-height: 100px;
 }
+
 .blog_sidebar__widget .post-item:last-child {
   border: none;
   padding-bottom: 0;
@@ -840,8 +842,66 @@ blockquote cite::before {
   transition: all 0.2s linear;
   font-size: 16px;
   font-weight: 600;
-  line-height: 26px;
+  line-height: 20px;
   margin-bottom: 0;
+}
+.blog_sidebar__widget .post-item:hover .info .title {
+  color: var(--theme-1);
+}
+
+.blog_sidebar__widget > ul {
+  padding-left: 0;
+}
+
+.blog_sidebar__widget .menu-main-menu-container > ul {
+  padding-left: 0;
+}
+.blog_sidebar__widget .menu-main-menu-container > ul .menu-item {
+  padding-bottom: 4px;
+}
+.blog_sidebar__widget .menu-main-menu-container > ul .menu-item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 5px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-h);
+  border-bottom: 1px solid #ddd;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.blog_sidebar__widget .menu-main-menu-container > ul .menu-item a:hover {
+  color: var(--theme-1);
+}
+
+.blog_sidebar__widget .tagcloud .tag-cloud-link {
+  display: inline-block;
+  color: var(--text-p-1);
+  font-weight: 400;
+  font-size: 15px !important;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.blog_sidebar__widget .tagcloud .tag-cloud-link:hover {
+  background: var(--theme-1);
+  color: var(--common-white);
+  border: 1px solid var(--theme-1);
 }
 
 .textwidget img {
@@ -1412,7 +1472,8 @@ blockquote cite::before {
 .footer__post .footer__post-item:not(:last-child) {
   padding-bottom: 20px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #edf2f64f;
+  border-bottom: 1px solid #c7ced34f;
+  min-height: 100px;
 }
 
 .footer__area-2 .border-b {
