@@ -8,20 +8,26 @@
  */
 
 if (is_single()): ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class('postbox__item format-image mb-50'); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('format-image '); ?>>
         <?php if (has_post_thumbnail()): ?>
-            <div class="postbox__thumb">
-                <?php the_post_thumbnail('full', ['class' => 'img-responsive']); ?>
+            <div class="img-file">
+                <a href="<?php the_permalink(); ?>">
+                    <?php the_post_thumbnail('full', ['class' => 'img-fluid']); ?>
+                </a>
             </div>
         <?php endif; ?>
-
-        <div class="postbox__content">
+        <div class="article-content">
             <!-- blog meta -->
             <?php get_template_part('template-parts/blog/blog-meta'); ?>
-            <h3 class="postbox__title">
-                <?php the_title(); ?>
-            </h3>
-            <div class="postbox__text">
+
+            <div class="title mt-20">
+                <h2>
+                    <?php the_title(); ?>
+                </h2>
+            </div>
+
+
+            <div class="inner-text">
                 <?php the_content(); ?>
                 <?php
                 wp_link_pages([
@@ -32,7 +38,12 @@ if (is_single()): ?>
                 ]);
                 ?>
             </div>
-            <?php print facontech_get_tag(); ?>
+            <div class="blog-footer">
+                <?php print facontech_get_tag(); ?>
+
+                <!-- social share -->
+                <?php get_template_part('template-parts/blog/blog-social-share'); ?>
+            </div>
         </div>
     </article>
 <?php else: ?>

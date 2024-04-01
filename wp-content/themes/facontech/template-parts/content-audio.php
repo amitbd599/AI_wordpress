@@ -11,7 +11,7 @@ $facontech_audio_url = function_exists('get_field') ? get_field('formate_style')
 if (is_single()):
     ?>
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class('format-standard '); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('format-audio '); ?>>
         <?php if (!empty($facontech_audio_url)): ?>
             <div class="postbox__thumb postbox__audio w-img p-relative">
                 <?php echo wp_oembed_get($facontech_audio_url); ?>

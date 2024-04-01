@@ -13,11 +13,11 @@ $blog_column = is_active_sidebar('blog-sidebar') ? 8 : 12;
 
 ?>
 
-<div class="tp-blog-area pt-120 pb-90">
-	<div class="container container-box">
+<div class="blog-section blog-list one">
+	<div class="container ">
 		<div class="row">
-			<div class="col-lg-<?php print esc_attr($blog_column); ?> blog-post-items">
-				<div class="postbox__wrapper pr-20">
+			<div class="col-lg-<?php print esc_attr($blog_column); ?> ">
+				<div class="blog-items">
 					<?php
 					if (have_posts()):
 						?>
