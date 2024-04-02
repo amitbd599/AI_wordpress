@@ -393,7 +393,7 @@ div.postbox__details .wp-block-cover-text {
 pre {
   display: block;
   font-size: 87.5%;
-  color: #212529;
+  color: var(--text-p-2);
   border: 1px solid #ddd;
   padding: 15px;
 }
@@ -488,6 +488,9 @@ blockquote {
   font-weight: 400;
   box-shadow: 0px 1px 2px 0px rgba(10, 0, 58, 0.14);
   border: 1px solid #f3f4f8;
+}
+blockquote cite {
+  color: #666 !important;
 }
 blockquote::before {
   content: "\f10e";
@@ -653,7 +656,7 @@ blockquote cite::before {
 }
 
 .wp-block-search__input {
-  background: var(--tp-grey-2);
+  background: var(--common-body-3);
   border: 0;
   height: 50px;
   width: 100%;
@@ -669,6 +672,35 @@ blockquote cite::before {
 }
 .wp-block-search__button:hover {
   background: #031220;
+}
+.postbox__details .wp-block-tag-cloud a {
+  display: inline-block;
+  color: var(--common-white);
+  font-weight: 400;
+  font-size: 15px !important;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.postbox__details .wp-block-tag-cloud a:hover {
+  background: var(--theme-1);
+  color: var(--common-white);
+  border: 1px solid var(--theme-1);
+}
+.wp-block-table figcaption {
+  color: var(--text-p-2);
+  font-size: 13px;
+  text-align: center;
+}
+.wp-block-image figcaption {
+  color: var(--text-p-2);
+  font-size: 13px;
+  text-align: center;
 }
 
 /*widget*/
@@ -707,6 +739,17 @@ blockquote cite::before {
 }
 .sidebar__widget .nice-select::after {
   right: 18px;
+}
+.wp-block-group p,
+.wp-block-media-text p {
+  color: var(--text-p-1);
+}
+.wp-block-table.is-style-stripes {
+  color: var(--text-p-1);
+  background-color: transparent;
+  border-bottom: 1px solid #f0f0f0;
+  border-collapse: inherit;
+  border-spacing: 0;
 }
 
 /* Custom  */
