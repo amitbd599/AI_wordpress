@@ -13,6 +13,7 @@
 ?>
 
 <div class="social">
+    <p class="share">Share : </p>
     <ul>
         <li><a
                 href="<?php echo esc_url('https://www.facebook.com/sharer/sharer.php?u=' . urlencode(get_permalink())); ?>">

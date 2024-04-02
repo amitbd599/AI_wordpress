@@ -37,7 +37,7 @@ class TP_Post_Sidebar_Widget extends WP_Widget
 			<?php echo $after_title; ?>
 		<?php endif; ?>
 
-		<div class="">
+		<div>
 
 			<div class="widget widget-post">
 				<div class="post">
@@ -87,43 +87,6 @@ class TP_Post_Sidebar_Widget extends WP_Widget
 
 		</div>
 
-		<div class="rc__post-wrapper d-none">
-			<?php
-			$q = new WP_Query(
-				array(
-					'post_type' => 'post',
-					'posts_per_page' => ($instance['count']) ? $instance['count'] : '3',
-					'order' => ($instance['posts_order']) ? $instance['posts_order'] : 'DESC',
-					'orderby' => 'date'
-				)
-			);
-
-			if ($q->have_posts()):
-				while ($q->have_posts()):
-					$q->the_post();
-					?>
-					<div class="rc__post">
-						<?php if (has_post_thumbnail()): ?>
-							<div class="rc__thumb f-left">
-								<a href="<?php the_permalink(); ?>">
-									<img class="mr-20" src="<?php print esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>"
-										alt="">
-								</a>
-							</div>
-						<?php endif; ?>
-						<div class="rc__content fix">
-							<div class="rc__meta">
-								<span>
-									<?php the_time('F d, Y'); ?>
-								</span>
-							</div>
-							<h6 class="rc__title"><a href="<?php the_permalink(); ?>">
-									<?php print wp_trim_words(get_the_title(), 6, ''); ?>
-								</a></h6>
-						</div>
-					</div>
-				<?php endwhile; endif; ?>
-		</div>
 
 		<?php echo $after_widget; ?>
 

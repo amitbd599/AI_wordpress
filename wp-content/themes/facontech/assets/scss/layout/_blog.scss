@@ -1072,9 +1072,6 @@
           }
           ul {
             padding-left: 30px;
-            li {
-              list-style: auto;
-            }
           }
         }
         .blog-footer {
@@ -1102,13 +1099,23 @@
             }
           }
           .social {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .share {
+              margin: 0;
+            }
             @media #{ $xs, $xss} {
               margin-top: 10px;
             }
             ul {
               display: flex;
               gap: 10px;
+              margin-bottom: 0;
+              padding: 0;
               li {
+                padding: 0;
+                list-style: none;
                 a {
                   display: block;
                   width: 35px;

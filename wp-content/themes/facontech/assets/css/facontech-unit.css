@@ -38,7 +38,7 @@ img {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 20px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 .comments-avatar {
   float: left;
@@ -259,6 +259,10 @@ div.latest-comments > ul {
 .tp-blog-area ul ol,
 .tp-blog-area ul ul {
   margin-bottom: 0;
+}
+
+.blog-section.details .post-comments {
+  padding-top: 40px;
 }
 
 /*tp-page-content*/
@@ -1530,4 +1534,8 @@ blockquote cite::before {
 .header-info {
   display: flex;
   gap: 30px;
+}
+
+.has-black-border-color {
+  border-color: var(--border-2) !important;
 }

@@ -18,7 +18,7 @@ if (post_password_required()) {
     <div id="comments" class="post-comments mb-55">
 
         <?php if (get_comments_number() >= 1): ?>
-            <div class="post-comments ">
+            <div>
                 <div class="blog-coment-title comments">
 
                     <?php
@@ -65,7 +65,7 @@ if (post_password_required()) {
                     <div class="clearfix"></div>
                 </nav><!-- #comment-nav-below -->
             </div>
-        <?php endif; // check for comment navigation              ?>
+        <?php endif; // check for comment navigation                ?>
 
 
         <?php
