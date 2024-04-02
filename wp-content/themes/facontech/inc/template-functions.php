@@ -42,13 +42,13 @@ add_filter('body_class', 'facontech_body_classes');
 function facontech_get_tag()
 {
     $html = '';
-    $html .= '<div>';
+
     if (has_tag()) {
         $html .= '<div class="blog-tags"><span> <i class="fas fa-bookmark"></i> </span>';
         $html .= get_the_tag_list('', ' , ', '');
         $html .= '</div>';
     }
-    $html .= '</div>';
+
     return $html;
 }
 

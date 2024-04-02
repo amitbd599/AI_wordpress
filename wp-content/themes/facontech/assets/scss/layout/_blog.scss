@@ -38,7 +38,7 @@
         overflow: hidden;
 
         img {
-          width: 100%;
+          // width: 100%;
         }
         & .vide-button-3 {
           position: absolute;
@@ -966,7 +966,7 @@
         border-radius: 8px;
         overflow: hidden;
         img {
-          width: 100%;
+          // width: 100%;
         }
       }
       .img-file {
@@ -1075,19 +1075,20 @@
           }
         }
         .blog-footer {
+          width: 100%;
           margin-top: 50px;
           border-top: 1px solid var(--border-3);
           padding: 18px 0;
           border-bottom: 1px solid var(--border-3);
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          display: grid;
+          gap: 22px;
           @media #{ $xs, $xss} {
             display: block;
           }
 
           .blog-tags {
             a {
+              text-decoration: none;
               color: var(--common-white);
               @include transition(0.3s);
               &:hover {

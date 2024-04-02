@@ -106,7 +106,7 @@
   --fz-h3: 30px;
   --fz-h4: 28px;
   --fz-h5: 26px;
-  --fz-h6: 26px;
+  --fz-h6: 16px;
   --fz-st1: 22px;
   --fz-st2: 16px;
 }
@@ -8346,9 +8346,6 @@ input[type=color] {
   border-radius: 8px 8px 0 0;
   overflow: hidden;
 }
-.blog-section.one .blog-items .img-file img {
-  width: 100%;
-}
 .blog-section.one .blog-items .img-file .vide-button-3 {
   position: absolute;
   top: 50%;
@@ -9293,9 +9290,6 @@ input[type=color] {
   border-radius: 8px;
   overflow: hidden;
 }
-.blog-section.details .wrapper .blog-image img {
-  width: 100%;
-}
 .blog-section.details .wrapper .img-file {
   position: relative;
   border-radius: 8px 8px 0 0;
@@ -9397,13 +9391,13 @@ input[type=color] {
   padding-left: 30px;
 }
 .blog-section.details .wrapper .article-content .blog-footer {
+  width: 100%;
   margin-top: 50px;
   border-top: 1px solid var(--border-3);
   padding: 18px 0;
   border-bottom: 1px solid var(--border-3);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  gap: 22px;
 }
 @media only screen and (min-width: 400px) and (max-width: 575px), (max-width: 399px) {
   .blog-section.details .wrapper .article-content .blog-footer {
@@ -9411,6 +9405,7 @@ input[type=color] {
   }
 }
 .blog-section.details .wrapper .article-content .blog-footer .blog-tags a {
+  text-decoration: none;
   color: var(--common-white);
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;

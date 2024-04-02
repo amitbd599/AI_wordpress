@@ -376,7 +376,7 @@ div.postbox__details .wp-block-cover-text {
 }
 .page-links a,
 .page-links > span {
-  border: 2px solid #ddd;
+  border: 2px solid #fff;
   display: inline-block;
   min-width: 35px;
   text-align: center;
@@ -384,11 +384,17 @@ div.postbox__details .wp-block-cover-text {
   height: 33px;
   line-height: 30px;
   margin-right: 3px;
-  color: #444;
+  color: #fff;
 }
 .page-links > span {
-  border: 2px solid #2b4eff;
-  color: #2b4eff;
+  border: 2px solid var(--theme-1);
+  color: var(--theme-1);
+}
+.article-content .inner-text ul li a,
+dl a {
+  text-underline-offset: 3px;
+  text-decoration-skip-ink: all;
+  text-decoration: underline;
 }
 pre {
   display: block;
@@ -633,7 +639,7 @@ blockquote cite::before {
 /*post password*/
 
 .post-password-form input[type="password"] {
-  background: var(--tp-grey-2);
+  background: var(--common-body-3);
   border: 0;
   height: 50px;
   width: 100%;
@@ -650,9 +656,26 @@ blockquote cite::before {
   border: 0;
   margin-top: 10px;
   transition: 0.3s;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--common-white);
+  padding: 15px 20px;
+  line-height: 1;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 1;
+  text-transform: capitalize;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: var(--theme-1);
+  display: inline-block;
 }
 .post-password-form input[type="submit"]:hover {
-  background: #031220;
+  color: var(--common-white);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .wp-block-search__input {
