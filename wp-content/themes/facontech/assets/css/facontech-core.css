@@ -8337,6 +8337,11 @@ input[type=color] {
 .blog-section.one .blog-items article {
   margin-bottom: 40px;
 }
+.blog-section.one .blog-items article.sticky {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--theme-1);
+}
 .blog-section.one .blog-items .img-file {
   position: relative;
   border-radius: 8px 8px 0 0;
