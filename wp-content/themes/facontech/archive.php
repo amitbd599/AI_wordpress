@@ -39,7 +39,7 @@ $blog_column = is_active_sidebar('blog-sidebar') ? 8 : 12;
 						endwhile;
 						?>
 
-						<div class="basic-pagination basic-pagination-2 mb-40">
+						<div class="basic-pagination pagination basic-pagination-2 mb-40">
 							<?php facontech_pagination('<i class="fas fa-angle-double-left"></i>', '<i class="fas fa-angle-double-right"></i>', '', ['class' => '']); ?>
 						</div>
 						<?php

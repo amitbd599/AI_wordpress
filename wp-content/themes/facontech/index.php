@@ -47,7 +47,7 @@ $blog_column = is_active_sidebar('blog-sidebar') ? 8 : 12;
 							<?php
 						endwhile;
 						?>
-						<div class="basic-pagination mb-40 pagination justify-content-left">
+						<div class=" pagination justify-content-left">
 							<?php facontech_pagination('<i class="fal fa-arrow-left"></i>', '<i class="fal fa-arrow-right"></i>', '', ['class' => '']); ?>
 						</div>
 						<?php

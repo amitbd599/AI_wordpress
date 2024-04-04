@@ -390,6 +390,34 @@ div.postbox__details .wp-block-cover-text {
   border: 2px solid var(--theme-1);
   color: var(--theme-1);
 }
+.pagination ul {
+  list-style: none;
+}
+.pagination ul li span.current {
+  width: 35px;
+  height: 35px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#243949),
+    to(#00151e)
+  );
+  background: -o-linear-gradient(top, #243949 0%, #00151e 100%);
+  background: linear-gradient(180deg, #243949 0%, #00151e 100%);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--theme-1);
+}
 .article-content .inner-text ul li a,
 dl a {
   text-underline-offset: 3px;
