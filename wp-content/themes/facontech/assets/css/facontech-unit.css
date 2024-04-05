@@ -32,6 +32,16 @@ img {
   max-width: 100%;
   height: auto;
 }
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1200px;
+  }
+}
 
 /*comments list */
 .blog-coment-title h2 {
@@ -1632,4 +1642,20 @@ blockquote cite::before {
 
 .has-black-border-color {
   border-color: var(--border-2) !important;
+}
+
+.bg-page {
+  background: var(--common-body-1);
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center;
+}
+.tp-page-content .post-comments {
+  clear: both;
+  overflow: hidden;
 }

@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-<div class="tp-page-area pt-120 pb-120">
+<div class="tp-page-area pt-100 pb-100 bg-page">
 	<div class="container">
 		<div class="row">
 			<div class="col-xl-12">
