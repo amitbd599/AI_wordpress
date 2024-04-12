@@ -11568,7 +11568,7 @@ input[type=color] {
 .footer__widget-title {
   font-size: 18px;
   color: var(--common-white);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .footer__widget-content p {
   color: #b4b8bb;
@@ -11810,16 +11810,10 @@ input[type=color] {
 .footer__copyright-2 .footer__copyright-links a:hover {
   color: var(--theme-1);
 }
-.footer__col-2 {
-  margin-right: 80px;
-}
 @media only screen and (min-width: 400px) and (max-width: 575px), only screen and (min-width: 576px) and (max-width: 767px) {
   .footer__col-2 {
     margin-right: 0;
   }
-}
-.footer__col-3 {
-  margin-left: -20px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), only screen and (min-width: 400px) and (max-width: 575px) {
   .footer__col-3 {

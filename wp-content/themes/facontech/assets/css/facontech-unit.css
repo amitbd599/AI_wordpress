@@ -32,16 +32,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-@media (min-width: 1400px) {
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl,
-  .container-xxl {
-    max-width: 1200px;
-  }
-}
 
 /*comments list */
 .blog-coment-title h2 {
@@ -252,13 +242,13 @@ div.latest-comments > ul {
 .tp-blog-area > ol,
 .tp-blog-area ul,
 .tp-blog-area ol {
-  padding-left: 24px;
+  /* padding-left: 24px; */
 }
 .tp-blog-area dl,
 .tp-blog-area ol,
 .tp-blog-area ul {
   margin-top: 0;
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
 }
 .postbox__details ol li,
 .postbox__details ul li {
@@ -980,8 +970,7 @@ blockquote cite::before {
   padding: 5px 0;
   font-size: 15px;
   font-weight: 600;
-  color: var(--text-h);
-  border-bottom: 1px solid #ddd;
+  color: var(--text-p-1);
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
@@ -1159,8 +1148,8 @@ blockquote cite::before {
   font-weight: 500;
 }
 .footer__widget.widget_recent_comments .comment-author-link a {
-  color: #010101;
-  font-weight: 500;
+  color: var(--text-p);
+  font-weight: 700;
 }
 .footer__widget.widget_recent_entries ul li a::after {
   display: none;
@@ -1173,7 +1162,8 @@ blockquote cite::before {
 }
 .footer__widget.widget_rss ul li a {
   padding-left: 0;
-  color: #010101;
+  color: var(--text-p);
+  font-weight: 700;
 }
 .footer__widget .nice-select .list {
   width: 100%;
@@ -1227,13 +1217,61 @@ blockquote cite::before {
   color: #6c757d;
 }
 .footer__widget .tagcloud a {
-  background: #fff;
+  display: inline-block;
+  color: var(--text-p-2);
+  font-weight: 400;
+  font-size: 15px !important;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 .footer__widget .tagcloud a:hover {
-  background: var(--tp-theme-1);
+  background: var(--theme-1);
+  color: var(--common-white);
+  border: 1px solid var(--theme-1);
 }
 .footer__widget .sidebar__search input {
-  background: #fff;
+  background-color: transparent;
+  height: 50px;
+  padding: 6px 15px;
+  width: 100%;
+  display: block;
+  outline: 0;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  font-size: 16px;
+  overflow: hidden;
+  color: var(--text-p-2);
+}
+.footer__widget .sidebar__search button {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 50px;
+  background: var(--theme-1);
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  border: 1px solid #eee;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 0px 5px 5px 0px;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 .footer__widget .nice-select {
   float: none;
@@ -1545,6 +1583,13 @@ blockquote cite::before {
   margin-bottom: 15px;
   overflow: hidden;
 }
+.footer-default-widget ul .menu-item {
+  margin: 0;
+}
+.footer-default-widget ul .menu-item a {
+  margin-bottom: 15px;
+  display: block;
+}
 .footer-default-widget ul li a {
   font-size: 16px;
   font-weight: 600;
@@ -1560,7 +1605,7 @@ blockquote cite::before {
   background-color: var(--theme-1);
   width: 0;
   height: 1px;
-  top: 20px;
+  top: 26px;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
@@ -1741,6 +1786,10 @@ blockquote cite::before {
   list-style: none;
   color: var(--text-p-1);
   border-bottom: 1px solid #ddd;
+  /* padding: 8px 0; */
+}
+
+.blog_sidebar__widget ul li a {
   padding: 8px 0;
 }
 .blog_sidebar__widget ul li:last-child {
@@ -1788,6 +1837,10 @@ blockquote cite::before {
   font-size: 18px;
   color: var(--text-h);
 }
-.blog_sidebar__widget .sub-menu .sub-menu{
+.blog_sidebar__widget .sub-menu .sub-menu {
   padding-left: 14px;
+}
+
+.nice-select {
+  color: var(--text-p-1);
 }

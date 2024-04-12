@@ -17,10 +17,10 @@ $facontech_footer_bg_color_from_page = function_exists('get_field') ? get_field(
 $footer_bg_color = get_theme_mod('facontech_footer_bg_color');
 
 // bg image
-$bg_img = !empty ($facontech_footer_bg_url_from_page['url']) ? $facontech_footer_bg_url_from_page['url'] : $footer_bg_img;
+$bg_img = !empty($facontech_footer_bg_url_from_page['url']) ? $facontech_footer_bg_url_from_page['url'] : $footer_bg_img;
 
 // bg color
-$bg_color = !empty ($facontech_footer_bg_color_from_page) ? $facontech_footer_bg_color_from_page : $footer_bg_color;
+$bg_color = !empty($facontech_footer_bg_color_from_page) ? $facontech_footer_bg_color_from_page : $footer_bg_color;
 
 
 // footer_columns
@@ -47,9 +47,9 @@ switch ($footer_columns) {
         $footer_class[3] = 'col-xl-4 col-lg-6';
         break;
     case '4':
-        $footer_class[1] = 'col-xl-4 col-lg-6 col-md-12 col-sm-12';
+        $footer_class[1] = 'col-xl-3 col-lg-6 col-md-12 col-sm-12';
         $footer_class[2] = 'col-xl-3 col-lg-6 col-md-6 col-sm-6';
-        $footer_class[3] = 'col-xl-2 col-lg-6 col-md-6 col-sm-6';
+        $footer_class[3] = 'col-xl-3 col-lg-6 col-md-6 col-sm-6';
         $footer_class[4] = 'col-xl-3 col-lg-6 col-md-8 col-sm-12';
         break;
     default:
