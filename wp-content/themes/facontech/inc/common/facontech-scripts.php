@@ -23,6 +23,7 @@ function facontech_scripts()
     wp_enqueue_style('magnific-popup', FACONTECH_THEME_CSS_DIR . 'magnific-popup.css', []);
     wp_enqueue_style('font-awesome-pro', FACONTECH_THEME_CSS_DIR . 'font-awesome-pro.css', []);
     wp_enqueue_style('spacing', FACONTECH_THEME_CSS_DIR . 'spacing.css', []);
+    wp_enqueue_style('nice-select', FACONTECH_THEME_CSS_DIR . 'nice-select.css', []);
     wp_enqueue_style('facontech-core', FACONTECH_THEME_CSS_DIR . 'facontech-core.css', [], time());
     wp_enqueue_style('facontech-unit', FACONTECH_THEME_CSS_DIR . 'facontech-unit.css', [], time());
     wp_enqueue_style('facontech-custom', FACONTECH_THEME_CSS_DIR . 'facontech-custom.css', []);
@@ -38,6 +39,7 @@ function facontech_scripts()
     wp_enqueue_script('magnific-popup', FACONTECH_THEME_JS_DIR . 'magnific-popup.js', ['jquery'], '', true);
     wp_enqueue_script('backtotop', FACONTECH_THEME_JS_DIR . 'backtotop.js', ['jquery'], false, true);
     wp_enqueue_script('counterup', FACONTECH_THEME_JS_DIR . 'counterup.js', ['jquery'], false, true);
+    wp_enqueue_script('jquery-nice-select', FACONTECH_THEME_JS_DIR . 'nice-select.js', ['jquery'], '', true);
     wp_enqueue_script('wow', FACONTECH_THEME_JS_DIR . 'wow.js', ['jquery'], false, true);
     wp_enqueue_script('facontech-main', FACONTECH_THEME_JS_DIR . 'main.js', ['jquery'], time(), true);
 

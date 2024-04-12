@@ -148,6 +148,9 @@
     });
   }
 
+  //! 04. niceSelect
+  $("select").niceSelect();
+
   //! 04. Counter Js
   $(".counter").counterUp({
     delay: 10,
