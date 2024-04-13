@@ -1593,8 +1593,12 @@ blockquote cite::before {
 .footer-default-widget ul li a {
   font-size: 16px;
   font-weight: 600;
-  color: #b4b8bb;
+  color: var(--text-p-2);
   position: relative;
+  transition: all 0.3s linear;
+}
+.footer-default-widget ul li a:hover {
+  color: var(--theme-1);
 }
 .footer-default-widget ul li a::before {
   position: absolute;
@@ -1843,4 +1847,65 @@ blockquote cite::before {
 
 .nice-select {
   color: var(--text-p-1);
+}
+
+.header-area-1 .menu-area .main-menu nav .menu-item .sub-menu .sub-menu {
+  left: 215px !important;
+  right: auto;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+.header-area-1
+  .menu-area
+  .main-menu
+  nav
+  .menu-item.menu-last
+  .sub-menu
+  .sub-menu {
+  left: auto !important;
+  right: 215px !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+.header-area-1
+  .menu-area
+  .main-menu
+  nav
+  .menu-item
+  .sub-menu
+  li:hover
+  .sub-menu {
+  visibility: visible !important;
+  opacity: 1 !important;
+  left: 200px !important;
+}
+.header-area-1
+  .menu-area
+  .main-menu
+  nav
+  .menu-item.menu-last
+  .sub-menu
+  li:hover
+  .sub-menu {
+  visibility: visible !important;
+  opacity: 1 !important;
+  right: 200px !important;
+  left: auto !important;
+}
+.header-area-1 .menu-area .main-menu nav .sub-menu .sub-menu li a {
+  padding-right: 16px;
+  position: relative;
+  display: block;
+  line-height: 1.5;
+  padding: 6px 25px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  color: var(--text-h) !important;
+  text-transform: capitalize;
+}
+.header-area-1 .menu-area .main-menu nav .sub-menu .sub-menu li:hover a {
+  color: var(--common-white) !important;
 }

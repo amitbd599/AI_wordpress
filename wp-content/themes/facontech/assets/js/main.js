@@ -157,6 +157,9 @@
     time: 1000,
   });
 
+  //! menu-last
+  $(".main-menu nav > ul > li").slice(-4).addClass("menu-last");
+
   //! 05. Testimonial Slider One
   if (jQuery(".testimonial-one").length > 0) {
     var testimonialOne = new Swiper(".testimonial-one", {
