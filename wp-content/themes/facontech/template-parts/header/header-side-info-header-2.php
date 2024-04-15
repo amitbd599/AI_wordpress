@@ -45,7 +45,7 @@ $facontech_gallery = get_theme_mod('facontech_gallery');
 
                <?php foreach ($facontech_gallery as $image): ?>
 
-                  <img class="img-fluid" src="<?php echo $image['image_client'] ?>" alt="">
+                  <img class="img-fluid" src="<?php echo esc_url($image['image_client']) ?>" alt="">
 
                <?php endforeach; ?>
 
