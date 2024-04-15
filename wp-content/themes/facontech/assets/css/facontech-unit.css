@@ -810,12 +810,62 @@ blockquote cite::before {
   padding: 15px 20px;
   border-radius: 5px;
   margin-bottom: 20px;
+  color: var(--text-p-1);
 }
-.blog_sidebar__widget .title {
+.blog_sidebar__widget .title,
+.blog_sidebar__widget .wp-block-heading {
   font-size: 20px;
   line-height: 40px;
   font-weight: 800;
   color: var(--text-h);
+}
+
+.blog_sidebar__widget .sidebar__contact__info {
+  color: var(--text-p-1) !important;
+}
+
+.blog-search-content .search-px .sidebar__search {
+  width: 360px;
+}
+
+.blog-search-content .search-px .sidebar__search input {
+  background-color: transparent;
+  height: 50px;
+  padding: 6px 15px;
+  width: 100%;
+  display: block;
+  outline: 0;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  font-size: 16px;
+  overflow: hidden;
+  color: var(--text-p);
+}
+
+.blog-search-content .search-px .sidebar__search button {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 50px;
+  background: var(--theme-1);
+  border: 1px solid var(--theme-1);
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 0px 5px 5px 0px;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .blog_sidebar__widget .sidebar__search input {

@@ -20,7 +20,7 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'ai-copy');
+define('DB_NAME', 'ai-server');
 
 /** Database username */
 define('DB_USER', 'root');
@@ -79,7 +79,7 @@ $table_prefix = 'wp_5';
  *
  * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
 
 /* Add any custom values between this line and the "stop editing" line. */
 

@@ -11,9 +11,9 @@
 
 <section class="no-results not-found">
     <header class="page-header">
-        <h1 class="page-title blog-search-title">
+        <h2 class="page-title blog-search-title">
             <?php esc_html_e('Nothing Found', 'facontech'); ?>
-        </h1>
+        </h2>
     </header><!-- .page-header -->
 
     <div class="pageontent blog-search-content  mt-20 mb-10">

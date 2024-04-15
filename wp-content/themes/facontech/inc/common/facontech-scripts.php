@@ -25,8 +25,8 @@ function facontech_scripts()
     wp_enqueue_style('spacing', FACONTECH_THEME_CSS_DIR . 'spacing.css', []);
     wp_enqueue_style('nice-select', FACONTECH_THEME_CSS_DIR . 'nice-select.css', []);
     wp_enqueue_style('facontech-core', FACONTECH_THEME_CSS_DIR . 'facontech-core.css', [], time());
-    wp_enqueue_style('facontech-unit', FACONTECH_THEME_CSS_DIR . 'facontech-unit.css', [], time());
     wp_enqueue_style('facontech-custom', FACONTECH_THEME_CSS_DIR . 'facontech-custom.css', []);
+    wp_enqueue_style('facontech-unit', FACONTECH_THEME_CSS_DIR . 'facontech-unit.css', [], time());
     wp_enqueue_style('facontech-style', get_stylesheet_uri());
 
 
@@ -63,7 +63,7 @@ function facontech_fonts_url()
     by chosen font(s), translate this to 'off'. Do not translate into your own language.
      */
     if ('off' !== _x('on', 'Google font: on or off', 'facontech')) {
-        $font_url = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap';
+        $font_url = 'https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,800&family=Orbitron:wght@400;500;600;700;800;900&display=swap';
     }
     return $font_url;
 }
