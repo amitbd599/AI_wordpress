@@ -26,13 +26,15 @@ get_header();
                      language processing, speech recognition and machine vision.</p>
                </div>
                <div class="img-file wow animated fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.5s">
-                  <img class="img-fluid" src="./assets/img/tech/01_tech.png" alt="">
+                  <img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>./assets/img/tech/01_tech.png"
+                     alt="">
                </div>
             </div>
             <div class="col-lg-6">
                <div class="faq-inner wow animated fadeInRight" data-wow-duration="1.5s" data-wow-delay="0.3s">
                   <div class="icon-shape">
-                     <img class="img-fluid" src="./assets/img/icon/23_icon.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/23_icon.png" alt="">
                   </div>
                   <div class="intro">
                      <h3>Common Question & Answer</h3>
@@ -101,28 +103,28 @@ get_header();
 
       <div class="shape-image">
          <div class="shape-img-1 poa">
-            <img src="./assets/img/icon/21_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/21_icon.png" alt="">
          </div>
          <div class="shape-img-2 poa">
-            <img src="./assets/img/icon/64_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/64_icon.png" alt="">
          </div>
          <div class="shape-img-3 poa">
-            <img src="./assets/img/icon/22_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/22_icon.png" alt="">
          </div>
          <div class="shape-img-4 poa">
-            <img src="./assets/img/icon/08_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/08_icon.png" alt="">
          </div>
          <div class="shape-img-5 poa">
-            <img src="./assets/img/icon/26_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/26_icon.png" alt="">
          </div>
          <div class="shape-img-6 poa">
-            <img src="./assets/img/icon/43_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/43_icon.png" alt="">
          </div>
          <div class="shape-img-7 poa">
-            <img src="./assets/img/icon/68_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/68_icon.png" alt="">
          </div>
          <div class="shape-img-8 poa">
-            <img src="./assets/img/icon/71_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/71_icon.png" alt="">
          </div>
 
       </div>
@@ -131,7 +133,8 @@ get_header();
 
 
    <!-- Counter-section one start -->
-   <section class="counter-section one" data-background="./assets/img/bg-image/04_bg-image.jpg">
+   <section class="counter-section one"
+      data-background="<?php echo get_template_directory_uri(); ?>./assets/img/bg-image/04_bg-image.jpg">
       <div class="container">
          <div class="award-part wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
             <div class="row">
@@ -155,10 +158,14 @@ get_header();
                <h1>AI</h1>
             </div>
             <div class="shape-img">
-               <img class="shape-1 poa" src="./assets/img/icon/50_icon.png" alt="">
-               <img class="shape-2 poa" src="./assets/img/icon/51_icon.png" alt="">
-               <img class="shape-3 poa" src="./assets/img/icon/16_icon.png" alt="">
-               <img class="shape-4 poa" src="./assets/img/icon/52_icon.png" alt="">
+               <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/50_icon.png"
+                  alt="">
+               <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/51_icon.png"
+                  alt="">
+               <img class="shape-3 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/16_icon.png"
+                  alt="">
+               <img class="shape-4 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/52_icon.png"
+                  alt="">
             </div>
          </div>
 
@@ -253,10 +260,14 @@ get_header();
          </div>
 
          <div class="shape-img">
-            <img class=" shape-5 poa" src="./assets/img/icon/53_icon.png" alt="">
-            <img class="shape-6 poa" src="./assets/img/icon/15_icon.png" alt="">
-            <img class="shape-7 poa" src="./assets/img/icon/17_icon.png" alt="">
-            <img class="shape-8 poa" src="./assets/img/icon/54_icon.png" alt="">
+            <img class=" shape-5 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/53_icon.png"
+               alt="">
+            <img class="shape-6 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/15_icon.png"
+               alt="">
+            <img class="shape-7 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/17_icon.png"
+               alt="">
+            <img class="shape-8 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/54_icon.png"
+               alt="">
          </div>
 
       </div>
@@ -265,7 +276,8 @@ get_header();
 
 
    <!-- News Letter One start -->
-   <section class="news-letter one" data-background="./assets/img/shape/06_shape.png">
+   <section class="news-letter one"
+      data-background="<?php echo get_template_directory_uri(); ?>./assets/img/shape/06_shape.png">
       <div class="container">
          <div class="row">
             <div class="col-lg-6 col-12">
@@ -288,8 +300,8 @@ get_header();
          </div>
       </div>
       <div class="shape-image">
-         <img class="shape-1 poa" src="./assets/img/icon/60_icon.png" alt="">
-         <img class="shape-2 poa" src="./assets/img/icon/61_icon.png" alt="">
+         <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/60_icon.png" alt="">
+         <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/61_icon.png" alt="">
       </div>
    </section>
    <!-- News Letter One end -->

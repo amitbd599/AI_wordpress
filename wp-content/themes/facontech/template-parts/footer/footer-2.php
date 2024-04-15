@@ -49,9 +49,9 @@ switch ($footer_columns) {
         $footer_class[3] = 'col-xl-4 col-lg-6';
         break;
     case '4':
-        $footer_class[1] = 'col-xl-4 col-lg-6 col-md-12 col-sm-12';
+        $footer_class[1] = 'col-xl-3 col-lg-6 col-md-12 col-sm-12';
         $footer_class[2] = 'col-xl-3 col-lg-6 col-md-6 col-sm-6';
-        $footer_class[3] = 'col-xl-2 col-lg-6 col-md-6 col-sm-6';
+        $footer_class[3] = 'col-xl-3 col-lg-6 col-md-6 col-sm-6';
         $footer_class[4] = 'col-xl-3 col-lg-6 col-md-8 col-sm-12';
         break;
     default:

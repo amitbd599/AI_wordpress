@@ -166,7 +166,8 @@ get_header();
             <div class="col-lg-6">
                <div class="left-wrapper wow animated fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.3s">
                   <div class="img-file">
-                     <img class="img-fluid " src="./assets/img/about/03_about.png" alt="">
+                     <img class="img-fluid "
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/about/03_about.png" alt="">
                   </div>
                </div>
             </div>
@@ -183,7 +184,8 @@ get_header();
                      <ul>
                         <li>
                            <span class="img-file">
-                              <img src="./assets/img/icon/33_icon.png" alt="">
+                              <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/33_icon.png"
+                                 alt="">
                            </span>
                            <div>
                               <h4>Machine Learning</h4>
@@ -194,7 +196,8 @@ get_header();
                         </li>
                         <li>
                            <span class="img-file">
-                              <img src="./assets/img/icon/34_icon.png" alt="">
+                              <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/34_icon.png"
+                                 alt="">
                            </span>
                            <div>
                               <h4>AI Smart Solutions</h4>
@@ -211,8 +214,9 @@ get_header();
          </div>
       </div>
       <div class="shape-img">
-         <img class="shape-1 poa" src="./assets/img/shape/14_shape.png" alt="">
-         <img class="shape-2 poa" src="./assets/img/icon/84_icon.png" alt="">
+         <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/14_shape.png"
+            alt="">
+         <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/84_icon.png" alt="">
 
       </div>
    </section>
@@ -238,7 +242,9 @@ get_header();
                   <div class="swiper-slide">
                      <div class="inner-wrapper ">
                         <div class="img-file">
-                           <img class="img-fluid" src="./assets/img/service/04_service.png" alt="">
+                           <img class="img-fluid"
+                              src="<?php echo get_template_directory_uri(); ?>./assets/img/service/04_service.png"
+                              alt="">
                         </div>
                         <div class="text-file">
                            <h2 class="title"><a href="service-details.html">
@@ -254,7 +260,8 @@ get_header();
                               </a>
                            </div>
                            <div class="shape-overlay">
-                              <img src="./assets/img/shape/15_shape.svg" alt="">
+                              <img src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/15_shape.svg"
+                                 alt="">
                            </div>
                         </div>
 
@@ -264,7 +271,9 @@ get_header();
                   <div class="swiper-slide">
                      <div class="inner-wrapper ">
                         <div class="img-file">
-                           <img class="img-fluid" src="./assets/img/service/05_service.png" alt="">
+                           <img class="img-fluid"
+                              src="<?php echo get_template_directory_uri(); ?>./assets/img/service/05_service.png"
+                              alt="">
                         </div>
                         <div class="text-file">
                            <h2 class="title"><a href="service-details.html">
@@ -280,7 +289,8 @@ get_header();
                               </a>
                            </div>
                            <div class="shape-overlay">
-                              <img src="./assets/img/shape/15_shape.svg" alt="">
+                              <img src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/15_shape.svg"
+                                 alt="">
                            </div>
                         </div>
 
@@ -290,7 +300,9 @@ get_header();
                   <div class="swiper-slide">
                      <div class="inner-wrapper ">
                         <div class="img-file">
-                           <img class="img-fluid" src="./assets/img/service/06_service.png" alt="">
+                           <img class="img-fluid"
+                              src="<?php echo get_template_directory_uri(); ?>./assets/img/service/06_service.png"
+                              alt="">
                         </div>
                         <div class="text-file">
                            <h2 class="title"><a href="service-details.html">
@@ -306,7 +318,8 @@ get_header();
                               </a>
                            </div>
                            <div class="shape-overlay">
-                              <img src="./assets/img/shape/15_shape.svg" alt="">
+                              <img src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/15_shape.svg"
+                                 alt="">
                            </div>
                         </div>
 
@@ -316,7 +329,9 @@ get_header();
                   <div class="swiper-slide">
                      <div class="inner-wrapper ">
                         <div class="img-file">
-                           <img class="img-fluid" src="./assets/img/service/07_service.png" alt="">
+                           <img class="img-fluid"
+                              src="<?php echo get_template_directory_uri(); ?>./assets/img/service/07_service.png"
+                              alt="">
                         </div>
                         <div class="text-file">
                            <h2 class="title"><a href="service-details.html">
@@ -332,7 +347,8 @@ get_header();
                               </a>
                            </div>
                            <div class="shape-overlay">
-                              <img src="./assets/img/shape/15_shape.svg" alt="">
+                              <img src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/15_shape.svg"
+                                 alt="">
                            </div>
                         </div>
 
@@ -342,7 +358,9 @@ get_header();
                   <div class="swiper-slide">
                      <div class="inner-wrapper ">
                         <div class="img-file">
-                           <img class="img-fluid" src="./assets/img/service/08_service.png" alt="">
+                           <img class="img-fluid"
+                              src="<?php echo get_template_directory_uri(); ?>./assets/img/service/08_service.png"
+                              alt="">
                         </div>
                         <div class="text-file">
                            <h2 class="title"><a href="service-details.html">
@@ -358,7 +376,9 @@ get_header();
                               </a>
                            </div>
                            <div class="shape-overlay">
-                              <img class="img-fluid" src="./assets/img/shape/15_shape.svg" alt="">
+                              <img class="img-fluid"
+                                 src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/15_shape.svg"
+                                 alt="">
                            </div>
                         </div>
                      </div>
@@ -378,10 +398,10 @@ get_header();
       </div>
       <div class="shape-img">
 
-         <img class="shape-1 poa" src="./assets/img/icon/96_icon.png" alt="">
-         <img class="shape-2 poa" src="./assets/img/icon/92_icon.png" alt="">
-         <img class="shape-3 poa" src="./assets/img/icon/71_icon.png" alt="">
-         <img class="shape-4 poa" src="./assets/img/icon/77_icon.png" alt="">
+         <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/96_icon.png" alt="">
+         <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/92_icon.png" alt="">
+         <img class="shape-3 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/71_icon.png" alt="">
+         <img class="shape-4 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/77_icon.png" alt="">
 
       </div>
    </section>
@@ -469,7 +489,8 @@ get_header();
             <div class="col-lg-4">
                <div class=" ps-lg-4 ps-0 por wow animated fadeInRight" data-wow-duration="1.5s" data-wow-delay="0.3s">
                   <div class="img-file">
-                     <img class="img-fluid" src="./assets/img/icon/97_icon.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/97_icon.png" alt="">
                   </div>
                   <div class="support">
                      <h2>Need To More Support With us?</h2>
@@ -495,22 +516,22 @@ get_header();
 
       <div class="shape-image">
          <div class="shape-img-1 poa">
-            <img src="./assets/img/icon/21_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/21_icon.png" alt="">
          </div>
          <div class="shape-img-2 poa">
-            <img src="./assets/img/shape/01_shape.svg" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/01_shape.svg" alt="">
          </div>
          <div class="shape-img-5 poa">
-            <img src="./assets/img/icon/26_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/26_icon.png" alt="">
          </div>
          <div class="shape-img-6 poa">
-            <img src="./assets/img/icon/43_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/43_icon.png" alt="">
          </div>
          <div class="shape-img-7 poa">
-            <img src="./assets/img/icon/68_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/68_icon.png" alt="">
          </div>
          <div class="shape-img-8 poa">
-            <img src="./assets/img/icon/71_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/71_icon.png" alt="">
          </div>
 
       </div>
@@ -537,7 +558,8 @@ get_header();
             <div class="col-lg-6">
                <div class="project-wrapper wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
                   <div class="img-file por">
-                     <img class="img-fluid" src="./assets/img/project/10_project.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/project/10_project.png" alt="">
                      <div class="shape-overlay poa">
                         <div class="inner">
                            <h2>Robotic Technology</h2>
@@ -556,7 +578,8 @@ get_header();
             <div class="col-lg-6">
                <div class="project-wrapper wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                   <div class="img-file por">
-                     <img class="img-fluid" src="./assets/img/project/11_project.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/project/11_project.png" alt="">
                      <div class="shape-overlay poa">
                         <div class="inner">
                            <h2>Machine Learning</h2>
@@ -575,7 +598,8 @@ get_header();
             <div class="col-lg-6">
                <div class="project-wrapper wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
                   <div class="img-file por">
-                     <img class="img-fluid" src="./assets/img/project/12_project.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/project/12_project.png" alt="">
                      <div class="shape-overlay poa">
                         <div class="inner">
                            <h2>Native Engagement</h2>
@@ -594,7 +618,8 @@ get_header();
             <div class="col-lg-6">
                <div class="project-wrapper wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                   <div class="img-file por">
-                     <img class="img-fluid" src="./assets/img/project/13_project.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/project/13_project.png" alt="">
                      <div class="shape-overlay poa">
                         <div class="inner">
                            <h2>Robotic Process</h2>
@@ -622,16 +647,18 @@ get_header();
       </div>
 
       <div class="shape-image">
-         <img class="shape-1 poa" src="./assets/img/shape/14_shape.png" alt="">
-         <img class="shape-2 poa" src="./assets/img/icon/03_icon.png" alt="">
-         <img class="shape-3 poa" src="./assets/img/icon/89_icon.png" alt="">
+         <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/14_shape.png"
+            alt="">
+         <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/03_icon.png" alt="">
+         <img class="shape-3 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/89_icon.png" alt="">
       </div>
    </section>
    <!-- Project Section three end -->
 
 
    <!-- counter-section three start -->
-   <section class="counter-section two white" data-background="./assets/img/shape/03_shape.svg">
+   <section class="counter-section two white"
+      data-background="<?php echo get_template_directory_uri(); ?>./assets/img/shape/03_shape.svg">
       <div class="container">
          <div class="row">
             <div class="col-lg-3 col-md-6">
@@ -707,7 +734,9 @@ get_header();
                         </div>
                         <div class="intro-body">
                            <div class="img-file">
-                              <img src="./assets/img/testimonial/01_testimonial-profile.png" alt="">
+                              <img
+                                 src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/01_testimonial-profile.png"
+                                 alt="">
                            </div>
                            <div class="text-file">
                               <h3>Stuart L. Roberts</h3>
@@ -731,7 +760,9 @@ get_header();
                         </div>
                         <div class="intro-body">
                            <div class="img-file">
-                              <img src="./assets/img/testimonial/02_testimonial-profile.png" alt="">
+                              <img
+                                 src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/02_testimonial-profile.png"
+                                 alt="">
                            </div>
                            <div class="text-file">
                               <h3>Nicole J. Robertson</h3>
@@ -755,7 +786,9 @@ get_header();
                         </div>
                         <div class="intro-body">
                            <div class="img-file">
-                              <img src="./assets/img/testimonial/03_testimonial-profile.png" alt="">
+                              <img
+                                 src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/03_testimonial-profile.png"
+                                 alt="">
                            </div>
                            <div class="text-file">
                               <h3>Jose N. Swarthout</h3>
@@ -779,7 +812,9 @@ get_header();
                         </div>
                         <div class="intro-body">
                            <div class="img-file">
-                              <img src="./assets/img/testimonial/04_testimonial-profile.png" alt="">
+                              <img
+                                 src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/04_testimonial-profile.png"
+                                 alt="">
                            </div>
                            <div class="text-file">
                               <h3>Rosie T. Butler</h3>
@@ -803,7 +838,9 @@ get_header();
                         </div>
                         <div class="intro-body">
                            <div class="img-file">
-                              <img src="./assets/img/testimonial/05_testimonial-profile.png" alt="">
+                              <img
+                                 src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/05_testimonial-profile.png"
+                                 alt="">
                            </div>
                            <div class="text-file">
                               <h3>Clarence M. Berube</h3>
@@ -827,7 +864,9 @@ get_header();
                         </div>
                         <div class="intro-body">
                            <div class="img-file">
-                              <img src="./assets/img/testimonial/06_testimonial-profile.png" alt="">
+                              <img
+                                 src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/06_testimonial-profile.png"
+                                 alt="">
                            </div>
                            <div class="text-file">
                               <h3>Melissa K. Watson</h3>
@@ -855,11 +894,11 @@ get_header();
          </div>
       </div>
       <div class="shape-image">
-         <img class="shape-1 poa" src="./assets/img/icon/92_icon.png" alt="">
-         <img class="shape-2 poa" src="./assets/img/icon/16_icon.png" alt="">
-         <img class="shape-3 poa" src="./assets/img/icon/95_icon.png" alt="">
-         <img class="shape-4 poa" src="./assets/img/icon/03_icon.png" alt="">
-         <img class="shape-6 poa" src="./assets/img/icon/43_icon.png" alt="">
+         <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/92_icon.png" alt="">
+         <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/16_icon.png" alt="">
+         <img class="shape-3 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/95_icon.png" alt="">
+         <img class="shape-4 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/03_icon.png" alt="">
+         <img class="shape-6 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/43_icon.png" alt="">
       </div>
    </section>
    <!-- Testimonial Section three end-->
@@ -980,14 +1019,16 @@ get_header();
       </div>
 
       <div class="shape-image">
-         <img class="shape-2 poa" src="./assets/img/icon/47_icon.png" alt="">
-         <img class="shape-3 poa" src="./assets/img/icon/43_icon.png" alt="">
-         <img class="shape-4 poa" src="./assets/img/icon/89_icon.png" alt="">
-         <img class="shape-5 poa" src="./assets/img/icon/07_icon.png" alt="">
-         <img class="shape-6 poa" src="./assets/img/icon/94_icon.png" alt="">
-         <img class="shape-7 poa" src="./assets/img/shape/09_shape.png" alt="">
-         <img class="shape-9 poa" src="./assets/img/icon/17_icon.png" alt="">
-         <img class="shape-10 poa" src="./assets/img/icon/78_icon.png" alt="">
+         <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/47_icon.png" alt="">
+         <img class="shape-3 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/43_icon.png" alt="">
+         <img class="shape-4 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/89_icon.png" alt="">
+         <img class="shape-5 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/07_icon.png" alt="">
+         <img class="shape-6 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/94_icon.png" alt="">
+         <img class="shape-7 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/09_shape.png"
+            alt="">
+         <img class="shape-9 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/17_icon.png" alt="">
+         <img class="shape-10 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/78_icon.png"
+            alt="">
       </div>
    </section>
    <!-- Pricing Section two end -->
@@ -1012,7 +1053,8 @@ get_header();
             <div class="col-lg-3 col-md-6 col-12">
                <div class="inner-wrapper wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
                   <div class="img-file">
-                     <img class="img-fluid" src="./assets/img/team/01_team.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/01_team.png" alt="">
 
                      <div class="shape-overlay">
                         <div class="inner-data">
@@ -1042,7 +1084,8 @@ get_header();
             <div class="col-lg-3 col-md-6 col-12">
                <div class="inner-wrapper wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                   <div class="img-file">
-                     <img class="img-fluid" src="./assets/img/team/02_team.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/02_team.png" alt="">
 
                      <div class="shape-overlay">
                         <div class="inner-data">
@@ -1075,7 +1118,8 @@ get_header();
             <div class="col-lg-3 col-md-6 col-12">
                <div class="inner-wrapper wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
                   <div class="img-file">
-                     <img class="img-fluid" src="./assets/img/team/03_team.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/03_team.png" alt="">
 
                      <div class="shape-overlay">
                         <div class="inner-data">
@@ -1108,7 +1152,8 @@ get_header();
             <div class="col-lg-3 col-md-6 col-12">
                <div class="inner-wrapper wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="img-file">
-                     <img class="img-fluid" src="./assets/img/team/04_team.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/04_team.png" alt="">
 
                      <div class="shape-overlay">
                         <div class="inner-data">
@@ -1144,27 +1189,27 @@ get_header();
 
       <div class="shape-image">
          <div class="shape-img-1 poa">
-            <img src="./assets/img/icon/77_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/77_icon.png" alt="">
          </div>
          <div class="shape-img-2 poa">
-            <img src="./assets/img/icon/07_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/07_icon.png" alt="">
          </div>
          <div class="shape-img-3 poa">
-            <img src="./assets/img/icon/43_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/43_icon.png" alt="">
          </div>
          <div class="shape-img-4 poa">
-            <img src="./assets/img/icon/95_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/95_icon.png" alt="">
          </div>
 
          <div class="shape-img-6 poa">
-            <img src="./assets/img/shape/14_shape.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/14_shape.png" alt="">
          </div>
 
          <div class="shape-img-8 poa">
-            <img src="./assets/img/icon/75_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/75_icon.png" alt="">
          </div>
          <div class="shape-img-9 poa">
-            <img src="./assets/img/icon/78_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/78_icon.png" alt="">
          </div>
       </div>
    </section>
@@ -1190,7 +1235,8 @@ get_header();
             <div class="col-lg-4 col-md-6 col-12">
                <div class="blog-items wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
                   <div class="img-file">
-                     <img class="img-fluid" src="./assets/img/blog/15_blog.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/blog/15_blog.png" alt="">
                   </div>
                   <div class="text-file">
                      <div class="title">
@@ -1210,7 +1256,8 @@ get_header();
             <div class="col-lg-4 col-md-6 col-12">
                <div class="blog-items wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                   <div class="img-file">
-                     <img class="img-fluid" src="./assets/img/blog/16_blog.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/blog/16_blog.png" alt="">
                   </div>
                   <div class="text-file">
                      <div class="title">
@@ -1230,7 +1277,8 @@ get_header();
             <div class="col-lg-4 col-md-6 col-12">
                <div class="blog-items wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
                   <div class="img-file">
-                     <img class="img-fluid" src="./assets/img/blog/17_blog.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/blog/17_blog.png" alt="">
                   </div>
                   <div class="text-file">
                      <div class="title">
@@ -1258,12 +1306,14 @@ get_header();
       </div>
 
       <div class="shape-image">
-         <img class="shape-1 poa" src="./assets/img/shape/05_shape.png" alt="">
-         <img class="shape-2 poa" src="./assets/img/shape/15_shape.svg" alt="">
-         <img class="shape-3 poa" src="./assets/img/icon/69_icon.png" alt="">
-         <img class="shape-4 poa" src="./assets/img/icon/09_icon.png" alt="">
-         <img class="shape-5 poa" src="./assets/img/icon/43_icon.png" alt="">
-         <img class="shape-6 poa" src="./assets/img/icon/71_icon.png" alt="">
+         <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/05_shape.png"
+            alt="">
+         <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/15_shape.svg"
+            alt="">
+         <img class="shape-3 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/69_icon.png" alt="">
+         <img class="shape-4 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/09_icon.png" alt="">
+         <img class="shape-5 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/43_icon.png" alt="">
+         <img class="shape-6 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/71_icon.png" alt="">
       </div>
    </section>
    <!-- Blog Section one end -->
@@ -1271,7 +1321,8 @@ get_header();
 
 
    <!-- News Letter two start -->
-   <section class="news-letter two" data-background="./assets/img/shape/06_shape.png">
+   <section class="news-letter two"
+      data-background="<?php echo get_template_directory_uri(); ?>./assets/img/shape/06_shape.png">
       <div class="container">
          <div class="row">
             <div class="col-12">
@@ -1294,8 +1345,8 @@ get_header();
          </div>
       </div>
       <div class="shape-image">
-         <img class="shape-1 poa" src="./assets/img/icon/98_icon.png" alt="">
-         <img class="shape-2 poa" src="./assets/img/icon/75_icon.png" alt="">
+         <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/98_icon.png" alt="">
+         <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/75_icon.png" alt="">
       </div>
    </section>
    <!-- News Letter two end -->

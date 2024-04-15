@@ -18,7 +18,8 @@ get_header();
             <div class="col-xl-3 col-md-4 col-sm-6 col-12">
                <div class="inner-wrapper wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
                   <div class="img-file">
-                     <img class="img-fluid" src="./assets/img/team/01_team.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/01_team.png" alt="">
 
                      <div class="shape-overlay">
                         <div class="inner-data">
@@ -51,7 +52,8 @@ get_header();
             <div class="col-xl-3 col-md-4 col-sm-6 col-12">
                <div class="inner-wrapper wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                   <div class="img-file">
-                     <img class="img-fluid" src="./assets/img/team/02_team.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/02_team.png" alt="">
 
                      <div class="shape-overlay">
                         <div class="inner-data">
@@ -85,7 +87,8 @@ get_header();
             <div class="col-xl-3 col-md-4 col-sm-6 col-12">
                <div class="inner-wrapper wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
                   <div class="img-file">
-                     <img class="img-fluid" src="./assets/img/team/03_team.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/03_team.png" alt="">
 
                      <div class="shape-overlay">
                         <div class="inner-data">
@@ -119,7 +122,8 @@ get_header();
             <div class="col-xl-3 col-md-4 col-sm-6 col-12">
                <div class="inner-wrapper wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="img-file">
-                     <img class="img-fluid" src="./assets/img/team/04_team.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/04_team.png" alt="">
 
                      <div class="shape-overlay">
                         <div class="inner-data">
@@ -153,7 +157,8 @@ get_header();
             <div class="col-xl-3 col-md-4 col-sm-6 col-12">
                <div class="inner-wrapper wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s">
                   <div class="img-file">
-                     <img class="img-fluid" src="./assets/img/team/05_team.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/05_team.png" alt="">
 
                      <div class="shape-overlay">
                         <div class="inner-data">
@@ -187,7 +192,8 @@ get_header();
             <div class="col-xl-3 col-md-4 col-sm-6 col-12">
                <div class="inner-wrapper wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                   <div class="img-file">
-                     <img class="img-fluid" src="./assets/img/team/06_team.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/06_team.png" alt="">
 
                      <div class="shape-overlay">
                         <div class="inner-data">
@@ -221,7 +227,8 @@ get_header();
             <div class="col-xl-3 col-md-4 col-sm-6 col-12">
                <div class="inner-wrapper wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">
                   <div class="img-file">
-                     <img class="img-fluid" src="./assets/img/team/07_team.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/07_team.png" alt="">
 
                      <div class="shape-overlay">
                         <div class="inner-data">
@@ -255,7 +262,8 @@ get_header();
             <div class="col-xl-3 col-md-4 col-sm-6 col-12">
                <div class="inner-wrapper wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="img-file">
-                     <img class="img-fluid" src="./assets/img/team/08_team.png" alt="">
+                     <img class="img-fluid"
+                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/08_team.png" alt="">
 
                      <div class="shape-overlay">
                         <div class="inner-data">
@@ -305,25 +313,25 @@ get_header();
 
       <div class="shape-image-file">
          <div class="shape-img-1 poa">
-            <img src="./assets/img/icon/21_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/21_icon.png" alt="">
          </div>
          <div class="shape-img-2 poa">
-            <img src="./assets/img/icon/64_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/64_icon.png" alt="">
          </div>
          <div class="shape-img-4 poa">
-            <img src="./assets/img/icon/08_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/08_icon.png" alt="">
          </div>
          <div class="shape-img-5 poa">
-            <img src="./assets/img/icon/78_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/78_icon.png" alt="">
          </div>
          <div class="shape-img-6 poa">
-            <img src="./assets/img/icon/43_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/43_icon.png" alt="">
          </div>
          <div class="shape-img-7 poa">
-            <img src="./assets/img/icon/68_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/68_icon.png" alt="">
          </div>
          <div class="shape-img-8 poa">
-            <img src="./assets/img/icon/71_icon.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/71_icon.png" alt="">
          </div>
 
       </div>
@@ -332,7 +340,8 @@ get_header();
 
 
    <!-- News Letter One start -->
-   <section class="news-letter one" data-background="./assets/img/shape/06_shape.png">
+   <section class="news-letter one"
+      data-background="<?php echo get_template_directory_uri(); ?>./assets/img/shape/06_shape.png">
       <div class="container">
          <div class="row">
             <div class="col-lg-6 col-12">
@@ -355,8 +364,8 @@ get_header();
          </div>
       </div>
       <div class="shape-image">
-         <img class="shape-1 poa" src="./assets/img/icon/60_icon.png" alt="">
-         <img class="shape-2 poa" src="./assets/img/icon/61_icon.png" alt="">
+         <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/60_icon.png" alt="">
+         <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/61_icon.png" alt="">
       </div>
    </section>
    <!-- News Letter One end -->
