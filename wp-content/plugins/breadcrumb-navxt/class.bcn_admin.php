@@ -1,6 +1,6 @@
 <?php
 /*
-	Copyright 2015-2024  John Havlik  (email : john.havlik@mtekk.us)
+	Copyright 2015-2025  John Havlik  (email : john.havlik@mtekk.us)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ use mtekk\adminKit\{adminKit, form, message, setting};
  */
 class bcn_admin extends adminKit
 {
-	const version = '7.3.0';
+	const version = '7.4.1';
 	protected $full_name = 'Breadcrumb NavXT Settings';
 	protected $short_name = 'Breadcrumb NavXT';
 	protected $access_level = 'bcn_manage_options';
@@ -419,7 +419,7 @@ class bcn_admin extends adminKit
 		}
 		foreach($this->settings as $key => $setting)
 		{
-			if(isset($network_opts[$key]))
+			if(isset($network_opts[$key]) && ((defined('BCN_SETTINGS_USE_NETWORK') && BCN_SETTINGS_USE_NETWORK) || (defined('BCN_SETTINGS_FAVOR_NETWORK') && BCN_SETTINGS_FAVOR_NETWORK)))
 			{
 				$overriden[$key] = ' ' . __('Value has been set via network wide setting.', 'breadcrumb-navxt');
 				$overriden_style[$key] = ' disabled';
@@ -574,14 +574,17 @@ class bcn_admin extends adminKit
 							<label for="<?php echo $optid;?>"><?php printf(esc_html__('%s Root Page', 'breadcrumb-navxt'), $post_type->labels->singular_name);?></label>
 						</th>
 						<td>
-							<?php wp_dropdown_pages(
-									array('name' => $this->unique_prefix . '_options[apost_' . $post_type->name . '_root]',
+							<?php wp_dropdown_pages( apply_filters(
+									'bcn_admin_post_root_args',
+										array('name' => $this->unique_prefix . '_options[apost_' . $post_type->name . '_root]',
 											'id' => $optid,
 											'echo' => 1,
 											'show_option_none' => __( '&mdash; Select &mdash;' ),
 											'option_none_value' => '0',
 											'selected' => $this->settings['apost_' . $post_type->name . '_root']->get_value(),
-											'class' => $overriden_style['apost_' . $post_type->name . '_root']));
+											'class' => $overriden_style['apost_' . $post_type->name . '_root']),
+									$post_type->name
+									));
 							if(isset($overriden['apost_' . $post_type->name . '_root']) && $overriden['apost_' . $post_type->name . '_root'] !== '')
 							{
 								printf('<p class="description">%s</p>', $overriden['apost_' . $post_type->name . '_root']);

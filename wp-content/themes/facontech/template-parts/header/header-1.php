@@ -9,7 +9,6 @@
  */
 
 // info
-$facontech_topbar_switch = get_theme_mod('facontech_topbar_switch', false);
 $facontech_phone_num = get_theme_mod('facontech_phone_num', __('(786) 686 350', 'facontech'));
 
 $facontech_mail_id = get_theme_mod('facontech_mail_id', __('info@facontech.com', 'facontech'));

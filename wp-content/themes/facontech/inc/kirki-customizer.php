@@ -206,51 +206,9 @@ function _header_top_fields($fields)
         ],
     ];
 
-    $fields[] = [
-        'type' => 'switch',
-        'settings' => 'facontech_header_lang',
-        'label' => esc_html__('language On/Off', 'facontech'),
-        'section' => 'header_top_setting',
-        'default' => '0',
-        'priority' => 10,
-        'choices' => [
-            'on' => esc_html__('Enable', 'facontech'),
-            'off' => esc_html__('Disable', 'facontech'),
-        ],
-    ];
 
-    // button
-    $fields[] = [
-        'type' => 'text',
-        'settings' => 'facontech_button_text',
-        'label' => esc_html__('Button Text', 'facontech'),
-        'section' => 'header_top_setting',
-        'default' => esc_html__('Get A Quote', 'facontech'),
-        'priority' => 10,
-        'active_callback' => [
-            [
-                'setting' => 'facontech_header_right',
-                'operator' => '==',
-                'value' => true,
-            ],
-        ],
-    ];
 
-    $fields[] = [
-        'type' => 'link',
-        'settings' => 'facontech_button_link',
-        'label' => esc_html__('Button URL', 'facontech'),
-        'section' => 'header_top_setting',
-        'default' => esc_html__('#', 'facontech'),
-        'priority' => 10,
-        'active_callback' => [
-            [
-                'setting' => 'facontech_header_right',
-                'operator' => '==',
-                'value' => true,
-            ],
-        ],
-    ];
+
 
 
     // phone
@@ -292,24 +250,7 @@ function _header_top_fields($fields)
         'priority' => 10,
     ];
 
-    // Login
-    $fields[] = [
-        'type' => 'text',
-        'settings' => 'facontech_acc_button_text',
-        'label' => esc_html__('Login', 'facontech'),
-        'section' => 'header_top_setting',
-        'default' => esc_html__('Login', 'facontech'),
-        'priority' => 10,
-    ];
 
-    $fields[] = [
-        'type' => 'text',
-        'settings' => 'facontech_acc_button_link',
-        'label' => esc_html__('Account URL', 'facontech'),
-        'section' => 'header_top_setting',
-        'default' => esc_html__('#', 'facontech'),
-        'priority' => 10,
-    ];
 
     return $fields;
 
@@ -923,36 +864,6 @@ function facontech_404_fields($fields)
 }
 add_filter('kirki/fields', 'facontech_404_fields');
 
-
-
-
-
-/**
- * Added Event Fields
- */
-function facontech_event_fields($fields)
-{
-    // event settings
-    $fields[] = [
-        'type' => 'text',
-        'settings' => 'event_btn_text',
-        'label' => esc_html__('Button Text', 'facontech'),
-        'section' => 'event_settings',
-        'default' => esc_html__('Enroll Now', 'facontech'),
-        'priority' => 10,
-    ];
-    $fields[] = [
-        'type' => 'text',
-        'settings' => 'event_btn_link',
-        'label' => esc_html__('Button Link', 'facontech'),
-        'section' => 'event_settings',
-        'default' => esc_html__('#', 'facontech'),
-        'priority' => 10,
-    ];
-    return $fields;
-}
-
-add_filter('kirki/fields', 'facontech_event_fields');
 
 
 /**
