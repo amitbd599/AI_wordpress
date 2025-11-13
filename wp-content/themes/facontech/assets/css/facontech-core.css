@@ -10835,7 +10835,7 @@ only screen and (min-width: 400px) and (max-width: 575px),
 }
 
 .blog-section.details {
-  background: var(--common-body-2);
+  background: var(--common-body-1);
   z-index: 9;
   padding: 120px 0;
   position: relative;
@@ -13676,7 +13676,7 @@ only screen and (min-width: 400px) and (max-width: 575px),
 }
 
 .footer__widget-title {
-  font-size: 18px;
+  font-size: 22px;
   color: var(--common-white);
   margin-bottom: 20px;
 }

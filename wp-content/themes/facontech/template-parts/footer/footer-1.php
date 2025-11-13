@@ -47,9 +47,9 @@ switch ($footer_columns) {
         $footer_class[3] = 'col-xl-4 col-lg-6';
         break;
     case '4':
-        $footer_class[1] = 'col-xl-3 col-lg-6 col-md-12 col-sm-12';
+        $footer_class[1] = 'col-xl-4 col-lg-6 col-md-12 col-sm-12';
         $footer_class[2] = 'col-xl-3 col-lg-6 col-md-6 col-sm-6';
-        $footer_class[3] = 'col-xl-3 col-lg-6 col-md-6 col-sm-6';
+        $footer_class[3] = 'col-xl-2 col-lg-6 col-md-6 col-sm-6';
         $footer_class[4] = 'col-xl-3 col-lg-6 col-md-8 col-sm-12';
         break;
     default:
@@ -58,8 +58,7 @@ switch ($footer_columns) {
 }
 
 
-var_dump($footer_columns);
-var_dump(value: $footer_columns < 4);
+
 ?>
 
 
@@ -73,16 +72,16 @@ var_dump(value: $footer_columns < 4);
                 <div class="container">
                     <div class="row">
                         <?php
-                        if ($footer_columns < 4) {
+                        if ($footer_columns > 4) {
                             print '<div class="col-xl-3 col-lg-6 col-md-12 col-sm-12">';
                             dynamic_sidebar('footer-1');
                             print '</div>';
 
-                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">';
+                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 px-2">';
                             dynamic_sidebar('footer-2');
                             print '</div>';
 
-                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">';
+                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 px-2">';
                             dynamic_sidebar('footer-3');
                             print '</div>';
 

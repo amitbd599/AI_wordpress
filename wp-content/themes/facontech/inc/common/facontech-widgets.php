@@ -27,12 +27,11 @@ function facontech_widgets_init()
 
     $footer_widgets = get_theme_mod('footer_widget_number', 4);
 
-    var_dump($footer_widgets);
 
     // footer default
     for ($num = 1; $num <= $footer_widgets; $num++) {
         register_sidebar([
-            'name' => sprintf(esc_html__('Footer Style :%1$s', 'facontech'), $num),
+            'name' => sprintf(esc_html__('Footer Design-1 : column option %1$s', 'facontech'), $num),
             'id' => 'footer-' . $num,
             'description' => sprintf(esc_html__('Footer column %1$s', 'facontech'), $num),
             'before_widget' => '<div id="%1$s" class="footer__widget footer-default-widget footer__col-' . $num . ' mb-50 %2$s">',
@@ -47,7 +46,7 @@ function facontech_widgets_init()
         for ($num = 1; $num <= $footer_widgets; $num++) {
 
             register_sidebar([
-                'name' => sprintf(esc_html__('Footer Style :%1$s', 'facontech'), $num),
+                'name' => sprintf(esc_html__('Footer Design-2 : column option %1$s', 'facontech'), $num),
                 'id' => 'footer-2-' . $num,
                 'description' => sprintf(esc_html__('Footer Style 2 : %1$s', 'facontech'), $num),
                 'before_widget' => '<div id="%1$s" class="footer__widget footer-default-widget footer__col-' . $num . ' mb-50 %2$s">',
@@ -62,7 +61,7 @@ function facontech_widgets_init()
     if ($footer_style_3_switch) {
         for ($num = 1; $num <= $footer_widgets + 1; $num++) {
             register_sidebar([
-                'name' => sprintf(esc_html__('Footer Style :%1$s', 'facontech'), $num),
+                'name' => sprintf(esc_html__('Footer Design-3 : column option %1$s', 'facontech'), $num),
                 'id' => 'footer-3-' . $num,
                 'description' => sprintf(esc_html__('Footer Style 3 : %1$s', 'facontech'), $num),
                 'before_widget' => '<div id="%1$s" class="footer__widget footer-3-widget footer-col-3-' . $num . ' mb-50 %2$s">',

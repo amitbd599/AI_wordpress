@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Breadcrumbs for Eduker theme.
  *
@@ -86,7 +87,7 @@ function facontech_breadcrumb_func()
         <?php if (!empty($breadcrumb_switch)): ?>
             <!-- Breadcrumb Section Start -->
             <section class="breadcrumb <?php print esc_attr($breadcrumb_class); ?>" <?php if (!empty($facontech_breadcrumb_bg_color)): ?>
-                    style="background-color: <?php print esc_attr($facontech_breadcrumb_bg_color); ?>;" <?php endif; ?>
+                style="background-color: <?php print esc_attr($facontech_breadcrumb_bg_color); ?>;" <?php endif; ?>
                 data-background="<?php print esc_attr($bg_img); ?>">
                 <div class="container">
                     <div class="row">
@@ -109,11 +110,11 @@ function facontech_breadcrumb_func()
                 </div>
 
                 <div class="shape-img">
-                    <img class="shape-1 poa" src="./assets/img/icon/84_icon.png" alt="">
-                    <img class="shape-2 poa" src="./assets/img/icon/66_icon.png" alt="">
-                    <img class="shape-3 poa" src="./assets/img/icon/66_icon.png" alt="">
-                    <img class="shape-4 poa" src="./assets/img/icon/04_icon.png" alt="">
-                    <img class="shape-5 poa" src="./assets/img/icon/66_icon.png" alt="">
+                    <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/84_icon.png" alt="">
+                    <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/66_icon.png" alt="">
+                    <img class="shape-3 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/66_icon.png" alt="">
+                    <img class="shape-4 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/04_icon.png" alt="">
+                    <img class="shape-5 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/66_icon.png" alt="">
                 </div>
 
             </section>
@@ -121,9 +122,8 @@ function facontech_breadcrumb_func()
 
         <?php endif; ?>
         <!-- page title area end -->
-        <?php
+<?php
     }
 }
 
 add_action('facontech_before_main_content', 'facontech_breadcrumb_func');
-

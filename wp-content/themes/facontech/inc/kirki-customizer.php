@@ -1,4 +1,5 @@
 <?php
+
 /**
  * facontech customizer
  *
@@ -132,8 +133,6 @@ function facontech_customizer_panels_sections($wp_customize)
         'capability' => 'edit_theme_options',
         'panel' => 'facontech_customizer',
     ]);
-
-
 }
 
 add_action('customize_register', 'facontech_customizer_panels_sections');
@@ -253,7 +252,6 @@ function _header_top_fields($fields)
 
 
     return $fields;
-
 }
 add_filter('kirki/fields', '_header_top_fields');
 
@@ -1133,7 +1131,6 @@ function facontech_course_fields($fields)
     ];
 
     return $fields;
-
 }
 
 add_filter('kirki/fields', 'facontech_course_fields');

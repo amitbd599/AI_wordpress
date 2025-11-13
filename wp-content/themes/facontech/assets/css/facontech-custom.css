@@ -94,3 +94,22 @@
 .footer-wrapper.two>ul>li {
     width: 50%;
 }
+
+.text-justify {
+    text-align: justify;
+}
+
+.footer__widget-title {
+    font-size: 22px;
+    color: var(--common-white);
+    margin-bottom: 20px;
+}
+
+
+.footer-wrapper.one .social.one.aos-init.aos-animate {
+    margin-top: 0;
+}
+
+.footer__copyright-2 .footer__copyright-links a {
+    margin-right: 0 !important;
+}

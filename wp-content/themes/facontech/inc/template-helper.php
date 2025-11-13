@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Custom template tags for this theme
  *
@@ -17,11 +18,11 @@ function facontech_check_header()
     $facontech_header_style = function_exists('get_field') ? get_field('header_style') : NULL;
     $facontech_default_header_style = get_theme_mod('choose_default_header', 'header-style-1');
 
-    if ($facontech_header_style == 'header-style-1' && empty ($_GET['s'])) {
+    if ($facontech_header_style == 'header-style-1' && empty($_GET['s'])) {
         get_template_part('template-parts/header/header-1');
-    } elseif ($facontech_header_style == 'header-style-2' && empty ($_GET['s'])) {
+    } elseif ($facontech_header_style == 'header-style-2' && empty($_GET['s'])) {
         get_template_part('template-parts/header/header-2');
-    } elseif ($facontech_header_style == 'header-style-3' && empty ($_GET['s'])) {
+    } elseif ($facontech_header_style == 'header-style-3' && empty($_GET['s'])) {
         get_template_part('template-parts/header/header-3');
     } else {
 
@@ -34,7 +35,6 @@ function facontech_check_header()
             get_template_part('template-parts/header/header-1');
         }
     }
-
 }
 add_action('facontech_header_style', 'facontech_check_header', 10);
 
@@ -42,7 +42,7 @@ add_action('facontech_header_style', 'facontech_check_header', 10);
 
 function facontech_header_search()
 {
-    ?>
+?>
     <div class="modal fade search-box" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true"><i class="fa-sharp fa-regular fa-xmark"></i></span>
@@ -103,7 +103,7 @@ function facontech_language_list()
 
     $mar = '';
     $languages = apply_filters('wpml_active_languages', NULL, 'orderby=id&order=desc');
-    if (!empty ($languages)) {
+    if (!empty($languages)) {
         $mar = '<ul>';
         foreach ($languages as $lan) {
             $active = $lan['active'] == 1 ? 'active' : '';
@@ -135,7 +135,7 @@ function facontech_header_logo()
     $facontech_secondary_logo = get_theme_mod('seconday_logo', $facontech_logo_black);
     ?>
 
-    <?php if (!empty ($facontech_logo_on)): ?>
+    <?php if (!empty($facontech_logo_on)): ?>
         <a class="secondary-logo" href="<?php print esc_url(home_url('/')); ?>">
             <img src="<?php print esc_url($facontech_secondary_logo); ?>"
                 alt="<?php print esc_attr__('logo', 'facontech'); ?>" />
@@ -159,7 +159,7 @@ function facontech_header_sticky_logo()
         <img src="<?php print esc_url($facontech_secondary_logo); ?>"
             alt="<?php print esc_attr__('logo', 'facontech'); ?>" />
     </a>
-    <?php
+<?php
 }
 
 function facontech_mobile_logo()
@@ -169,9 +169,9 @@ function facontech_mobile_logo()
 
     $facontech_site_logo = get_theme_mod('logo', get_template_directory_uri() . '/assets/img/logo/logo.png');
 
-    ?>
+?>
 
-    <?php if (!empty ($facontech_mobile_logo_hide)): ?>
+    <?php if (!empty($facontech_mobile_logo_hide)): ?>
         <div class="side__logo mb-25">
             <a class="sideinfo-logo" href="<?php print esc_url(home_url('/')); ?>">
                 <img src="<?php print esc_url($facontech_site_logo); ?>"
@@ -195,36 +195,36 @@ function facontech_header_social_profiles()
     $facontech_topbar_instagram_url = get_theme_mod('facontech_topbar_instagram_url', __('#', 'facontech'));
     $facontech_topbar_linkedin_url = get_theme_mod('facontech_topbar_linkedin_url', __('#', 'facontech'));
     $facontech_topbar_youtube_url = get_theme_mod('facontech_topbar_youtube_url', __('#', 'facontech'));
-    ?>
+?>
     <ul>
-        <?php if (!empty ($facontech_topbar_fb_url)): ?>
+        <?php if (!empty($facontech_topbar_fb_url)): ?>
             <li><a href="<?php print esc_url($facontech_topbar_fb_url); ?>"><span><i class="fab fa-facebook-f"></i></span></a>
             </li>
         <?php endif; ?>
 
-        <?php if (!empty ($facontech_topbar_twitter_url)): ?>
+        <?php if (!empty($facontech_topbar_twitter_url)): ?>
             <li><a href="<?php print esc_url($facontech_topbar_twitter_url); ?>"><span><i class="fab fa-twitter"></i></span></a>
             </li>
         <?php endif; ?>
 
-        <?php if (!empty ($facontech_topbar_instagram_url)): ?>
+        <?php if (!empty($facontech_topbar_instagram_url)): ?>
             <li><a href="<?php print esc_url($facontech_topbar_instagram_url); ?>"><span><i
                             class="fab fa-instagram"></i></span></a></li>
         <?php endif; ?>
 
-        <?php if (!empty ($facontech_topbar_linkedin_url)): ?>
+        <?php if (!empty($facontech_topbar_linkedin_url)): ?>
             <li><a href="<?php print esc_url($facontech_topbar_linkedin_url); ?>"><span><i
                             class="fab fa-linkedin"></i></span></a>
             </li>
         <?php endif; ?>
 
-        <?php if (!empty ($facontech_topbar_youtube_url)): ?>
+        <?php if (!empty($facontech_topbar_youtube_url)): ?>
             <li><a href="<?php print esc_url($facontech_topbar_youtube_url); ?>"><span><i class="fab fa-youtube"></i></span></a>
             </li>
         <?php endif; ?>
     </ul>
 
-    <?php
+<?php
 }
 
 function facontech_footer_social_profiles()
@@ -234,44 +234,54 @@ function facontech_footer_social_profiles()
     $facontech_footer_instagram_url = get_theme_mod('facontech_footer_instagram_url', __('#', 'facontech'));
     $facontech_footer_linkedin_url = get_theme_mod('facontech_footer_linkedin_url', __('#', 'facontech'));
 
-    ?>
+?>
 
-    <ul>
-        <?php if (!empty ($facontech_footer_fb_url)): ?>
-            <li>
+    <div class="footer-wrapper one d-flex justify-content-end">
+        <div class="social one aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+            <?php if (!empty($facontech_footer_fb_url)): ?>
+
                 <a href="<?php print esc_url($facontech_footer_fb_url); ?>">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-            </li>
-        <?php endif; ?>
 
-        <?php if (!empty ($facontech_footer_twitter_url)): ?>
-            <li>
+            <?php endif; ?>
+
+            <?php if (!empty($facontech_footer_twitter_url)): ?>
+
                 <a href="<?php print esc_url($facontech_footer_twitter_url); ?>">
                     <i class="fab fa-twitter"></i>
                 </a>
-            </li>
-        <?php endif; ?>
 
-        <?php if (!empty ($facontech_footer_instagram_url)): ?>
-            <li>
+            <?php endif; ?>
+
+            <?php if (!empty($facontech_footer_instagram_url)): ?>
+
                 <a href="<?php print esc_url($facontech_footer_instagram_url); ?>">
                     <i class="fab fa-instagram"></i>
                 </a>
-            </li>
-        <?php endif; ?>
 
-        <?php if (!empty ($facontech_footer_linkedin_url)): ?>
-            <li>
+            <?php endif; ?>
+
+            <?php if (!empty($facontech_footer_linkedin_url)): ?>
+
                 <a href="<?php print esc_url($facontech_footer_linkedin_url); ?>">
                     <i class="fab fa-linkedin"></i>
                 </a>
-            </li>
-        <?php endif; ?>
 
+            <?php endif; ?>
+        </div>
+    </div>
 
-    </ul>
-    <?php
+    <div class="footer-wrapper one d-flex justify-content-end d-none">
+        <div class="social one aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+            <a
+                href="/react_facontech/blog-list"><i class="fa-brands fa-facebook-f"></i></a><a
+                href="/react_facontech/blog-list"><i class="fa-brands fa-quora"></i></a><a
+                href="/react_facontech/blog-list"><i class="fa-brands fa-linkedin-in"></i></a><a
+                href="/react_facontech/blog-list"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+<?php
 }
 
 /**
@@ -280,7 +290,7 @@ function facontech_footer_social_profiles()
  */
 function facontech_header_menu()
 {
-    ?>
+?>
     <?php
     wp_nav_menu([
         'theme_location' => 'main-menu',
@@ -289,7 +299,7 @@ function facontech_header_menu()
         'fallback_cb' => 'Eduker_Navwalker_Class::fallback',
         'walker' => new Eduker_Navwalker_Class,
     ]);
-?>
+    ?>
 <?php
 }
 
@@ -299,7 +309,7 @@ function facontech_header_menu()
  */
 function facontech_mobile_menu()
 {
-    ?>
+?>
     <?php
     $facontech_menu = wp_nav_menu([
         'theme_location' => 'main-menu',
@@ -311,7 +321,7 @@ function facontech_mobile_menu()
 
     $facontech_menu = str_replace("menu-item-has-children", "menu-item-has-children has-children", $facontech_menu);
     echo wp_kses_post($facontech_menu);
-?>
+    ?>
 <?php
 }
 
@@ -321,7 +331,7 @@ function facontech_mobile_menu()
  */
 function facontech_header_search_menu()
 {
-    ?>
+?>
     <?php
     wp_nav_menu([
         'theme_location' => 'header-search-menu',
@@ -330,7 +340,7 @@ function facontech_header_search_menu()
         'fallback_cb' => 'Eduker_Navwalker_Class::fallback',
         'walker' => new Eduker_Navwalker_Class,
     ]);
-?>
+    ?>
 <?php
 }
 
@@ -382,7 +392,6 @@ function facontech_check_footer()
         } else {
             get_template_part('template-parts/footer/footer-1');
         }
-
     }
 }
 
@@ -419,7 +428,6 @@ if (!function_exists('facontech_pagination')) {
             if (!$pages) {
                 $pages = 1;
             }
-
         }
 
         $pagination = [
@@ -437,7 +445,7 @@ if (!function_exists('facontech_pagination')) {
             $pagination['base'] = user_trailingslashit(trailingslashit(remove_query_arg('s', get_pagenum_link(1))) . 'page/%#%/', 'paged');
         }
 
-        if (!empty ($wp_query->query_vars['s'])) {
+        if (!empty($wp_query->query_vars['s'])) {
             $pagination['add_args'] = ['s' => get_query_var('s')];
         }
 
@@ -493,7 +501,7 @@ function facontech_custom_color()
 
     wp_enqueue_style('facontech-custom', FACONTECH_THEME_CSS_DIR . 'facontech-custom.css', []);
 
-    if (!empty ($theme_color_1)) {
+    if (!empty($theme_color_1)) {
         $custom_css = '';
         $custom_css .= "html:root{
             --tp-theme-1: " . $theme_color_1 . ";
@@ -672,7 +680,7 @@ function facontech_kses($raw)
         ),
         'g' => array('fill' => true),
         'title' => array('title' => true),
-        'path' => array('d' => true, 'fill' => true, ),
+        'path' => array('d' => true, 'fill' => true,),
     );
 
     if (function_exists('wp_kses')) { // WP is here
