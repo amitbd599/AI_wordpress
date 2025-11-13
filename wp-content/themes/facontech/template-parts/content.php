@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying posts
  *
@@ -50,6 +51,7 @@ if (is_single()): ?>
         <?php if (has_post_thumbnail()): ?>
             <div class="img-file">
                 <a href="<?php the_permalink(); ?>">
+
                     <?php the_post_thumbnail('full', ['class' => 'img-fluid']); ?>
                 </a>
             </div>

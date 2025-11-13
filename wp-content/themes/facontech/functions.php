@@ -309,3 +309,12 @@ function facontech_admin_custom_scripts()
     wp_enqueue_script('facontech-admin-custom');
 }
 
+
+add_filter('site_transient_update_plugins', function ($value) {
+    if (isset($value) && isset($value->response['advanced-custom-fields-pro/acf.php'])) {
+        unset($value->response['advanced-custom-fields-pro/acf.php']);
+    }
+    return $value;
+});
+
+

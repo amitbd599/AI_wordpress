@@ -1,20 +1,24 @@
 .etn-event-search-wrapper .form-control:focus {
     box-shadow: none;
 }
+
 .etn-event-search-wrapper .input-group-text {
     background-color: transparent;
     border: none;
 }
-.etn-event-search-wrapper .form-control, .etn-event-search-wrapper .etn_event_select {
+
+.etn-event-search-wrapper .form-control,
+.etn-event-search-wrapper .etn_event_select {
     outline: none;
     background: none;
 }
 
 .input-group-prepend .input-group-text i.fa-buffer::before {
 
-    content: "\e931"!important;
+    content: "\e931" !important;
 
 }
+
 .etn-event-item .etn-event-footer .etn-event-date i {
     color: var(--tp-theme-1);
 }
@@ -30,32 +34,33 @@
         margin-left: 20px;
         margin-top: 10px;
     }
+
     .etn-event-search-wrapper .input-group {
         border: none;
     }
 }
 
-@media (max-width: 768px){
-.lp-user-profile .wrapper-profile-header .lp-profile-left {
-    width: 220px;
-    margin: auto;
-}
+@media (max-width: 768px) {
+    .lp-user-profile .wrapper-profile-header .lp-profile-left {
+        width: 220px;
+        margin: auto;
+    }
 }
 
 .etn-event-item .etn-event-location i {
-    color: var(--tp-theme-1)!important;
+    color: var(--tp-theme-1) !important;
 }
 
 .etn-event-item .etn-event-location {
-    color: #6a727f!important;
+    color: #6a727f !important;
     font-weight: 500;
     line-height: 14px;
     margin-bottom: 10px;
 }
 
 .etn-event-date {
-    font-size: 14px!important;
-    font-weight: 500!important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
     color: #6a727f;
     text-transform: capitalize;
     display: inline-block;
@@ -64,4 +69,28 @@
 
 .etn-event-item {
     box-shadow: 0px 30px 40px 0px rgb(1 11 60 / 10%);
+}
+
+
+.footer-default-widget ul li a::after {
+    content: "";
+    font-family: Font Awesome\ 5 Pro;
+    font-size: 12px;
+    left: 0;
+    position: absolute;
+    top: -2px;
+    transition: all .3s linear;
+}
+
+.footer-default-widget ul li a {
+    padding-left: 15px;
+}
+
+.footer-wrapper.two.custom_link>ul {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.footer-wrapper.two>ul>li {
+    width: 50%;
 }

@@ -57,7 +57,12 @@ switch ($footer_columns) {
         break;
 }
 
+
+var_dump($footer_columns);
+var_dump(value: $footer_columns < 4);
 ?>
+
+
 
 
 <!-- footer start -->
@@ -69,15 +74,15 @@ switch ($footer_columns) {
                     <div class="row">
                         <?php
                         if ($footer_columns < 4) {
-                            print '<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">';
+                            print '<div class="col-xl-3 col-lg-6 col-md-12 col-sm-12">';
                             dynamic_sidebar('footer-1');
                             print '</div>';
 
-                            print '<div class=col-xl-3 col-lg-6 col-md-6 col-sm-6">';
+                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">';
                             dynamic_sidebar('footer-2');
                             print '</div>';
 
-                            print '<div class="col-xl-2 col-lg-6 col-md-6 col-sm-6">';
+                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">';
                             dynamic_sidebar('footer-3');
                             print '</div>';
 
