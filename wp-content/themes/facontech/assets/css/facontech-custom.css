@@ -113,3 +113,31 @@
 .footer__copyright-2 .footer__copyright-links a {
     margin-right: 0 !important;
 }
+
+footer .footer__widget.widget_media_gallery .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+
+    .gallery-item {
+        max-width: 100%;
+        padding: 0 !important;
+        margin: 0;
+    }
+
+
+}
+
+footer {
+    .logo {
+        height: auto;
+        overflow: hidden;
+        width: 250px;
+    }
+}
+
+.blog__sidebar .widget-follow .social ul li {
+    border: none !important;
+}

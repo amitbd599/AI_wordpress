@@ -57,11 +57,7 @@ switch ($footer_columns) {
         break;
 }
 
-
-
 ?>
-
-
 
 
 <!-- footer start -->

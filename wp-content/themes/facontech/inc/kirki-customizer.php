@@ -781,7 +781,7 @@ function _header_footer_fields($fields)
         'settings' => 'facontech_copyright',
         'label' => esc_html__('Copy Right', 'facontech'),
         'section' => 'footer_setting',
-        'default' => esc_html__('Copyright &copy; 2022 Theme_Pure. All Rights Reserved', 'facontech'),
+        'default' => esc_html__('Copyright &copy; 2026 ThemeSoft69. All Rights Reserved', 'facontech'),
         'priority' => 10,
     ];
     return $fields;

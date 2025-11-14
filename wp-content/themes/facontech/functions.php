@@ -194,6 +194,7 @@ require_once FACONTECH_THEME_INC . 'add_plugin.php';
 require_once FACONTECH_THEME_INC . '/common/facontech-breadcrumb.php';
 require_once FACONTECH_THEME_INC . '/common/facontech-scripts.php';
 require_once FACONTECH_THEME_INC . '/common/facontech-widgets.php';
+require_once FACONTECH_THEME_INC . '/common/custom-widgets.php';
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
@@ -225,7 +226,7 @@ if (!function_exists('facontech_comment')) {
         extract($args, EXTR_SKIP);
         $args['reply_text'] = 'Reply';
         $replayClass = 'comment-depth-' . esc_attr($depth);
-        ?>
+?>
         <li id="comment-<?php comment_ID(); ?>">
             <div class="comments-box grey-bg-2">
                 <div class="comments-avatar">
@@ -248,7 +249,7 @@ if (!function_exists('facontech_comment')) {
 
                 </div>
             </div>
-            <?php
+    <?php
     }
 }
 
@@ -276,7 +277,6 @@ function facontech_shortcode_extra_content_remove($content)
         ']<br />' => ']',
     ];
     return strtr($content, $array);
-
 }
 
 // facontech_search_filter_form
@@ -316,5 +316,3 @@ add_filter('site_transient_update_plugins', function ($value) {
     }
     return $value;
 });
-
-

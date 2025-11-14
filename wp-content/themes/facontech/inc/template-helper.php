@@ -398,7 +398,7 @@ function facontech_check_footer()
 // facontech_copyright_text
 function facontech_copyright_text()
 {
-    print get_theme_mod('facontech_copyright', esc_html__('© 2024 Facontech, All Rights Reserved. Design By Themesoft69', 'facontech'));
+    print get_theme_mod('facontech_copyright', esc_html__('Copyright &copy; 2026 ThemeSoft69. All Rights Reserved', 'facontech'));
 }
 
 
