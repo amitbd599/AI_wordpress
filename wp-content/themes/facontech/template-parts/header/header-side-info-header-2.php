@@ -10,6 +10,7 @@
 
 $facontech_side_logo = get_theme_mod('facontech_side_logo', get_template_directory_uri() . '/assets/img/common/logo-black.png');
 $facontech_extra_text = get_theme_mod('facontech_extra_text', __('Oracle Cloud Infrastructure (OCI) AI Services is a collection of services with prebuilt machine learning models that make it easier for developers to apply AI to applications and business operations. ', 'facontech'));
+$facontech_extra_about_title = get_theme_mod('facontech_extra_about_title', __('About FaconTech', 'facontech'));
 $facontech_extra_about_text = get_theme_mod('facontech_extra_about_text', __(' Most people focus on the results of AI. For those of us who like to look under the hood, there are four foundational elements to understand: categorization, classification, machine learning, and collaborative filtering. ', 'facontech'));
 
 
@@ -39,7 +40,7 @@ $facontech_gallery = get_theme_mod('facontech_gallery');
       <?php if (!empty($facontech_gallery)): ?>
          <div class="intro-text">
             <div class="title-text">
-               <h3>Gallery</h3>
+               <h3> <?php echo esc_html__('Gallery', 'facontech') ?> </h3>
             </div>
             <div class="img-file">
 
@@ -57,7 +58,7 @@ $facontech_gallery = get_theme_mod('facontech_gallery');
       <?php if (!empty($facontech_extra_about_text)): ?>
          <div class="intro-text">
             <div class="title-text">
-               <h3>About FaconTech</h3>
+               <h3><?php echo esc_html($facontech_extra_about_title) ?> </h3>
                <p>
                   <?php echo esc_html($facontech_extra_about_text); ?>
                </p>

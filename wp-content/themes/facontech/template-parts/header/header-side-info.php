@@ -58,22 +58,22 @@ $facontech_extra_email = get_theme_mod('facontech_extra_email', __('support@mail
                      </div>
                      <div class="social one">
                         <?php if (!empty($facontech_topbar_fb_url)): ?>
-                           <a href="#">
+                           <a href="<?php echo esc_url($facontech_topbar_fb_url) ?>">
                               <i class="fa-brands fa-facebook-f"></i>
                            </a>
                         <?php endif; ?>
                         <?php if (!empty($facontech_topbar_twitter_url)): ?>
-                           <a href="#">
+                           <a href="<?php echo esc_url($facontech_topbar_twitter_url) ?>">
                               <i class="fa-brands fa-twitter"></i>
                            </a>
                         <?php endif; ?>
                         <?php if (!empty($facontech_topbar_linkedin_url)): ?>
-                           <a href="#">
+                           <a href="<?php echo esc_url($facontech_topbar_linkedin_url) ?>">
                               <i class="fa-brands fa-linkedin-in"></i>
                            </a>
                         <?php endif; ?>
                         <?php if (!empty($facontech_topbar_instagram_url)): ?>
-                           <a href="#">
+                           <a href="<?php echo esc_url($facontech_topbar_instagram_url) ?>">
                               <i class="fa-brands fa-instagram"></i>
                            </a>
                         <?php endif; ?>

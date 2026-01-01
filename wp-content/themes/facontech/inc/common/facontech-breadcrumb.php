@@ -83,46 +83,46 @@ function facontech_breadcrumb_func()
         } ?>
 
 
-<!-- page title area start -->
-<?php if (!empty($breadcrumb_switch)): ?>
-<!-- Breadcrumb Section Start -->
-<section class="breadcrumb <?php print esc_attr($breadcrumb_class); ?>"
-    <?php if (!empty($facontech_breadcrumb_bg_color)): ?>
-    style="background-color: <?php print esc_attr($facontech_breadcrumb_bg_color); ?>;" <?php endif; ?>
-    data-background="<?php print esc_attr($bg_img); ?>">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <?php if (!empty($breadcrumb_info_switch)): ?>
-                <div class="breadcrumb-inner">
-                    <h2>
-                        <?php echo wp_kses_post($title); ?>
-                    </h2>
-                    <div class="link-shape">
-                        <?php if (function_exists('bcn_display')) {
-                                                            bcn_display();
-                                                        } ?>
+        <!-- page title area start -->
+        <?php if (!empty($breadcrumb_switch)): ?>
+            <!-- Breadcrumb Section Start -->
+            <section class="breadcrumb <?php print esc_attr($breadcrumb_class); ?>"
+                <?php if (!empty($facontech_breadcrumb_bg_color)): ?>
+                style="background-color: <?php print esc_attr($facontech_breadcrumb_bg_color); ?>;" <?php endif; ?>
+                data-background="<?php print esc_attr($bg_img); ?>">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <?php if (!empty($breadcrumb_info_switch)): ?>
+                                <div class="breadcrumb-inner">
+                                    <h2>
+                                        <?php echo wp_kses_post($title); ?>
+                                    </h2>
+                                    <div class="link-shape">
+                                        <?php if (function_exists('bcn_display')) {
+                                            bcn_display();
+                                        } ?>
+                                    </div>
+
+                                </div>
+                            <?php endif; ?>
+                        </div>
                     </div>
-
                 </div>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
 
-    <div class="shape-img">
-        <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/84_icon.png" alt="">
-        <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/66_icon.png" alt="">
-        <img class="shape-3 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/66_icon.png" alt="">
-        <img class="shape-4 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/04_icon.png" alt="">
-        <img class="shape-5 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/66_icon.png" alt="">
-    </div>
+                <div class="shape-img">
+                    <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/84_icon.png" alt="">
+                    <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/66_icon.png" alt="">
+                    <img class="shape-3 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/66_icon.png" alt="">
+                    <img class="shape-4 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/04_icon.png" alt="">
+                    <img class="shape-5 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/66_icon.png" alt="">
+                </div>
 
-</section>
-<!-- Breadcrumb Section End -->
+            </section>
+            <!-- Breadcrumb Section End -->
 
-<?php endif; ?>
-<!-- page title area end -->
+        <?php endif; ?>
+        <!-- page title area end -->
 <?php
     }
 }

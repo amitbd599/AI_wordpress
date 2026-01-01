@@ -415,7 +415,7 @@ function _header_side_fields($fields)
         'label' => esc_html__('Side Info On/Off', 'facontech'),
         'section' => 'header_side_setting',
         'default' => '0',
-        'priority' => 10,
+        'priority' => 1,
         'choices' => [
             'on' => esc_html__('Enable', 'facontech'),
             'off' => esc_html__('Disable', 'facontech'),
@@ -428,6 +428,7 @@ function _header_side_fields($fields)
         'description' => esc_html__('Logo Side', 'facontech'),
         'section' => 'header_side_setting',
         'default' => get_template_directory_uri() . '/assets/img/common/logo-white.png',
+        'priority' => 2,
     ];
     $fields[] = [
         'type' => 'textarea',
@@ -435,7 +436,7 @@ function _header_side_fields($fields)
         'label' => esc_html__('Side Description Text', 'facontech'),
         'section' => 'header_side_setting',
         'default' => esc_html__('Oracle Cloud Infrastructure (OCI) AI Services is a collection of services with prebuilt machine learning models that make it easier for developers to apply AI to applications and business operations.', 'facontech'),
-        'priority' => 10,
+        'priority' => 2,
     ];
 
     $fields[] = [
@@ -454,10 +455,19 @@ function _header_side_fields($fields)
                 'label' => esc_html__('Gallery Image', 'facontech'),
                 'description' => esc_attr__('Upload Gallery Image', 'facontech')
             ]
-        ]
+        ],
+        'priority' => 3,
 
     ];
 
+    $fields[] = [
+        'type' => 'text',
+        'settings' => 'facontech_extra_about_title',
+        'label' => esc_html__('About Title', 'facontech'),
+        'section' => 'header_side_setting',
+        'default' => esc_html__(' About FaconTech', 'facontech'),
+        'priority' => 10,
+    ];
     $fields[] = [
         'type' => 'textarea',
         'settings' => 'facontech_extra_about_text',

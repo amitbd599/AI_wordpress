@@ -10,10 +10,12 @@
 
 // info
 $facontech_topbar_switch = get_theme_mod('facontech_topbar_switch', false);
+$facontech_side_hide = get_theme_mod('facontech_side_hide', false);
 $facontech_mail_id = get_theme_mod('facontech_mail_id', __('info@facontech.com', 'facontech'));
 $facontech_address = get_theme_mod('facontech_address', __('Moon ave, New York, 2020 NY US', 'facontech'));
 $facontech_phone_num = get_theme_mod('facontech_phone_num', __('(786) 686 350', 'facontech'));
 $facontech_office_hour = get_theme_mod('facontech_office_hour', __('09:00am-6:00pm', 'facontech'));
+
 
 // social 
 $facontech_topbar_fb_url = get_theme_mod('facontech_topbar_fb_url', __('#', 'facontech'));
@@ -33,19 +35,19 @@ $facontech_acc_button_link = get_theme_mod('facontech_acc_button_link', __('#', 
 // header right
 $facontech_search = get_theme_mod('facontech_search', false);
 $facontech_header_right = get_theme_mod('facontech_header_right', false);
-$facontech_menu_col = $facontech_header_right ? 'col-xxl-7 col-xl-7 col-lg-8 d-none d-lg-block' : 'col-xxl-10 col-xl-10 col-lg-9 d-none d-lg-block text-end';
+$facontech_menu_col = $facontech_header_right ? 'col-lg-7 col-md-6 col-6' : 'col-lg-9 col-md-6 col-6 d-flex justify-content-end';
 
 ?>
 
 <!-- header-area-start -->
 <header class="header-area-2">
-   <?php if (!empty ($facontech_topbar_switch)): ?>
+   <?php if (!empty($facontech_topbar_switch)): ?>
       <div class="header-top d-none d-lg-block">
          <div class="container">
             <div class="row">
                <div class="col-lg-7">
                   <div class="left-wrapper">
-                     <?php if (!empty ($facontech_mail_id)): ?>
+                     <?php if (!empty($facontech_mail_id)): ?>
                         <div class="item">
                            <span class="theme-color"><i class="fa-solid fa-envelope"></i></span>
                            <span>
@@ -54,7 +56,7 @@ $facontech_menu_col = $facontech_header_right ? 'col-xxl-7 col-xl-7 col-lg-8 d-n
                         </div>
                      <?php endif; ?>
 
-                     <?php if (!empty ($facontech_phone_num)): ?>
+                     <?php if (!empty($facontech_phone_num)): ?>
                         <div class="item">
                            <span class="theme-color"><i class="fa-solid fa-phone-arrow-up-right"></i></span>
                            <span>
@@ -63,7 +65,7 @@ $facontech_menu_col = $facontech_header_right ? 'col-xxl-7 col-xl-7 col-lg-8 d-n
                         </div>
                      <?php endif; ?>
 
-                     <?php if (!empty ($facontech_address)): ?>
+                     <?php if (!empty($facontech_address)): ?>
                         <div class="item">
                            <span class="theme-color"><i class="fa-sharp fa-solid fa-location-dot"></i></span>
                            <span>
@@ -75,7 +77,7 @@ $facontech_menu_col = $facontech_header_right ? 'col-xxl-7 col-xl-7 col-lg-8 d-n
                </div>
                <div class="col-lg-5">
                   <div class="right-wrapper">
-                     <?php if (!empty ($facontech_office_hour)): ?>
+                     <?php if (!empty($facontech_office_hour)): ?>
                         <div class="item">
                            <span class="theme-color"><i class="fa-solid fa-timer"></i></span>
                            <span>
@@ -85,19 +87,19 @@ $facontech_menu_col = $facontech_header_right ? 'col-xxl-7 col-xl-7 col-lg-8 d-n
                         </div>
                      <?php endif; ?>
                      <div class="item social">
-                        <?php if (!empty ($facontech_topbar_fb_url)): ?>
+                        <?php if (!empty($facontech_topbar_fb_url)): ?>
                            <a href="<?php echo esc_url($facontech_topbar_fb_url); ?>"><i
                                  class="fa-brands fa-facebook"></i></a>
                         <?php endif; ?>
-                        <?php if (!empty ($facontech_topbar_twitter_url)): ?>
+                        <?php if (!empty($facontech_topbar_twitter_url)): ?>
                            <a href="<?php echo esc_url($facontech_topbar_twitter_url); ?>"><i
                                  class="fa-brands fa-twitter"></i></a>
                         <?php endif; ?>
-                        <?php if (!empty ($facontech_topbar_linkedin_url)): ?>
+                        <?php if (!empty($facontech_topbar_linkedin_url)): ?>
                            <a href="<?php echo esc_url($facontech_topbar_linkedin_url); ?>"><i
                                  class="fa-brands fa-linkedin-in"></i></a>
                         <?php endif; ?>
-                        <?php if (!empty ($facontech_topbar_instagram_url)): ?>
+                        <?php if (!empty($facontech_topbar_instagram_url)): ?>
                            <a href="<?php echo esc_url($facontech_topbar_instagram_url); ?>"><i
                                  class="fa-brands fa-instagram"></i></a>
                         <?php endif; ?>
@@ -122,7 +124,7 @@ $facontech_menu_col = $facontech_header_right ? 'col-xxl-7 col-xl-7 col-lg-8 d-n
                   </div>
                </div>
             </div>
-            <div class=" col-lg-7 col-md-6 col-6">
+            <div class=" <?php echo esc_attr($facontech_menu_col) ?>">
                <div class="menu-area menu-padding">
                   <div class="main-menu">
                      <nav id="mobile-menu">
@@ -135,15 +137,22 @@ $facontech_menu_col = $facontech_header_right ? 'col-xxl-7 col-xl-7 col-lg-8 d-n
                         class="fal fa-bars"></i></a>
                </div>
             </div>
-            <div class=" col-lg-2 d-none d-lg-block">
-               <div class="trigger">
-                  <span data-bs-toggle="modal" data-bs-target="#search-modal"><i
-                        class="fa-regular fa-magnifying-glass "></i></span>
-                  <span class="sidebar-toggle"><i class="fa-solid fa-bars-sort "></i></span>
+            <?php if (!empty($facontech_header_right)): ?>
+               <?php if (!empty($facontech_side_hide)): ?>
+                  <div class=" col-lg-2 d-none d-lg-block">
+                     <div class="trigger">
+                        <?php if (!empty($facontech_search)) : ?>
+                           <span data-bs-toggle="modal" data-bs-target="#search-modal"><i
+                                 class="fa-regular fa-magnifying-glass "></i></span>
+                        <?php endif; ?>
 
-               </div>
+                        <span class="sidebar-toggle"><i class="fa-solid fa-bars-sort "></i></span>
 
-            </div>
+                     </div>
+
+                  </div>
+               <?php endif; ?>
+            <?php endif; ?>
          </div>
       </div>
    </div>

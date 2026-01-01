@@ -48,7 +48,6 @@ $facontech_menu_col = $facontech_header_right ? 'col-xl-7 col-lg-6 col-md-6 col-
                <div class="main-menu">
                   <nav id="mobile-menu">
                      <?php facontech_header_menu(); ?>
-
                   </nav>
                </div>
             </div>
