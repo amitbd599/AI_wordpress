@@ -178,6 +178,11 @@ include_once FACONTECH_THEME_INC . 'kirki-customizer.php';
 include_once FACONTECH_THEME_INC . 'class-facontech-kirki.php';
 
 /**
+ * initialize pods customizer class.
+ */
+include_once FACONTECH_THEME_INC . 'pods-customizer.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 if (defined('JETPACK__VERSION')) {
