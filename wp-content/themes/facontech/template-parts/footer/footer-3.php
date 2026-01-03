@@ -33,6 +33,7 @@ for ($num = 1; $num <= $footer_widgets + 1; $num++) {
     }
 }
 
+
 switch ($footer_columns) {
     case '1':
         $footer_class[1] = 'col-lg-12';
@@ -47,17 +48,10 @@ switch ($footer_columns) {
         $footer_class[3] = 'col-xl-4 col-lg-6';
         break;
     case '4':
-        $footer_class[1] = 'col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-7';
-        $footer_class[2] = 'col-xxl-2 col-xl-2 col-lg-2 col-md-3 col-sm-5';
-        $footer_class[3] = 'col-xxl-3 col-xl-2 col-lg-2 col-md-3 col-sm-5';
-        $footer_class[4] = 'col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-7';
-        break;
-    case '5':
-        $footer_class[1] = 'col-xl-2 col-lg-2 col-md-3 col-sm-4';
-        $footer_class[2] = 'col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6';
-        $footer_class[3] = 'col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6';
-        $footer_class[4] = 'col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6';
-        $footer_class[5] = 'col-xl-4 col-lg-4 col-md-8 col-sm-8';
+        $footer_class[1] = 'col-xl-3 col-lg-6 col-md-12 col-sm-12';
+        $footer_class[2] = 'col-xl-3 col-lg-6 col-md-6 col-sm-6';
+        $footer_class[3] = 'col-xl-3 col-lg-6 col-md-6 col-sm-6';
+        $footer_class[4] = 'col-xl-3 col-lg-6 col-md-8 col-sm-12';
         break;
     default:
         $footer_class = 'col-xl-3 col-lg-3 col-md-6';
@@ -67,35 +61,30 @@ switch ($footer_columns) {
 ?>
 
 <footer>
-    <div class="footer-area black-bg-2  fix " data-background="<?php print esc_url($bg_img); ?>">
-        <?php if (is_active_sidebar('footer-3-1') or is_active_sidebar('footer-3-2') or is_active_sidebar('footer-3-3') or is_active_sidebar('footer-3-4') or is_active_sidebar('footer-3-5')): ?>
-            <div class="border-b pt-100">
-                <div class="container">
-                    <div class="row">
-                        <?php
-                        if ($footer_columns < 4) {
-                            print '<div class="col-xl-2 col-lg-2 col-md-3 col-sm-4">';
+    <div class="footer-area black-bg-2  fix ">
+        <?php if (is_active_sidebar('footer-3-1') or is_active_sidebar('footer-3-2') or is_active_sidebar('footer-3-3') or is_active_sidebar('footer-3-4')): ?>
+        <div class="border-b pt-100">
+            <div class="container">
+                <div class="row">
+                    <?php
+                        if ($footer_columns > 4) {
+                            print '<div class="col-xl-3 col-lg-6 col-md-12 col-sm-12">';
                             dynamic_sidebar('footer-3-1');
                             print '</div>';
 
-                            print '<div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6">';
+                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 px-2">';
                             dynamic_sidebar('footer-3-2');
                             print '</div>';
 
-                            print '<div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6">';
+                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 px-2">';
                             dynamic_sidebar('footer-3-3');
                             print '</div>';
 
-                            print '<div class="col-xl-2 col-lg-2 col-md-3 col-sm-4 col-6">';
+                            print '<div class="col-xl-3 col-lg-6 col-md-8 col-sm-12">';
                             dynamic_sidebar('footer-3-4');
                             print '</div>';
-
-                            print '<div class="col-xl-4 col-lg-4 col-md-8 col-sm-8">';
-                            dynamic_sidebar('footer-3-5');
-                            print '</div>';
-
                         } else {
-                            for ($num = 1; $num <= $footer_columns + 1; $num++) {
+                            for ($num = 1; $num <= $footer_columns; $num++) {
                                 if (!is_active_sidebar('footer-3-' . $num)) {
                                     continue;
                                 }
@@ -105,11 +94,11 @@ switch ($footer_columns) {
                             }
                         }
                         ?>
-                    </div>
-
-
                 </div>
+
+
             </div>
+        </div>
         <?php endif; ?>
         <div class="container">
 

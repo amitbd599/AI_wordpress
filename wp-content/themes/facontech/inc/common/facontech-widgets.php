@@ -59,7 +59,7 @@ function facontech_widgets_init()
 
     // footer 3
     if ($footer_style_3_switch) {
-        for ($num = 1; $num <= $footer_widgets + 1; $num++) {
+        for ($num = 1; $num <= $footer_widgets ; $num++) {
             register_sidebar([
                 'name' => sprintf(esc_html__('Footer Design-3 : column option %1$s', 'facontech'), $num),
                 'id' => 'footer-3-' . $num,

@@ -8,7 +8,7 @@
  * @package facontech
  */
 
-/** 
+/**
  *
  * facontech header
  */
@@ -43,23 +43,23 @@ add_action('facontech_header_style', 'facontech_check_header', 10);
 function facontech_header_search()
 {
 ?>
-    <div class="modal fade search-box" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true"><i class="fa-sharp fa-regular fa-xmark"></i></span>
-        </button>
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <form method="get" action="<?php print esc_url(home_url('/')); ?>">
-                    <input type="text" name="s" placeholder="<?php echo esc_attr__("Search here...", "facontech") ?>?"
-                        value="<?php echo esc_attr(get_search_query()) ?> ">
-                    <button type="submit">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </form>
-            </div>
+<div class="modal fade search-box" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true"><i class="fa-sharp fa-regular fa-xmark"></i></span>
+    </button>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="get" action="<?php print esc_url(home_url('/')); ?>">
+                <input type="text" name="s" placeholder="<?php echo esc_attr__("Search here...", "facontech") ?>?"
+                    value="<?php echo esc_attr(get_search_query()) ?> ">
+                <button type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
         </div>
     </div>
-    <?php
+</div>
+<?php
 }
 
 add_action('facontech_before_main_content', 'facontech_header_search', 10);
@@ -78,15 +78,15 @@ function facontech_header_lang_defualt()
     $facontech_header_lang = get_theme_mod('facontech_header_lang', false);
     if ($facontech_header_lang): ?>
 
-        <ul>
-            <li><a href="javascript:void(0)" class="lang__btn">
-                    <?php print esc_html__('English', 'facontech'); ?> <i class="fal fa-angle-down"></i>
-                </a>
-                <?php do_action('facontech_language'); ?>
-            </li>
-        </ul>
+<ul>
+    <li><a href="javascript:void(0)" class="lang__btn">
+            <?php print esc_html__('English', 'facontech'); ?> <i class="fal fa-angle-down"></i>
+        </a>
+        <?php do_action('facontech_language'); ?>
+    </li>
+</ul>
 
-    <?php endif; ?>
+<?php endif; ?>
 <?php
 }
 
@@ -126,7 +126,7 @@ add_action('facontech_language', 'facontech_language_list');
 // header logo
 function facontech_header_logo()
 { ?>
-    <?php
+<?php
     $facontech_logo_on = function_exists('get_field') ? get_field('is_enable_sec_logo') : NULL;
     $facontech_logo = get_template_directory_uri() . '/assets/img/common/logo-white.png';
     $facontech_logo_black = get_template_directory_uri() . '/assets/img/common/logo-black.png';
@@ -135,30 +135,30 @@ function facontech_header_logo()
     $facontech_secondary_logo = get_theme_mod('seconday_logo', $facontech_logo_black);
     ?>
 
-    <?php if (!empty($facontech_logo_on)): ?>
-        <a class="secondary-logo" href="<?php print esc_url(home_url('/')); ?>">
-            <img src="<?php print esc_url($facontech_secondary_logo); ?>"
-                alt="<?php print esc_attr__('logo', 'facontech'); ?>" />
-        </a>
-    <?php else: ?>
-        <a class="standard-logo" href="<?php print esc_url(home_url('/')); ?>">
-            <img src="<?php print esc_url($facontech_site_logo); ?>" alt="<?php print esc_attr__('logo', 'facontech'); ?>" />
-        </a>
-    <?php endif; ?>
+<?php if (!empty($facontech_logo_on)): ?>
+<a class="secondary-logo" href="<?php print esc_url(home_url('/')); ?>">
+    <img src="<?php print esc_url($facontech_secondary_logo); ?>"
+        alt="<?php print esc_attr__('logo', 'facontech'); ?>" />
+</a>
+<?php else: ?>
+<a class="standard-logo" href="<?php print esc_url(home_url('/')); ?>">
+    <img src="<?php print esc_url($facontech_site_logo); ?>" alt="<?php print esc_attr__('logo', 'facontech'); ?>" />
+</a>
+<?php endif; ?>
 <?php
 }
 
 // header logo
 function facontech_header_sticky_logo()
 { ?>
-    <?php
+<?php
     $facontech_logo_black = get_template_directory_uri() . '/assets/img/logo/logo-black.png';
     $facontech_secondary_logo = get_theme_mod('seconday_logo', $facontech_logo_black);
     ?>
-    <a class="sticky-logo" href="<?php print esc_url(home_url('/')); ?>">
-        <img src="<?php print esc_url($facontech_secondary_logo); ?>"
-            alt="<?php print esc_attr__('logo', 'facontech'); ?>" />
-    </a>
+<a class="sticky-logo" href="<?php print esc_url(home_url('/')); ?>">
+    <img src="<?php print esc_url($facontech_secondary_logo); ?>"
+        alt="<?php print esc_attr__('logo', 'facontech'); ?>" />
+</a>
 <?php
 }
 
@@ -171,14 +171,14 @@ function facontech_mobile_logo()
 
 ?>
 
-    <?php if (!empty($facontech_mobile_logo_hide)): ?>
-        <div class="side__logo mb-25">
-            <a class="sideinfo-logo" href="<?php print esc_url(home_url('/')); ?>">
-                <img src="<?php print esc_url($facontech_site_logo); ?>"
-                    alt="<?php print esc_attr__('logo', 'facontech'); ?>" />
-            </a>
-        </div>
-    <?php endif; ?>
+<?php if (!empty($facontech_mobile_logo_hide)): ?>
+<div class="side__logo mb-25">
+    <a class="sideinfo-logo" href="<?php print esc_url(home_url('/')); ?>">
+        <img src="<?php print esc_url($facontech_site_logo); ?>"
+            alt="<?php print esc_attr__('logo', 'facontech'); ?>" />
+    </a>
+</div>
+<?php endif; ?>
 
 
 
@@ -196,33 +196,33 @@ function facontech_header_social_profiles()
     $facontech_topbar_linkedin_url = get_theme_mod('facontech_topbar_linkedin_url', __('#', 'facontech'));
     $facontech_topbar_youtube_url = get_theme_mod('facontech_topbar_youtube_url', __('#', 'facontech'));
 ?>
-    <ul>
-        <?php if (!empty($facontech_topbar_fb_url)): ?>
-            <li><a href="<?php print esc_url($facontech_topbar_fb_url); ?>"><span><i class="fab fa-facebook-f"></i></span></a>
-            </li>
-        <?php endif; ?>
+<ul>
+    <?php if (!empty($facontech_topbar_fb_url)): ?>
+    <li><a href="<?php print esc_url($facontech_topbar_fb_url); ?>"><span><i class="fab fa-facebook-f"></i></span></a>
+    </li>
+    <?php endif; ?>
 
-        <?php if (!empty($facontech_topbar_twitter_url)): ?>
-            <li><a href="<?php print esc_url($facontech_topbar_twitter_url); ?>"><span><i class="fab fa-twitter"></i></span></a>
-            </li>
-        <?php endif; ?>
+    <?php if (!empty($facontech_topbar_twitter_url)): ?>
+    <li><a href="<?php print esc_url($facontech_topbar_twitter_url); ?>"><span><i class="fab fa-twitter"></i></span></a>
+    </li>
+    <?php endif; ?>
 
-        <?php if (!empty($facontech_topbar_instagram_url)): ?>
-            <li><a href="<?php print esc_url($facontech_topbar_instagram_url); ?>"><span><i
-                            class="fab fa-instagram"></i></span></a></li>
-        <?php endif; ?>
+    <?php if (!empty($facontech_topbar_instagram_url)): ?>
+    <li><a href="<?php print esc_url($facontech_topbar_instagram_url); ?>"><span><i
+                    class="fab fa-instagram"></i></span></a></li>
+    <?php endif; ?>
 
-        <?php if (!empty($facontech_topbar_linkedin_url)): ?>
-            <li><a href="<?php print esc_url($facontech_topbar_linkedin_url); ?>"><span><i
-                            class="fab fa-linkedin"></i></span></a>
-            </li>
-        <?php endif; ?>
+    <?php if (!empty($facontech_topbar_linkedin_url)): ?>
+    <li><a href="<?php print esc_url($facontech_topbar_linkedin_url); ?>"><span><i
+                    class="fab fa-linkedin"></i></span></a>
+    </li>
+    <?php endif; ?>
 
-        <?php if (!empty($facontech_topbar_youtube_url)): ?>
-            <li><a href="<?php print esc_url($facontech_topbar_youtube_url); ?>"><span><i class="fab fa-youtube"></i></span></a>
-            </li>
-        <?php endif; ?>
-    </ul>
+    <?php if (!empty($facontech_topbar_youtube_url)): ?>
+    <li><a href="<?php print esc_url($facontech_topbar_youtube_url); ?>"><span><i class="fab fa-youtube"></i></span></a>
+    </li>
+    <?php endif; ?>
+</ul>
 
 <?php
 }
@@ -236,51 +236,43 @@ function facontech_footer_social_profiles()
 
 ?>
 
-    <div class="footer-wrapper one d-flex justify-content-end">
-        <div class="social one aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
-            <?php if (!empty($facontech_footer_fb_url)): ?>
+<div class="footer-wrapper one d-flex justify-content-end">
+    <div class="social one aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+        <?php if (!empty($facontech_footer_fb_url)): ?>
 
-                <a href="<?php print esc_url($facontech_footer_fb_url); ?>">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
+        <a href="<?php print esc_url($facontech_footer_fb_url); ?>">
+            <i class="fab fa-facebook-f"></i>
+        </a>
 
-            <?php endif; ?>
+        <?php endif; ?>
 
-            <?php if (!empty($facontech_footer_twitter_url)): ?>
+        <?php if (!empty($facontech_footer_twitter_url)): ?>
 
-                <a href="<?php print esc_url($facontech_footer_twitter_url); ?>">
-                    <i class="fab fa-twitter"></i>
-                </a>
+        <a href="<?php print esc_url($facontech_footer_twitter_url); ?>">
+            <i class="fab fa-twitter"></i>
+        </a>
 
-            <?php endif; ?>
+        <?php endif; ?>
 
-            <?php if (!empty($facontech_footer_instagram_url)): ?>
+        <?php if (!empty($facontech_footer_instagram_url)): ?>
 
-                <a href="<?php print esc_url($facontech_footer_instagram_url); ?>">
-                    <i class="fab fa-instagram"></i>
-                </a>
+        <a href="<?php print esc_url($facontech_footer_instagram_url); ?>">
+            <i class="fab fa-instagram"></i>
+        </a>
 
-            <?php endif; ?>
+        <?php endif; ?>
 
-            <?php if (!empty($facontech_footer_linkedin_url)): ?>
+        <?php if (!empty($facontech_footer_linkedin_url)): ?>
 
-                <a href="<?php print esc_url($facontech_footer_linkedin_url); ?>">
-                    <i class="fab fa-linkedin"></i>
-                </a>
+        <a href="<?php print esc_url($facontech_footer_linkedin_url); ?>">
+            <i class="fab fa-linkedin"></i>
+        </a>
 
-            <?php endif; ?>
-        </div>
+        <?php endif; ?>
     </div>
+</div>
 
-    <div class="footer-wrapper one d-flex justify-content-end d-none">
-        <div class="social one aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
-            <a
-                href="/react_facontech/blog-list"><i class="fa-brands fa-facebook-f"></i></a><a
-                href="/react_facontech/blog-list"><i class="fa-brands fa-quora"></i></a><a
-                href="/react_facontech/blog-list"><i class="fa-brands fa-linkedin-in"></i></a><a
-                href="/react_facontech/blog-list"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-    </div>
+
 <?php
 }
 
@@ -291,7 +283,7 @@ function facontech_footer_social_profiles()
 function facontech_header_menu()
 {
 ?>
-    <?php
+<?php
     wp_nav_menu([
         'theme_location' => 'main-menu',
         'menu_class' => '',
@@ -310,7 +302,7 @@ function facontech_header_menu()
 function facontech_mobile_menu()
 {
 ?>
-    <?php
+<?php
     $facontech_menu = wp_nav_menu([
         'theme_location' => 'main-menu',
         'menu_class' => '',
@@ -332,7 +324,7 @@ function facontech_mobile_menu()
 function facontech_header_search_menu()
 {
 ?>
-    <?php
+<?php
     wp_nav_menu([
         'theme_location' => 'header-search-menu',
         'menu_class' => '',
@@ -372,23 +364,21 @@ function facontech_check_footer()
     $facontech_footer_style = function_exists('get_field') ? get_field('footer_style') : NULL;
     $facontech_default_footer_style = get_theme_mod('choose_default_footer', 'footer-style-1');
 
+    var_dump($facontech_footer_style);
+
     if ($facontech_footer_style == 'footer-style-1') {
         get_template_part('template-parts/footer/footer-1');
     } elseif ($facontech_footer_style == 'footer-style-2') {
         get_template_part('template-parts/footer/footer-2');
     } elseif ($facontech_footer_style == 'footer-style-3') {
         get_template_part('template-parts/footer/footer-3');
-    } elseif ($facontech_footer_style == 'footer-style-4') {
-        get_template_part('template-parts/footer/footer-4');
-    } else {
+    }  else {
 
         /** default footer style **/
         if ($facontech_default_footer_style == 'footer-style-2') {
             get_template_part('template-parts/footer/footer-2');
         } elseif ($facontech_default_footer_style == 'footer-style-3') {
             get_template_part('template-parts/footer/footer-3');
-        } elseif ($facontech_default_footer_style == 'footer-style-4') {
-            get_template_part('template-parts/footer/footer-4');
         } else {
             get_template_part('template-parts/footer/footer-1');
         }

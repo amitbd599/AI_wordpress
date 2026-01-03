@@ -59,29 +59,29 @@ switch ($footer_columns) {
         break;
 }
 
+
 ?>
 
 <!-- footer area start -->
 
 
 <footer>
-    <div class="footer__area-2 " data-bg-color="<?php print esc_attr($bg_color); ?>"
-        data-background="<?php print esc_url($bg_img); ?>">
+    <div class="footer__area-2 " data-bg-color="<?php print esc_attr($bg_color); ?>">
         <?php if (is_active_sidebar('footer-2-1') or is_active_sidebar('footer-2-2') or is_active_sidebar('footer-2-3') or is_active_sidebar('footer-2-4')): ?>
-            <div class="pt-100 border-b">
-                <div class="container">
-                    <div class="row">
-                        <?php
-                        if ($footer_columns < 4) {
-                            print '<div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">';
+        <div class="pt-100 border-b">
+            <div class="container">
+                <div class="row">
+                    <?php
+                        if ($footer_columns > 4) {
+                            print '<div class="col-xl-3 col-lg-6 col-md-12 col-sm-12">';
                             dynamic_sidebar('footer-2-1');
                             print '</div>';
 
-                            print '<div class=col-xl-3 col-lg-6 col-md-6 col-sm-6">';
+                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 px-2">';
                             dynamic_sidebar('footer-2-2');
                             print '</div>';
 
-                            print '<div class="col-xl-2 col-lg-6 col-md-6 col-sm-6">';
+                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 px-2">';
                             dynamic_sidebar('footer-2-3');
                             print '</div>';
 
@@ -90,18 +90,18 @@ switch ($footer_columns) {
                             print '</div>';
                         } else {
                             for ($num = 1; $num <= $footer_columns; $num++) {
-                                if (!is_active_sidebar('footer-' . $num)) {
+                                if (!is_active_sidebar('footer-2-' . $num)) {
                                     continue;
                                 }
                                 print '<div class="' . esc_attr($footer_class[$num]) . '">';
-                                dynamic_sidebar('footer-' . $num);
+                                dynamic_sidebar('footer-2-' . $num);
                                 print '</div>';
                             }
                         }
                         ?>
-                    </div>
                 </div>
             </div>
+        </div>
 
         <?php endif; ?>
         <div class="footer__copyright-2 black-bg pt-25 pb-25 ">
