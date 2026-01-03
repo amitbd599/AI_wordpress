@@ -14060,24 +14060,6 @@ input[type='color'] {
   z-index: 1;
 }
 
-.footer__area-2 {
-  position: relative;
-  background: var(--common-body-2);
-  z-index: 1;
-}
-
-.footer__area-2::before {
-  position: absolute;
-  content: '';
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--common-body-2);
-  z-index: -1;
-  opacity: 0.9;
-}
-
 .footer__widget-title {
   font-size: 22px;
   color: var(--common-white);

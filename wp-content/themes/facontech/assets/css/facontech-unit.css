@@ -2044,3 +2044,16 @@ blockquote cite::before {
 .header-area-3 .menu-area .main-menu {
   padding-right: 110px;
 }
+
+
+.footer__area-2::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--common-body-2);
+    z-index: -1;
+    opacity: 0.9;
+}

@@ -23,6 +23,8 @@ $bg_img = !empty($facontech_footer_bg_url_from_page['url']) ? $facontech_footer_
 $bg_color = !empty($facontech_footer_bg_color_from_page) ? $facontech_footer_bg_color_from_page : $footer_bg_color;
 
 
+
+
 // footer_columns
 $footer_columns = 0;
 $footer_widgets = get_theme_mod('footer_widget_number', 4);
@@ -62,7 +64,7 @@ switch ($footer_columns) {
 
 <!-- footer start -->
 <footer>
-    <div class="footer__area-2 ">
+    <div class="footer__area-2 footer-section one" style="background-color: <?php echo esc_attr($bg_color); ?>;">
         <?php if (is_active_sidebar('footer-1') or is_active_sidebar('footer-2') or is_active_sidebar('footer-3') or is_active_sidebar('footer-4')): ?>
             <div class="pt-100 border-b">
                 <div class="container">

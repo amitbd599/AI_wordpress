@@ -713,13 +713,7 @@ function _header_footer_fields($fields)
         ],
     ];
 
-    $fields[] = [
-        'type' => 'image',
-        'settings' => 'facontech_footer_bg',
-        'label' => esc_html__('Footer Background Image.', 'facontech'),
-        'description' => esc_html__('Footer Background Image.', 'facontech'),
-        'section' => 'footer_setting',
-    ];
+
 
     $fields[] = [
         'type' => 'color',
@@ -727,7 +721,7 @@ function _header_footer_fields($fields)
         'label' => __('Footer BG Color', 'facontech'),
         'description' => esc_html__('This is a Footer bg color control.', 'facontech'),
         'section' => 'footer_setting',
-        'default' => '#f4f9fc',
+        'default' => '#00151E',
         'priority' => 10,
     ];
 
