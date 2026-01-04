@@ -233,9 +233,12 @@ function facontech_footer_social_profiles()
     $facontech_footer_twitter_url = get_theme_mod('facontech_footer_twitter_url', __('#', 'facontech'));
     $facontech_footer_instagram_url = get_theme_mod('facontech_footer_instagram_url', __('#', 'facontech'));
     $facontech_footer_linkedin_url = get_theme_mod('facontech_footer_linkedin_url', __('#', 'facontech'));
+    $footer_social_switch = get_theme_mod('footer_social_switch', false);
+
 
 ?>
 
+<?php if ($footer_social_switch): ?>
 <div class="footer-wrapper one d-flex justify-content-end">
     <div class="social one aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
         <?php if (!empty($facontech_footer_fb_url)): ?>
@@ -271,6 +274,9 @@ function facontech_footer_social_profiles()
         <?php endif; ?>
     </div>
 </div>
+<?php endif; ?>
+
+
 
 
 <?php
@@ -364,7 +370,6 @@ function facontech_check_footer()
     $facontech_footer_style = function_exists('get_field') ? get_field('footer_style') : NULL;
     $facontech_default_footer_style = get_theme_mod('choose_default_footer', 'footer-style-1');
 
-    var_dump($facontech_footer_style);
 
     if ($facontech_footer_style == 'footer-style-1') {
         get_template_part('template-parts/footer/footer-1');

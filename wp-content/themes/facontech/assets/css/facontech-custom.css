@@ -1,143 +1,133 @@
 .etn-event-search-wrapper .form-control:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .etn-event-search-wrapper .input-group-text {
-    background-color: transparent;
-    border: none;
+  background-color: transparent;
+  border: none;
 }
 
 .etn-event-search-wrapper .form-control,
 .etn-event-search-wrapper .etn_event_select {
-    outline: none;
-    background: none;
+  outline: none;
+  background: none;
 }
 
 .input-group-prepend .input-group-text i.fa-buffer::before {
-
-    content: "\e931" !important;
-
+  content: "\e931" !important;
 }
 
 .etn-event-item .etn-event-footer .etn-event-date i {
-    color: var(--tp-theme-1);
+  color: var(--tp-theme-1);
 }
 
 .etn-event-search-wrapper.etn-row {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 @media (max-width: 991px) {
-    button.etn-btn.etn-btn-primary {
-        float: left;
-        margin-bottom: 20px;
-        margin-left: 20px;
-        margin-top: 10px;
-    }
+  button.etn-btn.etn-btn-primary {
+    float: left;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
 
-    .etn-event-search-wrapper .input-group {
-        border: none;
-    }
+  .etn-event-search-wrapper .input-group {
+    border: none;
+  }
 }
 
 @media (max-width: 768px) {
-    .lp-user-profile .wrapper-profile-header .lp-profile-left {
-        width: 220px;
-        margin: auto;
-    }
+  .lp-user-profile .wrapper-profile-header .lp-profile-left {
+    width: 220px;
+    margin: auto;
+  }
 }
 
 .etn-event-item .etn-event-location i {
-    color: var(--tp-theme-1) !important;
+  color: var(--tp-theme-1) !important;
 }
 
 .etn-event-item .etn-event-location {
-    color: #6a727f !important;
-    font-weight: 500;
-    line-height: 14px;
-    margin-bottom: 10px;
+  color: #6a727f !important;
+  font-weight: 500;
+  line-height: 14px;
+  margin-bottom: 10px;
 }
 
 .etn-event-date {
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    color: #6a727f;
-    text-transform: capitalize;
-    display: inline-block;
-    margin-right: 30px;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #6a727f;
+  text-transform: capitalize;
+  display: inline-block;
+  margin-right: 30px;
 }
 
 .etn-event-item {
-    box-shadow: 0px 30px 40px 0px rgb(1 11 60 / 10%);
+  box-shadow: 0px 30px 40px 0px rgb(1 11 60 / 10%);
 }
 
-
 .footer-default-widget ul li a::after {
-    content: "";
-    font-family: Font Awesome\ 5 Pro;
-    font-size: 12px;
-    left: 0;
-    position: absolute;
-    top: -2px;
-    transition: all .3s linear;
+  content: "\f324";
+  font-family: "Font Awesome 5 Pro";
+  font-size: 12px;
+  left: 0;
+  position: absolute;
+  top: -2px;
+  transition: all 0.3s linear;
 }
 
 .footer-default-widget ul li a {
-    padding-left: 15px;
+  padding-left: 15px;
 }
 
-.footer-wrapper.two.custom_link>ul {
-    flex-wrap: wrap;
-    display: flex;
-}
-
-.footer-wrapper.two>ul>li {
-    width: 50%;
+.footer-wrapper.two.custom_link > ul {
+  flex-wrap: wrap;
+  display: flex;
 }
 
 .text-justify {
-    text-align: justify;
+  text-align: justify;
 }
 
 .footer__widget-title {
-    font-size: 22px;
-    color: var(--common-white);
-    margin-bottom: 20px;
+  font-size: 22px;
+  color: var(--common-white);
+  margin-bottom: 20px;
 }
 
-
 .footer-wrapper.one .social.one.aos-init.aos-animate {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .footer__copyright-2 .footer__copyright-links a {
-    margin-right: 0 !important;
+  margin-right: 0 !important;
 }
 
 footer .footer__widget.widget_media_gallery .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 6px;
-    grid-row-gap: 6px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
 
-    .gallery-item {
-        max-width: 100%;
-        padding: 0 !important;
-        margin: 0;
-    }
-
-
+  .gallery-item {
+    max-width: 100%;
+    padding: 0 !important;
+    margin: 0;
+  }
 }
 
 footer {
-    .logo {
-        height: auto;
-        overflow: hidden;
-        width: 250px;
-    }
+  .logo {
+    height: auto;
+    overflow: hidden;
+    width: 250px;
+  }
 }
 
 .blog__sidebar .widget-follow .social ul li {
-    border: none !important;
+  border: none !important;
 }

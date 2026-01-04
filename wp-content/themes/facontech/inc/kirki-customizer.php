@@ -697,6 +697,19 @@ function _header_footer_fields($fields)
         'default' => 'footer-style-1',
     ];
 
+        $fields[] = [
+        'type' => 'switch',
+        'settings' => 'footer_social_switch',
+        'label' => esc_html__('Footer Social On/Off', 'facontech'),
+        'section' => 'footer_setting',
+        'default' => '0',
+        'priority' => 10,
+        'choices' => [
+            'on' => esc_html__('Enable', 'facontech'),
+            'off' => esc_html__('Disable', 'facontech'),
+        ],
+    ];
+
     $fields[] = [
         'type' => 'select',
         'settings' => 'footer_widget_number',
@@ -724,6 +737,8 @@ function _header_footer_fields($fields)
         'default' => '#00151E',
         'priority' => 10,
     ];
+
+
 
 
     $fields[] = [
