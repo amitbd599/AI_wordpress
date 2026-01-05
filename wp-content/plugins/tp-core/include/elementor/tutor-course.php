@@ -17,6 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 class TP_Tutor_Course extends Widget_Base {
 
+    use TP_Style_Trait;
+
 	/**
 	 * Retrieve the widget name.
 	 *
@@ -89,6 +91,12 @@ class TP_Tutor_Course extends Widget_Base {
 		return [ 'tpcore' ];
 	}
 
+    protected function register_controls()
+    {
+        $this->register_controls_section();
+        $this->style_tab_content();
+    }
+
 	/**
 	 * Register the widget controls.
 	 *
@@ -98,7 +106,7 @@ class TP_Tutor_Course extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function register_controls() {
+	protected function register_controls_section() {
 
         // tp_section_title
         $this->start_controls_section(
@@ -912,38 +920,16 @@ class TP_Tutor_Course extends Widget_Base {
 
         $this->end_controls_section();
 
-
-        // style control
-
-
-		$this->start_controls_section(
-			'section_style',
-			[
-				'label' => __( 'Style', 'tpcore' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'text_transform',
-			[
-				'label' => __( 'Text Transform', 'tpcore' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => '',
-				'options' => [
-					'' => __( 'None', 'tpcore' ),
-					'uppercase' => __( 'UPPERCASE', 'tpcore' ),
-					'lowercase' => __( 'lowercase', 'tpcore' ),
-					'capitalize' => __( 'Capitalize', 'tpcore' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
 	}
+
+    protected function style_tab_content()
+    {
+        $this->tp_section_style_controls('about_section', 'Section', '.tp-el-sec');
+        $this->tp_basic_style_controls('heading_title', 'Title', '.tp-el-title');
+        $this->tp_basic_style_controls('heading_subtitle', 'Subtitle', '.tp-el-subtitle');
+        $this->tp_basic_style_controls('heading_desc', 'Description', '.tp-el-content');
+        $this->tp_link_controls_style('', 'b_btn1_style', 'Button', '.tp-el-btn');
+    }
 
 	/**
 	 * Render the widget output on the frontend.
@@ -1090,7 +1076,7 @@ class TP_Tutor_Course extends Widget_Base {
                         $course_students = tutor_utils()->count_enrolled_users_by_course();
                     ?>
                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                      <div class="course__item-2 transition-3 white-bg mb-30 fix">
+                      <div class="course__item-2 transition-3 tp-el-sec white-bg mb-30 fix">
                            <?php if ('yes' === $settings['tp_image_show']): ?>
                            <div class="course__thumb-2 p-relative w-img fix">
                                 <a href="<?php print get_the_permalink() ?>">
@@ -1148,7 +1134,7 @@ class TP_Tutor_Course extends Widget_Base {
                                             $course_id = get_the_ID();
                                             $default_price = apply_filters('tutor-loop-default-price', __('Free', 'micourse'));
                                             $price_html = '<span> ' . $default_price . '</span>';
-                                            if (tutor_utils()->is_course_purchasable()) {
+                                            if (tutor_utils()->is_course_purchasable() && class_exists('WooCommerce')) {
 
                                                 $product_id = tutor_utils()->get_course_product_id($course_id);
                                                 $product = wc_get_product($product_id);
@@ -1163,14 +1149,14 @@ class TP_Tutor_Course extends Widget_Base {
                                </div>
                                <?php endif; ?>
                             </div>
-                            <h3 class="course__title-2">
+                            <h3 class="tp-el-title course__title-2">
                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h3>
 
                             <?php if (!empty($settings['content'])):
                             $content_limit = (!empty($settings['content_limit'])) ? $settings['content_limit'] : '';
                             ?>
-                            <p><?php print wp_trim_words(get_the_excerpt(get_the_ID()), $content_limit, ''); ?></p>
+                            <p class="tp-el-content"><?php print wp_trim_words(get_the_excerpt(get_the_ID()), $content_limit, ''); ?></p>
                             <?php endif; ?>
 
                             <div class="course__bottom-2 d-flex align-items-center justify-content-between">
@@ -1181,7 +1167,7 @@ class TP_Tutor_Course extends Widget_Base {
                                         <div class="course__action-item d-flex align-items-center">
                                            <div class="course__action-icon mr-5">
                                               <span>
-                                                 <i class="tutor-icon-user-filled"></i>
+                                                 <i class="far fa-user"></i>
                                               </span>
                                            </div>
                                            <div class="course__action-content">
@@ -1214,7 +1200,7 @@ class TP_Tutor_Course extends Widget_Base {
                                         <div class="course__action-item d-flex align-items-center">
                                            <div class="course__action-icon mr-5">
                                               <span>
-                                                 <i class="tutor-icon-star-line-filled"></i>
+                                                 <i class="far fa-star"></i>
                                               </span>
                                            </div>
                                            <div class="course__action-content">
@@ -1235,7 +1221,7 @@ class TP_Tutor_Course extends Widget_Base {
                                </div>
                                <?php if ('yes' === $settings['tp_author_show']): ?>
                                <div class="course__tutor-2">
-                                  <a href="#">
+                                  <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
                                      <?php echo get_avatar(get_the_author_meta('ID'), 50) ?>
                                   </a>
                                </div>
@@ -1339,21 +1325,21 @@ class TP_Tutor_Course extends Widget_Base {
                        </div>
                        <?php endif; ?>
 
-                         <div class="course__item-3 white-bg transition-3 mb-30">
+                         <div class="course__item-3 white-bg tp-el-sec transition-3 mb-30">
                             <div class="course__icon-3 mb-30">
                                <span>
                                   <i class="<?php echo $course_icon; ?>"></i>
                                </span>
                             </div>
                             <div class="course__content-3">
-                               <h3 class="course__title-3">
+                               <h3 class="course__title-3 tp-el-title">
                                   <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                </h3>
 
                                <?php if (!empty($settings['content'])):
                                 $content_limit = (!empty($settings['content_limit'])) ? $settings['content_limit'] : '';
                                 ?>
-                                <p><?php print wp_trim_words(get_the_excerpt(get_the_ID()), $content_limit, ''); ?></p>
+                                <p class="tp-el-content"><?php print wp_trim_words(get_the_excerpt(get_the_ID()), $content_limit, ''); ?></p>
                                 <?php endif; ?>
 
                                <div class="course__meta d-flex align-items-center justify-content-between">
@@ -1372,7 +1358,7 @@ class TP_Tutor_Course extends Widget_Base {
                                                 $course_id = get_the_ID();
                                                 $default_price = apply_filters('tutor-loop-default-price', __('Free', 'micourse'));
                                                 $price_html = '<span> ' . $default_price . '</span>';
-                                                if (tutor_utils()->is_course_purchasable()) {
+                                                if (tutor_utils()->is_course_purchasable() && class_exists('WooCommerce')) {
 
                                                     $product_id = tutor_utils()->get_course_product_id($course_id);
                                                     $product = wc_get_product($product_id);
@@ -1427,8 +1413,8 @@ class TP_Tutor_Course extends Widget_Base {
 
                                      <?php if ('yes' === $settings['tp_author_show']): ?>
                                      <li>
-                                        <div class="course__tutor-3">
-                                           <a href="#">
+                                        <div class="course__tutor-3 d-none">
+                                           <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
                                               <?php echo get_avatar(get_the_author_meta('ID'), 50) ?>
                                            </a>
                                         </div>
@@ -1439,7 +1425,7 @@ class TP_Tutor_Course extends Widget_Base {
 
                                <?php if ('yes' === $settings['tp_cat_show']): ?>
                                <div class="course__join">
-                                  <a href="<?php the_permalink(); ?>" class="tp-btn-5 tp-btn-10"><?php echo tp_kses($settings['tp_btn_text']); ?></a>
+                                  <a href="<?php the_permalink(); ?>" class="tp-btn-5 tp-btn-10 tp-el-btn"><?php echo tp_kses($settings['tp_btn_text']); ?></a>
                                </div>
                                <?php endif; ?>
 
@@ -1487,6 +1473,7 @@ class TP_Tutor_Course extends Widget_Base {
         <?php elseif ($settings['tp_design_style'] === 'layout-4'): ?>
          <section class="course__areaW">
             <div class="container">
+               <?php if(!empty($filter_list)) : ?> 
                <div class="row">
                   <div class="col-xxl-12">
                      <div class="course__filter masonary-menu text-center mb-30">
@@ -1505,6 +1492,7 @@ class TP_Tutor_Course extends Widget_Base {
                      </div>
                   </div>
                </div>
+               <?php endif; ?>
                <div class="row grid">
                     <?php
                         global $authordata;
@@ -1530,7 +1518,7 @@ class TP_Tutor_Course extends Widget_Base {
                         endif; 
                     ?>
                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 grid-item <?php echo $item_classes; ?>">
-                      <div class="course__item-2 transition-3 white-bg mb-30 fix">
+                      <div class="course__item-2 transition-3 white-bg tp-el-sec mb-30 fix">
                            <?php if ('yes' === $settings['tp_image_show']): ?>
                            <div class="course__thumb-2 p-relative w-img fix">
                                 <a href="<?php print get_the_permalink() ?>">
@@ -1588,7 +1576,7 @@ class TP_Tutor_Course extends Widget_Base {
                                             $course_id = get_the_ID();
                                             $default_price = apply_filters('tutor-loop-default-price', __('Free', 'micourse'));
                                             $price_html = '<span> ' . $default_price . '</span>';
-                                            if (tutor_utils()->is_course_purchasable()) {
+                                            if (tutor_utils()->is_course_purchasable() && class_exists('WooCommerce')) {
 
                                                 $product_id = tutor_utils()->get_course_product_id($course_id);
                                                 $product = wc_get_product($product_id);
@@ -1603,14 +1591,14 @@ class TP_Tutor_Course extends Widget_Base {
                                </div>
                                <?php endif; ?>
                             </div>
-                            <h3 class="course__title-2">
+                            <h3 class="course__title-2 tp-el-title">
                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h3>
 
                             <?php if (!empty($settings['content'])):
                             $content_limit = (!empty($settings['content_limit'])) ? $settings['content_limit'] : '';
                             ?>
-                            <p><?php print wp_trim_words(get_the_excerpt(get_the_ID()), $content_limit, ''); ?></p>
+                            <p class="tp-el-content"><?php print wp_trim_words(get_the_excerpt(get_the_ID()), $content_limit, ''); ?></p>
                             <?php endif; ?>
 
                             <div class="course__bottom-2 d-flex align-items-center justify-content-between">
@@ -1621,11 +1609,11 @@ class TP_Tutor_Course extends Widget_Base {
                                         <div class="course__action-item d-flex align-items-center">
                                            <div class="course__action-icon mr-5">
                                               <span>
-                                                 <i class="tutor-icon-user-filled"></i>
+                                                 <i class="far fa-user"></i>
                                               </span>
                                            </div>
                                            <div class="course__action-content">
-                                            <span>
+                                            <span class="tp-el-content">
                                                 <?php echo $course_students; ?>
                                             </span>
                                            </div>
@@ -1643,7 +1631,7 @@ class TP_Tutor_Course extends Widget_Base {
                                               </span>
                                            </div>
                                            <div class="course__action-content">
-                                              <span><?php echo $tutor_lesson_count; ?></span>
+                                              <span class="tp-el-content"><?php echo $tutor_lesson_count; ?></span>
                                            </div>
                                         </div>
                                      </li>
@@ -1654,7 +1642,7 @@ class TP_Tutor_Course extends Widget_Base {
                                         <div class="course__action-item d-flex align-items-center">
                                            <div class="course__action-icon mr-5">
                                               <span>
-                                                 <i class="tutor-icon-star-line-filled"></i>
+                                                 <i class="far fa-star"></i>
                                               </span>
                                            </div>
                                            <div class="course__action-content">
@@ -1705,7 +1693,7 @@ class TP_Tutor_Course extends Widget_Base {
                         $tutor_course_duration = get_tutor_course_duration_context(get_the_ID());
                     ?>
                     <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6">
-                        <div class="course__item white-bg transition-3 mb-30">
+                        <div class="course__item white-bg transition-3 mb-30 tp-el-sec">
                            <?php if ('yes' === $settings['tp_image_show']): ?>
                            <div class="course__thumb p-relative w-img fix">
                                 <a href="<?php print get_the_permalink() ?>">
@@ -1752,7 +1740,7 @@ class TP_Tutor_Course extends Widget_Base {
                                         $course_id = get_the_ID();
                                         $default_price = apply_filters('tutor-loop-default-price', __('Free', 'micourse'));
                                         $price_html = '<span> ' . $default_price . '</span>';
-                                        if (tutor_utils()->is_course_purchasable()) {
+                                        if (tutor_utils()->is_course_purchasable() && class_exists('WooCommerce')) {
 
                                             $product_id = tutor_utils()->get_course_product_id($course_id);
                                             $product = wc_get_product($product_id);
@@ -1770,20 +1758,20 @@ class TP_Tutor_Course extends Widget_Base {
                               <?php if (!empty($terms)): ?>
                               <div class="course__tag">
                                 <?php foreach ($terms as $term) : ?>
-                                    <a href="<?php echo get_term_link($term->slug, 'course-category'); ?>"><?php echo $term->name; ?></a>
+                                    <a class="tp-el-subtitle" href="<?php echo get_term_link($term->slug, 'course-category'); ?>"><?php echo $term->name; ?></a>
                                 <?php endforeach; ?>
                               </div>
                               <?php endif; ?>
                               <?php endif; ?>
 
-                              <h3 class="course__title">
+                              <h3 class="course__title tp-el-title">
                                  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                               </h3>
 
                                 <?php if (!empty($settings['content'])):
                                 $content_limit = (!empty($settings['content_limit'])) ? $settings['content_limit'] : '';
                                 ?>
-                                <p><?php print wp_trim_words(get_the_excerpt(get_the_ID()), $content_limit, ''); ?></p>
+                                <p class="tp-el-content" ><?php print wp_trim_words(get_the_excerpt(get_the_ID()), $content_limit, ''); ?></p>
                                 <?php endif; ?>
    
                               <div class="course__bottom d-sm-flex align-items-center justify-content-between">

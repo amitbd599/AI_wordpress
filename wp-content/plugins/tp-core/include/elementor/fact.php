@@ -6,7 +6,6 @@ use Elementor\Controls_Manager;
 use \Elementor\Group_Control_Image_Size;
 use \Elementor\Repeater;
 use \Elementor\Utils;
-
 use \Elementor\Group_Control_Border;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Text_Shadow;
@@ -34,6 +33,7 @@ class TP_Fact extends Widget_Base {
 	 *
 	 * @return string Widget name.
 	 */
+
 	public function get_name() {
 		return 'tp-fact';
 	}
@@ -97,6 +97,12 @@ class TP_Fact extends Widget_Base {
 		return [ 'tpcore' ];
 	}
 
+    protected function register_controls()
+    {
+        $this->register_controls_section();
+        $this->style_tab_content();
+    }
+
 	/**
 	 * Register the widget controls.
 	 *
@@ -106,7 +112,7 @@ class TP_Fact extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function register_controls() {
+	protected function register_controls_section() {
 
         // layout Panel
         $this->start_controls_section(
@@ -384,51 +390,26 @@ class TP_Fact extends Widget_Base {
 
         $this->end_controls_section();
 
-// TAB_STYLE
-        $this->start_controls_section(
-            'section_style',
-            [
-                'label' => __( 'Style', 'tpcore' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'text_transform',
-            [
-                'label' => __( 'Text Transform', 'tpcore' ),
-                'type' => Controls_Manager::SELECT,
-                'default' => '',
-                'options' => [
-                    '' => __( 'None', 'tpcore' ),
-                    'uppercase' => __( 'UPPERCASE', 'tpcore' ),
-                    'lowercase' => __( 'lowercase', 'tpcore' ),
-                    'capitalize' => __( 'Capitalize', 'tpcore' ),
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
-
-
         // style tab here
+        
+	}
+
+    protected function style_tab_content()
+    {
         $this->start_controls_section(
             '_section_style_content',
             [
-                'label' => __( 'Title / Content', 'tocore' ),
-                'tab'   => Controls_Manager::TAB_STYLE,
+                'label' => __('Title / Content', 'tocore'),
+                'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
         $this->add_responsive_control(
             'content_padding',
             [
-                'label' => __( 'Content Padding', 'tocore' ),
+                'label' => __('Content Padding', 'tocore'),
                 'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', 'em', '%' ],
+                'size_units' => ['px', 'em', '%'],
                 'selectors' => [
                     '{{WRAPPER}} .tp-el-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
@@ -451,7 +432,7 @@ class TP_Fact extends Widget_Base {
             '_heading_title',
             [
                 'type' => Controls_Manager::HEADING,
-                'label' => __( 'Title', 'tocore' ),
+                'label' => __('Title', 'tocore'),
                 'separator' => 'before'
             ]
         );
@@ -459,7 +440,7 @@ class TP_Fact extends Widget_Base {
         $this->add_responsive_control(
             'title_spacing',
             [
-                'label' => __( 'Bottom Spacing', 'tocore' ),
+                'label' => __('Bottom Spacing', 'tocore'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'selectors' => [
@@ -471,7 +452,7 @@ class TP_Fact extends Widget_Base {
         $this->add_control(
             'title_color',
             [
-                'label' => __( 'Text Color', 'tocore' ),
+                'label' => __('Text Color', 'tocore'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tp-el-title' => 'color: {{VALUE}}',
@@ -484,7 +465,6 @@ class TP_Fact extends Widget_Base {
             [
                 'name' => 'title',
                 'selector' => '{{WRAPPER}} .tp-el-title',
-                'scheme' => Typography::TYPOGRAPHY_2,
             ]
         );
 
@@ -493,7 +473,7 @@ class TP_Fact extends Widget_Base {
             '_heading_subtitle',
             [
                 'type' => Controls_Manager::HEADING,
-                'label' => __( 'Subtitle', 'tocore' ),
+                'label' => __('Subtitle', 'tocore'),
                 'separator' => 'before'
             ]
         );
@@ -501,7 +481,7 @@ class TP_Fact extends Widget_Base {
         $this->add_responsive_control(
             'subtitle_spacing',
             [
-                'label' => __( 'Bottom Spacing', 'tocore' ),
+                'label' => __('Bottom Spacing', 'tocore'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'selectors' => [
@@ -513,7 +493,7 @@ class TP_Fact extends Widget_Base {
         $this->add_control(
             'subtitle_color',
             [
-                'label' => __( 'Text Color', 'tocore' ),
+                'label' => __('Text Color', 'tocore'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tp-el-subtitle' => 'color: {{VALUE}}',
@@ -526,7 +506,6 @@ class TP_Fact extends Widget_Base {
             [
                 'name' => 'subtitle',
                 'selector' => '{{WRAPPER}} .tp-el-subtitle',
-                'scheme' => Typography::TYPOGRAPHY_3,
             ]
         );
 
@@ -535,7 +514,7 @@ class TP_Fact extends Widget_Base {
             '_content_description',
             [
                 'type' => Controls_Manager::HEADING,
-                'label' => __( 'Description', 'tocore' ),
+                'label' => __('Description', 'tocore'),
                 'separator' => 'before'
             ]
         );
@@ -543,7 +522,7 @@ class TP_Fact extends Widget_Base {
         $this->add_responsive_control(
             'description_spacing',
             [
-                'label' => __( 'Bottom Spacing', 'tocore' ),
+                'label' => __('Bottom Spacing', 'tocore'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'selectors' => [
@@ -555,7 +534,7 @@ class TP_Fact extends Widget_Base {
         $this->add_control(
             'description_color',
             [
-                'label' => __( 'Text Color', 'tocore' ),
+                'label' => __('Text Color', 'tocore'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .tp-el-content p' => 'color: {{VALUE}}',
@@ -568,13 +547,11 @@ class TP_Fact extends Widget_Base {
             [
                 'name' => 'description',
                 'selector' => '{{WRAPPER}} .tp-el-content p',
-                'scheme' => Typography::TYPOGRAPHY_4,
             ]
         );
 
-
         $this->end_controls_section();
-	}
+    }
 
 	/**
 	 * Render the widget output on the frontend.
@@ -596,7 +573,7 @@ class TP_Fact extends Widget_Base {
                     <?php if ( !empty($settings['tp_section_title_show']) ) : ?>
                     <div class="row justify-content-center">
                         <div class="col-lg-6 col-md-8">
-                            <div class="section__title text-center">
+                            <div class="section__title text-center  tp-el-content">
                                 <?php if ( !empty($settings['tp_sub_title']) ) : ?>
                                 <span class="sub-title tp-el-subtitle"><?php echo tp_kses( $settings['tp_sub_title'] ); ?></span>
                                 <?php endif; ?>

@@ -19,6 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @since 1.0.0
  */
 class TP_IconBox extends Widget_Base {
+    use TP_Style_Trait;
 
 	/**
 	 * Retrieve the widget name.
@@ -92,6 +93,12 @@ class TP_IconBox extends Widget_Base {
 		return [ 'tpcore' ];
 	}
 
+    protected function register_controls()
+    {
+        $this->register_controls_section();
+        $this->style_tab_content();
+    }
+
 	/**
 	 * Register the widget controls.
 	 *
@@ -101,7 +108,7 @@ class TP_IconBox extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function register_controls() {
+	protected function register_controls_section() {
 
         // layout Panel
         $this->start_controls_section(
@@ -374,34 +381,15 @@ class TP_IconBox extends Widget_Base {
         
         $this->end_controls_section();
 
-		$this->start_controls_section(
-			'section_style',
-			[
-				'label' => __( 'Style', 'tpcore' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'text_transform',
-			[
-				'label' => __( 'Text Transform', 'tpcore' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => '',
-				'options' => [
-					'' => __( 'None', 'tpcore' ),
-					'uppercase' => __( 'UPPERCASE', 'tpcore' ),
-					'lowercase' => __( 'lowercase', 'tpcore' ),
-					'capitalize' => __( 'Capitalize', 'tpcore' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
 	}
+
+    protected function style_tab_content()
+    {
+        $this->tp_section_style_controls('about_section', 'Section', '.tp-el-sec');
+        $this->tp_basic_style_controls('heading_title', 'Title', '.tp-el-title');
+        $this->tp_basic_style_controls('heading_desc', 'Description', '.tp-el-content');
+        $this->tp_link_controls_style('', 'b_btn1_style', 'Button', '.tp-el-btn');
+    }
 
 	/**
 	 * Render the widget output on the frontend.
@@ -418,10 +406,10 @@ class TP_IconBox extends Widget_Base {
 		?>
 
 		<?php if ( $settings['tp_design_style']  == 'layout-2' ): 
-            $this->add_render_attribute('title_args', 'class', 'research__title');
+            $this->add_render_attribute('title_args', 'class', 'research__title tp-el-title');
         ?>
 
-        <div class="research__item research__item-border text-center mb-30 transition-3">
+        <div class="research__item research__item-border text-center mb-30 transition-3 tp-el-sec ">
             <div class="research__thumb mb-35">
                 <?php if($settings['tp_icon_type'] !== 'image') : ?>
                 <?php if (!empty($settings['tp_icon']) || !empty($settings['tp_selected_icon']['value'])) : ?>
@@ -446,29 +434,29 @@ class TP_IconBox extends Widget_Base {
                 endif;
                 ?>
                 <?php if ( !empty($settings['tp_desctiption']) ) : ?>
-                <p><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
+                <p class="tp-el-content" ><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
                 <?php endif; ?>
             </div>
         </div>
 
 		<?php else: 
-			$this->add_render_attribute('title_args', 'class', 'contact__title');
+			$this->add_render_attribute('title_args', 'class', 'contact__title tp-el-title');
 
             // Link
             if ('2' == $settings['tp_btn_link_type']) {
                 $this->add_render_attribute('tp-button-arg', 'href', get_permalink($settings['tp_btn_page_link']));
                 $this->add_render_attribute('tp-button-arg', 'target', '_self');
                 $this->add_render_attribute('tp-button-arg', 'rel', 'nofollow');
-                $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn tp-btn-border');
+                $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn tp-btn-border tp-el-btn');
             } else {
                 if ( ! empty( $settings['tp_btn_link']['url'] ) ) {
                     $this->add_link_attributes( 'tp-button-arg', $settings['tp_btn_link'] );
-                    $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn tp-btn-border ');
+                    $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn tp-btn-border tp-el-btn');
                 }
             }
 		?>	
 
-        <div class="contact__item text-center mb-30 transition-3 white-bg">
+        <div class="contact__item text-center mb-30 transition-3 white-bg tp-el-sec">
             <div class="contact__icon d-flex justify-content-center align-items-end">
                 <?php if($settings['tp_icon_type'] !== 'image') : ?>
                 <?php if (!empty($settings['tp_icon']) || !empty($settings['tp_selected_icon']['value'])) : ?>
@@ -494,7 +482,7 @@ class TP_IconBox extends Widget_Base {
                 ?>
 
                 <?php if ( !empty($settings['tp_desctiption']) ) : ?>
-                    <p class="keyFeatureBlock__text"><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
+                    <p class="keyFeatureBlock__text tp-el-content"><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
                 <?php endif; ?>
 
               <?php if (!empty($settings['tp_btn_button_show'])) : ?>

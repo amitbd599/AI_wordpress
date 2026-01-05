@@ -19,6 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 class TP_Main_Slider extends Widget_Base {
 
+    use TP_Style_Trait;
+
 	/**
 	 * Retrieve the widget name.
 	 *
@@ -91,6 +93,12 @@ class TP_Main_Slider extends Widget_Base {
 		return [ 'tpcore' ];
 	}
 
+    protected function register_controls()
+    {
+        $this->register_controls_section();
+        $this->style_tab_content();
+    }
+
 	/**
 	 * Register the widget controls.
 	 *
@@ -100,7 +108,7 @@ class TP_Main_Slider extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function register_controls() {
+	protected function register_controls_section() {
 		
 
         // layout Panel
@@ -338,37 +346,17 @@ class TP_Main_Slider extends Widget_Base {
             ]
         );
         $this->end_controls_section();
-
-
-        // Style
-		$this->start_controls_section(
-			'section_style',
-			[
-				'label' => __( 'Style', 'tpcore' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'text_transform',
-			[
-				'label' => __( 'Text Transform', 'tpcore' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => '',
-				'options' => [
-					'' => __( 'None', 'tpcore' ),
-					'uppercase' => __( 'UPPERCASE', 'tpcore' ),
-					'lowercase' => __( 'lowercase', 'tpcore' ),
-					'capitalize' => __( 'Capitalize', 'tpcore' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
 	}
+
+    // style_tab_content
+    protected function style_tab_content()
+    {
+        $this->tp_section_style_controls('about_section', 'Section', '.tp-el-sec');
+        $this->tp_basic_style_controls('slider_title', 'Title', '.tp-el-title');
+        $this->tp_basic_style_controls('slider_subtitle', 'Subtitle', '.tp-el-subtitle');
+        $this->tp_basic_style_controls('slider_desc', 'Description', '.tp-el-content');
+        $this->tp_link_controls_style('', 'b_btn1_style', 'Button', '.tp-el-btn');
+    }
 
 	/**
 	 * Render the widget output on the frontend.
@@ -388,7 +376,7 @@ class TP_Main_Slider extends Widget_Base {
             <div class="slider__active swiper-container">
                <div class="swiper-wrapper">
            		<?php foreach ($settings['slider_list'] as $item) :
-        			$this->add_render_attribute('title_args', 'class', 'slider__title-3');
+        			$this->add_render_attribute('title_args', 'class', 'slider__title-3 tp-el-title');
 					$this->add_render_attribute('title_args', 'data-animation', 'fadeInUp');
 					$this->add_render_attribute('title_args', 'data-delay', '.6s');
 
@@ -408,14 +396,14 @@ class TP_Main_Slider extends Widget_Base {
                         $rel = !empty($item['tp_btn_link']['nofollow']) ? 'nofollow' : '';
                     }
                 ?>                   
-                <div class="slider__item swiper-slide p-relative slider__height slider__height-3 d-flex align-items-center z-index-1">
+                <div class="slider__item swiper-slide p-relative slider__height slider__height-3 tp-el-sec d-flex align-items-center z-index-1">
                      <div class="slider__bg slider__overlay slider__overlay-3 include-bg" data-background="<?php echo esc_url($tp_slider_image_url); ?>"></div>
                      <div class="container">
                         <div class="row">
                            <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-10 col-sm-10">
                               <div class="slider__content-3 p-relative z-index-1">
                              	<?php if (!empty($item['tp_slider_sub_title'])) : ?>
-                                 <span data-animation="fadeInUp" data-delay=".3s"> 
+                                 <span class="tp-el-subtitle" data-animation="fadeInUp" data-delay=".3s"> 
                                     <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8.745 0.4425C9.435 -0.1475 10.565 -0.1475 11.265 0.4425L12.845 1.8025C13.145 2.0625 13.705 2.2725 14.105 2.2725H15.805C16.865 2.2725 17.735 3.1425 17.735 4.2025V5.9025C17.735 6.2925 17.945 6.8625 18.205 7.1625L19.565 8.7425C20.155 9.4325 20.155 10.5625 19.565 11.2625L18.205 12.8425C17.945 13.1425 17.735 13.7025 17.735 14.1025V15.8025C17.735 16.8625 16.865 17.7325 15.805 17.7325H14.105C13.715 17.7325 13.145 17.9425 12.845 18.2025L11.265 19.5625C10.575 20.1525 9.445 20.1525 8.745 19.5625L7.165 18.2025C6.865 17.9425 6.305 17.7325 5.905 17.7325H4.175C3.115 17.7325 2.245 16.8625 2.245 15.8025V14.0925C2.245 13.7025 2.035 13.1425 1.785 12.8425L0.435 11.2525C-0.145 10.5625 -0.145 9.4425 0.435 8.7525L1.785 7.1625C2.035 6.8625 2.245 6.3025 2.245 5.9125V4.1925C2.245 3.1325 3.115 2.2625 4.175 2.2625H5.905C6.295 2.2625 6.865 2.0525 7.165 1.7925L8.745 0.4425Z" fill="#FF8D00"/>
                                     <path d="M6.375 9.99251L8.785 12.4125L13.615 7.57251" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -437,7 +425,9 @@ class TP_Main_Slider extends Widget_Base {
                                     <form action="<?php print eduker_header_search_url();?>">
                                        <div class="slider__search-input p-relative">
                                        	  <input type="search" name="s" value="<?php print esc_attr( get_search_query() )?>" placeholder="<?php echo esc_attr__('Course title here...','tpcore'); ?>">
-                                          <button type="submit">Search</button>
+                                          <button type="submit">
+                                            <?php echo esc_html__('Search','tpcore'); ?>
+                                          </button>
                                           <div class="slider__search-input-icon">
                                              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M8.625 15.75C12.56 15.75 15.75 12.56 15.75 8.625C15.75 4.68997 12.56 1.5 8.625 1.5C4.68997 1.5 1.5 4.68997 1.5 8.625C1.5 12.56 4.68997 15.75 8.625 15.75Z" stroke="#828282" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -449,14 +439,14 @@ class TP_Main_Slider extends Widget_Base {
                                  </div>
                                  <?php endif; ?>
                                  <?php if (!empty($item['tp_slider_description'])) : ?>
-                                 <div class="slider__list" data-animation="fadeInUp" data-delay="1.2s">
+                                 <div class="slider__list tp-el-content " data-animation="fadeInUp" data-delay="1.2s">
                                     <?php echo tp_kses( $item['tp_slider_description'] ); ?>
                                  </div>
                                  <?php endif; ?>
 
                                  <?php if (!empty($link)) : ?>
-                                 <div class="slider__btn" data-animation="fadeInUp" data-delay="1.1s">
-                                    <a target="<?php echo esc_attr($target); ?>" rel="<?php echo esc_attr($rel); ?>" href="<?php echo esc_url($link); ?>" class="tp-btn-5 tp-btn-11">
+                                 <div class="slider__btn " data-animation="fadeInUp" data-delay="1.1s">
+                                    <a target="<?php echo esc_attr($target); ?>" rel="<?php echo esc_attr($rel); ?>" href="<?php echo esc_url($link); ?>" class="tp-btn-5 tp-btn-11 tp-el-btn">
                                     	<?php echo tp_kses($item['tp_btn_btn_text']); ?>
                                     </a>
                                  </div>
@@ -483,7 +473,7 @@ class TP_Main_Slider extends Widget_Base {
 
                <div class="swiper-wrapper">
            		<?php foreach ($settings['slider_list'] as $item) :
-        			$this->add_render_attribute('title_args', 'class', 'slider__title');
+        			$this->add_render_attribute('title_args', 'class', 'slider__title tp-el-title');
 					$this->add_render_attribute('title_args', 'data-animation', 'fadeInUp');
 					$this->add_render_attribute('title_args', 'data-delay', '.6s');
 
@@ -503,14 +493,14 @@ class TP_Main_Slider extends Widget_Base {
                         $rel = !empty($item['tp_btn_link']['nofollow']) ? 'nofollow' : '';
                     }
                 ?> 
-                  <div class="slider__item swiper-slide p-relative slider__height d-flex align-items-center z-index-1">
+                  <div class="slider__item swiper-slide p-relative slider__height tp-el-sec d-flex align-items-center z-index-1">
                      <div class="slider__bg slider__overlay include-bg" data-background="<?php echo esc_url($tp_slider_image_url); ?>"></div>
                      <div class="container">
                         <div class="row">
                            <div class="col-xl-7 col-lg-8 col-md-10 col-sm-10">
                               <div class="slider__content p-relative z-index-1">
                               	<?php if (!empty($item['tp_slider_sub_title'])) : ?>
-                                 <span data-animation="fadeInUp" data-delay=".3s"><?php echo tp_kses( $item['tp_slider_sub_title'] ); ?></span>
+                                 <span class="tp-el-subtitle" data-animation="fadeInUp" data-delay=".3s"><?php echo tp_kses( $item['tp_slider_sub_title'] ); ?></span>
                              	<?php endif; ?>
 
 								<?php
@@ -523,12 +513,12 @@ class TP_Main_Slider extends Widget_Base {
                                     endif;
                                 ?>
                                 <?php if (!empty($item['tp_slider_description'])) : ?>
-                                 <p data-animation="fadeInUp" data-delay=".9s"><?php echo tp_kses( $item['tp_slider_description'] ); ?></p>
+                                 <p class="tp-el-content" data-animation="fadeInUp" data-delay=".9s"><?php echo tp_kses( $item['tp_slider_description'] ); ?></p>
                                  <?php endif; ?>
 
                                  <?php if (!empty($link)) : ?>
                                  <div class="slider__btn" data-animation="fadeInUp" data-delay="1.1s">
-                                    <a target="<?php echo esc_attr($target); ?>" rel="<?php echo esc_attr($rel); ?>" href="<?php echo esc_url($link); ?>" class="tp-btn">
+                                    <a target="<?php echo esc_attr($target); ?>" rel="<?php echo esc_attr($rel); ?>" href="<?php echo esc_url($link); ?>" class="tp-btn tp-el-btn">
                                     	<?php echo tp_kses($item['tp_btn_btn_text']); ?>
                                     </a>
                                  </div>

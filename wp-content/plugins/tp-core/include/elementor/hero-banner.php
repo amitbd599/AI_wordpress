@@ -18,6 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 class TP_Hero_Banner extends Widget_Base {
 
+    use TP_Style_Trait;
 	/**
 	 * Retrieve the widget name.
 	 *
@@ -75,6 +76,12 @@ class TP_Hero_Banner extends Widget_Base {
 		return [ 'tpcore' ];
 	}
 
+    protected function register_controls()
+    {
+        $this->register_controls_section();
+        $this->style_tab_content();
+    }
+
 	/**
 	 * Retrieve the list of scripts the widget depended on.
 	 *
@@ -99,7 +106,7 @@ class TP_Hero_Banner extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function register_controls() {
+	protected function register_controls_section() {
 
         // layout Panel
         $this->start_controls_section(
@@ -116,7 +123,6 @@ class TP_Hero_Banner extends Widget_Base {
                 'options' => [
                     'layout-1' => esc_html__('Layout 1', 'tpcore'),
                     'layout-2' => esc_html__('Layout 2', 'tpcore'),
-                    'layout-3' => esc_html__('Layout 3', 'tpcore'),
                 ],
                 'default' => 'layout-1',
             ]
@@ -444,37 +450,16 @@ class TP_Hero_Banner extends Widget_Base {
         );
 
         $this->end_controls_section();
-
-
-		// TAB_STYLE
-		$this->start_controls_section(
-			'section_style',
-			[
-				'label' => __( 'Style', 'tpcore' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'text_transform',
-			[
-				'label' => __( 'Text Transform', 'tpcore' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => '',
-				'options' => [
-					'' => __( 'None', 'tpcore' ),
-					'uppercase' => __( 'UPPERCASE', 'tpcore' ),
-					'lowercase' => __( 'lowercase', 'tpcore' ),
-					'capitalize' => __( 'Capitalize', 'tpcore' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
 	}
+
+    protected function style_tab_content()
+    {
+        $this->tp_section_style_controls('about_section', 'Section', '.tp-el-sec');
+        $this->tp_basic_style_controls('heading_title', 'Title', '.tp-el-title');
+        $this->tp_basic_style_controls('heading_subtitle', 'Subtitle', '.tp-el-subtitle');
+        $this->tp_basic_style_controls('heading_desc', 'Description', '.tp-el-content');
+        $this->tp_link_controls_style('', 'b_btn1_style', 'Button', '.tp-el-btn');
+    }
 
 	/**
 	 * Render the widget output on the frontend.
@@ -497,7 +482,7 @@ class TP_Hero_Banner extends Widget_Base {
         } else {
             if ( ! empty( $settings['tp_btn_link']['url'] ) ) {
                 $this->add_link_attributes( 'tp-button-arg', $settings['tp_btn_link'] );
-                $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn-green');
+                $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn-green tp-el-btn');
             }
         }
 
@@ -509,16 +494,16 @@ class TP_Hero_Banner extends Widget_Base {
                 $tp_image_alt           = get_post_meta($settings["tp_image"]["id"], "_wp_attachment_image_alt", true);
             }
 
-            $this->add_render_attribute('title_args', 'class', 'hero__title hero__title--big');
+            $this->add_render_attribute('title_args', 'class', 'hero__title hero__title--big tp-el-title');
         ?>
-        <section class="hero hero--style2">
+        <section class="hero hero--style2 tp-el-sec">
           <div class="container container--custom">
             <div class="row align-items-center justify-content-between">
               <div class="col-12">
                 <div class="hero__content text-center">
                   <?php if ( !empty($settings['tp_section_title_show']) ) : ?>  
                    <?php if ( !empty($settings['tp_sub_title']) ) : ?>
-                    <span class="hero__title hero__title--small"><?php echo tp_kses( $settings['tp_sub_title'] ); ?></span>
+                    <span class="hero__title hero__title--small tp-el-subtitle"><?php echo tp_kses( $settings['tp_sub_title'] ); ?></span>
                     <?php endif; ?>
 
                     <?php
@@ -532,7 +517,7 @@ class TP_Hero_Banner extends Widget_Base {
                     ?>
 
                     <?php if ( !empty($settings['tp_desctiption']) ) : ?>
-                     <p class="hero__text wow animate__fadeInUp animate__animated" data-wow-duration="1200ms" data-wow-delay="400ms"><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
+                     <p class="hero__text wow animate__fadeInUp animate__animated tp-el-content" data-wow-duration="1200ms" data-wow-delay="400ms"><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
                     <?php endif; ?>
 
                   <?php endif; ?> 
@@ -558,16 +543,6 @@ class TP_Hero_Banner extends Widget_Base {
           </div>
         </section>
 
-        <?php elseif ( $settings['tp_design_style']  == 'layout-3' ):
-            if ( !empty($settings['tp_image']['url']) ) {
-                $tp_image = !empty($settings['tp_image']['id']) ? wp_get_attachment_image_url( $settings['tp_image']['id'], $settings['tp_image_size_size']) : $settings['tp_image']['url'];
-                $tp_image_alt           = get_post_meta($settings["tp_image"]["id"], "_wp_attachment_image_alt", true);
-            } 
-            $this->add_render_attribute('title_args', 'class', 'hero__title hero__title--big');
-        ?>
-
-
-
 		<?php else: 
             if ( !empty($settings['tp_image']['url']) ) {
                 $tp_image = !empty($settings['tp_image']['id']) ? wp_get_attachment_image_url( $settings['tp_image']['id'], $settings['tp_image_size_size']) : $settings['tp_image']['url'];
@@ -584,7 +559,7 @@ class TP_Hero_Banner extends Widget_Base {
                 $tp_shape_image_2_alt           = get_post_meta($settings["tp_shape_image_2"]["id"], "_wp_attachment_image_alt", true);
             }
             
-			$this->add_render_attribute('title_args', 'class', 'slider__title-2');
+			$this->add_render_attribute('title_args', 'class', 'slider__title-2 tp-el-title');
 
 		?>	
          <section class="slider__area slider__height-2 include-bg d-flex align-items-center">
@@ -593,7 +568,7 @@ class TP_Hero_Banner extends Widget_Base {
                   <div class="col-xxl-6 col-lg-6">
                      <div class="slider__content-2 mt-30">
                        <?php if ( !empty($settings['tp_sub_title']) ) : ?>
-                        <span><?php echo tp_kses( $settings['tp_sub_title'] ); ?></span>
+                        <span class="tp-el-subtitle " ><?php echo tp_kses( $settings['tp_sub_title'] ); ?></span>
                         <?php endif; ?>
 
                         <?php
@@ -607,7 +582,7 @@ class TP_Hero_Banner extends Widget_Base {
                         ?>
 
                         <?php if ( !empty($settings['tp_desctiption']) ) : ?>
-                         <p><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
+                         <p class="tp-el-content" ><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
                         <?php endif; ?>
                         
                         <?php if (!empty($settings['tp_btn_text'])) : ?>

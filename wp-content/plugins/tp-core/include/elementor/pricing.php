@@ -24,6 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @since 1.0.0
  */
 class TP_Pricing extends Widget_Base {
+    use TP_Style_Trait;
 
 	/**
 	 * Retrieve the widget name.
@@ -97,6 +98,12 @@ class TP_Pricing extends Widget_Base {
 		return [ 'tpcore' ];
 	}
 
+    protected function register_controls()
+    {
+        $this->register_controls_section();
+        $this->style_tab_content();
+    }
+
 	/**
 	 * Register the widget controls.
 	 *
@@ -106,7 +113,7 @@ class TP_Pricing extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function register_controls() {
+	protected function register_controls_section() {
 
 
         $this->start_controls_section(
@@ -123,7 +130,7 @@ class TP_Pricing extends Widget_Base {
                 'type' => Controls_Manager::SELECT,
                 'options' => [
                     'layout-1' => esc_html__('Layout 1', 'tpcore'),
-                    'layout-2' => esc_html__('Layout 2', 'tpcore'),
+                    //'layout-2' => esc_html__('Layout 2', 'tpcore'),
                 ],
                 'default' => 'layout-1',
             ]
@@ -645,6 +652,17 @@ class TP_Pricing extends Widget_Base {
 
 	}
 
+    protected function style_tab_content()
+    {
+        $this->tp_section_style_controls('section', 'Section', '.tp-el-sec');
+        $this->tp_basic_style_controls('pricing_heading_title', 'Title', '.tp-el-title');
+        $this->tp_basic_style_controls('pricing_heading_desc', 'List', '.tp-el-list li');
+
+        $this->tp_basic_style_controls('pricing_heading_price', 'Price', '.tp-el-price');
+        $this->tp_basic_style_controls('pricing_heading_month', 'Month', '.tp-el-month');
+        $this->tp_link_controls_style('', 'b_btn1_style', 'Button', '.tp-el-btn');
+    }
+
     private static function get_currency_symbol($symbol_name)
     {
         $symbols = [
@@ -689,11 +707,11 @@ class TP_Pricing extends Widget_Base {
                 $this->add_render_attribute('tp-button-arg', 'href', get_permalink($settings['tp_btn_page_link']));
                 $this->add_render_attribute('tp-button-arg', 'target', '_self');
                 $this->add_render_attribute('tp-button-arg', 'rel', 'nofollow');
-                $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn-9 tp-btn-12 w-100');
+                $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn-9 tp-btn-12 w-100 tp-el-btn');
             } else {
                 if ( ! empty( $settings['tp_btn_link']['url'] ) ) {
                     $this->add_link_attributes( 'tp-button-arg', $settings['tp_btn_link'] );
-                    $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn-9 tp-btn-12 w-100');
+                    $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn-9 tp-btn-12 w-100 tp-el-btn');
                 }
             }
 
@@ -703,13 +721,11 @@ class TP_Pricing extends Widget_Base {
 	            $currency = self::get_currency_symbol($settings['currency']);
 	        }
 
-	        $class_name = $settings['active_price'] ? 'active' : '';
-	        
-
+	        $class_name = $settings['active_price'] ? 'active' : '';      
 		?>
 
 
-     <div class="price__item white-bg mb-30 transition-3 fix p-relative <?php echo esc_attr($class_name); ?>">
+     <div class="price__item white-bg mb-30 transition-3 fix p-relative tp-el-sec <?php echo esc_attr($class_name); ?>">
         <?php if ( !empty($settings['show_badge']) ) : ?>
         <div class="badge-price">
             <span><?php echo esc_html($settings['badge_text']); ?></span>
@@ -717,18 +733,18 @@ class TP_Pricing extends Widget_Base {
         <?php endif; ?>
 
         <?php if ($settings['title']) : ?>
-        <h3 class="price__title"><?php echo tp_kses($settings['title']); ?></h3>
+        <h3 class="price__title tp-el-title"><?php echo tp_kses($settings['title']); ?></h3>
         <?php endif; ?>
 
         <div class="price__content">
         	<?php if (!empty($settings['features_switch'])) : ?>
 			<?php if ($settings['features_title']) : ?>
             <h4>
-                <b><u><?php echo tp_kses($settings['features_title']); ?></u></b>
+                <b><u class="tp-el-list" ><?php echo tp_kses($settings['features_title']); ?></u></b>
             </h4>
             <?php endif; ?>
            <div class="price__list mb-35">
-              <ul>
+              <ul class="tp-el-list">
               	<?php foreach ($settings['features_list'] as $index => $item) :
               		$availability = $item['tp_feature_unavailable'] ? 'unavailable' : 'price-available';
                 ?>
@@ -742,10 +758,10 @@ class TP_Pricing extends Widget_Base {
             <?php endif; ?>
 
            <div class="price__amount mb-30">
-	            <h4>
+	            <h4 class="tp-el-price" >
 	              	<?php echo esc_html($currency); ?><?php echo tp_kses($settings['price']); ?> 
 					<?php if ($settings['period']) : ?>
-                        <span>/ <?php echo tp_kses($settings['period']); ?></span>
+                        <span class="tp-el-month" >/ <?php echo tp_kses($settings['period']); ?></span>
                     <?php endif; ?>
 	          	</h4>
            </div>

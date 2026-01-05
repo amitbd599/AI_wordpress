@@ -336,35 +336,6 @@ class TP_Heading extends Widget_Base {
         );
         $this->end_controls_section();
 
-        // TAB_STYLE
-		$this->start_controls_section(
-			'section_style',
-			[
-				'label' => __( 'Style', 'tpcore' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'text_transform',
-			[
-				'label' => __( 'Text Transform', 'tpcore' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => '',
-				'options' => [
-					'' => __( 'None', 'tpcore' ),
-					'uppercase' => __( 'UPPERCASE', 'tpcore' ),
-					'lowercase' => __( 'lowercase', 'tpcore' ),
-					'capitalize' => __( 'Capitalize', 'tpcore' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
-
 
         // style tab here
         $this->start_controls_section(
@@ -436,7 +407,6 @@ class TP_Heading extends Widget_Base {
             [
                 'name' => 'title',
                 'selector' => '{{WRAPPER}} .tp-el-title',
-                'scheme' => Typography::TYPOGRAPHY_2,
             ]
         );
 
@@ -478,7 +448,6 @@ class TP_Heading extends Widget_Base {
             [
                 'name' => 'subtitle',
                 'selector' => '{{WRAPPER}} .tp-el-subtitle',
-                'scheme' => Typography::TYPOGRAPHY_3,
             ]
         );
 
@@ -520,7 +489,6 @@ class TP_Heading extends Widget_Base {
             [
                 'name' => 'description',
                 'selector' => '{{WRAPPER}} .tp-el-content p',
-                'scheme' => Typography::TYPOGRAPHY_4,
             ]
         );
 

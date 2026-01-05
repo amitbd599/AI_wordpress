@@ -137,12 +137,20 @@ class TP_Core_Plugin {
 			require_once( TPCORE_ELEMENTS_PATH . "/{$widget_file_name}.php" );
 		}
 
-		// Charitable_Campaign
+		// tutor course widget
 		if ( function_exists( 'tutor' ) ) {
 			foreach($this->tpcore_widget_list_tutor() as $widget_file_name){
 				require_once( TPCORE_ELEMENTS_PATH . "/{$widget_file_name}.php" );
 			}
 		}
+
+		// Wpeventin
+		if ( class_exists( 'Wpeventin' ) ) {
+			foreach($this->tpcore_widget_list_events_etn() as $widget_file_name){
+				require_once( TPCORE_ELEMENTS_PATH . "/{$widget_file_name}.php" );
+			}
+		}
+
 	}
 
 	public function tpcore_widget_list() {
@@ -163,20 +171,16 @@ class TP_Core_Plugin {
 			'services',
 			'process',
 			'testimonial',
-			'portfolio',
-			// 'portfolio-post',
+			'portfolio', 
 			'blog-post',
 			'contact-form',
 			'contact-info',
-			// 'skill',
 			'iconbox',
-			// 'gallery-tab',
 			'big-text',
 			'live-donation',
 			'tp-btn',
 			'stories',
 			'mission',
-			'events',
 			'faq',
 			'video-popup',
 			'category',
@@ -187,10 +191,17 @@ class TP_Core_Plugin {
 		];
 	}
 
-	// tpcore_widget_list_campaign
+	// tpcore_widget_list_tutor
 	public function tpcore_widget_list_tutor() {
 		return [
 			'tutor-course',
+		];
+	}
+
+	// etn events
+	public function tpcore_widget_list_events_etn() {
+		return [
+			'events',
 		];
 	}
 
@@ -229,39 +240,6 @@ class TP_Core_Plugin {
     
 
     public function tp_add_custom_icons_tab($tabs = array()){
-
-
-
-    // 	// echo "<pre>";
-    // 	// print_r($custom_font_icons);
-
-        // $tabs['tp-feather-icons'] = array(
-        //     'name' => 'tp-feather-icons',
-        //     'label' => esc_html__('TP - Feather Icons', 'tpcore'),
-        //     'labelIcon' => 'tp-icon',
-        //     'prefix' => '',
-        //     'displayPrefix' => 'tp',
-        //     'url' => TPCORE_ADDONS_URL . 'assets/css/feather.css',
-        //     'icons' => include_once(TPCORE_ADDONS_DIR . '/include/icons/feather-fonts.php'),
-        //     'ver' => '1.0.0',
-        // ); 
-
-
-        // $tabs['tp-fontawesome-icons'] = array(
-        //     'name' => 'tp-fontawesome-icons',
-        //     'label' => esc_html__('TP - Fontawesome Pro Light', 'tpcore'),
-        //     'labelIcon' => 'tp-icon',
-        //     'prefix' => 'fa-',
-        //     'displayPrefix' => 'fal',
-        //     'url' => TPCORE_ADDONS_URL . 'assets/css/fontawesome-all.min.css',
-        //     'icons' => include_once(TPCORE_ADDONS_DIR . '/include/icons/fa-light-fonts.php'),
-        //     'ver' => '1.0.0',
-        // );    
-
-
-        // return $tabs;
-
-
 
         // Append new icons
         $feather_icons = array(
@@ -367,7 +345,7 @@ class TP_Core_Plugin {
 	        $campaign_template_file_path = __DIR__ . '/include/template/single-campaign.php';
 	        $campaign_template           = $campaign_template_file_path;
 	    }
-	    if ( ( get_post_type() == 'tribe_events' ) && is_single() ) {
+	    if ( ( get_post_type() == 'etn' ) && is_single() ) {
 	        $campaign_template_file_path = __DIR__ . '/include/template/single-event.php';
 	        $campaign_template           = $campaign_template_file_path;
 	    }
@@ -407,8 +385,6 @@ class TP_Core_Plugin {
 	    // $this->tp_add_custom_icons_tab();
 
 	    add_action('elementor/editor/after_enqueue_scripts', [$this, 'tp_enqueue_editor_scripts'] );
-
-	    add_filter( 'template_include', [ $this, 'campaign_template_fun' ], 99 );
 
 		$this->add_page_settings_controls();
 

@@ -131,3 +131,31 @@ footer {
 .blog__sidebar .widget-follow .social ul li {
   border: none !important;
 }
+
+.footer__widget img.attachment-thumbnail.size-thumbnail {
+  border-radius: 6px;
+}
+
+.footer-wrapper.latest_blog_post .inner li {
+  display: flex;
+  .img-file img {
+    margin-right: 10px;
+    width: 80px;
+  }
+  a {
+    font-size: 16px;
+    color: var(--common-white);
+    transition: all 0.2s linear;
+    &:hover {
+      color: var(--theme-1);
+    }
+  }
+}
+
+.footer-wrapper.three {
+  ul {
+    li {
+      margin-bottom: 5px;
+    }
+  }
+}

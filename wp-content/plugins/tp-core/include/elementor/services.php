@@ -18,6 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @since 1.0.0
  */
 class TP_Services extends Widget_Base {
+    use TP_Style_Trait;
 
     /**
      * Retrieve the widget name.
@@ -91,6 +92,12 @@ class TP_Services extends Widget_Base {
         return [ 'tpcore' ];
     }
 
+    protected function register_controls()
+    {
+        $this->register_controls_section();
+        $this->style_tab_content();
+    }
+
     /**
      * Register the widget controls.
      *
@@ -100,7 +107,7 @@ class TP_Services extends Widget_Base {
      *
      * @access protected
      */
-    protected function register_controls() {
+    protected function register_controls_section() {
 
         // layout Panel
         $this->start_controls_section(
@@ -438,35 +445,15 @@ class TP_Services extends Widget_Base {
         );
 
         $this->end_controls_section();
+    }
 
-        // TAB_STYLE
-        $this->start_controls_section(
-            'section_style',
-            [
-                'label' => __( 'Style', 'tpcore' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'text_transform',
-            [
-                'label' => __( 'Text Transform', 'tpcore' ),
-                'type' => Controls_Manager::SELECT,
-                'default' => '',
-                'options' => [
-                    '' => __( 'None', 'tpcore' ),
-                    'uppercase' => __( 'UPPERCASE', 'tpcore' ),
-                    'lowercase' => __( 'lowercase', 'tpcore' ),
-                    'capitalize' => __( 'Capitalize', 'tpcore' ),
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
+    protected function style_tab_content()
+    {
+        $this->tp_section_style_controls('about_section', 'Section', '.tp-el-sec');
+        $this->tp_basic_style_controls('heading_title', 'Title', '.tp-el-title');
+        $this->tp_basic_style_controls('heading_subtitle', 'Subtitle', '.tp-el-subtitle');
+        $this->tp_basic_style_controls('heading_desc', 'Description', '.tp-el-content');
+        $this->tp_link_controls_style('', 'b_btn1_style', 'Button', '.tp-el-btn');
     }
 
     /**
@@ -494,7 +481,7 @@ class TP_Services extends Widget_Base {
                     <?php foreach ($settings['tp_service_list'] as $key => $item) : 
                         $border = ($key == 0) ? 'cta__item-border pr-110' : '';
                         $item_sec_class = ($key == 1) ? 'pl-85' : '';
-                        $btn_class = ($key == 1) ? 'tp-btn tp-btn-4' : 'tp-btn tp-btn-3';
+                        $btn_class = ($key == 1) ? 'tp-btn tp-btn-4' : 'tp-btn tp-btn-3 tp-el-btn';
                         // Link
                         if ('2' == $item['tp_services_link_type']) {
                             $link = get_permalink($item['tp_services_page_link']);
@@ -507,7 +494,7 @@ class TP_Services extends Widget_Base {
                         }
                     ?> 
                      <div class="col-xxl-6 col-xl-6 col-lg-6">
-                        <div class="cta__item <?php echo esc_attr($border); ?> <?php echo esc_attr($item_sec_class); ?> pt-40 pb-15 d-sm-flex align-items-start">
+                        <div class="cta__item tp-el-sec <?php echo esc_attr($border); ?> <?php echo esc_attr($item_sec_class); ?> pt-40 pb-15 d-sm-flex align-items-start">
                            <div class="cta__icon mr-30">
                               <span>
                                <?php if($item['tp_service_icon_type'] !== 'image') : ?>
@@ -528,12 +515,11 @@ class TP_Services extends Widget_Base {
 
                            <div class="cta__content">
                               <?php if (!empty($item['tp_service_title' ])): ?>
-                              <h3 class="cta__title"><?php echo tp_kses($item['tp_service_title' ]); ?></h3>
+                              <h3 class="cta__title tp-el-title"><?php echo tp_kses($item['tp_service_title' ]); ?></h3>
                               <?php endif; ?> 
                               <?php if (!empty($item['tp_service_description' ])): ?>
-                              <p class="keyFeatureBlock__text"><?php echo tp_kses($item['tp_service_description']); ?></p>
+                              <p class="keyFeatureBlock__text tp-el-content"><?php echo tp_kses($item['tp_service_description']); ?></p>
                               <?php endif; ?>
-
 
                             <?php if (!empty($link)) : ?>
                             <div class="sv-btn">
@@ -578,7 +564,7 @@ class TP_Services extends Widget_Base {
                         }
                     ?>
                      <div class="col-xl-<?php echo esc_attr($settings['tp_col_for_desktop']); ?> col-lg-<?php echo esc_attr($settings['tp_col_for_laptop']); ?> col-md-<?php echo esc_attr($settings['tp_col_for_tablet']); ?> col-<?php echo esc_attr($settings['tp_col_for_mobile']); ?>">
-                        <div class="features__item   d-sm-flex align-items-start white-bg mb-30">
+                        <div class="features__item tp-el-sec d-sm-flex align-items-start white-bg mb-30">
                            <div class="features__icon mr-25">
                                 <?php if($item['tp_service_icon_type'] !== 'image') : ?>
                                     <?php if (!empty($item['tp_service_icon']) || !empty($item['tp_service_selected_icon']['value'])) : ?>
@@ -596,7 +582,7 @@ class TP_Services extends Widget_Base {
                            </div>
                            <div class="features__content">
                             <?php if (!empty($item['tp_service_title' ])): ?>
-                            <h3 class="features__title">
+                            <h3 class="features__title tp-el-title">
                                 <?php if ($item['tp_services_link_switcher'] == 'yes') : ?>
                                 <a href="<?php echo esc_url($link); ?>"><?php echo tp_kses($item['tp_service_title' ]); ?></a>
                                 <?php else : ?>
@@ -606,13 +592,12 @@ class TP_Services extends Widget_Base {
                             <?php endif; ?> 
 
                             <?php if (!empty($item['tp_service_description' ])): ?>
-                            <p><?php echo tp_kses($item['tp_service_description']); ?></p>
+                            <p class="tp-el-content"><?php echo tp_kses($item['tp_service_description']); ?></p>
                             <?php endif; ?>
-
 
                             <?php if (!empty($link)) : ?>
                             <div class="sv-btn">
-                                <a target="<?php echo esc_attr($target); ?>" rel="<?php echo esc_attr($rel); ?>" href="<?php echo esc_url($link); ?>" class="link-btn">
+                                <a target="<?php echo esc_attr($target); ?>" rel="<?php echo esc_attr($rel); ?>" href="<?php echo esc_url($link); ?>" class="link-btn tp-el-btn">
                                 <?php echo tp_kses($item['tp_services_btn_text']); ?> <i class="fa-regular fa-arrow-right"></i></a>
                             </div>
                             <?php endif; ?>

@@ -1,105 +1,120 @@
 <?php
+/**
+ * 
+ * Demo Imports
+ */
 
-if ( !defined( 'ABSPATH' ) ) {
-    exit;
+function tp_ocdi_import_files() {
+    
+    return array(
+      array(
+        'import_file_name'           => 'Home 1',
+        'local_import_file'             => trailingslashit( get_template_directory() ) .'sample-data/contents-demo.xml',
+        'local_import_widget_file' => trailingslashit( get_template_directory() ) . 'sample-data/widget-settings.json',
+        'local_import_customizer_file' => trailingslashit( get_template_directory() ) . 'sample-data/customizer-data.dat',
+        'import_preview_image_url' => plugins_url( 'assets/img/demo/home1.jpg', dirname(__FILE__) ),
+        'preview_url'                => 'https://wp.hixstudio.net/eduker/',
+      ),
+      array(
+        'import_file_name'           => 'Home 2',
+        'local_import_file'             => trailingslashit( get_template_directory() ) .'sample-data/contents-demo.xml',
+        'local_import_widget_file' => trailingslashit( get_template_directory() ) . 'sample-data/widget-settings.json',
+        'local_import_customizer_file' => trailingslashit( get_template_directory() ) . 'sample-data/customizer-data.dat',
+        'import_preview_image_url' => plugins_url( 'assets/img/demo/home2.jpg', dirname(__FILE__) ),
+        'preview_url'                => 'https://wp.hixstudio.net/eduker/home-02',
+      ),
+      array(
+        'import_file_name'           => 'Home 3',
+        'local_import_file'             => trailingslashit( get_template_directory() ) .'sample-data/contents-demo.xml',
+        'local_import_widget_file' => trailingslashit( get_template_directory() ) . 'sample-data/widget-settings.json',
+        'local_import_customizer_file' => trailingslashit( get_template_directory() ) . 'sample-data/customizer-data.dat',
+        'import_preview_image_url' => plugins_url( 'assets/img/demo/home3.jpg', dirname(__FILE__) ),
+        'preview_url'                => 'https://wp.hixstudio.net/eduker/home-03',
+      ),
+    );
+}
+add_filter( 'ocdi/import_files', 'tp_ocdi_import_files' );
+
+
+function tp_ocdi_page($tp_page_name = 'Home'){
+    $posts = get_posts(
+        array(
+            'post_type'              => 'page',
+            'title'                  => $tp_page_name,
+            'post_status'            => 'all',
+            'posts_per_page'         => 1,
+            'no_found_rows'          => true,
+            'ignore_sticky_posts'    => true,
+            'update_post_term_cache' => false,
+            'update_post_meta_cache' => false,
+            'orderby'                => 'post_date ID',
+            'order'                  => 'ASC',
+        )
+    );
+
+    if ( ! empty( $posts ) ) {
+        $page_got_by_title = $posts[0];
+    } else {
+        $page_got_by_title = null;
+    }
+
+    return $page_got_by_title;
+
 }
 
-class TP_OCDI_Demo_Importer {
 
-    public function __construct() {
-        add_filter( 'pt-ocdi/import_files', [$this, 'import_files_config'] );
-        add_filter( 'pt-ocdi/after_import', [$this, 'ocdi_after_import_setup'] );
-        add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
-        add_action( 'init', [$this, 'tp_ocdi_rewrite_flush'] );
+// after demo imports
+function tp_ocdi_after_import_setup( $demo ) {
+    $front_page_id = "";
+    $blog_page_id = "";
+    if( "Home 1" == $demo['import_file_name'] ){
+        // Assign front page and posts page (blog page).
+        $front_page_id = tp_ocdi_page( 'Home' );
+        $blog_page_id  = tp_ocdi_page( 'Blog' );
+    }else if( "Home 2" == $demo['import_file_name'] ){
+        // Assign front page and posts page (blog page).
+        $front_page_id = tp_ocdi_page( 'Home 02' );
+        $blog_page_id  = tp_ocdi_page( 'Blog' );
+    }
+    else if( "Home 3" == $demo['import_file_name'] ){
+        // Assign front page and posts page (blog page).
+        $front_page_id = tp_ocdi_page( 'Home 03' );
+        $blog_page_id  = tp_ocdi_page( 'Blog' );
     }
 
-    public function import_files_config() {
+    update_option( 'show_on_front', 'page' );
+    update_option( 'page_on_front', $front_page_id->ID );
+    update_option( 'page_for_posts', $blog_page_id->ID );
 
-		$home_prevs = array(
-			'tp_demo_home_1' => array(
-				'title' => __( 'Home 1', 'tpcore' ),
-				'page'  => __( 'home', 'tpcore' ),
-				'screenshot' => plugins_url( 'assets/img/demo/home1.jpg', dirname(__FILE__) ),
-				'preview_link' => 'https://themepure.net/wp/gainioz/',
-			),
-			'tp_demo_home_2' => array(
-				'title' => __( 'Home 2', 'tpcore' ),
-				'page'  => __( 'home-02', 'tpcore' ),
-				'screenshot' => plugins_url( 'assets/img/demo/home2.jpg', dirname(__FILE__) ),
-				'preview_link' => 'https://themepure.net/wp/gainioz/home-02/',
-			),
-            'tp_demo_home_3' => array(
-                'title' => __( 'Home 3', 'tpcore' ),
-                'page'  => __( 'home-03', 'tpcore' ),
-                'screenshot' => plugins_url( 'assets/img/demo/home3.jpg', dirname(__FILE__) ),
-                'preview_link' => 'https://themepure.net/wp/gainioz/home-03/',
-            ),
-		);
 
-        $config = [];
+    // Assign menus to their locations.
+    $main_menu = get_term_by( 'name', 'Main Menu', 'nav_menu' );
+ 
+    set_theme_mod( 'nav_menu_locations', [
+            'main-menu' => $main_menu->term_id, // replace 'main-menu' here with the menu location identifier from register_nav_menu() function in your theme.
+        ]
+    );
 
-        $import_path = trailingslashit( get_template_directory() ) . 'sample-data/';
-
-        foreach ( $home_prevs as $key => $prev ) {
-
-            $contents_demo = $import_path . 'contents-demo.xml';
-            $widget_settings = $import_path . 'widget-settings.json';
-            $customizer_data = $import_path . 'customizer-data.dat';
-
-            $config[] = [
-                'import_file_id'               => $key,
-                'import_page_name'             => $prev['page'],
-                'import_file_name'             => $prev['title'],
-                'local_import_file'            => $contents_demo,
-                'local_import_widget_file'     => $widget_settings,
-                'local_import_customizer_file' => $customizer_data,
-                'import_preview_image_url'     => $prev['screenshot'],
-                'preview_url'                  => $prev['preview_link'],
-                'import_notice'                => esc_html__( 'After you import this demo, you will have to setup the slider separately.', 'tpcore' ),
-            ];
-        }
-
-        return $config;
+    // woocommerce default settings reset
+    if ( class_exists( 'woocommerce' ) ) {
+        update_option( 'woocommerce_shop_page_id', '7' );
+        update_option( 'woocommerce_cart_page_id', '8' );
+        update_option( 'woocommerce_checkout_page_id', '9' );
+        update_option( 'woocommerce_myaccount_page_id', '10' );
     }
-
-    public function ocdi_after_import_setup( $selected_file ) {
-
-        $this->assign_menu_to_location();
-        $this->assign_frontpage_id( $selected_file );
-        $this->update_permalinks();
-        update_option( 'basa_ocdi_importer_flash', true );
-    }
-
-    private function assign_menu_to_location() {
-
-        $main_menu = get_term_by( 'name', 'Main Menu', 'nav_menu' );
-
-        set_theme_mod( 'nav_menu_locations', [
-            'main-menu' => $main_menu->term_id,
-        ] );
-    }
-
-    private function assign_frontpage_id( $selected_import ) {
-
-        $front_page = get_page_by_title( $selected_import['import_page_name'] );
-        $blog_page = get_page_by_title( 'Blog' );
-
-        update_option( 'show_on_front', 'page' );
-        update_option( 'page_on_front', $front_page->ID );
-        update_option( 'page_for_posts', $blog_page->ID );
-    }
-
-    private function update_permalinks() {
-        update_option( 'permalink_structure', '/%postname%/' );
-    }
-
-    public function tp_ocdi_rewrite_flush() {
-
-        if ( get_option( 'basa_ocdi_importer_flash' ) == true ) {
-            flush_rewrite_rules();
-            delete_option( 'basa_ocdi_importer_flash' );
-        }
-    }
+ 
 }
+add_action( 'ocdi/after_import', 'tp_ocdi_after_import_setup' );
 
-new TP_OCDI_Demo_Importer;
+
+
+function tp_ocdi_plugin_page_setup( $default_settings ) {
+    $default_settings['parent_slug'] = 'themes.php';
+    $default_settings['page_title']  = esc_html__( 'One Click Demo Import' , 'one-click-demo-import' );
+    $default_settings['menu_title']  = esc_html__( 'Import Theme Demos' , 'one-click-demo-import' );
+    $default_settings['capability']  = 'import';
+    $default_settings['menu_slug']   = 'one-click-demo-import';
+ 
+    return $default_settings;
+}
+add_filter( 'ocdi/plugin_page_setup', 'tp_ocdi_plugin_page_setup' );

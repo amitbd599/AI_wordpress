@@ -539,3 +539,32 @@ function eduker_header_search_url() {
         return esc_url( home_url( '/courses' ) );
     }
 }
+
+/**************************************************
+ * Start - Default hooks required for all templates
+ *************************************************/
+
+use Etn\Utils\Helper;
+
+if( !function_exists('etn_after_single_event_meta_add_to_calendar') ){
+
+    function etn_after_single_event_meta_add_to_calendar( $single_event_id ){
+        $event_options  = get_option("etn_event_options");
+        if( isset($event_options["checked_hide_calendar_from_details"]) || Helper::get_child_events( $single_event_id )  ){
+            return;
+        }
+
+        ?>
+		<div class=" etn-widget etn-add-calender-url event__sidebar-widget white-bg mb-20">
+			<?php
+            
+                do_action('etn_before_add_to_calendar_button');
+
+                    (new \Etn\Core\Calendar\Add_Calendar\Add_Calendar())->etn_add_to_google_calender_link($single_event_id);
+                    
+                do_action('etn_after_add_to_calendar_button');
+			?>
+		</div>
+        <?php
+    }
+}

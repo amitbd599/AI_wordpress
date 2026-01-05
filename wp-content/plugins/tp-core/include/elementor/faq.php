@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @since 1.0.0
  */
 class TP_FAQ extends Widget_Base {
-
+	use TP_Style_Trait;
 	/**
 	 * Retrieve the widget name.
 	 *
@@ -87,6 +87,12 @@ class TP_FAQ extends Widget_Base {
 		return [ 'tpcore' ];
 	}
 
+	protected function register_controls()
+	{
+		$this->register_controls_section();
+		$this->style_tab_content();
+	}
+
 	/**
 	 * Register the widget controls.
 	 *
@@ -96,7 +102,7 @@ class TP_FAQ extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function register_controls() {
+	protected function register_controls_section() {
 
 		$this->start_controls_section(
             '_accordion',
@@ -175,36 +181,16 @@ class TP_FAQ extends Widget_Base {
 
         $this->end_controls_section();
 
-
-
-		$this->start_controls_section(
-			'section_style',
-			[
-				'label' => __( 'Style', 'tpcore' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'text_transform',
-			[
-				'label' => __( 'Text Transform', 'tpcore' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => '',
-				'options' => [
-					'' => __( 'None', 'tpcore' ),
-					'uppercase' => __( 'UPPERCASE', 'tpcore' ),
-					'lowercase' => __( 'lowercase', 'tpcore' ),
-					'capitalize' => __( 'Capitalize', 'tpcore' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
 	}
+
+	protected function style_tab_content()
+	{
+		$this->tp_section_style_controls('about_section', 'Section', '.tp-el-sec');
+		$this->tp_basic_style_controls('heading_title', 'Title', '.tp-el-title');
+		$this->tp_basic_style_controls('heading_desc', 'Description', '.tp-el-content');
+		$this->tp_link_controls_style('', 'b_btn1_style', 'Button', '.tp-el-btn:after');
+	}
+	
 
 	/**
 	 * Render the widget output on the frontend.
@@ -231,13 +217,13 @@ class TP_FAQ extends Widget_Base {
                 ?>
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="faqOne-<?php echo esc_attr($index); ?>">
-                      <button class="accordion-button <?php echo esc_attr($collapsed); ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne-<?php echo esc_attr($index); ?>" aria-expanded="true" aria-controls="collapseOne-<?php echo esc_attr($index); ?>">
+                      <button class="accordion-button tp-el-title tp-el-btn <?php echo esc_attr($collapsed); ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne-<?php echo esc_attr($index); ?>" aria-expanded="true" aria-controls="collapseOne-<?php echo esc_attr($index); ?>">
                         <?php echo esc_html($item['accordion_title']); ?>
                       </button>
                     </h2>
                     <div id="collapseOne-<?php echo esc_attr($index); ?>" class="accordion-collapse collapse <?php echo esc_attr($show); ?>" aria-labelledby="faqOne-<?php echo esc_attr($index); ?>" data-bs-parent="#faqaccordion-<?php echo esc_attr($this->get_id()); ?>">
                       <div class="accordion-body">
-                        <p><?php echo tp_kses($item['accordion_description']); ?></p>
+                        <p class="tp-el-content"><?php echo tp_kses($item['accordion_description']); ?></p>
                       </div>
                     </div>
                   </div>

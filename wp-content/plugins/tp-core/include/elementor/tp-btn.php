@@ -8,6 +8,9 @@ use \Elementor\Group_Control_Image_Size;
 use \Elementor\Repeater;
 use \Elementor\Utils;
 use \Elementor\Control_Media;
+use \Elementor\Group_Control_Border;
+use \Elementor\Group_Control_Box_Shadow;
+use \Elementor\Group_Control_Typography;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -19,6 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @since 1.0.0
  */
 class TP_Btn extends Widget_Base {
+
+    use TP_Style_Trait;
 
 	/**
 	 * Retrieve the widget name.
@@ -92,6 +97,12 @@ class TP_Btn extends Widget_Base {
 		return [ 'tpcore' ];
 	}
 
+    protected function register_controls()
+    {
+        $this->register_controls_section();
+        $this->style_tab_content();
+    }
+
 	/**
 	 * Register the widget controls.
 	 *
@@ -101,7 +112,7 @@ class TP_Btn extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function register_controls() {
+	protected function register_controls_section() {
 
         // layout Panel
         $this->start_controls_section(
@@ -241,34 +252,184 @@ class TP_Btn extends Widget_Base {
         
         $this->end_controls_section();
 
-		$this->start_controls_section(
-			'section_style',
-			[
-				'label' => __( 'Style', 'tpcore' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'text_transform',
-			[
-				'label' => __( 'Text Transform', 'tpcore' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => '',
-				'options' => [
-					'' => __( 'None', 'tpcore' ),
-					'uppercase' => __( 'UPPERCASE', 'tpcore' ),
-					'lowercase' => __( 'lowercase', 'tpcore' ),
-					'capitalize' => __( 'Capitalize', 'tpcore' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
 	}
+
+    protected function style_tab_content()
+    {
+        $this->start_controls_section(
+            'tp_theme_btn_style_sec',
+            [
+                'label' => esc_html__('Button Style', 'tpcore'),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name' => 'tp_theme_btn_typography',
+                'label' => esc_html__('Typhography', 'tpcore'),
+                'selector' => '{{WRAPPER}} .tp-el-theme-btn',
+            ]
+        );
+
+        $this->start_controls_tabs(
+            'tp_theme_btn_state_tabs',
+        );
+
+        // button normal state
+        $this->start_controls_tab(
+            'tp_theme_btn_normal_tab',
+            [
+                'label' => esc_html__('Normal', 'tpcore'),
+            ]
+        );
+
+        $this->add_control(
+            'tp_theme_btn_color',
+            [
+                'label' => esc_html__('Text Color', 'tpcore'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .tp-el-theme-btn' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'tp_theme_btn_bg_color',
+            [
+                'label' => esc_html__('Background Color', 'tpcore'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .tp-el-theme-btn' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name' => 'tp_theme_btn_border',
+                'selector' => '{{WRAPPER}} .tp-el-theme-btn',
+            ]
+        );
+
+        $this->add_control(
+            'tp_theme_btn_border_radius',
+            [
+                'label' => esc_html__('Border Radius', 'tpcore'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .tp-el-theme-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'tp_theme_btn_box_shadow',
+                'selector' => '{{WRAPPER}} .tp-el-theme-btn',
+            ]
+        );
+
+        $this->end_controls_tab();
+        // end normal state
+
+        // button hover state
+        $this->start_controls_tab(
+            'tp_theme_btn_hover_tab',
+            [
+                'label' => esc_html__('Hover', 'tpcore'),
+            ]
+        );
+
+        $this->add_control(
+            'tp_theme_btn_hover_color',
+            [
+                'label' => esc_html__('Text Color', 'tpcore'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .tp-el-theme-btn:hover' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'tp_theme_btn_hover_bg_color',
+            [
+                'label' => esc_html__('Background Color', 'tpcore'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .tp-el-theme-btn:hover' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name' => 'tp_theme_btn_hover_border',
+                'selector' => '{{WRAPPER}} .tp-el-theme-btn:hover',
+            ]
+        );
+
+        $this->add_control(
+            'tp_theme_btn_hover_border_radius',
+            [
+                'label' => esc_html__('Border Radius', 'tpcore'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .tp-el-theme-btn:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'tp_theme_btn_hover_box_shadow',
+                'selector' => '{{WRAPPER}} .tp-el-theme-btn:hover',
+            ]
+        );
+
+        $this->end_controls_tab();
+        // end hover state
+
+
+        $this->end_controls_tabs();
+        // end button state tabs
+
+        $this->add_control(
+            'tp_theme_btn_margin',
+            [
+                'label' => esc_html__('Button Margin', 'tpcore'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .tp-el-theme-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'tp_theme_btn_padding',
+            [
+                'label' => esc_html__('Button Padding', 'tpcore'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%', 'em'],
+                'selectors' => [
+                    '{{WRAPPER}} .tp-el-theme-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+
+    }
 
 	/**
 	 * Render the widget output on the frontend.
@@ -294,7 +455,7 @@ class TP_Btn extends Widget_Base {
             } else {
                 if ( ! empty( $settings['tp_btn_link']['url'] ) ) {
                     $this->add_link_attributes( 'tp-button-arg', $settings['tp_btn_link'] );
-                    $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn tp-btn-border');
+                    $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn tp-btn-border tp-el-theme-btn');
                 }
             }
         ?>
@@ -317,7 +478,7 @@ class TP_Btn extends Widget_Base {
             } else {
                 if ( ! empty( $settings['tp_btn_link']['url'] ) ) {
                     $this->add_link_attributes( 'tp-button-arg', $settings['tp_btn_link'] );
-                    $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn');
+                    $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn tp-el-theme-btn');
                 }
             }
 		?>	

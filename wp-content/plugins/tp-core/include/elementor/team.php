@@ -18,6 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @since 1.0.0
  */
 class TP_Team extends Widget_Base {
+    use TP_Style_Trait;
 
 	/**
 	 * Retrieve the widget name.
@@ -91,6 +92,12 @@ class TP_Team extends Widget_Base {
 		return [ 'tpcore' ];
 	}
 
+    protected function register_controls()
+    {
+        $this->register_controls_section();
+        $this->style_tab_content();
+    }
+
 	/**
 	 * Register the widget controls.
 	 *
@@ -100,7 +107,7 @@ class TP_Team extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function register_controls() {
+	protected function register_controls_section() {
 		
 
         // layout Panel
@@ -117,7 +124,6 @@ class TP_Team extends Widget_Base {
                 'type' => Controls_Manager::SELECT,
                 'options' => [
                     'layout-1' => esc_html__('Layout 1', 'tpcore'),
-                    'layout-2' => esc_html__('Layout 2', 'tpcore'),
                 ],
                 'default' => 'layout-1',
             ]
@@ -553,35 +559,15 @@ class TP_Team extends Widget_Base {
         );
 
         $this->end_controls_section();
-
-		$this->start_controls_section(
-			'section_style',
-			[
-				'label' => __( 'Style', 'tpcore' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'text_transform',
-			[
-				'label' => __( 'Text Transform', 'tpcore' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => '',
-				'options' => [
-					'' => __( 'None', 'tpcore' ),
-					'uppercase' => __( 'UPPERCASE', 'tpcore' ),
-					'lowercase' => __( 'lowercase', 'tpcore' ),
-					'capitalize' => __( 'Capitalize', 'tpcore' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
 	}
+
+    protected function style_tab_content()
+    {
+        $this->tp_section_style_controls('about_section', 'Section', '.tp-el-sec');
+        $this->tp_basic_style_controls('heading_title', 'Name', '.tp-el-title');
+        $this->tp_basic_style_controls('heading_desc', 'Designation', '.tp-el-content');
+        $this->tp_link_controls_style('', 'b_btn1_style', 'Social', '.tp-el-btn a');
+    }
 
 	/**
 	 * Render the widget output on the frontend.
@@ -603,7 +589,7 @@ class TP_Team extends Widget_Base {
 
 	    <!-- style default -->
 	    <?php else : 
-	        $this->add_render_attribute( 'title', 'class', 'team__title' );
+	        $this->add_render_attribute( 'title', 'class', 'team__title tp-el-title' );
 	    ?>
 
          <section class="team__area">
@@ -626,7 +612,7 @@ class TP_Team extends Widget_Base {
                            <?php endif; ?>
 
                             <?php if( !empty($item['show_social'] ) ) : ?> 
-                            <div class="team__social transition-3">
+                            <div class="team__social transition-3 tp-el-btn">
                                 <?php if( !empty($item['web_title'] ) ) : ?>
                                 <a href="<?php echo esc_url( $item['web_title'] ); ?>"><i class="fa-regular fa-globe"></i></a>
                                 <?php endif; ?>  
@@ -698,7 +684,7 @@ class TP_Team extends Widget_Base {
                             ); ?>
 
                             <?php if( !empty($item['designation']) ) : ?>
-                            <span class="team__designation"><?php echo tp_kses( $item['designation'] ); ?></span>
+                            <span class="team__designation tp-el-content"><?php echo tp_kses( $item['designation'] ); ?></span>
                             <?php endif; ?>
                             <?php if( !empty($item['description']) ) : ?>
                             <p><?php echo tp_kses( $item['description'] ); ?></p>

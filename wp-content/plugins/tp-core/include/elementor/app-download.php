@@ -20,6 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 class TP_App_Donwload extends Widget_Base {
 
+    use TP_Style_Trait;
+
 	/**
 	 * Retrieve the widget name.
 	 *
@@ -92,6 +94,12 @@ class TP_App_Donwload extends Widget_Base {
 		return [ 'tpcore' ];
 	}
 
+    protected function register_controls()
+    {
+        $this->register_controls_section();
+        $this->style_tab_content();
+    }
+
 	/**
 	 * Register the widget controls.
 	 *
@@ -101,7 +109,7 @@ class TP_App_Donwload extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function register_controls() {
+	protected function register_controls_section() {
 
         // layout Panel
         $this->start_controls_section(
@@ -440,36 +448,18 @@ class TP_App_Donwload extends Widget_Base {
         );
     
         $this->end_controls_section();
-
-
-		$this->start_controls_section(
-			'section_style',
-			[
-				'label' => __( 'Style', 'tpcore' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'text_transform',
-			[
-				'label' => __( 'Text Transform', 'tpcore' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => '',
-				'options' => [
-					'' => __( 'None', 'tpcore' ),
-					'uppercase' => __( 'UPPERCASE', 'tpcore' ),
-					'lowercase' => __( 'lowercase', 'tpcore' ),
-					'capitalize' => __( 'Capitalize', 'tpcore' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
 	}
+
+    protected function style_tab_content()
+    {
+        $this->tp_section_style_controls('about_section', 'Section', '.tp-el-sec');
+        $this->tp_basic_style_controls('heading_title', 'Title', '.tp-el-title');
+        $this->tp_link_controls_style('', 'b_btn1_style', 'Button', '.tp-el-btn');
+        $this->tp_link_controls_style('', 'b_btn1_style2', 'Button 2', '.tp-el-btn2');
+    }
+
+
+
 
 	/**
 	 * Render the widget output on the frontend.
@@ -496,18 +486,18 @@ class TP_App_Donwload extends Widget_Base {
                 $tp_image_2_alt = get_post_meta($settings["tp_image_2"]["id"], "_wp_attachment_image_alt", true);
             }            
 
-            $this->add_render_attribute('title_args', 'class', 'app__title');
+            $this->add_render_attribute('title_args', 'class', 'app__title tp-el-title');
 
             // Link
             if ('2' == $settings['tp_btn_link_type']) {
                 $this->add_render_attribute('tp-button-arg', 'href', get_permalink($settings['tp_btn_page_link']));
                 $this->add_render_attribute('tp-button-arg', 'target', '_self');
                 $this->add_render_attribute('tp-button-arg', 'rel', 'nofollow');
-                $this->add_render_attribute('tp-button-arg', 'class', 'app-btn');
+                $this->add_render_attribute('tp-button-arg', 'class', 'tp-el-btn  app-btn');
             } else {
                 if ( ! empty( $settings['tp_btn_link']['url'] ) ) {
                     $this->add_link_attributes( 'tp-button-arg', $settings['tp_btn_link'] );
-                    $this->add_render_attribute('tp-button-arg', 'class', 'app-btn');
+                    $this->add_render_attribute('tp-button-arg', 'class', 'tp-el-btn  app-btn');
                 }
             }            
 
@@ -516,11 +506,11 @@ class TP_App_Donwload extends Widget_Base {
                 $this->add_render_attribute('tp-button2-arg', 'href', get_permalink($settings['tp_btn_2_page_link']));
                 $this->add_render_attribute('tp-button2-arg', 'target', '_self');
                 $this->add_render_attribute('tp-button2-arg', 'rel', 'nofollow');
-                $this->add_render_attribute('tp-button2-arg', 'class', 'app-btn');
+                $this->add_render_attribute('tp-button2-arg', 'class', 'tp-el-btn2 app-btn');
             } else {
                 if ( ! empty( $settings['tp_btn_2_link']['url'] ) ) {
                     $this->add_link_attributes( 'tp-button2-arg', $settings['tp_btn_2_link'] );
-                    $this->add_render_attribute('tp-button2-arg', 'class', 'app-btn');
+                    $this->add_render_attribute('tp-button2-arg', 'class', 'tp-el-btn2 app-btn');
                 }
             }
 
@@ -528,7 +518,7 @@ class TP_App_Donwload extends Widget_Base {
 
          <section class="app__area">
             <div class="container">
-               <div class="app__inner tp-el-bg-color p-relative fix">
+               <div class="app__inner tp-el-bg-color p-relative fix tp-el-sec">
                   <div class="app__shape">
                      <img class="app__shape-1" src="<?php echo get_template_directory_uri(); ?>/assets/img/app/app-shape-1.png" alt="img">
                      <img class="app__shape-2" src="<?php echo get_template_directory_uri(); ?>/assets/img/app/app-shape-2.png" alt="img">
@@ -584,18 +574,18 @@ class TP_App_Donwload extends Widget_Base {
                 $tp_image_2_alt = get_post_meta($settings["tp_image_2"]["id"], "_wp_attachment_image_alt", true);
             }            
 
-			$this->add_render_attribute('title_args', 'class', 'research__title-2');
+			$this->add_render_attribute('title_args', 'class', 'research__title-2 tp-el-title');
 
             // Link
             if ('2' == $settings['tp_btn_link_type']) {
                 $this->add_render_attribute('tp-button-arg', 'href', get_permalink($settings['tp_btn_page_link']));
                 $this->add_render_attribute('tp-button-arg', 'target', '_self');
                 $this->add_render_attribute('tp-button-arg', 'rel', 'nofollow');
-                $this->add_render_attribute('tp-button-arg', 'class', 'app-btn');
+                $this->add_render_attribute('tp-button-arg', 'class', 'app-btn tp-el-btn');
             } else {
                 if ( ! empty( $settings['tp_btn_link']['url'] ) ) {
                     $this->add_link_attributes( 'tp-button-arg', $settings['tp_btn_link'] );
-                    $this->add_render_attribute('tp-button-arg', 'class', 'app-btn');
+                    $this->add_render_attribute('tp-button-arg', 'class', 'app-btn tp-el-btn');
                 }
             }            
 
@@ -604,11 +594,11 @@ class TP_App_Donwload extends Widget_Base {
                 $this->add_render_attribute('tp-button2-arg', 'href', get_permalink($settings['tp_btn_2_page_link']));
                 $this->add_render_attribute('tp-button2-arg', 'target', '_self');
                 $this->add_render_attribute('tp-button2-arg', 'rel', 'nofollow');
-                $this->add_render_attribute('tp-button2-arg', 'class', 'app-btn');
+                $this->add_render_attribute('tp-button2-arg', 'class', 'app-btn tp-el-btn2');
             } else {
                 if ( ! empty( $settings['tp_btn_2_link']['url'] ) ) {
                     $this->add_link_attributes( 'tp-button2-arg', $settings['tp_btn_2_link'] );
-                    $this->add_render_attribute('tp-button2-arg', 'class', 'app-btn');
+                    $this->add_render_attribute('tp-button2-arg', 'class', 'app-btn tp-el-btn2');
                 }
             }
 		?>	

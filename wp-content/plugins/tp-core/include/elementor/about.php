@@ -9,6 +9,7 @@ use \Elementor\Repeater;
 use \Elementor\Utils;
 use \Elementor\Control_Media;
 
+
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
@@ -19,6 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @since 1.0.0
  */
 class TP_About extends Widget_Base {
+
+    use TP_Style_Trait;
 
 	/**
 	 * Retrieve the widget name.
@@ -92,6 +95,12 @@ class TP_About extends Widget_Base {
 		return [ 'tpcore' ];
 	}
 
+    protected function register_controls()
+    {
+        $this->register_controls_section();
+        $this->style_tab_content();
+    }
+
 	/**
 	 * Register the widget controls.
 	 *
@@ -101,7 +110,7 @@ class TP_About extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function register_controls() {
+	protected function register_controls_section() {
 
         // layout Panel
         $this->start_controls_section(
@@ -671,34 +680,17 @@ class TP_About extends Widget_Base {
 
         $this->end_controls_section();
 
-		$this->start_controls_section(
-			'section_style',
-			[
-				'label' => __( 'Style', 'tpcore' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'text_transform',
-			[
-				'label' => __( 'Text Transform', 'tpcore' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => '',
-				'options' => [
-					'' => __( 'None', 'tpcore' ),
-					'uppercase' => __( 'UPPERCASE', 'tpcore' ),
-					'lowercase' => __( 'lowercase', 'tpcore' ),
-					'capitalize' => __( 'Capitalize', 'tpcore' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
 	}
+
+    // style_tab_content
+    protected function style_tab_content()
+    {
+        $this->tp_section_style_controls('about_section', 'Section', '.tp-el-sec');
+        $this->tp_basic_style_controls('heading_title', 'Title', '.tp-el-title');
+        $this->tp_basic_style_controls('heading_subtitle', 'Subtitle', '.tp-el-subtitle');
+        $this->tp_basic_style_controls('heading_desc', 'Description', '.tp-el-content');
+        $this->tp_link_controls_style('', 'b_btn1_style', 'Button', '.tp-el-btn');
+    }
 
 	/**
 	 * Render the widget output on the frontend.
@@ -719,7 +711,7 @@ class TP_About extends Widget_Base {
                 $tp_image = !empty($settings['tp_image']['id']) ? wp_get_attachment_image_url( $settings['tp_image']['id'], $settings['tp_image_size_size']) : $settings['tp_image']['url'];
                 $tp_image_alt = get_post_meta($settings["tp_image"]["id"], "_wp_attachment_image_alt", true);
             }
-            $this->add_render_attribute('title_args', 'class', 'sectionTitle__big');
+            $this->add_render_attribute('title_args', 'class', 'sectionTitle__big tp-el-title');
 
             // Link
             if ('2' == $settings['tp_btn_link_type']) {
@@ -730,13 +722,13 @@ class TP_About extends Widget_Base {
             } else {
                 if ( ! empty( $settings['tp_btn_link']['url'] ) ) {
                     $this->add_link_attributes( 'tp-button-arg', $settings['tp_btn_link'] );
-                    $this->add_render_attribute('tp-button-arg', 'class', ' btn btn--styleOne btn--secondary it-btn');
+                    $this->add_render_attribute('tp-button-arg', 'class', ' btn btn--styleOne btn--secondary it-btn tp-el-btn');
                 }
             }
 
         ?>
 
-        <section class="about">
+        <section class="about tp-el-sec">
           <div class="container">
             <div class="row align-items-center justify-content-between">
               <div class="col-lg-6 mb-30">
@@ -744,8 +736,9 @@ class TP_About extends Widget_Base {
                   <!-- Section Heading/Title -->
                   <div class="sectionTitle mb-20">
                     <?php if ( !empty($settings['tp_sub_title']) ) : ?>    
-                    <span class="sectionTitle__small">
-                        <i class="fa-solid fa-heart btn__icon"></i><?php echo tp_kses( $settings['tp_sub_title'] ); ?>
+                    <span class="sectionTitle__small tp-el-subtitle">
+                        <i class="fa-solid fa-heart btn__icon"></i>
+                        <?php echo tp_kses( $settings['tp_sub_title'] ); ?>
                     </span>
                     <?php endif; ?>
 
@@ -761,7 +754,9 @@ class TP_About extends Widget_Base {
                   </div>
                   <!-- Section Heading/Title End -->
                     <?php if ( !empty($settings['tp_desctiption']) ) : ?>
-                        <p class="aboutContent__text"><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
+                        <p class="aboutContent__text tp-el-content">
+                            <?php echo tp_kses( $settings['tp_desctiption'] ); ?>
+                        </p>
                     <?php endif; ?>
 
                     <?php if ( !empty($settings['tp_short_desctiption']) ) : ?>
@@ -804,7 +799,7 @@ class TP_About extends Widget_Base {
                 $tp_image = !empty($settings['tp_image']['id']) ? wp_get_attachment_image_url( $settings['tp_image']['id'], $settings['tp_image_size_size']) : $settings['tp_image']['url'];
                 $tp_image_alt = get_post_meta($settings["tp_image"]["id"], "_wp_attachment_image_alt", true);
             }
-            $this->add_render_attribute('title_args', 'class', 'sectionTitle__big');
+            $this->add_render_attribute('title_args', 'class', 'sectionTitle__big tp-el-title');
             // Link
             if ('2' == $settings['tp_btn_link_type']) {
                 $this->add_render_attribute('tp-button-arg', 'href', get_permalink($settings['tp_btn_page_link']));
@@ -814,12 +809,12 @@ class TP_About extends Widget_Base {
             } else {
                 if ( ! empty( $settings['tp_btn_link']['url'] ) ) {
                     $this->add_link_attributes( 'tp-button-arg', $settings['tp_btn_link'] );
-                    $this->add_render_attribute('tp-button-arg', 'class', 'btn btn--styleOne btn--primary it-btn');
+                    $this->add_render_attribute('tp-button-arg', 'class', 'btn btn--styleOne btn--primary it-btn tp-el-btn');
                 }
             }
         ?>
 
-        <section class="fact fact--layout1 position-relative">
+        <section class="fact fact--layout1 position-relative tp-el-sec">
           <div class="container">
             <div class="volunteer">
               <div class="container">
@@ -863,8 +858,9 @@ class TP_About extends Widget_Base {
                       <!-- Section Heading/Title -->
                       <div class="sectionTitle mb-20">
                         <?php if ( !empty($settings['tp_sub_title']) ) : ?>    
-                        <span class="sectionTitle__small">
-                            <i class="fa-solid fa-heart btn__icon"></i><?php echo tp_kses( $settings['tp_sub_title'] ); ?>
+                        <span class="sectionTitle__small tp-el-subtitle">
+                            <i class="fa-solid fa-heart btn__icon"></i>
+                            <?php echo tp_kses( $settings['tp_sub_title'] ); ?>
                         </span>
                         <?php endif; ?>
 
@@ -883,7 +879,9 @@ class TP_About extends Widget_Base {
                     <span class="aboutContent__quote text-uppercase"><?php echo tp_kses( $settings['tp_short_desctiption'] ); ?></span>
                     <?php endif; ?>
                     <?php if ( !empty($settings['tp_desctiption']) ) : ?>
-                        <p class="aboutContent__text"><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
+                        <p class="aboutContent__text tp-el-content">
+                            <?php echo tp_kses( $settings['tp_desctiption'] ); ?>
+                        </p>
                     <?php endif; ?>
                     <?php endif; ?>
 
@@ -908,7 +906,7 @@ class TP_About extends Widget_Base {
                 $tp_image = !empty($settings['tp_image']['id']) ? wp_get_attachment_image_url( $settings['tp_image']['id'], $settings['tp_image_size_size']) : $settings['tp_image']['url'];
                 $tp_image_alt = get_post_meta($settings["tp_image"]["id"], "_wp_attachment_image_alt", true);
             }
-            $this->add_render_attribute('title_args', 'class', 'sectionTitle__big');
+            $this->add_render_attribute('title_args', 'class', 'sectionTitle__big tp-el-title');
             // Link
             if ('2' == $settings['tp_btn_link_type']) {
                 $this->add_render_attribute('tp-button-arg', 'href', get_permalink($settings['tp_btn_page_link']));
@@ -918,12 +916,12 @@ class TP_About extends Widget_Base {
             } else {
                 if ( ! empty( $settings['tp_btn_link']['url'] ) ) {
                     $this->add_link_attributes( 'tp-button-arg', $settings['tp_btn_link'] );
-                    $this->add_render_attribute('tp-button-arg', 'class', 'btn btn--styleOne btn--secondary it-btn');
+                    $this->add_render_attribute('tp-button-arg', 'class', 'btn btn--styleOne btn--secondary it-btn tp-el-btn');
                 }
             }
         ?>
 
-        <section class="joinSection position-relative overflow-hidden">
+        <section class="joinSection position-relative overflow-hidden tp-el-sec">
           <?php if ($settings['tp_image']['url'] || $settings['tp_image']['id']) : ?>    
           <div class="joinSectionThumb d-none d-lg-block">
             <img src="<?php echo esc_url($tp_image); ?>" alt="<?php echo esc_attr($tp_image_alt); ?>">
@@ -939,7 +937,7 @@ class TP_About extends Widget_Base {
                       <!-- Section Heading/Title -->
                       <div class="sectionTitle mb-20">
                         <?php if ( !empty($settings['tp_sub_title']) ) : ?>    
-                        <span class="sectionTitle__small justify-content-end">
+                        <span class="sectionTitle__small justify-content-end tp-el-subtitle">
                             <i class="fa-solid fa-heart btn__icon"></i><?php echo tp_kses( $settings['tp_sub_title'] ); ?>
                         </span>
                         <?php endif; ?>
@@ -958,7 +956,7 @@ class TP_About extends Widget_Base {
                   </div>
 
                   <?php if ( !empty($settings['tp_desctiption']) ) : ?>
-                    <p class="joinContent__text"><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
+                    <p class="joinContent__text tp-el-content"><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
                   <?php endif; ?>
                   <?php endif; ?>
 
@@ -981,7 +979,7 @@ class TP_About extends Widget_Base {
                 $tp_image = !empty($settings['tp_image']['id']) ? wp_get_attachment_image_url( $settings['tp_image']['id'], $settings['tp_image_size_size']) : $settings['tp_image']['url'];
                 $tp_image_alt = get_post_meta($settings["tp_image"]["id"], "_wp_attachment_image_alt", true);
             }
-            $this->add_render_attribute('title_args', 'class', 'sectionTitle__big');
+            $this->add_render_attribute('title_args', 'class', 'sectionTitle__big tp-el-title');
             // Link
             if ('2' == $settings['tp_btn_link_type']) {
                 $this->add_render_attribute('tp-button-arg', 'href', get_permalink($settings['tp_btn_page_link']));
@@ -991,12 +989,12 @@ class TP_About extends Widget_Base {
             } else {
                 if ( ! empty( $settings['tp_btn_link']['url'] ) ) {
                     $this->add_link_attributes( 'tp-button-arg', $settings['tp_btn_link'] );
-                    $this->add_render_attribute('tp-button-arg', 'class', 'btn btn--styleOne btn--primary it-btn');
+                    $this->add_render_attribute('tp-button-arg', 'class', 'btn btn--styleOne btn--primary it-btn tp-el-btn');
                 }
             }
         ?>
 
-        <section class="about gray-bg about--style3">
+        <section class="about gray-bg about--style3 tp-el-sec">
           <?php if ($settings['tp_image']['url'] || $settings['tp_image']['id']) : ?>    
           <div class="aboutThumb3 d-none d-lg-block">
             <img src="<?php echo esc_url($tp_image); ?>" alt="<?php echo esc_attr($tp_image_alt); ?>">
@@ -1010,7 +1008,7 @@ class TP_About extends Widget_Base {
                   <?php if ( !empty($settings['tp_section_title_show']) ) : ?>
                   <div class="sectionTitle mb-20">
                     <?php if ( !empty($settings['tp_sub_title']) ) : ?>    
-                    <span class="sectionTitle__small">
+                    <span class="sectionTitle__small tp-el-subtitle">
                         <i class="fa-solid fa-heart btn__icon"></i><?php echo tp_kses( $settings['tp_sub_title'] ); ?>
                     </span>
                     <?php endif; ?>
@@ -1026,7 +1024,7 @@ class TP_About extends Widget_Base {
                   </div>
                   <!-- Section Heading/Title End -->
                   <?php if ( !empty($settings['tp_desctiption']) ) : ?>
-                    <p class="aboutContent__text"><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
+                    <p class="aboutContent__text tp-el-content"><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
                   <?php endif; ?>
                   <?php endif; ?>
 
@@ -1077,23 +1075,23 @@ class TP_About extends Widget_Base {
                 $tp_image_3_alt = get_post_meta($settings["tp_image_3"]["id"], "_wp_attachment_image_alt", true);
             }
 
-			$this->add_render_attribute('title_args', 'class', 'section__title');
+			$this->add_render_attribute('title_args', 'class', 'section__title tp-el-title');
 
             // Link
             if ('2' == $settings['tp_btn_link_type']) {
                 $this->add_render_attribute('tp-button-arg', 'href', get_permalink($settings['tp_btn_page_link']));
                 $this->add_render_attribute('tp-button-arg', 'target', '_self');
                 $this->add_render_attribute('tp-button-arg', 'rel', 'nofollow');
-                $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn tp-btn-2');
+                $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn tp-btn-2 tp-el-btn');
             } else {
                 if ( ! empty( $settings['tp_btn_link']['url'] ) ) {
                     $this->add_link_attributes( 'tp-button-arg', $settings['tp_btn_link'] );
-                    $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn tp-btn-2');
+                    $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn tp-btn-2 tp-el-btn');
                 }
             }
 		?>	
 
-         <section class="about__area p-relative">
+         <section class="about__area p-relative tp-el-sec">
             <div class="container">
                <div class="row">
                   <div class="col-xxl-7 col-xl-7 col-lg-7">
@@ -1128,7 +1126,7 @@ class TP_About extends Widget_Base {
 
                         <div class="section__title-wrapper mb-15">
                         <?php if ( !empty($settings['tp_sub_title']) ) : ?>    
-                        <span class="section__title-pre">
+                        <span class="section__title-pre tp-el-subtitle ">
                             <?php echo tp_kses( $settings['tp_sub_title'] ); ?>
                         </span>
                         <?php endif; ?>
@@ -1145,7 +1143,7 @@ class TP_About extends Widget_Base {
                         </div>
 
                         <?php if ( !empty($settings['tp_desctiption']) ) : ?>
-                        <p><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
+                        <p class="tp-el-content"><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
                         <?php endif; ?>
 
                         <?php endif; ?>

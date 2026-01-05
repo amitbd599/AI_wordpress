@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @since 1.0.0
  */
 class TP_Categories extends Widget_Base {
-
+    use TP_Style_Trait;
     /**
      * Retrieve the widget name.
      *
@@ -91,6 +91,12 @@ class TP_Categories extends Widget_Base {
         return [ 'tpcore' ];
     }
 
+    protected function register_controls()
+    {
+        $this->register_controls_section();
+        $this->style_tab_content();
+    }
+
     /**
      * Register the widget controls.
      *
@@ -100,7 +106,7 @@ class TP_Categories extends Widget_Base {
      *
      * @access protected
      */
-    protected function register_controls() {
+    protected function register_controls_section() {
 
         // layout Panel
         $this->start_controls_section(
@@ -594,36 +600,18 @@ class TP_Categories extends Widget_Base {
             ]
         );
         $this->end_controls_section();
-
-        // TAB_STYLE
-        $this->start_controls_section(
-            'section_style',
-            [
-                'label' => __( 'Style', 'tpcore' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'text_transform',
-            [
-                'label' => __( 'Text Transform', 'tpcore' ),
-                'type' => Controls_Manager::SELECT,
-                'default' => '',
-                'options' => [
-                    '' => __( 'None', 'tpcore' ),
-                    'uppercase' => __( 'UPPERCASE', 'tpcore' ),
-                    'lowercase' => __( 'lowercase', 'tpcore' ),
-                    'capitalize' => __( 'Capitalize', 'tpcore' ),
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
     }
+
+    protected function style_tab_content()
+    {
+        $this->tp_section_style_controls('about_section', 'Section', '.tp-el-sec');
+        $this->tp_basic_style_controls('heading_title', 'Title', '.tp-el-title');
+        $this->tp_basic_style_controls('heading_subtitle', 'Subtitle', '.tp-el-subtitle');
+        $this->tp_basic_style_controls('heading_desc', 'Description', '.tp-el-content');
+        $this->tp_basic_style_controls('cat_title', 'Category Title', '.tp-el-cat');
+        $this->tp_link_controls_style('', 'b_btn1_style', 'Button', '.tp-el-btn');
+    }
+
 
     /**
      * Render the widget output on the frontend.
@@ -644,7 +632,7 @@ class TP_Categories extends Widget_Base {
         ?>
         
         <?php else: 
-            $this->add_render_attribute('title_args', 'class', 'section__title-2 section__title-2-30');
+            $this->add_render_attribute('title_args', 'class', 'section__title-2 section__title-2-30 tp-el-title');
             // Link
             if ('2' == $settings['tp_btn_link_type']) {
                 $this->add_render_attribute('tp-button-arg', 'href', get_permalink($settings['tp_btn_page_link']));
@@ -654,12 +642,12 @@ class TP_Categories extends Widget_Base {
             } else {
                 if ( ! empty( $settings['tp_btn_link']['url'] ) ) {
                     $this->add_link_attributes( 'tp-button-arg', $settings['tp_btn_link'] );
-                    $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn-5');
+                    $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn-5 tp-el-btn');
                 }
             }
         ?>  
 
-         <section class="category__area">
+         <section class="category__area tp-el-sec">
             <div class="container">
                <div class="row">
                   <?php if ( !empty($settings['tp_section_title_show']) ) : ?>
@@ -667,7 +655,7 @@ class TP_Categories extends Widget_Base {
                      <div class="category__wrapper">
                         <div class="section__title-wrapper-2">
                             <?php if ( !empty($settings['tp_sub_title']) ) : ?>    
-                            <span class="section__title-pre-2">
+                            <span class="section__title-pre-2 tp-el-subtitle">
                                 <?php echo tp_kses( $settings['tp_sub_title'] ); ?>
                             </span>
                             <?php endif; ?>
@@ -682,7 +670,7 @@ class TP_Categories extends Widget_Base {
                             ?>
                         </div>
                         <?php if ( !empty($settings['tp_desctiption']) ) : ?>
-                            <p><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
+                            <p class="tp-el-content" ><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
                         <?php endif; ?>
 
                         <?php if (!empty($settings['tp_btn_text'])) : ?>
@@ -730,7 +718,7 @@ class TP_Categories extends Widget_Base {
                                  </div>
                                  <div class="category__content">
                                     <?php if (!empty($item['tp_service_title' ])): ?>
-                                    <h4 class="category__title">
+                                    <h4 class="category__title tp-el-cat">
                                        <a target="<?php echo esc_attr($target); ?>" rel="<?php echo esc_attr($rel); ?>" href="<?php echo esc_url($link); ?>"><?php echo tp_kses($item['tp_service_title' ]); ?></a>
                                     </h4>
                                     <?php endif; ?> 

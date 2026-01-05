@@ -44,15 +44,15 @@ switch ($footer_columns) {
         $footer_class[2] = 'col-lg-6 col-md-6';
         break;
     case '3':
-        $footer_class[1] = 'col-xl-4 col-lg-6 col-md-5';
-        $footer_class[2] = 'col-xl-4 col-lg-6 col-md-7';
-        $footer_class[3] = 'col-xl-4 col-lg-6';
+        $footer_class[1] = 'col-xl-6 col-lg-6 col-md-6';
+        $footer_class[2] = 'col-xl-3 col-lg-3 col-md-6';
+        $footer_class[3] = 'col-xl-3 col-lg-3';
         break;
     case '4':
-        $footer_class[1] = 'col-xl-3 col-lg-6 col-md-12 col-sm-12';
-        $footer_class[2] = 'col-xl-3 col-lg-6 col-md-6 col-sm-6';
-        $footer_class[3] = 'col-xl-3 col-lg-6 col-md-6 col-sm-6';
-        $footer_class[4] = 'col-xl-3 col-lg-6 col-md-8 col-sm-12';
+        $footer_class[1] = 'col-xl-5 col-lg-5 col-md-12 col-sm-12';
+        $footer_class[2] = 'col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6';
+        $footer_class[3] = 'col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6';
+        $footer_class[4] = 'col-xl-3 col-lg-3 col-md-6 col-sm-6';
         break;
     default:
         $footer_class = 'col-xl-3 col-lg-3 col-md-6';
@@ -73,19 +73,19 @@ switch ($footer_columns) {
                 <div class="row">
                     <?php
                         if ($footer_columns > 4) {
-                            print '<div class="col-xl-3 col-lg-6 col-md-12 col-sm-12">';
+                            print '<div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">';
                             dynamic_sidebar('footer-2-1');
                             print '</div>';
 
-                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 px-2">';
+                            print '<div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 px-2">';
                             dynamic_sidebar('footer-2-2');
                             print '</div>';
 
-                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 px-2">';
+                            print '<div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-6 px-2">';
                             dynamic_sidebar('footer-2-3');
                             print '</div>';
 
-                            print '<div class="col-xl-3 col-lg-6 col-md-8 col-sm-12">';
+                            print '<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">';
                             dynamic_sidebar('footer-2-4');
                             print '</div>';
                         } else {

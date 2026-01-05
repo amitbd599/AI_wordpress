@@ -26,6 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 class TP_Info_List_Box extends Widget_Base {
 
+    use TP_Style_Trait;
 	/**
 	 * Retrieve the widget name.
 	 *
@@ -83,6 +84,12 @@ class TP_Info_List_Box extends Widget_Base {
 		return [ 'tpcore' ];
 	}
 
+    protected function register_controls()
+    {
+        $this->register_controls_section();
+        $this->style_tab_content();
+    }
+
 	/**
 	 * Retrieve the list of scripts the widget depended on.
 	 *
@@ -107,7 +114,7 @@ class TP_Info_List_Box extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function register_controls() {
+	protected function register_controls_section() {
 
         // layout Panel
         $this->start_controls_section(
@@ -423,157 +430,17 @@ class TP_Info_List_Box extends Widget_Base {
             ]
         );
         
-        $this->end_controls_section();
-
-// TAB_STYLE
-        $this->start_controls_section(
-            'section_style',
-            [
-                'label' => __( 'Style', 'tpcore' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'text_transform',
-            [
-                'label' => __( 'Text Transform', 'tpcore' ),
-                'type' => Controls_Manager::SELECT,
-                'default' => '',
-                'options' => [
-                    '' => __( 'None', 'tpcore' ),
-                    'uppercase' => __( 'UPPERCASE', 'tpcore' ),
-                    'lowercase' => __( 'lowercase', 'tpcore' ),
-                    'capitalize' => __( 'Capitalize', 'tpcore' ),
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
-
-
-        // style tab here
-        $this->start_controls_section(
-            '_section_style_content',
-            [
-                'label' => __( 'Title / Content', 'tocore' ),
-                'tab'   => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_responsive_control(
-            'content_padding',
-            [
-                'label' => __( 'Content Padding', 'tocore' ),
-                'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', 'em', '%' ],
-                'selectors' => [
-                    '{{WRAPPER}} .tp-el-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Background::get_type(),
-            [
-                'name' => 'content_background',
-                'selector' => '{{WRAPPER}} .tp-el-content',
-                'exclude' => [
-                    'image'
-                ]
-            ]
-        );
-
-        // Title
-        $this->add_control(
-            '_heading_title',
-            [
-                'type' => Controls_Manager::HEADING,
-                'label' => __( 'Title', 'tocore' ),
-                'separator' => 'before'
-            ]
-        );
-
-        $this->add_responsive_control(
-            'title_spacing',
-            [
-                'label' => __( 'Bottom Spacing', 'tocore' ),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => ['px'],
-                'selectors' => [
-                    '{{WRAPPER}} .tp-el-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'title_color',
-            [
-                'label' => __( 'Text Color', 'tocore' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .tp-el-title' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'title',
-                'selector' => '{{WRAPPER}} .tp-el-title',
-                'scheme' => Typography::TYPOGRAPHY_2,
-            ]
-        );
-
-        // description
-        $this->add_control(
-            '_content_description',
-            [
-                'type' => Controls_Manager::HEADING,
-                'label' => __( 'Description', 'tocore' ),
-                'separator' => 'before'
-            ]
-        );
-
-        $this->add_responsive_control(
-            'description_spacing',
-            [
-                'label' => __( 'Bottom Spacing', 'tocore' ),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => ['px'],
-                'selectors' => [
-                    '{{WRAPPER}} .tp-el-content p' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'description_color',
-            [
-                'label' => __( 'Text Color', 'tocore' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .tp-el-content p' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Typography::get_type(),
-            [
-                'name' => 'description',
-                'selector' => '{{WRAPPER}} .tp-el-content p',
-                'scheme' => Typography::TYPOGRAPHY_4,
-            ]
-        );
-
-
-        $this->end_controls_section();
+        $this->end_controls_section();        
 	}
+
+    protected function style_tab_content()
+    {
+        $this->tp_section_style_controls('about_section', 'Section', '.tp-el-sec');
+        $this->tp_basic_style_controls('heading_title', 'Title', '.tp-el-title');
+        $this->tp_basic_style_controls('heading_subtitle', 'Subtitle', '.tp-el-subtitle');
+        $this->tp_basic_style_controls('heading_desc', 'Description', '.tp-el-content');
+        $this->tp_link_controls_style('', 'b_btn1_style', 'Button', '.tp-el-btn');
+    }
 
 	/**
 	 * Render the widget output on the frontend.
@@ -590,7 +457,7 @@ class TP_Info_List_Box extends Widget_Base {
 		?>
 
 		<?php if ( $settings['tp_design_style']  == 'layout-2' ): 
-            $this->add_render_attribute('title_args', 'class', 'title');
+            $this->add_render_attribute('title_args', 'class', 'title tp-el-title');
         ?>
             <?php if ( !empty($settings['tp_section_title_show']) ) : ?>
             <div class="contact__info">
@@ -623,7 +490,7 @@ class TP_Info_List_Box extends Widget_Base {
                     ?>
 
                     <?php if ( !empty($settings['tp_desctiption']) ) : ?>
-                    <span><?php echo tp_kses( $settings['tp_desctiption'] ); ?></span>
+                    <span class="tp-el-content" ><?php echo tp_kses( $settings['tp_desctiption'] ); ?></span>
                     <?php endif; ?>
                 </div>
             </div>
@@ -638,16 +505,16 @@ class TP_Info_List_Box extends Widget_Base {
                 $this->add_render_attribute('tp-button-arg', 'href', get_permalink($settings['tp_btn_page_link']));
                 $this->add_render_attribute('tp-button-arg', 'target', '_self');
                 $this->add_render_attribute('tp-button-arg', 'rel', 'nofollow');
-                $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn-9 w-100');
+                $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn-9 w-100 tp-el-btn');
             } else {
                 if ( ! empty( $settings['tp_btn_link']['url'] ) ) {
                     $this->add_link_attributes( 'tp-button-arg', $settings['tp_btn_link'] );
-                    $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn-9 w-100');
+                    $this->add_render_attribute('tp-button-arg', 'class', 'tp-btn-9 w-100 tp-el-btn');
                 }
             }
 		?>	
 
-        <div class="category__item-3 fix transition-3 white-bg mb-30 tp-el-content">
+        <div class="category__item-3 fix transition-3 white-bg mb-30 tp-el-sec">
             <?php
             if ( !empty($settings['tp_title' ]) ) :
                 printf( '<%1$s %2$s>%3$s</%1$s>',
@@ -661,7 +528,7 @@ class TP_Info_List_Box extends Widget_Base {
               <ul>
                  <?php foreach ($settings['tp_features_list'] as $item) : ?>
                  <li>
-                    <a href="<?php echo tp_kses($item['tp_features_url' ]); ?> ">
+                    <a class="tp-el-subtitle" href="<?php echo tp_kses($item['tp_features_url' ]); ?> ">
                         <?php echo tp_kses($item['tp_features_title' ]); ?> 
                         <?php if($item['tp_features_icon_type'] !== 'image') : ?>
                             <?php if (!empty($item['tp_features_icon']) || !empty($item['tp_features_selected_icon']['value'])) : ?>
@@ -681,7 +548,7 @@ class TP_Info_List_Box extends Widget_Base {
            </div>
 
             <?php if ( !empty($settings['tp_desctiption']) ) : ?>
-                <p class="keyFeatureBlock__text"><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
+                <p class="keyFeatureBlock__text tp-el-content"><?php echo tp_kses( $settings['tp_desctiption'] ); ?></p>
             <?php endif; ?>
 
            <?php if (!empty($settings['tp_btn_button_show'])) : ?>
@@ -692,9 +559,7 @@ class TP_Info_List_Box extends Widget_Base {
            </div>
            <?php endif; ?>
         </div>
-
         <?php endif; ?>
-
         <?php 
 	}
 }

@@ -17,6 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 class TP_Blog_Post extends Widget_Base {
 
+    use TP_Style_Trait;
+
 	/**
 	 * Retrieve the widget name.
 	 *
@@ -74,6 +76,12 @@ class TP_Blog_Post extends Widget_Base {
 		return [ 'tpcore' ];
 	}
 
+    protected function register_controls()
+    {
+        $this->register_controls_section();
+        $this->style_tab_content();
+    }
+
 	/**
 	 * Retrieve the list of scripts the widget depended on.
 	 *
@@ -98,7 +106,7 @@ class TP_Blog_Post extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function register_controls() {
+	protected function register_controls_section() {
 
 
         // tp_section_title
@@ -218,7 +226,7 @@ class TP_Blog_Post extends Widget_Base {
         );
         $this->end_controls_section();
 
-// tp_btn_button_group
+        // tp_btn_button_group
         $this->start_controls_section(
             'tp_btn_button_group',
             [
@@ -857,38 +865,16 @@ class TP_Blog_Post extends Widget_Base {
 
         $this->end_controls_section();
 
-
-        // style control
-
-
-		$this->start_controls_section(
-			'section_style',
-			[
-				'label' => __( 'Style', 'tpcore' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'text_transform',
-			[
-				'label' => __( 'Text Transform', 'tpcore' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => '',
-				'options' => [
-					'' => __( 'None', 'tpcore' ),
-					'uppercase' => __( 'UPPERCASE', 'tpcore' ),
-					'lowercase' => __( 'lowercase', 'tpcore' ),
-					'capitalize' => __( 'Capitalize', 'tpcore' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
 	}
+
+    protected function style_tab_content()
+    {
+        $this->tp_section_style_controls('about_section', 'Section', '.tp-el-sec');
+        $this->tp_basic_style_controls('heading_cat', 'Category', '.tp-el-cat');
+        $this->tp_basic_style_controls('heading_title', 'Title', '.tp-el-title');
+        $this->tp_basic_style_controls('heading_desc', 'Description', '.tp-el-content');
+        $this->tp_basic_style_controls('heading_meta', 'Meta', '.tp-el-meta span');
+    }
 
 	/**
 	 * Render the widget output on the frontend.
@@ -1029,7 +1015,7 @@ class TP_Blog_Post extends Widget_Base {
                 global $post;
                 $categories = get_the_category($post->ID);
             ?>
-            <div class="blog__item mb-30 white-bg transition-3 mb-30">
+            <div class="blog__item mb-30 white-bg transition-3 mb-30 tp-el-sec">
                 <div class="blog__thumb w-img fix">
                    <a href="<?php the_permalink(); ?>">
                       <?php the_post_thumbnail( $post->ID, $settings['thumbnail_size'] );?>
@@ -1037,18 +1023,18 @@ class TP_Blog_Post extends Widget_Base {
                 </div>
                 <div class="blog__content">
                    <div class="blog__tag">
-                      <a href="<?php echo esc_url(get_category_link($categories[0]->term_id)); ?>"><?php echo esc_html($categories[0]->name); ?></a>
+                      <a class="tp-el-cat" href="<?php echo esc_url(get_category_link($categories[0]->term_id)); ?>"><?php echo esc_html($categories[0]->name); ?></a>
                    </div>
-                   <h3 class="blog__title">
+                   <h3 class="blog__title tp-el-title">
                       <a href="<?php the_permalink(); ?>"><?php echo wp_trim_words(get_the_title(), $settings['tp_blog_title_word'], ''); ?></a>
                    </h3>
                    <?php if (!empty($settings['tp_post_content'])):
                         $tp_post_content_limit = (!empty($settings['tp_post_content_limit'])) ? $settings['tp_post_content_limit'] : '';
                             ?>
-                        <p class="blogBlock__text"><?php print wp_trim_words(get_the_excerpt(get_the_ID()), $tp_post_content_limit, ''); ?></p>
+                        <p class="blogBlock__text tp-el-content"><?php print wp_trim_words(get_the_excerpt(get_the_ID()), $tp_post_content_limit, ''); ?></p>
                     <?php endif; ?>
                    <div class="blog__meta">
-                      <ul>
+                      <ul class="tp-el-meta">
                          <li>
                             <span><svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                <path d="M10.6848 6.99994C10.6848 8.48494 9.48476 9.68494 7.99976 9.68494C6.51476 9.68494 5.31476 8.48494 5.31476 6.99994C5.31476 5.51494 6.51476 4.31494 7.99976 4.31494C9.48476 4.31494 10.6848 5.51494 10.6848 6.99994Z" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1080,22 +1066,22 @@ class TP_Blog_Post extends Widget_Base {
 
         $categories = get_the_category($post->ID);
         ?>
-         <div class="blog__item-float blog__item-float-overlay p-relative fix transition-3 mb-30 d-flex align-items-end">
+         <div class="blog__item-float blog__item-float-overlay p-relative fix transition-3 mb-30 d-flex align-items-end tp-el-sec">
             <div class="blog__thumb-bg w-img fix" data-background="<?php the_post_thumbnail_url( $post->ID, $settings['thumbnail_size'] );?>"></div>
             <div class="blog__content-float">
                <div class="blog__tag-float mb-15">
-                  <a href="<?php echo esc_url(get_category_link($categories[0]->term_id)); ?>"><?php echo esc_html($categories[0]->name); ?></a>
+                  <a class="tp-el-cat" href="<?php echo esc_url(get_category_link($categories[0]->term_id)); ?>"><?php echo esc_html($categories[0]->name); ?></a>
                </div>
-               <h3 class="blog__title-float">
+               <h3 class="blog__title-float tp-el-title">
                   <a href="<?php the_permalink(); ?>"><?php echo wp_trim_words(get_the_title(), $settings['tp_blog_title_word'], ''); ?></a>
                </h3>
                 <?php if (!empty($settings['tp_post_content'])):
                     $tp_post_content_limit = (!empty($settings['tp_post_content_limit'])) ? $settings['tp_post_content_limit'] : '';
                     ?>
-                    <p class="blogBlock__text"><?php print wp_trim_words(get_the_excerpt(get_the_ID()), $tp_post_content_limit, ''); ?></p>
+                    <p class="blogBlock__text tp-el-content"><?php print wp_trim_words(get_the_excerpt(get_the_ID()), $tp_post_content_limit, ''); ?></p>
                 <?php endif; ?>
                <div class="blog__meta-float">
-                  <ul>
+                  <ul class="tp-el-meta">
                      <li>
                         <span><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <path d="M16.4998 9C16.4998 13.14 13.1398 16.5 8.99976 16.5C4.85976 16.5 1.49976 13.14 1.49976 9C1.49976 4.86 4.85976 1.5 8.99976 1.5C13.1398 1.5 16.4998 4.86 16.4998 9Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

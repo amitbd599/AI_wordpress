@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @since 1.0.0
  */
 class TP_Contact_Info extends Widget_Base {
-
+    use TP_Style_Trait;
 	/**
 	 * Retrieve the widget name.
 	 *
@@ -75,6 +75,12 @@ class TP_Contact_Info extends Widget_Base {
 	public function get_categories() {
 		return [ 'tpcore' ];
 	}
+
+    protected function register_controls()
+    {
+        $this->register_controls_section();
+        $this->style_tab_content();
+    }
 
 	/**
 	 * Retrieve the list of scripts the widget depended on.
@@ -145,7 +151,7 @@ class TP_Contact_Info extends Widget_Base {
 	 *
 	 * @access protected
 	 */
-	protected function register_controls() {
+	protected function register_controls_section() {
 
         // Service group
         $this->start_controls_section(
@@ -166,8 +172,6 @@ class TP_Contact_Info extends Widget_Base {
                 'type' => Controls_Manager::SELECT,
                 'options' => [
                     'style_1' => __( 'Style 1', 'tpcore' ),
-                    'style_2' => __( 'Style 2', 'tpcore' ),
-                    'style_3' => __( 'Style 3', 'tpcore' ),
                 ],
                 'default' => 'style_1',
                 'frontend_available' => true,
@@ -234,8 +238,6 @@ class TP_Contact_Info extends Widget_Base {
                 ]
             );
         }
-
-
 
         $repeater->add_control(
             'tp_title', [
@@ -400,37 +402,15 @@ class TP_Contact_Info extends Widget_Base {
         );
 
         $this->end_controls_section();
-
-
-        // TAB_STYLE
-		$this->start_controls_section(
-			'section_style',
-			[
-				'label' => __( 'Style', 'tpcore' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			'text_transform',
-			[
-				'label' => __( 'Text Transform', 'tpcore' ),
-				'type' => Controls_Manager::SELECT,
-				'default' => '',
-				'options' => [
-					'' => __( 'None', 'tpcore' ),
-					'uppercase' => __( 'UPPERCASE', 'tpcore' ),
-					'lowercase' => __( 'lowercase', 'tpcore' ),
-					'capitalize' => __( 'Capitalize', 'tpcore' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} .title' => 'text-transform: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->end_controls_section();
 	}
+
+    protected function style_tab_content()
+    {
+        $this->tp_section_style_controls('about_section', 'Section', '.tp-el-sec');
+        $this->tp_basic_style_controls('heading_title', 'Title', '.tp-el-title');
+        $this->tp_basic_style_controls('heading_desc', 'Content', '.tp-el-content');
+        $this->tp_link_controls_style('', 'b_btn1_style', 'Social ', '.tp-el-btn a');
+    }
 
 	/**
 	 * Render the widget output on the frontend.
@@ -448,7 +428,7 @@ class TP_Contact_Info extends Widget_Base {
 
 
         <div class="contact__info white-bg p-relative z-index-1">
-            <div class="contact__info-inner white-bg">
+            <div class="contact__info-inner white-bg tp-el-sec">
                <ul>
                 <?php foreach ($settings['tp_list'] as $item) : ?>
                   <li>
@@ -467,9 +447,9 @@ class TP_Contact_Info extends Widget_Base {
                             <?php endif; ?>
                         </div>
                         <div class="contact__info-text">
-                           <h4><?php echo tp_kses($item['tp_title' ]); ?></h4>
+                           <h4 class="tp-el-title" ><?php echo tp_kses($item['tp_title' ]); ?></h4>
                         <?php if (!empty($item['tp_description' ])): ?>
-                        <p><?php echo tp_kses($item['tp_description']); ?></p>
+                        <p class="tp-el-content" ><?php echo tp_kses($item['tp_description']); ?></p>
                         <?php endif; ?>
 
                         </div>
@@ -488,7 +468,7 @@ class TP_Contact_Info extends Widget_Base {
                             $icon = $profile['name'];
                             $url = esc_url($profile['link']['url']);
 
-                            printf('<li><a target="_blank" rel="noopener"  href="%s" class="elementor-repeater-item-%s"><i class="fab fa-%s" aria-hidden="true"></i></a></li>',
+                            printf('<li class="tp-el-btn" ><a target="_blank" rel="noopener"  href="%s" class="elementor-repeater-item-%s"><i class="fab fa-%s" aria-hidden="true"></i></a></li>',
                                 $url,
                                 esc_attr($profile['_id']),
                                 esc_attr($icon)
