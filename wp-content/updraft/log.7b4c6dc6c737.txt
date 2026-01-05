@@ -1,0 +1,82 @@
+0000.011 () Opened log file at time: Mon, 05 Jan 2026 14:22:18 +0000 on http://ai.test
+0000.012 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.9 WP: 6.9 PHP: 8.1.10 (apache2handler, Windows NT DESKTOP-S9H07L2 10.0 build 19045 (Windows 10) AMD64) MySQL: 8.0.30 (max packet size=536870912) WPLANG: en_US Server: Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10 safe_mode: 0 max_execution_time: 900 memory_limit: 512M (used: 57.8M | 60M) multisite: N openssl: OpenSSL 1.1.1q  5 Jul 2022 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.012 () Free space on disk containing Updraft's temporary directory: 15579 MB
+0000.056 () Restore setup, now closing connection and starting restore over AJAX.
+0000.006 () Opened log file at time: Mon, 05 Jan 2026 14:22:20 +0000 on http://ai.test
+0000.007 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.9 WP: 6.9 PHP: 8.1.10 (apache2handler, Windows NT DESKTOP-S9H07L2 10.0 build 19045 (Windows 10) AMD64) MySQL: 8.0.30 (max packet size=536870912) WPLANG: en_US Server: Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10 safe_mode: 0 max_execution_time: 900 memory_limit: 512M (used: 54.7M | 58M) multisite: N openssl: OpenSSL 1.1.1q  5 Jul 2022 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.007 () Free space on disk containing Updraft's temporary directory: 15579 MB
+0000.045 () Ensuring WP_Filesystem is setup for a restore
+0000.048 () WP_Filesystem is setup and ready for a restore
+0000.054 () Restore job started. Entities to restore: db. Restore options: {"include_unspecified_tables":false,"tables_to_restore":["wp_5options","wp_5users","wp_5usermeta","wp_5commentmeta","wp_5comments","wp_5links","wp_5postmeta","wp_5posts","wp_5term_relationships","wp_5term_taxonomy","wp_5termmeta","wp_5terms","wp_5podsrel"],"tables_to_skip":[],"updraft_encryptionphrase":"","updraft_restorer_wpcore_includewpconfig":false,"updraft_incremental_restore_point":-1}
+0000.059 () PHP event: code E_WARNING: mkdir(): File exists (line 558, D:\laragon\www\ai\wp-admin\includes\class-wp-filesystem-direct.php)
+0000.060 () Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.063 () Entity: db
+0000.063 () restore_backup(backup_file=backup_2026-01-05-1416_Facontech_e6ddd7bfe632-db.gz, type=db, info=a:0:{}, last_one=1)
+0000.064 () Unpacking backup... (backup_2026-01-05-1416_Facontech_e6ddd7bfe632-db.gz, 0.1 Mb)
+0000.064 () PHP event: code E_WARNING: mkdir(): File exists (line 558, D:\laragon\www\ai\wp-admin\includes\class-wp-filesystem-direct.php)
+0000.067 () Database successfully unpacked
+0000.068 () Restoring the database (on a large site this can take a long time - if it times out (which can happen if your web hosting company has configured your hosting to limit resources) then you should use a different method, such as phpMyAdmin)...
+0000.085 () Using direct MySQL access; value of use_mysqli is: 1
+0000.086 () SQL compatibility mode is: NO_AUTO_VALUE_ON_ZERO,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+0000.149 () Max packet size: 512 MB
+0000.149 () Entering maintenance mode
+0000.149 () Enabling Maintenance mode&#8230;
+0000.171 () Backup of: http://ai.test
+0000.174 () Content URL: http://ai.test/wp-content
+0000.174 () Uploads URL: http://ai.test/wp-content/uploads
+0000.174 () Old table prefix: wp_5
+0000.175 () UpdraftPlus plugin slug: updraftplus/updraftplus.php
+0000.175 () Site information: multisite=0
+0000.175 () Site information: sql_mode=NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+0000.177 () Skipped execution of SQL statement (unwanted or internally handled type=18): /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+0000.177 () New table prefix: fl_
+0000.183 () Processing table (InnoDB): wp_5options - will restore as: fl_options
+0000.290 () Atomic restore: dropping original table (wp_5options)
+0000.300 () Atomic restore: renaming new table (fl_options) to final table name (wp_5options)
+0000.313 () Restoring prior UD configuration (table: wp_5options; keys: 4)
+0000.335 () Processing table (InnoDB): wp_5users - will restore as: fl_users
+0000.394 () Atomic restore: dropping original table (wp_5users)
+0000.403 () Atomic restore: renaming new table (fl_users) to final table name (wp_5users)
+0000.419 () Processing table (InnoDB): wp_5usermeta - will restore as: fl_usermeta
+0000.463 () Atomic restore: dropping original table (wp_5usermeta)
+0000.473 () Atomic restore: renaming new table (fl_usermeta) to final table name (wp_5usermeta)
+0000.484 () Processing table (InnoDB): wp_5commentmeta - will restore as: fl_commentmeta
+0000.536 () Atomic restore: dropping original table (wp_5commentmeta)
+0000.545 () Atomic restore: renaming new table (fl_commentmeta) to final table name (wp_5commentmeta)
+0000.557 () Processing table (InnoDB): wp_5comments - will restore as: fl_comments
+0000.613 () Atomic restore: dropping original table (wp_5comments)
+0000.625 () Atomic restore: renaming new table (fl_comments) to final table name (wp_5comments)
+0000.643 () Processing table (InnoDB): wp_5links - will restore as: fl_links
+0000.687 () Atomic restore: dropping original table (wp_5links)
+0000.695 () Atomic restore: renaming new table (fl_links) to final table name (wp_5links)
+0000.710 () Processing table (InnoDB): wp_5postmeta - will restore as: fl_postmeta
+0000.775 () Atomic restore: dropping original table (wp_5postmeta)
+0000.782 () Atomic restore: renaming new table (fl_postmeta) to final table name (wp_5postmeta)
+0000.794 () Processing table (InnoDB): wp_5posts - will restore as: fl_posts
+0001.108 () Atomic restore: dropping original table (wp_5posts)
+0001.122 () Atomic restore: renaming new table (fl_posts) to final table name (wp_5posts)
+0001.142 () Processing table (InnoDB): wp_5term_relationships - will restore as: fl_term_relationships
+0001.190 () Atomic restore: dropping original table (wp_5term_relationships)
+0001.200 () Atomic restore: renaming new table (fl_term_relationships) to final table name (wp_5term_relationships)
+0001.214 () Processing table (InnoDB): wp_5term_taxonomy - will restore as: fl_term_taxonomy
+0001.267 () Atomic restore: dropping original table (wp_5term_taxonomy)
+0001.278 () Atomic restore: renaming new table (fl_term_taxonomy) to final table name (wp_5term_taxonomy)
+0001.292 () Processing table (InnoDB): wp_5termmeta - will restore as: fl_termmeta
+0001.346 () Atomic restore: dropping original table (wp_5termmeta)
+0001.354 () Atomic restore: renaming new table (fl_termmeta) to final table name (wp_5termmeta)
+0001.371 () Processing table (InnoDB): wp_5terms - will restore as: fl_terms
+0001.423 () Atomic restore: dropping original table (wp_5terms)
+0001.431 () Atomic restore: renaming new table (fl_terms) to final table name (wp_5terms)
+0001.444 () Processing table (InnoDB): wp_5podsrel - will restore as: fl_podsrel
+0001.493 () Skipped execution of SQL statement (unwanted or internally handled type=18): /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+0001.521 () Unlocking database and leaving maintenance mode
+0001.521 () Disabling Maintenance mode&#8230;
+0001.522 () Atomic restore: dropping original table (wp_5podsrel)
+0001.534 () Atomic restore: renaming new table (fl_podsrel) to final table name (wp_5podsrel)
+0001.552 () Finished: lines processed: 46 in 1.46 seconds
+0001.553 () Cleaning up rubbish...
+0001.555 () Begin search and replace (updraftplus_restored_db)
+0001.555 () [Database-replace-site-url] Database: search and replace site URL
+0001.555 () This option was not selected.
+0001.612 () Restore successful!
+0001.612 () Restore successful
