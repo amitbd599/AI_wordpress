@@ -14,7 +14,7 @@
 }
 
 .input-group-prepend .input-group-text i.fa-buffer::before {
-  content: "\e931" !important;
+  content: '\e931' !important;
 }
 
 .etn-event-item .etn-event-footer .etn-event-date i {
@@ -70,8 +70,8 @@
 }
 
 .footer-default-widget ul li a::after {
-  content: "\f324";
-  font-family: "Font Awesome 5 Pro";
+  content: '\f324';
+  font-family: 'Font Awesome 5 Pro';
   font-size: 12px;
   left: 0;
   position: absolute;
@@ -138,9 +138,11 @@ footer {
 
 .footer-wrapper.latest_blog_post .inner li {
   display: flex;
-  .img-file img {
-    margin-right: 10px;
+  .img-file {
     width: 80px;
+    height: 80px;
+    display: block;
+    padding-right: 10px;
   }
   a {
     font-size: 16px;
@@ -155,7 +157,11 @@ footer {
 .footer-wrapper.three {
   ul {
     li {
-      margin-bottom: 5px;
+      margin-bottom: 8px;
     }
   }
+}
+
+.widget_ts-latest-posts-footer {
+  padding: 0 30px;
 }

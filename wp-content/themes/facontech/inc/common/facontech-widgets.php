@@ -34,7 +34,7 @@ function facontech_widgets_init()
             'name' => sprintf(esc_html__('Footer Design-1 : column option %1$s', 'facontech'), $num),
             'id' => 'footer-' . $num,
             'description' => sprintf(esc_html__('Footer column %1$s', 'facontech'), $num),
-            'before_widget' => '<div id="%1$s" class="footer__widget footer-default-widget footer__col-' . $num . ' mb-40 %2$s">',
+            'before_widget' => '<div id="%1$s" class="footer__widget footer-default-widget footer__col-' . $num . ' mb-20 %2$s">',
             'after_widget' => '</div>',
             'before_title' => '<h3 class="footer__widget-title title">',
             'after_title' => '</h3>',
@@ -49,7 +49,7 @@ function facontech_widgets_init()
                 'name' => sprintf(esc_html__('Footer Design-2 : column option %1$s', 'facontech'), $num),
                 'id' => 'footer-2-' . $num,
                 'description' => sprintf(esc_html__('Footer Style 2 : %1$s', 'facontech'), $num),
-                'before_widget' => '<div id="%1$s" class="footer__widget footer-default-widget footer__col-' . $num . ' mb-40 %2$s">',
+                'before_widget' => '<div id="%1$s" class="footer__widget footer-default-widget footer__col-' . $num . ' mb-20 %2$s">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="footer__widget-title title">',
                 'after_title' => '</h3>',
@@ -59,12 +59,12 @@ function facontech_widgets_init()
 
     // footer 3
     if ($footer_style_3_switch) {
-        for ($num = 1; $num <= $footer_widgets ; $num++) {
+        for ($num = 1; $num <= $footer_widgets; $num++) {
             register_sidebar([
                 'name' => sprintf(esc_html__('Footer Design-3 : column option %1$s', 'facontech'), $num),
                 'id' => 'footer-3-' . $num,
                 'description' => sprintf(esc_html__('Footer Style 3 : %1$s', 'facontech'), $num),
-                'before_widget' => '<div id="%1$s" class="footer__widget footer-3-widget footer-col-3-' . $num . ' mb-50 %2$s">',
+                'before_widget' => '<div id="%1$s" class="footer__widget footer-3-widget footer-col-3-' . $num . ' mb-20 %2$s">',
                 'after_widget' => '</div>',
                 'before_title' => '<h3 class="footer__widget-title title">',
                 'after_title' => '</h3>',

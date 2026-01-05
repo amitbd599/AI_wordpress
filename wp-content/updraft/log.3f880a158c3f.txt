@@ -1,0 +1,181 @@
+0000.000 (0) Opened log file at time: Mon, 05 Jan 2026 16:05:50 +0000 on http://ai.test
+0000.002 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.9 WP: 6.9 PHP: 8.1.10 (apache2handler, Windows NT AMIT 10.0 build 26200 (Windows 11) AMD64) MySQL: 8.0.30 (max packet size=536870912) WPLANG: en_US Server: Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10 safe_mode: 0 max_execution_time: 900 memory_limit: 512M (used: 55M | 58M) multisite: N openssl: OpenSSL 1.1.1q  5 Jul 2022 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.002 (0) Free space on disk containing Updraft's temporary directory: 134933.7 MB
+0000.008 (0) Tasks: Backup files: 0 (schedule: unset) Backup DB: 1 (schedule: unset)
+0000.010 (0) Requesting semaphore lock (d) (apparently not via scheduler)
+0000.012 (0) Semaphore (d, wp_5options) was stuck, set lock time to 2026-01-05 16:05:50
+0000.013 (0) Semaphore (d, wp_5options) reset to 1
+0000.013 (0) Set semaphore last lock (d) time to 2026-01-05 16:05:50
+0000.014 (0) Semaphore lock (d) complete
+0000.017 (0) Backup run: resumption=0, nonce=3f880a158c3f, file_nonce=3f880a158c3f begun at=1767629150 (0s ago), job type=backup
+0000.018 (0) Scheduling a resumption (1) after 300 seconds (1767629450) in case this run gets aborted
+0000.026 (0) This backup run is not intended for files - skipping
+0000.027 (0) Beginning creation of database dump (WordPress DB)
+0000.028 (0) SQL compatibility mode is: NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+0000.039 (0) Table wp_5options: Total expected rows (via COUNT): 235
+0000.040 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.051 (0) Table wp_5options: Rows added in this batch (next record: 5808): 228 (uncompressed bytes in this segment=360138) in 0.02 seconds
+0000.058 (0) Table wp_5options: finishing file(s) (2, 60.4 KB)
+0000.062 (0) Table wp_5users: Total expected rows (via COUNT): 1
+0000.063 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.066 (0) Table wp_5users: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1554) in 0.00 seconds
+0000.070 (0) Table wp_5users: finishing file(s) (2, 0.6 KB)
+0000.075 (0) Table wp_5usermeta: Total expected rows (via COUNT): 31
+0000.076 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.078 (0) Table wp_5usermeta: Rows added in this batch (next record: 31): 31 (uncompressed bytes in this segment=3400) in 0.01 seconds
+0000.083 (0) Table wp_5usermeta: finishing file(s) (2, 1.4 KB)
+0000.089 (0) Table wp_5commentmeta: Total expected rows (via COUNT): 0
+0000.091 (0) Table wp_5commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=727) in 0.01 seconds
+0000.096 (0) Table wp_5commentmeta: finishing file(s) (2, 0.4 KB)
+0000.101 (0) Table wp_5comments: Total expected rows (via COUNT): 4
+0000.102 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.103 (0) Table wp_5comments: Rows added in this batch (next record: 4): 4 (uncompressed bytes in this segment=3145) in 0.00 seconds
+0000.108 (0) Table wp_5comments: finishing file(s) (2, 1 KB)
+0000.113 (0) Table wp_5links: Total expected rows (via COUNT): 0
+0000.115 (0) Table wp_5links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1502) in 0.00 seconds
+0000.120 (0) Table wp_5links: finishing file(s) (2, 0.5 KB)
+0000.125 (0) Table wp_5postmeta: Total expected rows (via COUNT): 300
+0000.126 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.129 (0) Table wp_5postmeta: Rows added in this batch (next record: 1066): 300 (uncompressed bytes in this segment=20520) in 0.01 seconds
+0000.134 (0) Table wp_5postmeta: finishing file(s) (2, 3.5 KB)
+0000.140 (0) Table wp_5posts: Total expected rows (via COUNT): 139
+0000.141 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.147 (0) Table wp_5posts: Rows added in this batch (next record: 248): 139 (uncompressed bytes in this segment=242914) in 0.01 seconds
+0000.152 (0) Table wp_5posts: finishing file(s) (2, 17.1 KB)
+0000.157 (0) Table wp_5term_relationships: Total expected rows (approximate): 30
+0000.159 (0) Table wp_5term_relationships: Rows added in this batch (next record: 100000): 30 (uncompressed bytes in this segment=1085) in 0.00 seconds
+0000.163 (0) Table wp_5term_relationships: finishing file(s) (2, 0.5 KB)
+0000.169 (0) Table wp_5term_taxonomy: Total expected rows (via COUNT): 2
+0000.170 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.171 (0) Table wp_5term_taxonomy: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=993) in 0.01 seconds
+0000.177 (0) Table wp_5term_taxonomy: finishing file(s) (2, 0.5 KB)
+0000.183 (0) Table wp_5termmeta: Total expected rows (via COUNT): 0
+0000.185 (0) Table wp_5termmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=700) in 0.01 seconds
+0000.191 (0) Table wp_5termmeta: finishing file(s) (2, 0.4 KB)
+0000.195 (0) Table wp_5terms: Total expected rows (via COUNT): 2
+0000.197 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.199 (0) Table wp_5terms: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=814) in 0.01 seconds
+0000.203 (0) Table wp_5terms: finishing file(s) (2, 0.4 KB)
+0000.210 (0) Table wp_55commentmeta: Total expected rows (via COUNT): 0
+0000.211 (0) Table wp_55commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=733) in 0.01 seconds
+0000.217 (0) Table wp_55commentmeta: finishing file(s) (2, 0.4 KB)
+0000.223 (0) Table wp_55comments: Total expected rows (via COUNT): 4
+0000.224 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.226 (0) Table wp_55comments: Rows added in this batch (next record: 4): 4 (uncompressed bytes in this segment=3152) in 0.01 seconds
+0000.230 (0) Table wp_55comments: finishing file(s) (2, 1 KB)
+0000.236 (0) Table wp_55links: Total expected rows (via COUNT): 0
+0000.238 (0) Table wp_55links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1508) in 0.00 seconds
+0000.243 (0) Table wp_55links: finishing file(s) (2, 0.5 KB)
+0000.251 (0) Table wp_55option_tmp: Total expected rows (via COUNT): 165
+0000.251 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.254 (0) Table wp_55option_tmp: Rows added in this batch (next record: 5716): 165 (uncompressed bytes in this segment=30318) in 0.01 seconds
+0000.259 (0) Table wp_55option_tmp: finishing file(s) (2, 7.1 KB)
+0000.265 (0) Table wp_55podsrel: Total expected rows (via COUNT): 0
+0000.267 (0) Table wp_55podsrel: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=946) in 0.00 seconds
+0000.271 (0) Table wp_55podsrel: finishing file(s) (2, 0.4 KB)
+0000.278 (0) Table wp_55postmeta: Total expected rows (via COUNT): 285
+0000.279 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.282 (0) Table wp_55postmeta: Rows added in this batch (next record: 1051): 285 (uncompressed bytes in this segment=19788) in 0.01 seconds
+0000.287 (0) Table wp_55postmeta: finishing file(s) (2, 3.4 KB)
+0000.295 (0) Table wp_55posts: Total expected rows (via COUNT): 131
+0000.296 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.302 (0) Table wp_55posts: Rows added in this batch (next record: 241): 131 (uncompressed bytes in this segment=275078) in 0.01 seconds
+0000.308 (0) Table wp_55posts: finishing file(s) (2, 15.7 KB)
+0000.313 (0) Table wp_55term_relationships: Total expected rows (approximate): 30
+0000.315 (0) Table wp_55term_relationships: Rows added in this batch (next record: 1000): 30 (uncompressed bytes in this segment=1092) in 0.00 seconds
+0000.320 (0) Table wp_55term_relationships: finishing file(s) (2, 0.5 KB)
+0000.327 (0) Table wp_55term_taxonomy: Total expected rows (via COUNT): 2
+0000.328 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.330 (0) Table wp_55term_taxonomy: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=1000) in 0.01 seconds
+0000.335 (0) Table wp_55term_taxonomy: finishing file(s) (2, 0.5 KB)
+0000.341 (0) Table wp_55termmeta: Total expected rows (via COUNT): 0
+0000.343 (0) Table wp_55termmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=706) in 0.00 seconds
+0000.348 (0) Table wp_55termmeta: finishing file(s) (2, 0.4 KB)
+0000.354 (0) Table wp_55terms: Total expected rows (via COUNT): 2
+0000.355 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.356 (0) Table wp_55terms: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=821) in 0.01 seconds
+0000.361 (0) Table wp_55terms: finishing file(s) (2, 0.4 KB)
+0000.366 (0) Table wp_55wpdbbkp_processed_files: Total expected rows (via COUNT): 0
+0000.368 (0) Table wp_55wpdbbkp_processed_files: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=836) in 0.00 seconds
+0000.373 (0) Table wp_55wpdbbkp_processed_files: finishing file(s) (2, 0.4 KB)
+0000.378 (0) Table wp_5podsrel: Total expected rows (via COUNT): 0
+0000.379 (0) Table wp_5podsrel: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=940) in 0.00 seconds
+0000.383 (0) Table wp_5podsrel: finishing file(s) (2, 0.4 KB)
+0000.389 (0) Table wp_5wpdbbkp_processed_files: Total expected rows (via COUNT): 0
+0000.390 (0) Table wp_5wpdbbkp_processed_files: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=830) in 0.00 seconds
+0000.394 (0) Table wp_5wpdbbkp_processed_files: finishing file(s) (2, 0.4 KB)
+0000.395 (0) PHP event: code E_WARNING: filemtime(): stat failed for E:\laragon\www\ai/wp-content/updraft/backup_2026-01-05-1605_Facontech_3f880a158c3f-db.gz (line 1923, E:\laragon\www\ai\wp-content\plugins\updraftplus\backup.php)
+0000.397 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5options.table.tmpr5809.gz (1/26/fopen): adding to final database dump
+0000.399 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5options.table.gz (2/26/fopen): adding to final database dump
+0000.400 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5users.table.tmpr2.gz (3/26/fopen): adding to final database dump
+0000.401 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5users.table.gz (4/26/fopen): adding to final database dump
+0000.402 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5usermeta.table.tmpr32.gz (5/26/fopen): adding to final database dump
+0000.402 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5usermeta.table.gz (6/26/fopen): adding to final database dump
+0000.403 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5commentmeta.table.tmpr0.gz (7/26/fopen): adding to final database dump
+0000.404 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5commentmeta.table.gz (8/26/fopen): adding to final database dump
+0000.405 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5comments.table.tmpr5.gz (9/26/fopen): adding to final database dump
+0000.406 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5comments.table.gz (10/26/fopen): adding to final database dump
+0000.407 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5links.table.tmpr0.gz (11/26/fopen): adding to final database dump
+0000.408 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5links.table.gz (12/26/fopen): adding to final database dump
+0000.409 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5postmeta.table.tmpr1067.gz (13/26/fopen): adding to final database dump
+0000.410 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5postmeta.table.gz (14/26/fopen): adding to final database dump
+0000.411 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5posts.table.tmpr249.gz (15/26/fopen): adding to final database dump
+0000.412 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5posts.table.gz (16/26/fopen): adding to final database dump
+0000.413 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5term_relationships.table.tmpr100001.gz (17/26/fopen): adding to final database dump
+0000.414 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5term_relationships.table.gz (18/26/fopen): adding to final database dump
+0000.414 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5term_taxonomy.table.tmpr3.gz (19/26/fopen): adding to final database dump
+0000.415 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5term_taxonomy.table.gz (20/26/fopen): adding to final database dump
+0000.416 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5termmeta.table.tmpr0.gz (21/26/fopen): adding to final database dump
+0000.417 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5termmeta.table.gz (22/26/fopen): adding to final database dump
+0000.418 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5terms.table.tmpr3.gz (23/26/fopen): adding to final database dump
+0000.419 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5terms.table.gz (24/26/fopen): adding to final database dump
+0000.420 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55commentmeta.table.tmpr0.gz (25/26/fopen): adding to final database dump
+0000.420 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55commentmeta.table.gz (26/26/fopen): adding to final database dump
+0000.421 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55comments.table.tmpr5.gz (27/26/fopen): adding to final database dump
+0000.422 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55comments.table.gz (28/26/fopen): adding to final database dump
+0000.423 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55links.table.tmpr0.gz (29/26/fopen): adding to final database dump
+0000.424 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55links.table.gz (30/26/fopen): adding to final database dump
+0000.425 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55option_tmp.table.tmpr5717.gz (31/26/fopen): adding to final database dump
+0000.426 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55option_tmp.table.gz (32/26/fopen): adding to final database dump
+0000.427 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55podsrel.table.tmpr0.gz (33/26/fopen): adding to final database dump
+0000.428 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55podsrel.table.gz (34/26/fopen): adding to final database dump
+0000.429 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55postmeta.table.tmpr1052.gz (35/26/fopen): adding to final database dump
+0000.430 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55postmeta.table.gz (36/26/fopen): adding to final database dump
+0000.430 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55posts.table.tmpr242.gz (37/26/fopen): adding to final database dump
+0000.432 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55posts.table.gz (38/26/fopen): adding to final database dump
+0000.432 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55term_relationships.table.tmpr1001.gz (39/26/fopen): adding to final database dump
+0000.433 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55term_relationships.table.gz (40/26/fopen): adding to final database dump
+0000.434 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55term_taxonomy.table.tmpr3.gz (41/26/fopen): adding to final database dump
+0000.435 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55term_taxonomy.table.gz (42/26/fopen): adding to final database dump
+0000.436 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55termmeta.table.tmpr0.gz (43/26/fopen): adding to final database dump
+0000.437 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55termmeta.table.gz (44/26/fopen): adding to final database dump
+0000.438 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55terms.table.tmpr3.gz (45/26/fopen): adding to final database dump
+0000.439 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55terms.table.gz (46/26/fopen): adding to final database dump
+0000.439 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55wpdbbkp_processed_files.table.tmpr0.gz (47/26/fopen): adding to final database dump
+0000.440 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_55wpdbbkp_processed_files.table.gz (48/26/fopen): adding to final database dump
+0000.441 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5podsrel.table.tmpr0.gz (49/26/fopen): adding to final database dump
+0000.442 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5podsrel.table.gz (50/26/fopen): adding to final database dump
+0000.443 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5wpdbbkp_processed_files.table.tmpr0.gz (51/26/fopen): adding to final database dump
+0000.443 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db-table-wp_5wpdbbkp_processed_files.table.gz (52/26/fopen): adding to final database dump
+0000.446 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db.gz: finished writing out complete database file (118.2 KB)
+0000.465 (0) Total database tables backed up: 26 (backup_2026-01-05-1605_Facontech_3f880a158c3f-db.gz, size: 121158, sha1: e86e4f7db804856abf7ed6422f25a062f7f76c48, sha256: 05eba651f81845376f17ad51dcf982c7542e55970da71980e114b857e7e0ac3c)
+0000.469 (0) backup_2026-01-05-1605_Facontech_3f880a158c3f-db.gz: db: This file has not yet been successfully uploaded: will queue
+0000.470 (0) Saving backup history. Total backup size: 118.3 KB
+0000.472 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0000.474 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0000.475 (0) No remote despatch: user chose no remote backup service
+0000.476 (0) Recording as successfully uploaded: backup_2026-01-05-1605_Facontech_3f880a158c3f-db.gz
+0000.479 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0000.479 (0) Number of backup sets in history: 1; groups (db): 1
+0000.480 (0) Examining (for databases) backup set with group_id=0, nonce=3f880a158c3f, datestamp=1767629150 (Jan 05 2026 16:05:50)
+0000.481 (0) This backup set is the backup set just made, so will not be deleted.
+0000.481 (0) Number of backup sets in history: 1; groups (files): 1
+0000.482 (0) Examining (for files) backup set with nonce=3f880a158c3f, datestamp=1767629150 (Jan 05 2026 16:05:50)
+0000.482 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0000.482 (0) Retain: saving new backup history (sets now: 1) and finishing retain operation
+0000.484 (0) Resume backup (3f880a158c3f, 0): finish run
+0000.486 (0) Decremented the semaphore (d) by 1
+0000.488 (0) Semaphore (d) unlocked
+0000.489 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0000.491 (0) No email will/can be sent - the user has not configured an email address.
+0000.492 (0) The backup succeeded and is now complete

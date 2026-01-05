@@ -1,0 +1,98 @@
+0000.044 (R) [notice] Looking for db archive: file name: backup_2026-01-05-1602_Facontech_51ac253063b0-db.gz
+0000.044 (R) [notice] Archive is expected to be size: 118.1 KB: OK
+0000.047 (R) [notice] Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.049 (R) [notice] Unpacking backup... (backup_2026-01-05-1602_Facontech_51ac253063b0-db.gz, 0.1 Mb)
+0000.051 (R) [notice] Restoring the database (on a large site this can take a long time - if it times out (which can happen if your web hosting company has configured your hosting to limit resources) then you should use a different method, such as phpMyAdmin)...
+0000.084 (R) [notice] Enabling Maintenance mode&#8230;
+0000.090 (R) [notice] Backup of: http://ai.test
+0000.090 (R) [notice] Content URL: http://ai.test/wp-content
+0000.090 (R) [notice] Uploads URL: http://ai.test/wp-content/uploads
+0000.091 (R) [notice] Old table prefix: wp_5
+0000.091 (R) [notice] UpdraftPlus plugin slug: updraftplus/updraftplus.php
+0000.091 (R) [notice] Site information: multisite = 0
+0000.091 (R) [notice] Site information: sql_mode = NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+0000.092 (R) [notice] New table prefix: 8d_
+0000.095 (R) [notice] Processing table (InnoDB):  wp_5options - will restore as: 8d_options
+0000.143 (R) [notice] Atomic restore: dropping original table (wp_5options)
+0000.147 (R) [notice] Atomic restore: renaming new table (8d_options) to final table name (wp_5options)
+0000.162 (R) [notice] Processing table (InnoDB):  wp_5users - will restore as: 8d_users
+0000.194 (R) [notice] Atomic restore: dropping original table (wp_5users)
+0000.198 (R) [notice] Atomic restore: renaming new table (8d_users) to final table name (wp_5users)
+0000.203 (R) [notice] Processing table (InnoDB):  wp_5usermeta - will restore as: 8d_usermeta
+0000.227 (R) [notice] Atomic restore: dropping original table (wp_5usermeta)
+0000.230 (R) [notice] Atomic restore: renaming new table (8d_usermeta) to final table name (wp_5usermeta)
+0000.234 (R) [notice] Processing table (InnoDB):  wp_5commentmeta - will restore as: 8d_commentmeta
+0000.258 (R) [notice] Atomic restore: dropping original table (wp_5commentmeta)
+0000.261 (R) [notice] Atomic restore: renaming new table (8d_commentmeta) to final table name (wp_5commentmeta)
+0000.266 (R) [notice] Processing table (InnoDB):  wp_5comments - will restore as: 8d_comments
+0000.293 (R) [notice] Atomic restore: dropping original table (wp_5comments)
+0000.297 (R) [notice] Atomic restore: renaming new table (8d_comments) to final table name (wp_5comments)
+0000.302 (R) [notice] Processing table (InnoDB):  wp_5links - will restore as: 8d_links
+0000.330 (R) [notice] Atomic restore: dropping original table (wp_5links)
+0000.334 (R) [notice] Atomic restore: renaming new table (8d_links) to final table name (wp_5links)
+0000.340 (R) [notice] Processing table (InnoDB):  wp_5postmeta - will restore as: 8d_postmeta
+0000.364 (R) [notice] Atomic restore: dropping original table (wp_5postmeta)
+0000.368 (R) [notice] Atomic restore: renaming new table (8d_postmeta) to final table name (wp_5postmeta)
+0000.372 (R) [notice] Processing table (InnoDB):  wp_5posts - will restore as: 8d_posts
+0000.417 (R) [notice] Atomic restore: dropping original table (wp_5posts)
+0000.421 (R) [notice] Atomic restore: renaming new table (8d_posts) to final table name (wp_5posts)
+0000.428 (R) [notice] Processing table (InnoDB):  wp_5term_relationships - will restore as: 8d_term_relationships
+0000.451 (R) [notice] Atomic restore: dropping original table (wp_5term_relationships)
+0000.454 (R) [notice] Atomic restore: renaming new table (8d_term_relationships) to final table name (wp_5term_relationships)
+0000.459 (R) [notice] Processing table (InnoDB):  wp_5term_taxonomy - will restore as: 8d_term_taxonomy
+0000.483 (R) [notice] Atomic restore: dropping original table (wp_5term_taxonomy)
+0000.486 (R) [notice] Atomic restore: renaming new table (8d_term_taxonomy) to final table name (wp_5term_taxonomy)
+0000.491 (R) [notice] Processing table (InnoDB):  wp_5termmeta - will restore as: 8d_termmeta
+0000.514 (R) [notice] Atomic restore: dropping original table (wp_5termmeta)
+0000.517 (R) [notice] Atomic restore: renaming new table (8d_termmeta) to final table name (wp_5termmeta)
+0000.522 (R) [notice] Processing table (InnoDB):  wp_5terms - will restore as: 8d_terms
+0000.547 (R) [notice] Atomic restore: dropping original table (wp_5terms)
+0000.550 (R) [notice] Atomic restore: renaming new table (8d_terms) to final table name (wp_5terms)
+0000.555 (R) [notice] Processing table (InnoDB):  wp_55commentmeta - will restore as: 8d_5commentmeta
+0000.578 (R) [notice] Atomic restore: dropping original table (wp_55commentmeta)
+0000.582 (R) [notice] Atomic restore: renaming new table (8d_5commentmeta) to final table name (wp_55commentmeta)
+0000.587 (R) [notice] Processing table (InnoDB):  wp_55comments - will restore as: 8d_5comments
+0000.615 (R) [notice] Atomic restore: dropping original table (wp_55comments)
+0000.619 (R) [notice] Atomic restore: renaming new table (8d_5comments) to final table name (wp_55comments)
+0000.624 (R) [notice] Processing table (InnoDB):  wp_55links - will restore as: 8d_5links
+0000.647 (R) [notice] Atomic restore: dropping original table (wp_55links)
+0000.651 (R) [notice] Atomic restore: renaming new table (8d_5links) to final table name (wp_55links)
+0000.657 (R) [notice] Processing table (InnoDB):  wp_55option_tmp - will restore as: 8d_5option_tmp
+0000.709 (R) [notice] Database queries processed: 50 in 0.65 seconds
+0000.709 (R) [notice] Atomic restore: dropping original table (wp_55option_tmp)
+0000.714 (R) [notice] Atomic restore: renaming new table (8d_5option_tmp) to final table name (wp_55option_tmp)
+0000.719 (R) [notice] Processing table (InnoDB):  wp_55podsrel - will restore as: 8d_5podsrel
+0000.746 (R) [notice] Atomic restore: dropping original table (wp_55podsrel)
+0000.750 (R) [notice] Atomic restore: renaming new table (8d_5podsrel) to final table name (wp_55podsrel)
+0000.755 (R) [notice] Processing table (InnoDB):  wp_55postmeta - will restore as: 8d_5postmeta
+0000.788 (R) [notice] Atomic restore: dropping original table (wp_55postmeta)
+0000.793 (R) [notice] Atomic restore: renaming new table (8d_5postmeta) to final table name (wp_55postmeta)
+0000.798 (R) [notice] Processing table (InnoDB):  wp_55posts - will restore as: 8d_5posts
+0000.845 (R) [notice] Atomic restore: dropping original table (wp_55posts)
+0000.850 (R) [notice] Atomic restore: renaming new table (8d_5posts) to final table name (wp_55posts)
+0000.856 (R) [notice] Processing table (InnoDB):  wp_55term_relationships - will restore as: 8d_5term_relationships
+0000.880 (R) [notice] Atomic restore: dropping original table (wp_55term_relationships)
+0000.883 (R) [notice] Atomic restore: renaming new table (8d_5term_relationships) to final table name (wp_55term_relationships)
+0000.888 (R) [notice] Processing table (InnoDB):  wp_55term_taxonomy - will restore as: 8d_5term_taxonomy
+0000.913 (R) [notice] Atomic restore: dropping original table (wp_55term_taxonomy)
+0000.917 (R) [notice] Atomic restore: renaming new table (8d_5term_taxonomy) to final table name (wp_55term_taxonomy)
+0000.921 (R) [notice] Processing table (InnoDB):  wp_55termmeta - will restore as: 8d_5termmeta
+0000.939 (R) [notice] Atomic restore: dropping original table (wp_55termmeta)
+0000.943 (R) [notice] Atomic restore: renaming new table (8d_5termmeta) to final table name (wp_55termmeta)
+0000.948 (R) [notice] Processing table (InnoDB):  wp_55terms - will restore as: 8d_5terms
+0000.975 (R) [notice] Atomic restore: dropping original table (wp_55terms)
+0000.979 (R) [notice] Atomic restore: renaming new table (8d_5terms) to final table name (wp_55terms)
+0000.983 (R) [notice] Processing table (InnoDB):  wp_55wpdbbkp_processed_files - will restore as: 8d_5wpdbbkp_processed_files
+0001.007 (R) [notice] Atomic restore: dropping original table (wp_55wpdbbkp_processed_files)
+0001.010 (R) [notice] Atomic restore: renaming new table (8d_5wpdbbkp_processed_files) to final table name (wp_55wpdbbkp_processed_files)
+0001.015 (R) [notice] Processing table (InnoDB):  wp_5podsrel - will restore as: 8d_podsrel
+0001.042 (R) [notice] Atomic restore: dropping original table (wp_5podsrel)
+0001.045 (R) [notice] Atomic restore: renaming new table (8d_podsrel) to final table name (wp_5podsrel)
+0001.051 (R) [notice] Processing table (InnoDB):  wp_5wpdbbkp_processed_files - will restore as: 8d_wpdbbkp_processed_files
+0001.082 (R) [notice] Disabling Maintenance mode&#8230;
+0001.082 (R) [notice] Atomic restore: dropping original table (wp_5wpdbbkp_processed_files)
+0001.086 (R) [notice] Atomic restore: renaming new table (8d_wpdbbkp_processed_files) to final table name (wp_5wpdbbkp_processed_files)
+0001.091 (R) [notice] Finished: lines processed: 78 in 1.03 seconds
+0001.092 (R) [notice] Cleaning up rubbish...
+0001.093 (R) [notice] This option was not selected.
+0001.117 (R) [notice] Restore successful!

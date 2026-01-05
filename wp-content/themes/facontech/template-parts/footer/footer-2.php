@@ -13,7 +13,7 @@ $facontech_footer_logo = get_theme_mod('facontech_footer_logo');
 $facontech_footer_top_space = function_exists('get_field') ? get_field('facontech_footer_top_space') : '0';
 $facontech_copyright_center = $facontech_footer_logo ? 'col-lg-4 offset-lg-4 col-md-6 text-right' : 'col-lg-12 text-center';
 $facontech_footer_bg_url_from_page = function_exists('get_field') ? get_field('facontech_footer_bg') : '';
-$facontech_footer_bg_color_from_page = function_exists('get_field') ? get_field('facontech_footer_bg_color') : '';
+$facontech_footer_bg_color_from_page = function_exists('get_field') ? get_field('facontech_footer_bg_color') : '#00151E';
 $footer_bg_color = get_theme_mod('facontech_footer_bg_color');
 $footer_top_space = get_theme_mod('facontech_footer_top_space');
 $footer_copyright_switch = get_theme_mod('footer_copyright_switch', false);
@@ -66,12 +66,12 @@ switch ($footer_columns) {
 
 
 <footer>
-    <div class="footer__area-2 " data-bg-color="<?php print esc_attr($bg_color); ?>">
+    <div class="footer__area-2 " data-bg-color="<?php print esc_attr($bg_color); ?>" style="background-color: <?php echo esc_attr($bg_color); ?>; padding-top:<?php echo esc_attr($facontech_footer_top_space); ?>px">
         <?php if (is_active_sidebar('footer-2-1') or is_active_sidebar('footer-2-2') or is_active_sidebar('footer-2-3') or is_active_sidebar('footer-2-4')): ?>
-        <div class="pt-100 border-b">
-            <div class="container">
-                <div class="row">
-                    <?php
+            <div class="pt-100 border-b">
+                <div class="container">
+                    <div class="row">
+                        <?php
                         if ($footer_columns > 4) {
                             print '<div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">';
                             dynamic_sidebar('footer-2-1');
@@ -99,9 +99,9 @@ switch ($footer_columns) {
                             }
                         }
                         ?>
+                    </div>
                 </div>
             </div>
-        </div>
 
         <?php endif; ?>
         <div class="footer__copyright-2 black-bg pt-25 pb-25 ">
