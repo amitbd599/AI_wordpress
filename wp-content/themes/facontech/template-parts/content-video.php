@@ -9,38 +9,40 @@
 
 $facontech_video_url = function_exists('get_field') ? get_field('formate_style') : NULL;
 
+
+
 if (is_single()):
     ?>
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class('format-video '); ?>>
-        <?php if (has_post_thumbnail()): ?>
-            <div class="img-file">
+<article id="post-<?php the_ID(); ?>" <?php post_class('format-video '); ?>>
+    <?php if (has_post_thumbnail()): ?>
+    <div class="img-file">
 
-                <?php the_post_thumbnail('full', ['class' => 'img-fluid']); ?>
+        <?php the_post_thumbnail('full', ['class' => 'img-fluid']); ?>
 
-                <?php if (!empty($facontech_video_url)): ?>
-                    <div class="vide-button vide-button-3">
-                        <a href="<?php echo esc_url($facontech_video_url); ?>" class="popup-video"><i
-                                class="fa-solid fa-play"></i></a>
-                    </div>
-                <?php endif; ?>
-            </div>
-
+        <?php if (!empty($facontech_video_url)): ?>
+        <div class="vide-button vide-button-3">
+            <a href="<?php echo esc_url($facontech_video_url); ?>" class="popup-video"><i
+                    class="fa-solid fa-play"></i></a>
+        </div>
         <?php endif; ?>
-        <div class="article-content">
-            <!-- blog meta -->
-            <?php get_template_part('template-parts/blog/blog-meta'); ?>
+    </div>
 
-            <div class="title mt-20">
-                <h2>
-                    <?php the_title(); ?>
-                </h2>
-            </div>
+    <?php endif; ?>
+    <div class="article-content">
+        <!-- blog meta -->
+        <?php get_template_part('template-parts/blog/blog-meta'); ?>
+
+        <div class="title mt-20">
+            <h2>
+                <?php the_title(); ?>
+            </h2>
+        </div>
 
 
-            <div class="inner-text">
-                <?php the_content(); ?>
-                <?php
+        <div class="inner-text">
+            <?php the_content(); ?>
+            <?php
                 wp_link_pages([
                     'before' => '<div class="page-links">' . esc_html__('Pages:', 'facontech'),
                     'after' => '</div>',
@@ -48,51 +50,54 @@ if (is_single()):
                     'link_after' => '</span>',
                 ]);
                 ?>
-            </div>
-            <div class="blog-footer">
-                <?php print facontech_get_tag(); ?>
-                <!-- social share -->
-                <?php get_template_part('template-parts/blog/blog-social-share'); ?>
-            </div>
         </div>
-    </article>
+        <div class="blog-footer">
+            <?php print facontech_get_tag(); ?>
+            <!-- social share -->
+            <?php get_template_part('template-parts/blog/blog-social-share'); ?>
+        </div>
+    </div>
+</article>
 
 <?php else: ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class('format-video'); ?>>
-        <?php if (has_post_thumbnail()): ?>
-            <div class="img-file">
-                <a href="<?php the_permalink(); ?>">
-                    <?php the_post_thumbnail('full', ['class' => 'img-fluid']); ?>
-                </a>
-                <?php if (!empty($facontech_video_url)): ?>
-                    <div class="vide-button vide-button-3">
-                        <a href="<?php echo esc_url($facontech_video_url); ?>" class="popup-video"><i
-                                class="fa-solid fa-play"></i></a>
-                    </div>
-                <?php endif; ?>
-            </div>
-
-        <?php endif; ?>
-
-        <div class="text-file">
-            <!-- blog meta -->
-            <?php get_template_part('template-parts/blog/blog-meta'); ?>
-
-            <div class="title">
-                <h2><a href="<?php the_permalink(); ?>">
-                        <?php the_title(); ?>
-                    </a>
-                </h2>
-                <p>
-                    <?php the_excerpt(); ?>
-                </p>
-                <!-- blog btn -->
-                <?php get_template_part('template-parts/blog/blog-btn'); ?>
-
-
-            </div>
+<article id="post-<?php the_ID(); ?>" <?php post_class('format-video'); ?>>
+    <?php if (has_post_thumbnail()): ?>
+    <div class="img-file">
+        <a href="<?php the_permalink(); ?>">
+            <?php the_post_thumbnail('full', ['class' => 'img-fluid']); ?>
+        </a>
+        <?php if (!empty($facontech_video_url)): ?>
+        <div class="vide-button vide-button-3">
+            <span>
+                <a href="<?php echo esc_url($facontech_video_url); ?>" class="popup-video"><i
+                        class="fa-solid fa-play"></i></a>
+            </span>
         </div>
-    </article>
+        <?php endif; ?>
+    </div>
+
+    <?php endif; ?>
+
+    <div class="text-file">
+        <!-- blog meta -->
+        <?php get_template_part('template-parts/blog/blog-meta'); ?>
+
+        <div class="title">
+            <h2>
+                <a href="<?php the_permalink(); ?>">
+                    <?php the_title(); ?>
+                </a>
+            </h2>
+            <p>
+                <?php the_excerpt(); ?>
+            </p>
+            <!-- blog btn -->
+            <?php get_template_part('template-parts/blog/blog-btn'); ?>
+
+
+        </div>
+    </div>
+</article>
 
 
 <?php endif; ?>

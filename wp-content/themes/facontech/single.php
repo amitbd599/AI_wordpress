@@ -14,11 +14,11 @@ $blog_column = is_active_sidebar('blog-sidebar') ? 8 : 12;
 ?>
 
 <section class="tp-blog-area blog-section one details">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-<?php print esc_attr($blog_column); ?>">
-				<div class="postbox__wrapper postbox__details wrapper">
-					<?php
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-<?php print esc_attr($blog_column); ?>">
+                <div class="postbox__wrapper postbox__details wrapper">
+                    <?php
 					while (have_posts()):
 						the_post();
 
@@ -26,47 +26,47 @@ $blog_column = is_active_sidebar('blog-sidebar') ? 8 : 12;
 
 						?>
 
-						<?php
+                    <?php
 						if (get_previous_post_link() and get_next_post_link()): ?>
 
-							<div class="blog-details-border d-none">
-								<div class="row align-items-center">
-									<?php
+                    <div class="blog-details-border d-none">
+                        <div class="row align-items-center">
+                            <?php
 									if (get_previous_post_link()): ?>
-										<div class="col-lg-6 col-md-6">
-											<div class="theme-navigation b-next-post text-left mb-30">
-												<span>
-													<?php print esc_html__('Prev Post', 'facontech'); ?>
-												</span>
-												<h4>
-													<?php print get_previous_post_link('%link ', '%title'); ?>
-												</h4>
-											</div>
-										</div>
-										<?php
+                            <div class="col-lg-6 col-md-6">
+                                <div class="theme-navigation b-next-post text-left mb-30">
+                                    <span>
+                                        <?php print esc_html__('Prev Post', 'facontech'); ?>
+                                    </span>
+                                    <h4>
+                                        <?php print get_previous_post_link('%link ', '%title'); ?>
+                                    </h4>
+                                </div>
+                            </div>
+                            <?php
 									endif; ?>
 
-									<?php
+                            <?php
 									if (get_next_post_link()): ?>
-										<div class="col-lg-6 col-md-6">
-											<div class="theme-navigation b-next-post text-left text-md-right  mb-30">
-												<span>
-													<?php print esc_html__('Next Post', 'facontech'); ?>
-												</span>
-												<h4>
-													<?php print get_next_post_link('%link ', '%title'); ?>
-												</h4>
-											</div>
-										</div>
-										<?php
+                            <div class="col-lg-6 col-md-6">
+                                <div class="theme-navigation b-next-post text-left text-md-right  mb-30">
+                                    <span>
+                                        <?php print esc_html__('Next Post', 'facontech'); ?>
+                                    </span>
+                                    <h4>
+                                        <?php print get_next_post_link('%link ', '%title'); ?>
+                                    </h4>
+                                </div>
+                            </div>
+                            <?php
 									endif; ?>
 
-								</div>
-							</div>
+                        </div>
+                    </div>
 
-							<?php
+                    <?php
 						endif; ?>
-						<?php
+                    <?php
 
 						get_template_part('template-parts/biography');
 
@@ -77,17 +77,17 @@ $blog_column = is_active_sidebar('blog-sidebar') ? 8 : 12;
 
 					endwhile; // End of the loop.
 					?>
-				</div>
-			</div>
-			<?php if (is_active_sidebar('blog-sidebar')): ?>
-				<div class="col-lg-4">
-					<div class="blog__sidebar pl-40">
-						<?php get_sidebar(); ?>
-					</div>
-				</div>
-			<?php endif; ?>
-		</div>
-	</div>
+                </div>
+            </div>
+            <?php if (is_active_sidebar('blog-sidebar')): ?>
+            <div class="col-lg-4">
+                <div class="blog__sidebar pl-40">
+                    <?php get_sidebar(); ?>
+                </div>
+            </div>
+            <?php endif; ?>
+        </div>
+    </div>
 </section>
 
 <?php
