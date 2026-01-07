@@ -24,9 +24,9 @@ function facontech_scripts()
     wp_enqueue_style('font-awesome-pro', FACONTECH_THEME_CSS_DIR . 'font-awesome-pro.css', []);
     wp_enqueue_style('spacing', FACONTECH_THEME_CSS_DIR . 'spacing.css', []);
     wp_enqueue_style('nice-select', FACONTECH_THEME_CSS_DIR . 'nice-select.css', []);
-    wp_enqueue_style('facontech-core', FACONTECH_THEME_CSS_DIR . 'facontech-core.css', [], time());
+    wp_enqueue_style('facontech-core', FACONTECH_THEME_CSS_DIR . 'facontech-core.css', []);
     wp_enqueue_style('facontech-custom', FACONTECH_THEME_CSS_DIR . 'facontech-custom.css', []);
-    wp_enqueue_style('facontech-unit', FACONTECH_THEME_CSS_DIR . 'facontech-unit.css', [], time());
+    wp_enqueue_style('facontech-unit', FACONTECH_THEME_CSS_DIR . 'facontech-unit.css', []);
     wp_enqueue_style('facontech-style', get_stylesheet_uri());
 
 
