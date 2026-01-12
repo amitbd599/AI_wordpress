@@ -255,3 +255,36 @@ footer {
     }
   }
 }
+
+.blog_sidebar__widget.widget-area .widget {
+  margin-top: 0 !important;
+}
+
+.sidebar__search .far.fa-search::before {
+  color: var(--common-white);
+}
+
+.blog_sidebar__widget .post-item {
+  padding-bottom: 0 !important;
+  margin-bottom: 8px !important;
+  display: flex !important;
+  min-height: 0 !important;
+  .img-wrap-link {
+    min-height: 100px;
+    display: block;
+  }
+  .info {
+    padding-bottom: 12px;
+  }
+}
+
+.widget-area .widget.widget-follow .follow {
+  background: var(--common-white);
+  padding: 0 !important;
+}
+
+.blog_sidebar__widget .tagcloud .tag-cloud-link {
+  padding: 4px 10px !important;
+  margin-top: 0 !important;
+  margin-bottom: 10px;
+}

@@ -18,9 +18,9 @@ function facontech_widgets_init()
         'name' => esc_html__('Blog Sidebar', 'facontech'),
         'id' => 'blog-sidebar',
         'description' => esc_html__('Set Your Blog Widget', 'facontech'),
-        'before_widget' => '<div id="%1$s" class="blog_sidebar__widget  %2$s">',
+        'before_widget' => '<div id="%1$s" class="blog_sidebar__widget widget-area  %2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<div class="search post follow categories tags"><h3 class="title">',
+        'before_title' => '<div class="search post follow categories tags widget widget-search widget-post widget-follow widget-tags"><h3 class="title">',
         'after_title' => '</h3></div>',
     ]);
 
