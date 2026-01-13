@@ -176,9 +176,7 @@ footer {
 .blog-items .type-post {
   .img-file {
     border-radius: 10px !important;
-    img {
-      width: 100%;
-    }
+
     &::after {
       content: '';
       position: absolute;

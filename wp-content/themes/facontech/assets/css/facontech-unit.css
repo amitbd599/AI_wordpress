@@ -248,7 +248,7 @@ div.latest-comments > ul {
 .tp-blog-area ol,
 .tp-blog-area ul {
   margin-top: 0;
-  /* margin-bottom: 25px; */
+  margin-bottom: 25px;
 }
 .postbox__details ol li,
 .postbox__details ul li {
@@ -396,13 +396,7 @@ div.postbox__details .wp-block-cover-text {
 .pagination ul li span.current {
   width: 35px;
   height: 35px;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#243949),
-    to(#00151e)
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(#243949), to(#00151e));
   background: -o-linear-gradient(top, #243949 0%, #00151e 100%);
   background: linear-gradient(180deg, #243949 0%, #00151e 100%);
   border-radius: 5px;
@@ -528,11 +522,11 @@ blockquote p {
   color: var(--text-p-1) !important;
 }
 blockquote::before {
-  content: "\f10e";
+  content: '\f10e';
   position: static;
-  font-family: "Font Awesome 5 Pro";
+  font-family: 'Font Awesome 5 Pro';
   font-size: 32px;
-  color: #2b4eff;
+  color: var(--theme-1);
   line-height: 1;
   margin-bottom: 18px;
   display: inline-block;
@@ -553,12 +547,12 @@ blockquote cite {
   font-weight: 500;
 }
 blockquote cite::before {
-  content: "";
+  content: '';
   font-size: 28px;
   color: #ff5421;
   padding-bottom: 0px;
   display: inline-block;
-  background: #2b4eff;
+  background: var(--theme-1);
   height: 2px;
   width: 40px;
   font-weight: 400;
@@ -667,7 +661,7 @@ blockquote cite::before {
 
 /*post password*/
 
-.post-password-form input[type="password"] {
+.post-password-form input[type='password'] {
   background: var(--common-body-3);
   border: 0;
   height: 50px;
@@ -677,7 +671,7 @@ blockquote cite::before {
 .post-password-form label {
   width: 100%;
 }
-.post-password-form input[type="submit"] {
+.post-password-form input[type='submit'] {
   width: 120px;
   height: 50px;
   background: #3d6ce9;
@@ -701,7 +695,7 @@ blockquote cite::before {
   background-color: var(--theme-1);
   display: inline-block;
 }
-.post-password-form input[type="submit"]:hover {
+.post-password-form input[type='submit']:hover {
   color: var(--common-white);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -1595,9 +1589,7 @@ blockquote cite::before {
   padding: 0 35px;
   color: #fff;
 }
-.select2-container--default
-  .select2-selection--single
-  .select2-selection__rendered {
+.select2-container--default .select2-selection--single .select2-selection__rendered {
   color: #444;
   line-height: 50px;
 }
@@ -1613,9 +1605,7 @@ blockquote cite::before {
   background: #f5f6f8;
   border: 0;
 }
-.select2-container--default
-  .select2-selection--single
-  .select2-selection__arrow {
+.select2-container--default .select2-selection--single .select2-selection__arrow {
   height: 47px;
   position: absolute;
   top: 1px;
@@ -1656,7 +1646,7 @@ blockquote cite::before {
 }
 .footer-default-widget ul li a::before {
   position: absolute;
-  content: "";
+  content: '';
   left: auto;
   right: 0;
   bottom: 0;
@@ -1716,7 +1706,7 @@ blockquote cite::before {
 }
 .footer-3-widget ul li a::before {
   position: absolute;
-  content: "";
+  content: '';
   background: var(--theme-1);
   width: 5px;
   height: 2px;
@@ -1909,39 +1899,19 @@ blockquote cite::before {
   visibility: hidden !important;
   opacity: 0 !important;
 }
-.header-area-1
-  .menu-area
-  .main-menu
-  nav
-  .menu-item.menu-last
-  .sub-menu
-  .sub-menu {
+.header-area-1 .menu-area .main-menu nav .menu-item.menu-last .sub-menu .sub-menu {
   left: auto !important;
   right: 200px !important;
   visibility: hidden !important;
   opacity: 0 !important;
 }
-.header-area-1
-  .menu-area
-  .main-menu
-  nav
-  .menu-item
-  .sub-menu
-  li:hover
-  > .sub-menu {
+.header-area-1 .menu-area .main-menu nav .menu-item .sub-menu li:hover > .sub-menu {
   visibility: visible !important;
   opacity: 1 !important;
   left: 200px !important;
   top: 0;
 }
-.header-area-1
-  .menu-area
-  .main-menu
-  nav
-  .menu-item.menu-last
-  .sub-menu
-  li:hover
-  > .sub-menu {
+.header-area-1 .menu-area .main-menu nav .menu-item.menu-last .sub-menu li:hover > .sub-menu {
   visibility: visible !important;
   opacity: 1 !important;
   right: 200px !important;
@@ -1964,25 +1934,10 @@ blockquote cite::before {
 .header-area-1 .menu-area .main-menu nav .sub-menu .sub-menu li:hover > a {
   color: var(--common-white) !important;
 }
-.header-area-1
-  .menu-area
-  .main-menu
-  nav
-  .sub-menu
-  .sub-menu
-  .sub-menu
-  li:hover
-  a {
+.header-area-1 .menu-area .main-menu nav .sub-menu .sub-menu .sub-menu li:hover a {
   color: var(--common-white) !important;
 }
-.header-area-1
-  .menu-area
-  .main-menu
-  nav
-  .sub-menu
-  .sub-menu
-  .sub-menu
-  .sub-menu {
+.header-area-1 .menu-area .main-menu nav .sub-menu .sub-menu .sub-menu .sub-menu {
   display: none !important;
 }
 
@@ -1993,39 +1948,19 @@ blockquote cite::before {
   visibility: hidden !important;
   opacity: 0 !important;
 }
-.header-area-2
-  .menu-area
-  .main-menu
-  nav
-  .menu-item.menu-last
-  .sub-menu
-  .sub-menu {
+.header-area-2 .menu-area .main-menu nav .menu-item.menu-last .sub-menu .sub-menu {
   left: auto !important;
   right: 200px !important;
   visibility: hidden !important;
   opacity: 0 !important;
 }
-.header-area-2
-  .menu-area
-  .main-menu
-  nav
-  .menu-item
-  .sub-menu
-  li:hover
-  > .sub-menu {
+.header-area-2 .menu-area .main-menu nav .menu-item .sub-menu li:hover > .sub-menu {
   visibility: visible !important;
   opacity: 1 !important;
   left: 200px !important;
   top: 0;
 }
-.header-area-2
-  .menu-area
-  .main-menu
-  nav
-  .menu-item.menu-last
-  .sub-menu
-  li:hover
-  > .sub-menu {
+.header-area-2 .menu-area .main-menu nav .menu-item.menu-last .sub-menu li:hover > .sub-menu {
   visibility: visible !important;
   opacity: 1 !important;
   right: 200px !important;
@@ -2048,25 +1983,10 @@ blockquote cite::before {
 .header-area-2 .menu-area .main-menu nav .sub-menu .sub-menu li:hover > a {
   color: var(--theme-1) !important;
 }
-.header-area-2
-  .menu-area
-  .main-menu
-  nav
-  .sub-menu
-  .sub-menu
-  .sub-menu
-  li:hover
-  a {
+.header-area-2 .menu-area .main-menu nav .sub-menu .sub-menu .sub-menu li:hover a {
   color: var(--theme-1) !important;
 }
-.header-area-2
-  .menu-area
-  .main-menu
-  nav
-  .sub-menu
-  .sub-menu
-  .sub-menu
-  .sub-menu {
+.header-area-2 .menu-area .main-menu nav .sub-menu .sub-menu .sub-menu .sub-menu {
   display: none !important;
 }
 
@@ -2079,39 +1999,19 @@ blockquote cite::before {
   visibility: hidden !important;
   opacity: 0 !important;
 }
-.header-area-3
-  .menu-area
-  .main-menu
-  nav
-  .menu-item.menu-last
-  .sub-menu
-  .sub-menu {
+.header-area-3 .menu-area .main-menu nav .menu-item.menu-last .sub-menu .sub-menu {
   left: auto !important;
   right: 200px !important;
   visibility: hidden !important;
   opacity: 0 !important;
 }
-.header-area-3
-  .menu-area
-  .main-menu
-  nav
-  .menu-item
-  .sub-menu
-  li:hover
-  > .sub-menu {
+.header-area-3 .menu-area .main-menu nav .menu-item .sub-menu li:hover > .sub-menu {
   visibility: visible !important;
   opacity: 1 !important;
   left: 200px !important;
   top: 0;
 }
-.header-area-3
-  .menu-area
-  .main-menu
-  nav
-  .menu-item.menu-last
-  .sub-menu
-  li:hover
-  > .sub-menu {
+.header-area-3 .menu-area .main-menu nav .menu-item.menu-last .sub-menu li:hover > .sub-menu {
   visibility: visible !important;
   opacity: 1 !important;
   right: 200px !important;
@@ -2134,25 +2034,10 @@ blockquote cite::before {
 .header-area-3 .menu-area .main-menu nav .sub-menu .sub-menu li:hover > a {
   color: var(--theme-1) !important;
 }
-.header-area-3
-  .menu-area
-  .main-menu
-  nav
-  .sub-menu
-  .sub-menu
-  .sub-menu
-  li:hover
-  a {
+.header-area-3 .menu-area .main-menu nav .sub-menu .sub-menu .sub-menu li:hover a {
   color: var(--theme-1) !important;
 }
-.header-area-3
-  .menu-area
-  .main-menu
-  nav
-  .sub-menu
-  .sub-menu
-  .sub-menu
-  .sub-menu {
+.header-area-3 .menu-area .main-menu nav .sub-menu .sub-menu .sub-menu .sub-menu {
   display: none !important;
 }
 
@@ -2162,7 +2047,7 @@ blockquote cite::before {
 
 .footer__area-2::before {
   position: absolute;
-  content: "";
+  content: '';
   left: 0;
   top: 0;
   width: 100%;
@@ -2183,4 +2068,8 @@ blockquote cite::before {
 .footer-section.one .footer-wrapper.three ul li.phone {
   font-size: 20px;
   font-weight: 600;
+}
+
+.blog-section.details .wrapper .article-content .inner-text .nice-select {
+  width: 100%;
 }
