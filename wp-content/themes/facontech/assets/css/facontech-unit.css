@@ -2073,3 +2073,7 @@ blockquote cite::before {
 .blog-section.details .wrapper .article-content .inner-text .nice-select {
   width: 100%;
 }
+
+.footer__widget .comment-author-link a {
+  color: var(--theme-1) !important;
+}

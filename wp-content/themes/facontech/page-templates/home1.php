@@ -25,10 +25,8 @@ get_header();
                                         <h2 class="slider-title">AI Machine consulting services and solutions With <span
                                                 class="theme-color">IT Support</span></h2>
                                         <p class="description">
-                                            To take a trivial example, which of us ever undertakes laborious physical
-                                            exercise,
-                                            except to obtain some advantage from it but right to find fault with a man
-                                            who
+                                            To take a trivial example, which of us ever undertakes laborious physical exercise,
+                                            except to obtain some advantage from it but right to find fault with a man who
                                             chooses
                                             enjoy. for your business work.
                                         </p>
@@ -60,14 +58,12 @@ get_header();
                                 <div class="slider-content-inner ">
 
                                     <div>
-                                        <h2 class="slider-title">helping companies process information or data more
-                                            <span class="theme-color">Efficiently</span>
+                                        <h2 class="slider-title">helping companies process information or data more <span
+                                                class="theme-color">Efficiently</span>
                                         </h2>
                                         <p class="description">
-                                            AI for customer engagement, improving customer service for companies with
-                                            tools like
-                                            AI chatbots. We offer AI consulting services and solutions that will help
-                                            you
+                                            AI for customer engagement, improving customer service for companies with tools like
+                                            AI chatbots. We offer AI consulting services and solutions that will help you
                                             achieve your business objectives faster.
                                         </p>
                                         <div class="inner-btn">
@@ -101,10 +97,8 @@ get_header();
                                         <h2 class="slider-title">Avenga AI services help companies create AI and<span
                                                 class="theme-color"> ML solutions</span></h2>
                                         <p class="description">
-                                            To take a trivial example, which of us ever undertakes laborious physical
-                                            exercise,
-                                            except to obtain some advantage from it but right to find fault with a man
-                                            who
+                                            To take a trivial example, which of us ever undertakes laborious physical exercise,
+                                            except to obtain some advantage from it but right to find fault with a man who
                                             chooses
                                             enjoy. for your business work.
                                         </p>
@@ -178,15 +172,12 @@ get_header();
                 <div class="col-lg-6">
                     <div class="left-wrapper ">
                         <div class=" img-file ">
-                            <img class=" img-fluid wow animated fadeInLeft" data-wow-duration="1.5s"
-                                data-wow-delay="0.3s"
-                                src="<?php echo get_template_directory_uri(); ?>./assets/img/about/01_about.png" alt="">
+                            <img class=" img-fluid wow animated fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.3s"
+                                src="./assets/img/about/01_about.png" alt="">
                             <div class="shape-overlay ">
-                                <div class="overlay wow animated fadeInUp" data-wow-duration="1.5s"
-                                    data-wow-delay="0.3s">
+                                <div class="overlay wow animated fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">
                                     <span>
-                                        <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/44_icon.png"
-                                            alt="">
+                                        <img src="./assets/img/icon/44_icon.png" alt="">
                                     </span>
                                     <h3>Impressive Works <br> Since 2010</h3>
                                     <div class="video-intro ">
@@ -200,8 +191,7 @@ get_header();
                                 </div>
                             </div>
                             <div class="shape-7 poa">
-                                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/69_icon.svg"
-                                    alt="">
+                                <img src="./assets/img/icon/69_icon.svg" alt="">
                             </div>
                         </div>
 
@@ -220,8 +210,7 @@ get_header();
                             <ul>
                                 <li>
                                     <span class="img-file">
-                                        <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/11_icon.png"
-                                            alt="">
+                                        <img src="./assets/img/icon/11_icon.png" alt="">
                                     </span>
                                     <div>
                                         <h4>100% Customer Satisfaction</h4>
@@ -233,15 +222,12 @@ get_header();
                                 </li>
                                 <li>
                                     <span class="img-file">
-                                        <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/12_icon.png"
-                                            alt="">
+                                        <img src="./assets/img/icon/12_icon.png" alt="">
                                     </span>
                                     <div>
                                         <h4>Empowering People By Keeping</h4>
-                                        <p>Customer satisfaction is a term frequently used in marketing. It is a measure
-                                            of how
-                                            products and services Decorate Your Lawn for the Holidays supplied
-                                            expectation.
+                                        <p>Customer satisfaction is a term frequently used in marketing. It is a measure of how
+                                            products and services Decorate Your Lawn for the Holidays supplied expectation.
                                         </p>
                                     </div>
                                 </li>
@@ -261,22 +247,22 @@ get_header();
         </div>
         <div class="shape-img">
             <div class="shape-1 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/10_icon.png" alt="">
+                <img src="./assets/img/icon/10_icon.png" alt="">
             </div>
             <div class="shape-2 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/09_icon.png" alt="">
+                <img src="./assets/img/icon/09_icon.png" alt="">
             </div>
             <div class="shape-3 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/01_shape.svg" alt="">
+                <img src="./assets/img/shape/01_shape.svg" alt="">
             </div>
             <div class="shape-4 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/63_icon.png" alt="">
+                <img src="./assets/img/icon/63_icon.png" alt="">
             </div>
             <div class="shape-5 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/66_icon.png" alt="">
+                <img src="./assets/img/icon/66_icon.png" alt="">
             </div>
             <div class="shape-6 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/68_icon.png" alt="">
+                <img src="./assets/img/icon/68_icon.png" alt="">
             </div>
 
         </div>
@@ -284,8 +270,7 @@ get_header();
     <!-- About Section one End -->
 
     <!-- Service Section One Start -->
-    <section class="service-section one"
-        data-background="<?php echo get_template_directory_uri(); ?>./assets/img/shape/03_shape.svg">
+    <section class="service-section one" data-background="./assets/img/shape/03_shape.svg">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -303,8 +288,7 @@ get_header();
                         <div class="wrapper-inner one wow animated fadeInUp" data-wow-duration="1.5s"
                             data-wow-delay="0.2s">
                             <div class="img-file">
-                                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/31_icon.png"
-                                    alt="">
+                                <img src="./assets/img/icon/31_icon.png" alt="">
                             </div>
                             <div class="text-file">
                                 <h3><a href="#">Robotics & Drones</a></h3>
@@ -320,8 +304,7 @@ get_header();
                         <div class="wrapper-inner one wow animated fadeInUp" data-wow-duration="1.5s"
                             data-wow-delay="0.3s">
                             <div class="img-file">
-                                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/32_icon.png"
-                                    alt="">
+                                <img src="./assets/img/icon/32_icon.png" alt="">
                             </div>
                             <div class="text-file">
                                 <h3><a href="#">Analyze videos</a></h3>
@@ -337,8 +320,7 @@ get_header();
                         <div class="wrapper-inner one wow animated fadeInUp" data-wow-duration="1.5s"
                             data-wow-delay="0.5s">
                             <div class="img-file">
-                                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/33_icon.png"
-                                    alt="">
+                                <img src="./assets/img/icon/33_icon.png" alt="">
                             </div>
                             <div class="text-file">
                                 <h3><a href="#">Acquire insights</a></h3>
@@ -354,8 +336,7 @@ get_header();
                         <div class="wrapper-inner one wow animated fadeInUp" data-wow-duration="1.5s"
                             data-wow-delay="0.2s">
                             <div class="img-file">
-                                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/34_icon.png"
-                                    alt="">
+                                <img src="./assets/img/icon/34_icon.png" alt="">
                             </div>
                             <div class="text-file">
                                 <h3><a href="#">Extract text & data</a></h3>
@@ -371,8 +352,7 @@ get_header();
                         <div class="wrapper-inner one wow animated fadeInUp" data-wow-duration="1.5s"
                             data-wow-delay="0.3s">
                             <div class="img-file">
-                                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/35_icon.png"
-                                    alt="">
+                                <img src="./assets/img/icon/35_icon.png" alt="">
                             </div>
                             <div class="text-file">
                                 <h3><a href="#">Online experiences</a></h3>
@@ -388,8 +368,7 @@ get_header();
                         <div class="wrapper-inner one wow animated fadeInUp" data-wow-duration="1.5s"
                             data-wow-delay="0.5s">
                             <div class="img-file">
-                                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/40_icon.png"
-                                    alt="">
+                                <img src="./assets/img/icon/40_icon.png" alt="">
                             </div>
                             <div class="text-file">
                                 <h3><a href="#">Control quality</a></h3>
@@ -411,25 +390,25 @@ get_header();
         </div>
         <div class="shape-image">
             <div class="shape-1 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/13_icon.png" alt="">
+                <img src="./assets/img/icon/13_icon.png" alt="">
             </div>
             <div class="shape-2 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/28_icon.png" alt="">
+                <img src="./assets/img/icon/28_icon.png" alt="">
             </div>
             <div class="shape-3 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/41_icon.png" alt="">
+                <img src="./assets/img/icon/41_icon.png" alt="">
             </div>
             <div class="shape-4 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/02_icon.png" alt="">
+                <img src="./assets/img/icon/02_icon.png" alt="">
             </div>
             <div class="shape-5 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/42_icon.png" alt="">
+                <img src="./assets/img/icon/42_icon.png" alt="">
             </div>
             <div class="shape-6 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/43_icon.png" alt="">
+                <img src="./assets/img/icon/43_icon.png" alt="">
             </div>
             <div class="shape-7 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/70_icon.svg" alt="">
+                <img src="./assets/img/icon/70_icon.svg" alt="">
             </div>
         </div>
     </section>
@@ -449,15 +428,13 @@ get_header();
                             language processing, speech recognition and machine vision.</p>
                     </div>
                     <div class="img-file wow animated fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.5s">
-                        <img class="img-fluid"
-                            src="<?php echo get_template_directory_uri(); ?>./assets/img/tech/01_tech.png" alt="">
+                        <img class="img-fluid" src="./assets/img/tech/01_tech.png" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="faq-inner wow animated fadeInRight" data-wow-duration="1.5s" data-wow-delay="0.3s">
                         <div class="icon-shape">
-                            <img class="img-fluid"
-                                src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/23_icon.png" alt="">
+                            <img class="img-fluid" src="./assets/img/icon/23_icon.png" alt="">
                         </div>
                         <div class="intro">
                             <h3>Common Question & Answer</h3>
@@ -474,65 +451,47 @@ get_header();
                                     </h2>
                                     <div id="flush-collapseOne" class="accordion-collapse collapse show"
                                         data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">As you may have read in our AI, ML, and deep
-                                            learning post,
-                                            ML is a subset of AI. Not all AI systems learn from experience but
-                                            ML-enabled
-                                            devices do. Very simply put, all ML systems are AI but not all AI machines
-                                            are
-                                            ML-capable. As you may have read in our AI, ML, and deep learning post, ML
-                                            is a
-                                            subset of AI. Not all AI systems learn from experience but ML-enabled
-                                            devices do.
-                                            Very simply put, all ML systems are AI but not all AI machines are
-                                            ML-capable.</div>
+                                        <div class="accordion-body">As you may have read in our AI, ML, and deep learning post,
+                                            ML is a subset of AI. Not all AI systems learn from experience but ML-enabled
+                                            devices do. Very simply put, all ML systems are AI but not all AI machines are
+                                            ML-capable. As you may have read in our AI, ML, and deep learning post, ML is a
+                                            subset of AI. Not all AI systems learn from experience but ML-enabled devices do.
+                                            Very simply put, all ML systems are AI but not all AI machines are ML-capable.</div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                            aria-expanded="false" aria-controls="flush-collapseTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                            aria-controls="flush-collapseTwo">
                                             What is the difference between Data Analyst? </button>
                                     </h2>
                                     <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                         data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">As you may have read in our AI, ML, and deep
-                                            learning post,
-                                            ML is a subset of AI. Not all AI systems learn from experience but
-                                            ML-enabled
-                                            devices do. Very simply put, all ML systems are AI but not all AI machines
-                                            are
-                                            ML-capable. As you may have read in our AI, ML, and deep learning post, ML
-                                            is a
-                                            subset of AI. Not all AI systems learn from experience but ML-enabled
-                                            devices do.
-                                            Very simply put, all ML systems are AI but not all AI machines are
-                                            ML-capable.</div>
+                                        <div class="accordion-body">As you may have read in our AI, ML, and deep learning post,
+                                            ML is a subset of AI. Not all AI systems learn from experience but ML-enabled
+                                            devices do. Very simply put, all ML systems are AI but not all AI machines are
+                                            ML-capable. As you may have read in our AI, ML, and deep learning post, ML is a
+                                            subset of AI. Not all AI systems learn from experience but ML-enabled devices do.
+                                            Very simply put, all ML systems are AI but not all AI machines are ML-capable.</div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
-                                            aria-expanded="false" aria-controls="flush-collapseThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                            aria-controls="flush-collapseThree">
                                             What are 3 good things about artificial intelligence?
                                         </button>
                                     </h2>
                                     <div id="flush-collapseThree" class="accordion-collapse collapse"
                                         data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">As you may have read in our AI, ML, and deep
-                                            learning post,
-                                            ML is a subset of AI. Not all AI systems learn from experience but
-                                            ML-enabled
-                                            devices do. Very simply put, all ML systems are AI but not all AI machines
-                                            are
-                                            ML-capable. As you may have read in our AI, ML, and deep learning post, ML
-                                            is a
-                                            subset of AI. Not all AI systems learn from experience but ML-enabled
-                                            devices do.
-                                            Very simply put, all ML systems are AI but not all AI machines are
-                                            ML-capable.</div>
+                                        <div class="accordion-body">As you may have read in our AI, ML, and deep learning post,
+                                            ML is a subset of AI. Not all AI systems learn from experience but ML-enabled
+                                            devices do. Very simply put, all ML systems are AI but not all AI machines are
+                                            ML-capable. As you may have read in our AI, ML, and deep learning post, ML is a
+                                            subset of AI. Not all AI systems learn from experience but ML-enabled devices do.
+                                            Very simply put, all ML systems are AI but not all AI machines are ML-capable.</div>
                                     </div>
                                 </div>
                             </div>
@@ -544,28 +503,28 @@ get_header();
 
         <div class="shape-image">
             <div class="shape-img-1 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/21_icon.png" alt="">
+                <img src="./assets/img/icon/21_icon.png" alt="">
             </div>
             <div class="shape-img-2 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/64_icon.png" alt="">
+                <img src="./assets/img/icon/64_icon.png" alt="">
             </div>
             <div class="shape-img-3 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/22_icon.png" alt="">
+                <img src="./assets/img/icon/22_icon.png" alt="">
             </div>
             <div class="shape-img-4 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/08_icon.png" alt="">
+                <img src="./assets/img/icon/08_icon.png" alt="">
             </div>
             <div class="shape-img-5 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/26_icon.png" alt="">
+                <img src="./assets/img/icon/26_icon.png" alt="">
             </div>
             <div class="shape-img-6 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/43_icon.png" alt="">
+                <img src="./assets/img/icon/43_icon.png" alt="">
             </div>
             <div class="shape-img-7 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/68_icon.png" alt="">
+                <img src="./assets/img/icon/68_icon.png" alt="">
             </div>
             <div class="shape-img-8 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/71_icon.png" alt="">
+                <img src="./assets/img/icon/71_icon.png" alt="">
             </div>
 
         </div>
@@ -588,13 +547,10 @@ get_header();
                 <div class="col-lg-6">
                     <div class="project-wrapper wow animated fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.3s">
                         <div class="img-file por">
-                            <img class="img-fluid"
-                                src="<?php echo get_template_directory_uri(); ?>./assets/img/project/01_project.png"
-                                alt="">
+                            <img class="img-fluid" src="./assets/img/project/01_project.png" alt="">
                             <div class="shape-overlay poa">
                                 <h2>Robotic Technology</h2>
-                                <p>In this space, we will explore the most innovative and impactful Artificial
-                                    Intelligence
+                                <p>In this space, we will explore the most innovative and impactful Artificial Intelligence
                                     projects, from cutting-edge research to real-world applications.</p>
                                 <div class="d-inline-block">
                                     <a href="#">View More <i class="fa-light fa-chevrons-right"></i></a>
@@ -605,16 +561,12 @@ get_header();
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="project-wrapper wow animated fadeInRight" data-wow-duration="1.5s"
-                        data-wow-delay="0.3s">
+                    <div class="project-wrapper wow animated fadeInRight" data-wow-duration="1.5s" data-wow-delay="0.3s">
                         <div class="img-file por">
-                            <img class="img-fluid"
-                                src="<?php echo get_template_directory_uri(); ?>./assets/img/project/02_project.png"
-                                alt="">
+                            <img class="img-fluid" src="./assets/img/project/02_project.png" alt="">
                             <div class="shape-overlay poa">
                                 <h2>Data Science</h2>
-                                <p>In this space, we will explore the most innovative and impactful Artificial
-                                    Intelligence
+                                <p>In this space, we will explore the most innovative and impactful Artificial Intelligence
                                     projects, from cutting-edge research to real-world applications.</p>
                                 <div class="d-inline-block">
                                     <a href="#">View More <i class="fa-light fa-chevrons-right"></i></a>
@@ -627,13 +579,10 @@ get_header();
                 <div class="col-lg-6">
                     <div class="project-wrapper wow animated fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.3s">
                         <div class="img-file por">
-                            <img class="img-fluid"
-                                src="<?php echo get_template_directory_uri(); ?>./assets/img/project/03_project.png"
-                                alt="">
+                            <img class="img-fluid" src="./assets/img/project/03_project.png" alt="">
                             <div class="shape-overlay poa">
                                 <h2>Facing AI Challenges</h2>
-                                <p>In this space, we will explore the most innovative and impactful Artificial
-                                    Intelligence
+                                <p>In this space, we will explore the most innovative and impactful Artificial Intelligence
                                     projects, from cutting-edge research to real-world applications.</p>
                                 <div class="d-inline-block">
                                     <a href="#">View More <i class="fa-light fa-chevrons-right"></i></a>
@@ -644,16 +593,12 @@ get_header();
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="project-wrapper wow animated fadeInRight" data-wow-duration="1.5s"
-                        data-wow-delay="0.3s">
+                    <div class="project-wrapper wow animated fadeInRight" data-wow-duration="1.5s" data-wow-delay="0.3s">
                         <div class="img-file por">
-                            <img class="img-fluid"
-                                src="<?php echo get_template_directory_uri(); ?>./assets/img/project/04_project.png"
-                                alt="">
+                            <img class="img-fluid" src="./assets/img/project/04_project.png" alt="">
                             <div class="shape-overlay poa">
                                 <h2>Technical Support</h2>
-                                <p>In this space, we will explore the most innovative and impactful Artificial
-                                    Intelligence
+                                <p>In this space, we will explore the most innovative and impactful Artificial Intelligence
                                     projects, from cutting-edge research to real-world applications.</p>
                                 <div class="d-inline-block">
                                     <a href="#">View More <i class="fa-light fa-chevrons-right"></i></a>
@@ -675,34 +620,34 @@ get_header();
 
         <div class="shape-image">
             <div class="shape-img-1 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/04_shape.png" alt="">
+                <img src="./assets/img/shape/04_shape.png" alt="">
             </div>
             <div class="shape-img-2 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/44_icon.png" alt="">
+                <img src="./assets/img/icon/44_icon.png" alt="">
             </div>
             <div class="shape-img-3 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/15_icon.png" alt="">
+                <img src="./assets/img/icon/15_icon.png" alt="">
             </div>
             <div class="shape-img-4 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/45_icon.png" alt="">
+                <img src="./assets/img/icon/45_icon.png" alt="">
             </div>
             <div class="shape-img-5 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/13_icon.png" alt="">
+                <img src="./assets/img/icon/13_icon.png" alt="">
             </div>
             <div class="shape-img-6 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/46_icon.png" alt="">
+                <img src="./assets/img/icon/46_icon.png" alt="">
             </div>
             <div class="shape-img-7 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/47_icon.png" alt="">
+                <img src="./assets/img/icon/47_icon.png" alt="">
             </div>
             <div class="shape-img-8 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/17_icon.png" alt="">
+                <img src="./assets/img/icon/17_icon.png" alt="">
             </div>
             <div class="shape-img-9 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/73_icon.png" alt="">
+                <img src="./assets/img/icon/73_icon.png" alt="">
             </div>
             <div class="shape-img-10 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/76_icon.png" alt="">
+                <img src="./assets/img/icon/76_icon.png" alt="">
             </div>
         </div>
     </section>
@@ -728,9 +673,7 @@ get_header();
                         <div class="swiper-slide">
                             <div class="inner-wrapper ">
                                 <div class="img-file">
-                                    <img class="img-fluid"
-                                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/01_team.png"
-                                        alt="">
+                                    <img class="img-fluid" src="./assets/img/team/01_team.png" alt="">
 
                                     <div class="shape-overlay">
                                         <div class="inner-data">
@@ -763,9 +706,7 @@ get_header();
                         <div class="swiper-slide">
                             <div class="inner-wrapper ">
                                 <div class="img-file">
-                                    <img class="img-fluid"
-                                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/02_team.png"
-                                        alt="">
+                                    <img class="img-fluid" src="./assets/img/team/02_team.png" alt="">
 
                                     <div class="shape-overlay">
                                         <div class="inner-data">
@@ -799,9 +740,7 @@ get_header();
                         <div class="swiper-slide">
                             <div class="inner-wrapper ">
                                 <div class="img-file">
-                                    <img class="img-fluid"
-                                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/03_team.png"
-                                        alt="">
+                                    <img class="img-fluid" src="./assets/img/team/03_team.png" alt="">
 
                                     <div class="shape-overlay">
                                         <div class="inner-data">
@@ -835,9 +774,7 @@ get_header();
                         <div class="swiper-slide">
                             <div class="inner-wrapper ">
                                 <div class="img-file">
-                                    <img class="img-fluid"
-                                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/04_team.png"
-                                        alt="">
+                                    <img class="img-fluid" src="./assets/img/team/04_team.png" alt="">
 
                                     <div class="shape-overlay">
                                         <div class="inner-data">
@@ -871,9 +808,7 @@ get_header();
                         <div class="swiper-slide">
                             <div class="inner-wrapper ">
                                 <div class="img-file">
-                                    <img class="img-fluid"
-                                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/05_team.png"
-                                        alt="">
+                                    <img class="img-fluid" src="./assets/img/team/05_team.png" alt="">
 
                                     <div class="shape-overlay">
                                         <div class="inner-data">
@@ -907,9 +842,7 @@ get_header();
                         <div class="swiper-slide">
                             <div class="inner-wrapper ">
                                 <div class="img-file">
-                                    <img class="img-fluid"
-                                        src="<?php echo get_template_directory_uri(); ?>./assets/img/team/06_team.png"
-                                        alt="">
+                                    <img class="img-fluid" src="./assets/img/team/06_team.png" alt="">
 
                                     <div class="shape-overlay">
                                         <div class="inner-data">
@@ -950,39 +883,38 @@ get_header();
 
         <div class="shape-image">
             <div class="shape-img-1 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/48_icon.png" alt="">
+                <img src="./assets/img/icon/48_icon.png" alt="">
             </div>
             <div class="shape-img-2 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/28_icon.png" alt="">
+                <img src="./assets/img/icon/28_icon.png" alt="">
             </div>
             <div class="shape-img-3 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/43_icon.png" alt="">
+                <img src="./assets/img/icon/43_icon.png" alt="">
             </div>
             <div class="shape-img-4 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/15_icon.png" alt="">
+                <img src="./assets/img/icon/15_icon.png" alt="">
             </div>
             <div class="shape-img-5 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/17_icon.png" alt="">
+                <img src="./assets/img/icon/17_icon.png" alt="">
             </div>
             <div class="shape-img-6 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/49_icon.png" alt="">
+                <img src="./assets/img/icon/49_icon.png" alt="">
             </div>
             <div class="shape-img-7 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/62_icon.png" alt="">
+                <img src="./assets/img/icon/62_icon.png" alt="">
             </div>
             <div class="shape-img-8 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/75_icon.png" alt="">
+                <img src="./assets/img/icon/75_icon.png" alt="">
             </div>
             <div class="shape-img-9 poa">
-                <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/78_icon.png" alt="">
+                <img src="./assets/img/icon/78_icon.png" alt="">
             </div>
         </div>
     </section>
     <!-- Team Section one end -->
 
     <!-- Counter-section one start -->
-    <section class="counter-section one"
-        data-background="<?php echo get_template_directory_uri(); ?>./assets/img/bg-image/04_bg-image.jpg">
+    <section class="counter-section one" data-background="./assets/img/bg-image/04_bg-image.jpg">
         <div class="container">
             <div class="award-part wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                 <div class="row">
@@ -1006,44 +938,35 @@ get_header();
                     <h1>AI</h1>
                 </div>
                 <div class="shape-img">
-                    <img class="shape-1 poa"
-                        src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/50_icon.png" alt="">
-                    <img class="shape-2 poa"
-                        src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/51_icon.png" alt="">
-                    <img class="shape-3 poa"
-                        src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/16_icon.png" alt="">
-                    <img class="shape-4 poa"
-                        src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/52_icon.png" alt="">
+                    <img class="shape-1 poa" src="./assets/img/icon/50_icon.png" alt="">
+                    <img class="shape-2 poa" src="./assets/img/icon/51_icon.png" alt="">
+                    <img class="shape-3 poa" src="./assets/img/icon/16_icon.png" alt="">
+                    <img class="shape-4 poa" src="./assets/img/icon/52_icon.png" alt="">
                 </div>
             </div>
 
             <div class="inner-wrapper">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="left-wrapper wow animated fadeInLeft" data-wow-duration="1.5s"
-                            data-wow-delay="0.3s">
+                        <div class="left-wrapper wow animated fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.3s">
                             <div class="title-des">
                                 <h2>
                                     Let’s See Our Company Achievement
                                 </h2>
-                                <p>This refers to the general concept of machines acting in a way that simulates or
-                                    mimics
-                                    human intelligence. AI can have a variety of features, such as human-like
-                                    communication or
+                                <p>This refers to the general concept of machines acting in a way that simulates or mimics
+                                    human intelligence. AI can have a variety of features, such as human-like communication or
                                     decision making.</p>
                             </div>
                             <div class="list">
                                 <ul>
                                     <li><i class="fa-regular fa-chevrons-right"></i>The ability of a digital computer or
                                         computer-controlled robot.</li>
-                                    <li><i class="fa-regular fa-chevrons-right"></i>Artificial intelligence or AI refers
-                                        to
+                                    <li><i class="fa-regular fa-chevrons-right"></i>Artificial intelligence or AI refers to
                                         the simulation of human intelligence
                                         in machines.</li>
                                     <li><i class="fa-regular fa-chevrons-right"></i>Artificial intelligence (AI) is
                                         intelligence demonstrated by machines.</li>
-                                    <li><i class="fa-regular fa-chevrons-right"></i>Artificial Intelligence can be
-                                        defined as
+                                    <li><i class="fa-regular fa-chevrons-right"></i>Artificial Intelligence can be defined as
                                         a set of algorithms and techniques
                                         aimed at imitating human.</li>
                                 </ul>
@@ -1058,8 +981,7 @@ get_header();
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="right-wrapper wow animated fadeInRight" data-wow-duration="1.5s"
-                            data-wow-delay="0.3s">
+                        <div class="right-wrapper wow animated fadeInRight" data-wow-duration="1.5s" data-wow-delay="0.3s">
                             <div class="d-sm-flex d-block gap-4">
                                 <div>
                                     <div class="item">
@@ -1114,14 +1036,10 @@ get_header();
             </div>
 
             <div class="shape-img">
-                <img class="shape-5 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/53_icon.png"
-                    alt="">
-                <img class="shape-6 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/15_icon.png"
-                    alt="">
-                <img class="shape-7 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/17_icon.png"
-                    alt="">
-                <img class="shape-8 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/54_icon.png"
-                    alt="">
+                <img class="shape-5 poa" src="./assets/img/icon/53_icon.png" alt="">
+                <img class="shape-6 poa" src="./assets/img/icon/15_icon.png" alt="">
+                <img class="shape-7 poa" src="./assets/img/icon/17_icon.png" alt="">
+                <img class="shape-8 poa" src="./assets/img/icon/54_icon.png" alt="">
             </div>
 
         </div>
@@ -1219,33 +1137,22 @@ get_header();
         </div>
 
         <div class="shape-image">
-            <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/55_icon.png"
-                alt="">
-            <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/47_icon.png"
-                alt="">
-            <img class="shape-3 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/43_icon.png"
-                alt="">
-            <img class="shape-4 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/28_icon.png"
-                alt="">
-            <img class="shape-5 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/07_icon.png"
-                alt="">
-            <img class="shape-6 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/15_icon.png"
-                alt="">
-            <img class="shape-7 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/01_shape.svg"
-                alt="">
-            <img class="shape-8 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/21_icon.png"
-                alt="">
-            <img class="shape-9 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/17_icon.png"
-                alt="">
-            <img class="shape-10 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/78_icon.png"
-                alt="">
+            <img class="shape-1 poa" src="./assets/img/icon/55_icon.png" alt="">
+            <img class="shape-2 poa" src="./assets/img/icon/47_icon.png" alt="">
+            <img class="shape-3 poa" src="./assets/img/icon/43_icon.png" alt="">
+            <img class="shape-4 poa" src="./assets/img/icon/28_icon.png" alt="">
+            <img class="shape-5 poa" src="./assets/img/icon/07_icon.png" alt="">
+            <img class="shape-6 poa" src="./assets/img/icon/15_icon.png" alt="">
+            <img class="shape-7 poa" src="./assets/img/shape/01_shape.svg" alt="">
+            <img class="shape-8 poa" src="./assets/img/icon/21_icon.png" alt="">
+            <img class="shape-9 poa" src="./assets/img/icon/17_icon.png" alt="">
+            <img class="shape-10 poa" src="./assets/img/icon/78_icon.png" alt="">
         </div>
     </section>
     <!-- Pricing Section one end -->
 
     <!-- Testimonial Section one start-->
-    <section class="testimonial-section one"
-        data-background="<?php echo get_template_directory_uri(); ?>./assets/img/shape/03_shape.svg">
+    <section class="testimonial-section one" data-background="./assets/img/shape/03_shape.svg">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -1263,8 +1170,7 @@ get_header();
                             <div class="inner-wrapper">
                                 <div class="intro-body">
                                     <div class="img-file">
-                                        <img src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/01_testimonial-profile.png"
-                                            alt="">
+                                        <img src="./assets/img/testimonial/01_testimonial-profile.png" alt="">
                                     </div>
                                     <div class="text-file">
                                         <h3>Stuart L. Roberts</h3>
@@ -1294,8 +1200,7 @@ get_header();
                             <div class="inner-wrapper">
                                 <div class="intro-body">
                                     <div class="img-file">
-                                        <img src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/02_testimonial-profile.png"
-                                            alt="">
+                                        <img src="./assets/img/testimonial/02_testimonial-profile.png" alt="">
                                     </div>
                                     <div class="text-file">
                                         <h3>Christine J. Robinson</h3>
@@ -1325,8 +1230,7 @@ get_header();
                             <div class="inner-wrapper">
                                 <div class="intro-body">
                                     <div class="img-file">
-                                        <img src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/03_testimonial-profile.png"
-                                            alt="">
+                                        <img src="./assets/img/testimonial/03_testimonial-profile.png" alt="">
                                     </div>
                                     <div class="text-file">
                                         <h3>Lucio M. Sampson</h3>
@@ -1356,8 +1260,7 @@ get_header();
                             <div class="inner-wrapper">
                                 <div class="intro-body">
                                     <div class="img-file">
-                                        <img src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/04_testimonial-profile.png"
-                                            alt="">
+                                        <img src="./assets/img/testimonial/04_testimonial-profile.png" alt="">
                                     </div>
                                     <div class="text-file">
                                         <h3>Donna G. Caldwell</h3>
@@ -1401,18 +1304,12 @@ get_header();
             </div>
         </div>
         <div class="shape-image">
-            <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/17_icon.png"
-                alt="">
-            <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/16_icon.png"
-                alt="">
-            <img class="shape-3 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/15_icon.png"
-                alt="">
-            <img class="shape-4 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/03_icon.png"
-                alt="">
-            <img class="shape-5 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/29_icon.png"
-                alt="">
-            <img class="shape-6 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/41_icon.png"
-                alt="">
+            <img class="shape-1 poa" src="./assets/img/icon/17_icon.png" alt="">
+            <img class="shape-2 poa" src="./assets/img/icon/16_icon.png" alt="">
+            <img class="shape-3 poa" src="./assets/img/icon/15_icon.png" alt="">
+            <img class="shape-4 poa" src="./assets/img/icon/03_icon.png" alt="">
+            <img class="shape-5 poa" src="./assets/img/icon/29_icon.png" alt="">
+            <img class="shape-6 poa" src="./assets/img/icon/41_icon.png" alt="">
         </div>
     </section>
     <!-- Testimonial Section one end-->
@@ -1433,15 +1330,13 @@ get_header();
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-items wow animated fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
                         <div class="img-file">
-                            <img class="img-fluid"
-                                src="<?php echo get_template_directory_uri(); ?>./assets/img/blog/01_blog.png" alt="">
+                            <img class="img-fluid" src="./assets/img/blog/01_blog.png" alt="">
                         </div>
                         <div class="text-file">
                             <div class="intro">
                                 <div class="d-flex gap-3 align-items-center">
                                     <div class="dp-img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/01_testimonial-profile.png"
-                                            alt="">
+                                        <img src="./assets/img/testimonial/01_testimonial-profile.png" alt="">
                                     </div>
                                     <div>
                                         <p class="admin">Admin</p>
@@ -1467,15 +1362,13 @@ get_header();
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-items wow animated fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
                         <div class="img-file">
-                            <img class="img-fluid"
-                                src="<?php echo get_template_directory_uri(); ?>./assets/img/blog/02_blog.png" alt="">
+                            <img class="img-fluid" src="./assets/img/blog/02_blog.png" alt="">
                         </div>
                         <div class="text-file">
                             <div class="intro">
                                 <div class="d-flex gap-3 align-items-center">
                                     <div class="dp-img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/01_testimonial-profile.png"
-                                            alt="">
+                                        <img src="./assets/img/testimonial/01_testimonial-profile.png" alt="">
                                     </div>
                                     <div>
                                         <p class="admin">Admin</p>
@@ -1501,15 +1394,13 @@ get_header();
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-items wow animated fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.6s">
                         <div class="img-file">
-                            <img class="img-fluid"
-                                src="<?php echo get_template_directory_uri(); ?>./assets/img/blog/03_blog.png" alt="">
+                            <img class="img-fluid" src="./assets/img/blog/03_blog.png" alt="">
                         </div>
                         <div class="text-file">
                             <div class="intro">
                                 <div class="d-flex gap-3 align-items-center">
                                     <div class="dp-img">
-                                        <img src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/01_testimonial-profile.png"
-                                            alt="">
+                                        <img src="./assets/img/testimonial/01_testimonial-profile.png" alt="">
                                     </div>
                                     <div>
                                         <p class="admin">Admin</p>
@@ -1543,25 +1434,18 @@ get_header();
         </div>
 
         <div class="shape-image">
-            <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/05_shape.png"
-                alt="">
-            <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/58_icon.png"
-                alt="">
-            <img class="shape-3 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/59_icon.png"
-                alt="">
-            <img class="shape-4 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/09_icon.png"
-                alt="">
-            <img class="shape-5 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/43_icon.png"
-                alt="">
-            <img class="shape-6 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/78_icon.png"
-                alt="">
+            <img class="shape-1 poa" src="./assets/img/shape/05_shape.png" alt="">
+            <img class="shape-2 poa" src="./assets/img/icon/58_icon.png" alt="">
+            <img class="shape-3 poa" src="./assets/img/icon/59_icon.png" alt="">
+            <img class="shape-4 poa" src="./assets/img/icon/09_icon.png" alt="">
+            <img class="shape-5 poa" src="./assets/img/icon/43_icon.png" alt="">
+            <img class="shape-6 poa" src="./assets/img/icon/78_icon.png" alt="">
         </div>
     </section>
     <!-- Blog Section one end -->
 
     <!-- News Letter One start -->
-    <section class="news-letter one"
-        data-background="<?php echo get_template_directory_uri(); ?>./assets/img/shape/06_shape.png">
+    <section class="news-letter one" data-background="./assets/img/shape/06_shape.png">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-12">
@@ -1584,10 +1468,8 @@ get_header();
             </div>
         </div>
         <div class="shape-image">
-            <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/60_icon.png"
-                alt="">
-            <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/61_icon.png"
-                alt="">
+            <img class="shape-1 poa" src="./assets/img/icon/60_icon.png" alt="">
+            <img class="shape-2 poa" src="./assets/img/icon/61_icon.png" alt="">
         </div>
     </section>
     <!-- News Letter One end -->
@@ -1597,4 +1479,3 @@ get_header();
 
 <?php
 get_footer();
-

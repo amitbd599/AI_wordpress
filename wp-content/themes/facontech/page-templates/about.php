@@ -9,6 +9,7 @@ get_header();
 ?>
 
 <main>
+
    <!-- About Section one Start -->
    <div class="about-section one">
       <div class="container">
@@ -17,12 +18,11 @@ get_header();
                <div class="left-wrapper ">
                   <div class=" img-file ">
                      <img class=" img-fluid wow animated fadeInLeft" data-wow-duration="1.5s" data-wow-delay="0.3s"
-                        src="<?php echo get_template_directory_uri(); ?>./assets/img/about/01_about.png" alt="">
+                        src="./assets/img/about/01_about.png" alt="">
                      <div class="shape-overlay ">
                         <div class="overlay wow animated fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">
                            <span>
-                              <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/44_icon.png"
-                                 alt="">
+                              <img src="./assets/img/icon/44_icon.png" alt="">
                            </span>
                            <h3>Impressive Works <br> Since 2010</h3>
                            <div class="video-intro ">
@@ -36,7 +36,7 @@ get_header();
                         </div>
                      </div>
                      <div class="shape-7 poa">
-                        <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/69_icon.svg" alt="">
+                        <img src="./assets/img/icon/69_icon.svg" alt="">
                      </div>
                   </div>
 
@@ -55,8 +55,7 @@ get_header();
                      <ul>
                         <li>
                            <span class="img-file">
-                              <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/11_icon.png"
-                                 alt="">
+                              <img src="./assets/img/icon/11_icon.png" alt="">
                            </span>
                            <div>
                               <h4>100% Customer Satisfaction</h4>
@@ -68,8 +67,7 @@ get_header();
                         </li>
                         <li>
                            <span class="img-file">
-                              <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/12_icon.png"
-                                 alt="">
+                              <img src="./assets/img/icon/12_icon.png" alt="">
                            </span>
                            <div>
                               <h4>Empowering People By Keeping</h4>
@@ -94,22 +92,22 @@ get_header();
       </div>
       <div class="shape-img">
          <div class="shape-1 poa">
-            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/10_icon.png" alt="">
+            <img src="./assets/img/icon/10_icon.png" alt="">
          </div>
          <div class="shape-2 poa">
-            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/09_icon.png" alt="">
+            <img src="./assets/img/icon/09_icon.png" alt="">
          </div>
          <div class="shape-3 poa">
-            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/shape/01_shape.svg" alt="">
+            <img src="./assets/img/shape/01_shape.svg" alt="">
          </div>
          <div class="shape-4 poa">
-            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/63_icon.png" alt="">
+            <img src="./assets/img/icon/63_icon.png" alt="">
          </div>
          <div class="shape-5 poa">
-            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/66_icon.png" alt="">
+            <img src="./assets/img/icon/66_icon.png" alt="">
          </div>
          <div class="shape-6 poa">
-            <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/68_icon.png" alt="">
+            <img src="./assets/img/icon/68_icon.png" alt="">
          </div>
 
       </div>
@@ -118,8 +116,7 @@ get_header();
 
 
    <!-- Counter-section one start -->
-   <section class="counter-section one"
-      data-background="<?php echo get_template_directory_uri(); ?>./assets/img/bg-image/04_bg-image.jpg">
+   <section class="counter-section one" data-background="./assets/img/bg-image/04_bg-image.jpg">
       <div class="container">
          <div class="award-part wow animated fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
             <div class="row">
@@ -143,14 +140,10 @@ get_header();
                <h1>AI</h1>
             </div>
             <div class="shape-img">
-               <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/50_icon.png"
-                  alt="">
-               <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/51_icon.png"
-                  alt="">
-               <img class="shape-3 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/16_icon.png"
-                  alt="">
-               <img class="shape-4 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/52_icon.png"
-                  alt="">
+               <img class="shape-1 poa" src="./assets/img/icon/50_icon.png" alt="">
+               <img class="shape-2 poa" src="./assets/img/icon/51_icon.png" alt="">
+               <img class="shape-3 poa" src="./assets/img/icon/16_icon.png" alt="">
+               <img class="shape-4 poa" src="./assets/img/icon/52_icon.png" alt="">
             </div>
          </div>
 
@@ -245,14 +238,10 @@ get_header();
          </div>
 
          <div class="shape-img">
-            <img class=" shape-5 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/53_icon.png"
-               alt="">
-            <img class="shape-6 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/15_icon.png"
-               alt="">
-            <img class="shape-7 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/17_icon.png"
-               alt="">
-            <img class="shape-8 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/54_icon.png"
-               alt="">
+            <img class=" shape-5 poa" src="./assets/img/icon/53_icon.png" alt="">
+            <img class="shape-6 poa" src="./assets/img/icon/15_icon.png" alt="">
+            <img class="shape-7 poa" src="./assets/img/icon/17_icon.png" alt="">
+            <img class="shape-8 poa" src="./assets/img/icon/54_icon.png" alt="">
          </div>
 
       </div>
@@ -260,8 +249,7 @@ get_header();
    <!-- Counter-section one end -->
 
    <!-- Testimonial Section one start-->
-   <section class="testimonial-section one"
-      data-background="<?php echo get_template_directory_uri(); ?>./assets/img/shape/03_shape.svg">
+   <section class="testimonial-section one" data-background="./assets/img/shape/03_shape.svg">
       <div class="container">
          <div class="row">
             <div class="col-12">
@@ -279,9 +267,7 @@ get_header();
                      <div class="inner-wrapper">
                         <div class="intro-body">
                            <div class="img-file">
-                              <img
-                                 src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/01_testimonial-profile.png"
-                                 alt="">
+                              <img src="./assets/img/testimonial/01_testimonial-profile.png" alt="">
                            </div>
                            <div class="text-file">
                               <h3>Stuart L. Roberts</h3>
@@ -311,9 +297,7 @@ get_header();
                      <div class="inner-wrapper">
                         <div class="intro-body">
                            <div class="img-file">
-                              <img
-                                 src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/02_testimonial-profile.png"
-                                 alt="">
+                              <img src="./assets/img/testimonial/02_testimonial-profile.png" alt="">
                            </div>
                            <div class="text-file">
                               <h3>Christine J. Robinson</h3>
@@ -343,9 +327,7 @@ get_header();
                      <div class="inner-wrapper">
                         <div class="intro-body">
                            <div class="img-file">
-                              <img
-                                 src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/03_testimonial-profile.png"
-                                 alt="">
+                              <img src="./assets/img/testimonial/03_testimonial-profile.png" alt="">
                            </div>
                            <div class="text-file">
                               <h3>Lucio M. Sampson</h3>
@@ -375,9 +357,7 @@ get_header();
                      <div class="inner-wrapper">
                         <div class="intro-body">
                            <div class="img-file">
-                              <img
-                                 src="<?php echo get_template_directory_uri(); ?>./assets/img/testimonial/04_testimonial-profile.png"
-                                 alt="">
+                              <img src="./assets/img/testimonial/04_testimonial-profile.png" alt="">
                            </div>
                            <div class="text-file">
                               <h3>Donna G. Caldwell</h3>
@@ -421,12 +401,12 @@ get_header();
          </div>
       </div>
       <div class="shape-image">
-         <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/17_icon.png" alt="">
-         <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/16_icon.png" alt="">
-         <img class="shape-3 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/15_icon.png" alt="">
-         <img class="shape-4 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/03_icon.png" alt="">
-         <img class="shape-5 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/29_icon.png" alt="">
-         <img class="shape-6 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/41_icon.png" alt="">
+         <img class="shape-1 poa" src="./assets/img/icon/17_icon.png" alt="">
+         <img class="shape-2 poa" src="./assets/img/icon/16_icon.png" alt="">
+         <img class="shape-3 poa" src="./assets/img/icon/15_icon.png" alt="">
+         <img class="shape-4 poa" src="./assets/img/icon/03_icon.png" alt="">
+         <img class="shape-5 poa" src="./assets/img/icon/29_icon.png" alt="">
+         <img class="shape-6 poa" src="./assets/img/icon/41_icon.png" alt="">
       </div>
    </section>
    <!-- Testimonial Section one end-->
@@ -434,8 +414,7 @@ get_header();
 
 
    <!-- News Letter One start -->
-   <section class="news-letter one"
-      data-background="<?php echo get_template_directory_uri(); ?>./assets/img/shape/06_shape.png">
+   <section class="news-letter one" data-background="./assets/img/shape/06_shape.png">
       <div class="container">
          <div class="row">
             <div class="col-lg-6 col-12">
@@ -458,8 +437,8 @@ get_header();
          </div>
       </div>
       <div class="shape-image">
-         <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/60_icon.png" alt="">
-         <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/61_icon.png" alt="">
+         <img class="shape-1 poa" src="./assets/img/icon/60_icon.png" alt="">
+         <img class="shape-2 poa" src="./assets/img/icon/61_icon.png" alt="">
       </div>
    </section>
    <!-- News Letter One end -->
@@ -471,4 +450,3 @@ get_header();
 
 <?php
 get_footer();
-

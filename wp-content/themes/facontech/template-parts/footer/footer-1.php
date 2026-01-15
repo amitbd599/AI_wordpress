@@ -46,18 +46,18 @@ switch ($footer_columns) {
         $footer_class[2] = 'col-lg-6 col-md-6';
         break;
     case '3':
-        $footer_class[1] = 'col-xl-4 col-lg-6 col-md-5';
-        $footer_class[2] = 'col-xl-4 col-lg-6 col-md-7';
+        $footer_class[1] = 'col-xl-4 col-lg-6 col-md-6';
+        $footer_class[2] = 'col-xl-4 col-lg-6 col-md-6';
         $footer_class[3] = 'col-xl-4 col-lg-6';
         break;
     case '4':
-        $footer_class[1] = 'col-xl-5 col-lg-6 col-md-12 col-sm-12';
-        $footer_class[2] = 'col-xl-2 col-lg-6 col-md-6 col-sm-6';
-        $footer_class[3] = 'col-xl-2 col-lg-6 col-md-6 col-sm-6';
-        $footer_class[4] = 'col-xl-3 col-lg-6 col-md-8 col-sm-12';
+        $footer_class[1] = 'col-xl-3 col-lg-6 col-md-6 col-sm-12';
+        $footer_class[2] = 'col-xl-3 col-lg-6 col-md-6 col-sm-12';
+        $footer_class[3] = 'col-xl-3 col-lg-6 col-md-6 col-sm-12';
+        $footer_class[4] = 'col-xl-3 col-lg-6 col-md-6 col-sm-12';
         break;
     default:
-        $footer_class = 'col-xl-3 col-lg-3 col-md-6';
+        $footer_class = 'col-xl-3 col-lg-6 col-md-6';
         break;
 }
 
@@ -69,24 +69,24 @@ switch ($footer_columns) {
     <div class="footer__area-2 footer-section one"
         style="background-color: <?php echo esc_attr($bg_color); ?>; padding-top:<?php echo esc_attr($facontech_footer_top_space); ?>px">
         <?php if (is_active_sidebar('footer-1') or is_active_sidebar('footer-2') or is_active_sidebar('footer-3') or is_active_sidebar('footer-4')): ?>
-        <div class="pt-100 border-b">
-            <div class="container">
-                <div class="row">
-                    <?php
+            <div class="pt-100 border-b">
+                <div class="container">
+                    <div class="row">
+                        <?php
                         if ($footer_columns > 4) {
-                            print '<div class="col-xl-3 col-lg-6 col-md-12 col-sm-12">';
+                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">';
                             dynamic_sidebar('footer-1');
                             print '</div>';
 
-                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 px-2">';
+                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 px-2">';
                             dynamic_sidebar('footer-2');
                             print '</div>';
 
-                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 px-2">';
+                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 px-2">';
                             dynamic_sidebar('footer-3');
                             print '</div>';
 
-                            print '<div class="col-xl-3 col-lg-6 col-md-8 col-sm-12">';
+                            print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">';
                             dynamic_sidebar('footer-4');
                             print '</div>';
                         } else {
@@ -100,9 +100,9 @@ switch ($footer_columns) {
                             }
                         }
                         ?>
+                    </div>
                 </div>
             </div>
-        </div>
 
         <?php endif; ?>
         <div class="footer__copyright-2 black-bg pt-25 pb-25 ">
