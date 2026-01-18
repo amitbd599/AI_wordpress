@@ -111,11 +111,11 @@ function facontech_breadcrumb_func()
                 </div>
 
                 <div class="shape-img">
-                    <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/84_icon.png" alt="">
-                    <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/66_icon.png" alt="">
-                    <img class="shape-3 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/66_icon.png" alt="">
-                    <img class="shape-4 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/04_icon.png" alt="">
-                    <img class="shape-5 poa" src="<?php echo get_template_directory_uri(); ?>/assets/img/icon/66_icon.png" alt="">
+                    <img class="shape-1 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/84_icon.png'); ?>" alt="">
+                    <img class="shape-2 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/66_icon.png'); ?>" alt="">
+                    <img class="shape-3 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/66_icon.png'); ?>" alt="">
+                    <img class="shape-4 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/04_icon.png'); ?>" alt="">
+                    <img class="shape-5 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/66_icon.png'); ?>" alt="">
                 </div>
 
             </section>

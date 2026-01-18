@@ -19,7 +19,7 @@ get_header();
                <div class="project-wrapper wow animated fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
                   <div class="img-file por">
                      <img class="img-fluid"
-                        src="<?php echo get_template_directory_uri(); ?>./assets/img/project/01_project.png" alt="">
+                        src="<?php echo esc_url(get_template_directory_uri() . './assets/img/project/01_project.png'); ?>" alt="">
                      <div class="shape-overlay poa">
                         <h2>Robotic Technology</h2>
                         <p>In this space, we will explore the most innovative and impactful Artificial Intelligence
@@ -36,7 +36,7 @@ get_header();
                <div class="project-wrapper wow animated fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">
                   <div class="img-file por">
                      <img class="img-fluid"
-                        src="<?php echo get_template_directory_uri(); ?>./assets/img/project/02_project.png" alt="">
+                        src="<?php echo esc_url(get_template_directory_uri() . './assets/img/project/02_project.png'); ?>" alt="">
                      <div class="shape-overlay poa">
                         <h2>Data Science</h2>
                         <p>In this space, we will explore the most innovative and impactful Artificial Intelligence
@@ -53,7 +53,7 @@ get_header();
                <div class="project-wrapper wow animated fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
                   <div class="img-file por">
                      <img class="img-fluid"
-                        src="<?php echo get_template_directory_uri(); ?>./assets/img/project/03_project.png" alt="">
+                        src="<?php echo esc_url(get_template_directory_uri() . './assets/img/project/03_project.png'); ?>" alt="">
                      <div class="shape-overlay poa">
                         <h2>Facing AI Challenges</h2>
                         <p>In this space, we will explore the most innovative and impactful Artificial Intelligence
@@ -70,7 +70,7 @@ get_header();
                <div class="project-wrapper wow animated fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">
                   <div class="img-file por">
                      <img class="img-fluid"
-                        src="<?php echo get_template_directory_uri(); ?>./assets/img/project/04_project.png" alt="">
+                        src="<?php echo esc_url(get_template_directory_uri() . './assets/img/project/04_project.png'); ?>" alt="">
                      <div class="shape-overlay poa">
                         <h2>Technical Support</h2>
                         <p>In this space, we will explore the most innovative and impactful Artificial Intelligence
@@ -87,7 +87,7 @@ get_header();
                <div class="project-wrapper wow animated fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
                   <div class="img-file por">
                      <img class="img-fluid"
-                        src="<?php echo get_template_directory_uri(); ?>./assets/img/project/05_project.png" alt="">
+                        src="<?php echo esc_url(get_template_directory_uri() . './assets/img/project/05_project.png'); ?>" alt="">
                      <div class="shape-overlay poa">
                         <h2>Robotic Automation</h2>
                         <p>In this space, we will explore the most innovative and impactful Artificial Intelligence
@@ -104,7 +104,7 @@ get_header();
                <div class="project-wrapper wow animated fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">
                   <div class="img-file por">
                      <img class="img-fluid"
-                        src="<?php echo get_template_directory_uri(); ?>./assets/img/project/06_project.png" alt="">
+                        src="<?php echo esc_url(get_template_directory_uri() . './assets/img/project/06_project.png'); ?>" alt="">
                      <div class="shape-overlay poa">
                         <h2>Virtual Reality</h2>
                         <p>In this space, we will explore the most innovative and impactful Artificial Intelligence
@@ -121,7 +121,7 @@ get_header();
                <div class="project-wrapper wow animated fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.2s">
                   <div class="img-file por">
                      <img class="img-fluid"
-                        src="<?php echo get_template_directory_uri(); ?>./assets/img/project/07_project.png" alt="">
+                        src="<?php echo esc_url(get_template_directory_uri() . './assets/img/project/07_project.png'); ?>" alt="">
                      <div class="shape-overlay poa">
                         <h2>Support & Services</h2>
                         <p>In this space, we will explore the most innovative and impactful Artificial Intelligence
@@ -138,7 +138,7 @@ get_header();
                <div class="project-wrapper wow animated fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">
                   <div class="img-file por">
                      <img class="img-fluid"
-                        src="<?php echo get_template_directory_uri(); ?>./assets/img/project/08_project.png" alt="">
+                        src="<?php echo esc_url(get_template_directory_uri() . './assets/img/project/08_project.png'); ?>" alt="">
                      <div class="shape-overlay poa">
                         <h2>Ai For Cloud Services</h2>
                         <p>In this space, we will explore the most innovative and impactful Artificial Intelligence
@@ -170,25 +170,25 @@ get_header();
 
          <div class="shape-image-file">
             <div class="shape-img-1 poa">
-               <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/21_icon.png" alt="">
+               <img src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/21_icon.png'); ?>" alt="">
             </div>
             <div class="shape-img-2 poa">
-               <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/64_icon.png" alt="">
+               <img src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/64_icon.png'); ?>" alt="">
             </div>
             <div class="shape-img-4 poa">
-               <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/08_icon.png" alt="">
+               <img src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/08_icon.png'); ?>" alt="">
             </div>
             <div class="shape-img-5 poa">
-               <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/78_icon.png" alt="">
+               <img src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/78_icon.png'); ?>" alt="">
             </div>
             <div class="shape-img-6 poa">
-               <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/43_icon.png" alt="">
+               <img src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/43_icon.png'); ?>" alt="">
             </div>
             <div class="shape-img-7 poa">
-               <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/68_icon.png" alt="">
+               <img src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/68_icon.png'); ?>" alt="">
             </div>
             <div class="shape-img-8 poa">
-               <img src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/71_icon.png" alt="">
+               <img src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/71_icon.png'); ?>" alt="">
             </div>
 
          </div>
@@ -202,7 +202,7 @@ get_header();
 
    <!-- News Letter One start -->
    <section class="news-letter one"
-      data-background="<?php echo get_template_directory_uri(); ?>./assets/img/shape/06_shape.png">
+      data-background="<?php echo esc_url(get_template_directory_uri() . './assets/img/shape/06_shape.png'); ?>">
       <div class="container">
          <div class="row">
             <div class="col-lg-6 col-12">
@@ -225,8 +225,8 @@ get_header();
          </div>
       </div>
       <div class="shape-image">
-         <img class="shape-1 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/60_icon.png" alt="">
-         <img class="shape-2 poa" src="<?php echo get_template_directory_uri(); ?>./assets/img/icon/61_icon.png" alt="">
+         <img class="shape-1 poa" src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/60_icon.png'); ?>" alt="">
+         <img class="shape-2 poa" src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/61_icon.png'); ?>" alt="">
       </div>
    </section>
    <!-- News Letter One end -->
@@ -238,4 +238,3 @@ get_header();
 
 <?php
 get_footer();
-
