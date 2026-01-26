@@ -63,16 +63,16 @@ if (!function_exists('facontech_setup')):
         ]);
 
         // Set up the WordPress core custom background feature.
-        add_theme_support('custom-background', apply_filters('facontech_custom_background_args', [
-            'default-color' => 'ffffff',
-            'default-image' => '',
-        ]));
+        // add_theme_support('custom-background', apply_filters('facontech_custom_background_args', [
+        //     'default-color' => 'ffffff',
+        //     'default-image' => '',
+        // ]));
 
         // Add theme support for selective refresh for widgets.
         add_theme_support('customize-selective-refresh-widgets');
 
         //Enable custom header
-        add_theme_support('custom-header');
+        // add_theme_support('custom-header');
 
         /**
          * Add support for core custom logo.
@@ -111,7 +111,7 @@ if (!function_exists('facontech_setup')):
         // Add support for responsive embedded content.
         add_theme_support('responsive-embeds');
 
-        remove_theme_support('widgets-block-editor');
+        // remove_theme_support('widgets-block-editor');
 
         add_image_size('facontech-case-details', 1170, 600, ['center', 'center']);
     }
@@ -156,10 +156,7 @@ if (!function_exists('wp_body_open')) {
     }
 }
 
-/**
- * Implement the Custom Header feature.
- */
-require FACONTECH_THEME_INC . 'custom-header.php';
+
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
@@ -196,7 +193,6 @@ require_once FACONTECH_THEME_INC . 'add_plugin.php';
 require_once FACONTECH_THEME_INC . '/common/facontech-breadcrumb.php';
 require_once FACONTECH_THEME_INC . '/common/facontech-scripts.php';
 require_once FACONTECH_THEME_INC . '/common/facontech-widgets.php';
-require_once FACONTECH_THEME_INC . '/common/custom-widgets.php';
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
@@ -318,3 +314,14 @@ add_filter('site_transient_update_plugins', function ($value) {
     }
     return $value;
 });
+
+
+/**
+ * Remove the Site Identity section from the WordPress Customizer.
+ */
+function facontech_remove_customizer_sections($wp_customize)
+{
+    // The internal ID for Site Identity is 'title_tagline'
+    $wp_customize->remove_section('title_tagline');
+}
+add_action('customize_register', 'facontech_remove_customizer_sections', 30);

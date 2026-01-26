@@ -101,18 +101,18 @@ get_header();
       </div>
 
       <div class="shape-image">
-         <img class="shape-1 poa" src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/55_icon.png'); ?>" alt="">
-         <img class="shape-2 poa" src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/47_icon.png'); ?>" alt="">
-         <img class="shape-3 poa" src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/43_icon.png'); ?>" alt="">
-         <img class="shape-4 poa" src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/28_icon.png'); ?>" alt="">
-         <img class="shape-5 poa" src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/07_icon.png'); ?>" alt="">
-         <img class="shape-6 poa" src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/15_icon.png'); ?>" alt="">
-         <img class="shape-7 poa" src="<?php echo esc_url(get_template_directory_uri() . './assets/img/shape/01_shape.svg'); ?>"
-            alt="">
-         <img class="shape-8 poa" src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/21_icon.png'); ?>" alt="">
-         <img class="shape-9 poa" src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/17_icon.png'); ?>" alt="">
-         <img class="shape-10 poa" src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/78_icon.png'); ?>"
-            alt="">
+         <img class="shape-1 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/55_icon.png'); ?>" alt="Facontech">
+         <img class="shape-2 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/47_icon.png'); ?>" alt="Facontech">
+         <img class="shape-3 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/43_icon.png'); ?>" alt="Facontech">
+         <img class="shape-4 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/28_icon.png'); ?>" alt="Facontech">
+         <img class="shape-5 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/07_icon.png'); ?>" alt="Facontech">
+         <img class="shape-6 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/15_icon.png'); ?>" alt="Facontech">
+         <img class="shape-7 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/shape/01_shape.svg'); ?>"
+            alt="Facontech">
+         <img class="shape-8 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/21_icon.png'); ?>" alt="Facontech">
+         <img class="shape-9 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/17_icon.png'); ?>" alt="Facontech">
+         <img class="shape-10 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/78_icon.png'); ?>"
+            alt="Facontech">
       </div>
    </section>
    <!-- Pricing Section one end -->
@@ -120,7 +120,7 @@ get_header();
 
    <!-- News Letter One start -->
    <section class="news-letter one"
-      data-background="<?php echo esc_url(get_template_directory_uri() . ''); ?>./assets/img/shape/06_shape.png">
+      data-background="<?php echo esc_url(get_template_directory_uri() . '/assets/img/shape/06_shape.png'); ?>">
       <div class="container">
          <div class="row">
             <div class="col-lg-6 col-12">
@@ -143,8 +143,8 @@ get_header();
          </div>
       </div>
       <div class="shape-image">
-         <img class="shape-1 poa" src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/60_icon.png'); ?>" alt="">
-         <img class="shape-2 poa" src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/61_icon.png'); ?>" alt="">
+         <img class="shape-1 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/60_icon.png'); ?>" alt="Facontech">
+         <img class="shape-2 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/61_icon.png'); ?>" alt="Facontech">
       </div>
    </section>
    <!-- News Letter One end -->

@@ -14,7 +14,7 @@ $facontech_footer_top_space = function_exists('get_field') ? get_field('facontec
 $facontech_copyright_center = $facontech_footer_logo ? 'col-lg-4 offset-lg-4 col-md-6 text-right' : 'col-lg-12 text-center';
 $facontech_footer_bg_url_from_page = function_exists('get_field') ? get_field('facontech_footer_bg') : '';
 $facontech_footer_bg_color_from_page = function_exists('get_field') ? get_field('facontech_footer_bg_color') : '#00151E';
-$footer_bg_color = get_theme_mod('facontech_footer_bg_color');
+$footer_bg_color = get_theme_mod('facontech_footer_bg_color', "#00151E");
 $footer_copyright_switch = get_theme_mod('footer_copyright_switch', false);
 
 // bg image
@@ -63,12 +63,13 @@ switch ($footer_columns) {
 ?>
 
 <footer>
-    <div class="footer-area black-bg-2  fix " style="background-color: <?php echo esc_attr($bg_color); ?>; padding-top:<?php echo esc_attr($facontech_footer_top_space); ?>px">
+    <div class="footer-area black-bg-2  fix "
+        style="background-color: <?php echo esc_attr($bg_color); ?>; padding-top:<?php echo esc_attr($facontech_footer_top_space); ?>px">
         <?php if (is_active_sidebar('footer-3-1') or is_active_sidebar('footer-3-2') or is_active_sidebar('footer-3-3') or is_active_sidebar('footer-3-4')): ?>
-            <div class="border-b pt-100 pb-20">
-                <div class="container">
-                    <div class="row">
-                        <?php
+        <div class="border-b pt-100 pb-20">
+            <div class="container">
+                <div class="row">
+                    <?php
                         if ($footer_columns > 4) {
                             print '<div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">';
                             dynamic_sidebar('footer-3-1');
@@ -96,11 +97,11 @@ switch ($footer_columns) {
                             }
                         }
                         ?>
-                    </div>
-
-
                 </div>
+
+
             </div>
+        </div>
         <?php endif; ?>
         <div class="container">
 

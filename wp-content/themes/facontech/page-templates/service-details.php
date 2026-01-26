@@ -36,7 +36,7 @@ get_header();
                <div class="left-wrapper ps-2">
                   <div class="img-file">
                      <img class="img-fluid"
-                        src="<?php echo esc_url(get_template_directory_uri() . './assets/img/service/02_service.png'); ?>" alt="">
+                        src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/service/02_service.png'); ?>" alt="Facontech">
                   </div>
                </div>
             </div>
@@ -48,7 +48,7 @@ get_header();
                <div class="left-wrapper pe-2">
                   <div class="img-file">
                      <img class="img-fluid"
-                        src="<?php echo esc_url(get_template_directory_uri() . './assets/img/service/03_service.png'); ?>" alt="">
+                        src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/service/03_service.png'); ?>" alt="Facontech">
                   </div>
                </div>
             </div>
@@ -154,25 +154,25 @@ get_header();
 
       <div class="shape-image-file">
          <div class="shape-img-1 poa">
-            <img src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/21_icon.png'); ?>" alt="">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/21_icon.png'); ?>" alt="Facontech">
          </div>
          <div class="shape-img-2 poa">
-            <img src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/64_icon.png'); ?>" alt="">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/64_icon.png'); ?>" alt="Facontech">
          </div>
          <div class="shape-img-4 poa">
-            <img src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/08_icon.png'); ?>" alt="">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/08_icon.png'); ?>" alt="Facontech">
          </div>
          <div class="shape-img-5 poa">
-            <img src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/78_icon.png'); ?>" alt="">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/78_icon.png'); ?>" alt="Facontech">
          </div>
          <div class="shape-img-6 poa">
-            <img src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/43_icon.png'); ?>" alt="">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/43_icon.png'); ?>" alt="Facontech">
          </div>
          <div class="shape-img-7 poa">
-            <img src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/68_icon.png'); ?>" alt="">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/68_icon.png'); ?>" alt="Facontech">
          </div>
          <div class="shape-img-8 poa">
-            <img src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/71_icon.png'); ?>" alt="">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/71_icon.png'); ?>" alt="Facontech">
          </div>
 
       </div>
@@ -182,7 +182,7 @@ get_header();
 
    <!-- News Letter One start -->
    <section class="news-letter one"
-      data-background="<?php echo esc_url(get_template_directory_uri() . './assets/img/shape/06_shape.png'); ?>">
+      data-background="<?php echo esc_url(get_template_directory_uri() . '/assets/img/shape/06_shape.png'); ?>">
       <div class="container">
          <div class="row">
             <div class="col-lg-6 col-12">
@@ -205,8 +205,8 @@ get_header();
          </div>
       </div>
       <div class="shape-image">
-         <img class="shape-1 poa" src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/60_icon.png'); ?>" alt="">
-         <img class="shape-2 poa" src="<?php echo esc_url(get_template_directory_uri() . './assets/img/icon/61_icon.png'); ?>" alt="">
+         <img class="shape-1 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/60_icon.png'); ?>" alt="Facontech">
+         <img class="shape-2 poa" src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/icon/61_icon.png'); ?>" alt="Facontech">
       </div>
    </section>
    <!-- News Letter One end -->

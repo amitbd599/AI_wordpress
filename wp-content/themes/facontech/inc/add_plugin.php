@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file represents an example of the code that themes would use to register
  * the required plugins.
@@ -24,7 +25,7 @@ function facontech_register_required_plugins()
      * If the source is NOT from the .org repo, then source is also required.
      */
 
-    $acf_url = 'https://hixstudio.net/plugin/';
+    $acf_url = 'https://wp.themesoft69.com/plugin/';
 
     $plugins = [
         [
@@ -32,17 +33,13 @@ function facontech_register_required_plugins()
             'slug' => 'elementor',
             'required' => true,
         ],
+
         [
-            'name' => esc_html__('Tutor LMS', 'facontech'),
-            'slug' => 'tutor',
+            'name' => esc_html__('TS Core ', 'facontech'),
+            'slug' => 'ts-core',
+            'source' => esc_url('https://wp.themesoft69.com/facontech/source/ts-core.zip'),
             'required' => true,
-        ],
-        [
-            'name' => esc_html__('TP Core ', 'facontech'),
-            'slug' => 'tp-core',
-            'source' => esc_url('https://wp.hixstudio.net/facontech/source/tp-core.zip'),
-            'required' => true,
-            'external_url' => esc_url('https://wp.hixstudio.net/facontech/source/tp-core.zip'),
+            'external_url' => esc_url('https://wp.themesoft69.com/facontech/source/ts-core.zip'),
         ],
         [
             'name' => esc_html__('Advanced Custom Fields Pro', 'facontech'),
@@ -75,26 +72,8 @@ function facontech_register_required_plugins()
             'slug' => 'breadcrumb-navxt',
             'required' => false,
         ),
-        array(
-            'name' => esc_html__('WooCommerce', 'facontech'),
-            'slug' => 'woocommerce',
-            'required' => false,
-        ),
-        array(
-            'name' => esc_html__('YITH WooCommerce Wishlist', 'facontech'),
-            'slug' => 'yith-woocommerce-wishlist',
-            'required' => false,
-        ),
-        array(
-            'name' => esc_html__('YITH WooCommerce Quick View', 'facontech'),
-            'slug' => 'yith-woocommerce-quick-view',
-            'required' => false,
-        ),
-        array(
-            'name' => esc_html__('Event Manager – Eventin', 'facontech'),
-            'slug' => 'wp-event-solution',
-            'required' => false,
-        )
+
+
     ];
     $config = [
         'id' => 'facontech', // Unique ID for hashing notices for multiple instances of TGMPA.

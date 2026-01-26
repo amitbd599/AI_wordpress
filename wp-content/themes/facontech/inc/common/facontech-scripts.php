@@ -4,6 +4,26 @@
  * facontech_scripts description
  * @return [type] [description]
  */
+
+
+/*
+Register Fonts
+ */
+function facontech_fonts_url()
+{
+    $font_url = '';
+
+    /*
+    Translators: If there are characters in your language that are not supported
+    by chosen font(s), translate this to 'off'. Do not translate into your own language.
+     */
+    if ('off' !== _x('on', 'Google font: on or off', 'facontech')) {
+        $font_url = 'https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,800&family=Orbitron:wght@400;500;600;700;800;900&display=swap';
+    }
+    return $font_url;
+}
+
+
 function facontech_scripts()
 {
 
@@ -50,20 +70,3 @@ function facontech_scripts()
     }
 }
 add_action('wp_enqueue_scripts', 'facontech_scripts');
-
-/*
-Register Fonts
- */
-function facontech_fonts_url()
-{
-    $font_url = '';
-
-    /*
-    Translators: If there are characters in your language that are not supported
-    by chosen font(s), translate this to 'off'. Do not translate into your own language.
-     */
-    if ('off' !== _x('on', 'Google font: on or off', 'facontech')) {
-        $font_url = 'https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,800&family=Orbitron:wght@400;500;600;700;800;900&display=swap';
-    }
-    return $font_url;
-}
