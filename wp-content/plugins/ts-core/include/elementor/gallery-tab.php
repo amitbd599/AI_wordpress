@@ -201,7 +201,7 @@ $this->start_controls_section(
                 'dynamic' => [
                     'active' => true,
                 ],
-                'placeholder' => esc_html__( 'htTSs://your-link.com', 'TScore' ),
+                'placeholder' => esc_html__( 'https://your-link.com', 'TScore' ),
                 'show_external' => true,
                 'default' => [
                     'url' => '#',

@@ -46,8 +46,7 @@ if (!function_exists('facontech_setup')):
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus([
-            'main-menu' => esc_html__('Main Menu', 'facontech'),
-            'footer-menu' => esc_html__('Footer Menu', 'facontech'),
+            'main-menu' => esc_html__('Main Menu', 'facontech')
         ]);
 
         /*
@@ -111,7 +110,7 @@ if (!function_exists('facontech_setup')):
         // Add support for responsive embedded content.
         add_theme_support('responsive-embeds');
 
-        // remove_theme_support('widgets-block-editor');
+        remove_theme_support('widgets-block-editor');
 
         add_image_size('facontech-case-details', 1170, 600, ['center', 'center']);
     }
@@ -314,14 +313,3 @@ add_filter('site_transient_update_plugins', function ($value) {
     }
     return $value;
 });
-
-
-/**
- * Remove the Site Identity section from the WordPress Customizer.
- */
-function facontech_remove_customizer_sections($wp_customize)
-{
-    // The internal ID for Site Identity is 'title_tagline'
-    $wp_customize->remove_section('title_tagline');
-}
-add_action('customize_register', 'facontech_remove_customizer_sections', 30);

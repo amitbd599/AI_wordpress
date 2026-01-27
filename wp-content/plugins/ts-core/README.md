@@ -1,6 +1,6 @@
 # Ts Core Sample Plugin
 
-This is a sample plugin to demonstrate how you can write extentions (plugins) to add custom functionality to [Elementor](htTSs://github.com/pojome/elementor/)
+This is a sample plugin to demonstrate how you can write extentions (plugins) to add custom functionality to [Elementor](https://github.com/pojome/elementor/)
 
 Plugin Structure:
 
@@ -28,4 +28,4 @@ plugin.php
 - `TScore.php` - Main plugin file, used as a loader if plugin minimum requirements are met.
 - `plugin.php` - The actual Plugin file/Class.
 
-For more documentation please see [Elementor Developers Resource](htTSs://developers.elementor.com/creating-an-extension-for-elementor/).
+For more documentation please see [Elementor Developers Resource](https://developers.elementor.com/creating-an-extension-for-elementor/).

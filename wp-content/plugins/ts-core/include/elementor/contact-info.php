@@ -372,15 +372,15 @@ class TS_Contact_Info extends Widget_Base {
                 'title_field' => '<# print(name.slice(0,1).toUpperCase() + name.slice(1)) #>',
                 'default' => [
                     [
-                        'link' => ['url' => 'htTSs://facebook.com/'],
+                        'link' => ['url' => 'https://facebook.com/'],
                         'name' => 'facebook'
                     ],
                     [
-                        'link' => ['url' => 'htTSs://linkedin.com/'],
+                        'link' => ['url' => 'https://linkedin.com/'],
                         'name' => 'linkedin'
                     ],
                     [
-                        'link' => ['url' => 'htTSs://twitter.com/'],
+                        'link' => ['url' => 'https://twitter.com/'],
                         'name' => 'twitter'
                     ]
                 ],

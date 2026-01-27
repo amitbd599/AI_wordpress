@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco htTSs://localise.biz/\n"
+"X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.6.4; wp-6.2.2\n"
 "X-Domain: TScore"
 
@@ -1770,7 +1770,7 @@ msgstr ""
 
 #. URI of the plugin
 #. Author URI of the plugin
-msgid "htTSs://themepure.net/"
+msgid "https://themepure.net/"
 msgstr ""
 
 #: include/elementor/slider.php:284 include/elementor/category.php:275
@@ -1785,7 +1785,7 @@ msgstr ""
 #: include/elementor/portfolio-post.php:542
 #: include/elementor/app-download.php:283
 #: include/elementor/app-download.php:371
-msgid "htTSs://your-link.com"
+msgid "https://your-link.com"
 msgstr ""
 
 #: include/elementor/contact-info.php:186 include/elementor/category.php:408

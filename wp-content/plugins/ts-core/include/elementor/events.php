@@ -469,7 +469,7 @@ class TS_Event_New_Post extends Widget_Base {
                 'dynamic' => [
                     'active' => true,
                 ],
-                'placeholder' => esc_html__('htTSs://your-link.com', 'TScore'),
+                'placeholder' => esc_html__('https://your-link.com', 'TScore'),
                 'show_external' => false,
                 'default' => [
                     'url' => '#',

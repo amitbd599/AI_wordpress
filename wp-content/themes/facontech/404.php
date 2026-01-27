@@ -11,7 +11,7 @@ get_header();
 ?>
 
 <?php
-$facontech_404_bg = get_theme_mod('facontech_404_bg', get_template_directory_uri() . '/assets/img/error/error.png');
+$facontech_404_bg = get_theme_mod('facontech_404_bg', get_template_directory_uri() . '/assets/img/common/error.png');
 $facontech_error_title = get_theme_mod('facontech_error_title', __('Page not found', 'facontech'));
 $facontech_error_link_text = get_theme_mod('facontech_error_link_text', __('Back To Home', 'facontech'));
 $facontech_error_desc = get_theme_mod('facontech_error_desc', __('Oops! The page you are looking for does not exist. It might have been moved or deleted.', 'facontech'));

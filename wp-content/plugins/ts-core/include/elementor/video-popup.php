@@ -255,7 +255,7 @@ class TS_Video_Popup extends Widget_Base {
             [
                 'label' => esc_html__('Video', 'TScore'),
                 'type' => Controls_Manager::TEXT,
-                'default' => 'htTSs://www.youtube.com/watch?v=AjgD3CvWzS0',
+                'default' => 'https://www.youtube.com/watch?v=AjgD3CvWzS0',
                 'title' => esc_html__('Video url', 'TScore'),
                 'label_block' => true,
             ]

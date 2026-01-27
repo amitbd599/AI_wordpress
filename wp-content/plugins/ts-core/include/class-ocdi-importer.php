@@ -13,7 +13,7 @@ function TS_ocdi_import_files() {
         'local_import_widget_file' => trailingslashit( get_template_directory() ) . 'sample-data/widget-settings.json',
         'local_import_customizer_file' => trailingslashit( get_template_directory() ) . 'sample-data/customizer-data.dat',
         'import_preview_image_url' => plugins_url( 'assets/img/demo/home1.jpg', dirname(__FILE__) ),
-        'preview_url'                => 'htTSs://wp.hixstudio.net/eduker/',
+        'preview_url'                => 'https://wp.themesoft69.com/facontech/',
       ),
       array(
         'import_file_name'           => 'Home 2',
@@ -21,7 +21,7 @@ function TS_ocdi_import_files() {
         'local_import_widget_file' => trailingslashit( get_template_directory() ) . 'sample-data/widget-settings.json',
         'local_import_customizer_file' => trailingslashit( get_template_directory() ) . 'sample-data/customizer-data.dat',
         'import_preview_image_url' => plugins_url( 'assets/img/demo/home2.jpg', dirname(__FILE__) ),
-        'preview_url'                => 'htTSs://wp.hixstudio.net/eduker/home-02',
+        'preview_url'                => 'https://wp.themesoft69.com/facontech/home-02',
       ),
       array(
         'import_file_name'           => 'Home 3',
@@ -29,7 +29,7 @@ function TS_ocdi_import_files() {
         'local_import_widget_file' => trailingslashit( get_template_directory() ) . 'sample-data/widget-settings.json',
         'local_import_customizer_file' => trailingslashit( get_template_directory() ) . 'sample-data/customizer-data.dat',
         'import_preview_image_url' => plugins_url( 'assets/img/demo/home3.jpg', dirname(__FILE__) ),
-        'preview_url'                => 'htTSs://wp.hixstudio.net/eduker/home-03',
+        'preview_url'                => 'https://wp.themesoft69.com/facontech/home-03',
       ),
     );
 }
