@@ -1,4 +1,5 @@
 <?php
+
 namespace TSCore;
 
 use TSCore\PageSettings\Page_Settings;
@@ -11,7 +12,8 @@ use Elementor\Controls_Manager;
  * Main Plugin class
  * @since 1.2.0
  */
-class TS_Core_Plugin {
+class TS_Core_Plugin
+{
 
 	/**
 	 * Instance
@@ -34,8 +36,9 @@ class TS_Core_Plugin {
 	 *
 	 * @return Plugin An instance of the class.
 	 */
-	public static function instance() {
-		if ( is_null( self::$_instance ) ) {
+	public static function instance()
+	{
+		if (is_null(self::$_instance)) {
 			self::$_instance = new self();
 		}
 		return self::$_instance;
@@ -45,16 +48,16 @@ class TS_Core_Plugin {
 	 * Add Category
 	 */
 
-    public function TS_core_elementor_category($manager)
-    {
-        $manager->add_category(
-            'TScore',
-            array(
-                'title' => esc_html__('TS Addons', 'TScore'),
-                'icon' => 'eicon-banner',
-            )
-        );
-    }
+	public function TS_core_elementor_category($manager)
+	{
+		$manager->add_category(
+			'TScore',
+			array(
+				'title' => esc_html__('TS Addons', 'TScore'),
+				'icon' => 'eicon-banner',
+			)
+		);
+	}
 
 	/**
 	 * widget_scripts
@@ -64,8 +67,9 @@ class TS_Core_Plugin {
 	 * @since 1.2.0
 	 * @access public
 	 */
-	public function widget_scripts() {
-		wp_register_script( 'TScore', plugins_url( '/assets/js/hello-world.js', __FILE__ ), [ 'jquery' ], false, true );
+	public function widget_scripts()
+	{
+		wp_register_script('TScore', plugins_url('/assets/js/hello-world.js', __FILE__), ['jquery'], false, true);
 	}
 
 	/**
@@ -76,12 +80,13 @@ class TS_Core_Plugin {
 	 * @since 1.2.1
 	 * @access public
 	 */
-	public function editor_scripts() {
-		add_filter( 'script_loader_tag', [ $this, 'editor_scripts_as_a_module' ], 10, 2 );
+	public function editor_scripts()
+	{
+		add_filter('script_loader_tag', [$this, 'editor_scripts_as_a_module'], 10, 2);
 
 		wp_enqueue_script(
 			'TScore-editor',
-			plugins_url( '/assets/js/editor/editor.js', __FILE__ ),
+			plugins_url('/assets/js/editor/editor.js', __FILE__),
 			[
 				'elementor-editor',
 			],
@@ -94,10 +99,10 @@ class TS_Core_Plugin {
 	/**
 	 * TS_enqueue_editor_scripts
 	 */
-    function TS_enqueue_editor_scripts()
-    {
-        wp_enqueue_style('ts-element-addons-editor', TSCORE_ADDONS_URL . 'assets/css/editor.css', null, '1.0');
-    }
+	function TS_enqueue_editor_scripts()
+	{
+		wp_enqueue_style('ts-element-addons-editor', TSCORE_ADDONS_URL . 'assets/css/editor.css', null, '1.0');
+	}
 
 
 
@@ -113,9 +118,10 @@ class TS_Core_Plugin {
 	 *
 	 * @return string
 	 */
-	public function editor_scripts_as_a_module( $tag, $handle ) {
-		if ( 'TScore-editor' === $handle ) {
-			$tag = str_replace( '<script', '<script type="module"', $tag );
+	public function editor_scripts_as_a_module($tag, $handle)
+	{
+		if ('TScore-editor' === $handle) {
+			$tag = str_replace('<script', '<script type="module"', $tag);
 		}
 
 		return $tag;
@@ -131,75 +137,78 @@ class TS_Core_Plugin {
 	 *
 	 * @param Widgets_Manager $widgets_manager Elementor widgets manager.
 	 */
-	public function register_widgets( $widgets_manager ) {
+	public function register_widgets($widgets_manager)
+	{
 		// Its is now safe to include Widgets files
-		foreach($this->TScore_widget_list() as $widget_file_name){
-			require_once( TSCORE_ELEMENTS_PATH . "/{$widget_file_name}.php" );
+		foreach ($this->TScore_widget_list() as $widget_file_name) {
+			require_once(TSCORE_ELEMENTS_PATH . "/{$widget_file_name}.php");
 		}
 
 		// tutor course widget
-		if ( function_exists( 'tutor' ) ) {
-			foreach($this->TScore_widget_list_tutor() as $widget_file_name){
-				require_once( TSCORE_ELEMENTS_PATH . "/{$widget_file_name}.php" );
+		if (function_exists('tutor')) {
+			foreach ($this->TScore_widget_list_tutor() as $widget_file_name) {
+				require_once(TSCORE_ELEMENTS_PATH . "/{$widget_file_name}.php");
 			}
 		}
 
 		// Wpeventin
-		if ( class_exists( 'Wpeventin' ) ) {
-			foreach($this->TScore_widget_list_events_etn() as $widget_file_name){
-				require_once( TSCORE_ELEMENTS_PATH . "/{$widget_file_name}.php" );
+		if (class_exists('Wpeventin')) {
+			foreach ($this->TScore_widget_list_events_etn() as $widget_file_name) {
+				require_once(TSCORE_ELEMENTS_PATH . "/{$widget_file_name}.php");
 			}
 		}
-
 	}
 
-	public function TScore_widget_list() {
+	public function TScore_widget_list()
+	{
 		return [
-			'slider',
 			'heading',
-			'hero-banner',
-			'pricing',
-			'campaign',
-			'features',
-			'advanced-tab',
-			'team',
-			'team-details',
-			'cta',
-			'fact',
 			'about',
-			'brand',
-			'services',
-			'process',
-			'testimonial',
-			'portfolio',
-			'blog-post',
-			'contact-form',
-			'contact-info',
-			'iconbox',
-			'big-text',
-			'live-donation',
-			'ts-btn',
-			'stories',
-			'mission',
-			'faq',
-			'video-popup',
-			'category',
-			'info-list-box',
-			'app-download',
-			'hello-world',
-			'inline-editing'
+			// 'slider',
+			// 'hero-banner',
+			// 'pricing',
+			// 'campaign',
+			// 'features',
+			// 'advanced-tab',
+			// 'team',
+			// 'team-details',
+			// 'cta',
+			// 'fact',
+			// 'brand',
+			// 'services',
+			// 'process',
+			// 'testimonial',
+			// 'portfolio',
+			// 'blog-post',
+			// 'contact-form',
+			// 'contact-info',
+			// 'iconbox',
+			// 'big-text',
+			// 'live-donation',
+			// 'ts-btn',
+			// 'stories',
+			// 'mission',
+			// 'faq',
+			// 'video-popup',
+			// 'category',
+			// 'info-list-box',
+			// 'app-download',
+			// 'hello-world',
+			// 'inline-editing'
 		];
 	}
 
 	// TScore_widget_list_tutor
-	public function TScore_widget_list_tutor() {
+	public function TScore_widget_list_tutor()
+	{
 		return [
 			'tutor-course',
 		];
 	}
 
 	// etn events
-	public function TScore_widget_list_events_etn() {
+	public function TScore_widget_list_events_etn()
+	{
 		return [
 			'events',
 		];
@@ -213,8 +222,9 @@ class TS_Core_Plugin {
 	 * @since 1.2.1
 	 * @access private
 	 */
-	private function add_page_settings_controls() {
-		require_once( __DIR__ . '/page-settings/manager.php' );
+	private function add_page_settings_controls()
+	{
+		require_once(__DIR__ . '/page-settings/manager.php');
 		new Page_Settings();
 	}
 
@@ -225,135 +235,137 @@ class TS_Core_Plugin {
 	 * @param Controls_Manager $controls_Manager
 	 */
 
-    public function register_controls(Controls_Manager $controls_Manager)
-    {
-        include_once(TSCORE_ADDONS_DIR . '/controls/tsgradient.php');
-        $TSgradient = 'TSCore\Elementor\Controls\Group_Control_TSGradient';
-        $controls_Manager->add_group_control($TSgradient::get_type(), new $TSgradient());
+	public function register_controls(Controls_Manager $controls_Manager)
+	{
+		include_once(TSCORE_ADDONS_DIR . '/controls/tsgradient.php');
+		$TSgradient = 'TSCore\Elementor\Controls\Group_Control_TSGradient';
+		$controls_Manager->add_group_control($TSgradient::get_type(), new $TSgradient());
 
-        include_once(TSCORE_ADDONS_DIR . '/controls/tsbggradient.php');
-        $TSbggradient = 'TSCore\Elementor\Controls\Group_Control_TSBGGradient';
-        $controls_Manager->add_group_control($TSbggradient::get_type(), new $TSbggradient());
-    }
-
-
+		include_once(TSCORE_ADDONS_DIR . '/controls/tsbggradient.php');
+		$TSbggradient = 'TSCore\Elementor\Controls\Group_Control_TSBGGradient';
+		$controls_Manager->add_group_control($TSbggradient::get_type(), new $TSbggradient());
+	}
 
 
-    public function TS_add_custom_icons_tab($tabs = array()){
 
-        // Append new icons
-        $feather_icons = array(
-            'feather-activity',
-            'feather-airplay',
-            'feather-alert-circle',
-            'feather-alert-octagon',
-            'feather-alert-triangle',
-            'feather-align-center',
-            'feather-align-justify',
-            'feather-align-left',
-            'feather-align-right',
-        );
 
-        $tabs['ts-feather-icons'] = array(
-            'name' => 'ts-feather-icons',
-            'label' => esc_html__('TS - Feather Icons', 'TScore'),
-            'labelIcon' => 'ts-icon',
-            'prefix' => '',
-            'displayPrefix' => 'ts',
-            'url' => TSCORE_ADDONS_URL . 'assets/css/feather.css',
-            'icons' => $feather_icons,
-            'ver' => '1.0.0',
-        );
+	public function TS_add_custom_icons_tab($tabs = array())
+	{
 
-        $feather_icons = array(
-	        'angle-up',
-	        'check',
-	        'times',
-	        'calendar',
-	        'language',
-	        'shopping-cart',
-	        'bars',
-	        'search',
-	        'map-marker',
-	        'arrow-right',
-	        'arrow-left',
-	        'arrow-up',
-	        'arrow-down',
-	        'angle-right',
-	        'angle-left',
-	        'angle-up',
-	        'angle-down',
-	        'phone',
-	        'users',
-	        'user',
-	        'map-marked-alt',
-	        'trophy-alt',
-	        'envelope',
-	        'marker',
-	        'globe',
-	        'broom',
-	        'home',
-	        'bed',
-	        'chair',
-	        'bath',
-	        'tree',
-	        'laptop-code',
-	        'cube',
-	        'cog',
-	        'play',
-	        'trophy-alt',
-	        'heart',
-	        'truck',
-	        'user-circle',
-	        'map-marker-alt',
-	        'comments',
-	         'award',
-	        'bell',
-	        'book-alt',
-	        'book-open',
-	        'book-reader',
-	        'graduation-cap',
-	        'laptop-code',
-	        'music',
-	        'ruler-triangle',
-	        'user-graduate',
-	        'microscope',
-	        'glasses-alt',
-	        'theater-masks',
-	        'atom'
-        );
+		// Append new icons
+		$feather_icons = array(
+			'feather-activity',
+			'feather-airplay',
+			'feather-alert-circle',
+			'feather-alert-octagon',
+			'feather-alert-triangle',
+			'feather-align-center',
+			'feather-align-justify',
+			'feather-align-left',
+			'feather-align-right',
+		);
 
-        $tabs['ts-fontawesome-icons'] = array(
-            'name' => 'ts-fontawesome-icons',
-            'label' => esc_html__('TS - Fontawesome Pro Light', 'TScore'),
-            'labelIcon' => 'ts-icon',
-            'prefix' => 'fa-',
-            'displayPrefix' => 'fal',
-            'url' => TSCORE_ADDONS_URL . 'assets/css/fontawesome-all.min.css',
-            'icons' => $feather_icons,
-            'ver' => '1.0.0',
-        );
+		$tabs['ts-feather-icons'] = array(
+			'name' => 'ts-feather-icons',
+			'label' => esc_html__('TS - Feather Icons', 'TScore'),
+			'labelIcon' => 'ts-icon',
+			'prefix' => '',
+			'displayPrefix' => 'ts',
+			'url' => TSCORE_ADDONS_URL . 'assets/css/feather.css',
+			'icons' => $feather_icons,
+			'ver' => '1.0.0',
+		);
 
-        return $tabs;
-    }
+		$feather_icons = array(
+			'angle-up',
+			'check',
+			'times',
+			'calendar',
+			'language',
+			'shopping-cart',
+			'bars',
+			'search',
+			'map-marker',
+			'arrow-right',
+			'arrow-left',
+			'arrow-up',
+			'arrow-down',
+			'angle-right',
+			'angle-left',
+			'angle-up',
+			'angle-down',
+			'phone',
+			'users',
+			'user',
+			'map-marked-alt',
+			'trophy-alt',
+			'envelope',
+			'marker',
+			'globe',
+			'broom',
+			'home',
+			'bed',
+			'chair',
+			'bath',
+			'tree',
+			'laptop-code',
+			'cube',
+			'cog',
+			'play',
+			'trophy-alt',
+			'heart',
+			'truck',
+			'user-circle',
+			'map-marker-alt',
+			'comments',
+			'award',
+			'bell',
+			'book-alt',
+			'book-open',
+			'book-reader',
+			'graduation-cap',
+			'laptop-code',
+			'music',
+			'ruler-triangle',
+			'user-graduate',
+			'microscope',
+			'glasses-alt',
+			'theater-masks',
+			'atom'
+		);
+
+		$tabs['ts-fontawesome-icons'] = array(
+			'name' => 'ts-fontawesome-icons',
+			'label' => esc_html__('TS - Fontawesome Pro Light', 'TScore'),
+			'labelIcon' => 'ts-icon',
+			'prefix' => 'fa-',
+			'displayPrefix' => 'fal',
+			'url' => TSCORE_ADDONS_URL . 'assets/css/fontawesome-all.min.css',
+			'icons' => $feather_icons,
+			'ver' => '1.0.0',
+		);
+
+		return $tabs;
+	}
 
 
 	// campaign_template_fun
-	public function campaign_template_fun( $campaign_template ) {
+	public function campaign_template_fun($campaign_template)
+	{
 
-	    if ( ( get_post_type() == 'campaign' ) && is_single() ) {
-	        $campaign_template_file_path = __DIR__ . '/include/template/single-campaign.php';
-	        $campaign_template           = $campaign_template_file_path;
-	    }
-	    if ( ( get_post_type() == 'etn' ) && is_single() ) {
-	        $campaign_template_file_path = __DIR__ . '/include/template/single-event.php';
-	        $campaign_template           = $campaign_template_file_path;
-	    }
+		if ((get_post_type() == 'campaign') && is_single()) {
+			$campaign_template_file_path = __DIR__ . '/include/template/single-campaign.php';
+			$campaign_template           = $campaign_template_file_path;
+		}
+		if ((get_post_type() == 'etn') && is_single()) {
+			$campaign_template_file_path = __DIR__ . '/include/template/single-event.php';
+			$campaign_template           = $campaign_template_file_path;
+		}
 
-	    if ( ! $campaign_template ) {
-	        return $campaign_template;
-	    }
-	    return $campaign_template;
+		if (! $campaign_template) {
+			return $campaign_template;
+		}
+		return $campaign_template;
 	}
 
 	/**
@@ -364,33 +376,31 @@ class TS_Core_Plugin {
 	 * @since 1.2.0
 	 * @access public
 	 */
-	public function __construct() {
+	public function __construct()
+	{
 
 		// Register widget scripts
-		add_action( 'elementor/frontend/after_register_scripts', [ $this, 'widget_scripts' ] );
+		add_action('elementor/frontend/after_register_scripts', [$this, 'widget_scripts']);
 
 		// Register widgets
-		add_action( 'elementor/widgets/register', [ $this, 'register_widgets' ] );
+		add_action('elementor/widgets/register', [$this, 'register_widgets']);
 
 		// Register editor scripts
-		add_action( 'elementor/editor/after_enqueue_scripts', [ $this, 'editor_scripts' ] );
+		add_action('elementor/editor/after_enqueue_scripts', [$this, 'editor_scripts']);
 
 		add_action('elementor/elements/categories_registered', [$this, 'TS_core_elementor_category']);
 
 		// Register custom controls
-	    add_action('elementor/controls/controls_registered', [$this, 'register_controls']);
+		add_action('elementor/controls/controls_registered', [$this, 'register_controls']);
 
-	    add_filter('elementor/icons_manager/additional_tabs', [$this, 'TS_add_custom_icons_tab']);
+		add_filter('elementor/icons_manager/additional_tabs', [$this, 'TS_add_custom_icons_tab']);
 
-	    // $this->TS_add_custom_icons_tab();
+		// $this->TS_add_custom_icons_tab();
 
-	    add_action('elementor/editor/after_enqueue_scripts', [$this, 'TS_enqueue_editor_scripts'] );
+		add_action('elementor/editor/after_enqueue_scripts', [$this, 'TS_enqueue_editor_scripts']);
 
 		$this->add_page_settings_controls();
-
 	}
-
-
 }
 
 // Instantiate Plugin Class

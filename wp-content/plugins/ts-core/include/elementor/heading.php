@@ -562,30 +562,36 @@ class TS_Heading extends Widget_Base {
         </section>
 
 		<?php else:
-			$this->add_render_attribute('title_args', 'class', 'section__title section__title-44 ts-el-title');
+			$this->add_render_attribute('title', 'class', 'section__title section__title-44 ts-el-title');
 		?>
 
         <?php if ( !empty($settings['TS_section_title_show']) ) : ?>
-            <div class="section__title-wrapper ts-el-content">
-                <?php if ( !empty($settings['TS_sub_title']) ) : ?>
-                <span class="section__title-pre ts-el-subtitle">
-                    <?php echo TS_kses( $settings['TS_sub_title'] ); ?>
-                </span>
-                <?php endif; ?>
-                <?php
+
+
+            <div class="section-title-shape-one">
+                 <?php if ( !empty($settings['TS_sub_title']) ) : ?>
+                  <h3><?php echo TS_kses( $settings['TS_sub_title'] ); ?></h3>
+                   <?php endif; ?>
+
+                  <h2><?php
                     if ( !empty($settings['TS_title' ]) ) :
-                        printf( '<%1$s %2$s>%3$s</%1$s>',
+                        printf( '<%1$s %2$s> %3$s </%1$s>',
                             tag_escape( $settings['TS_title_tag'] ),
-                            $this->get_render_attribute_string( 'title_args' ),
+                            $this->get_render_attribute_string( 'title' ),
                             TS_kses( $settings['TS_title' ] )
                             );
                     endif;
-                ?>
+                ?></h2>
 
-                <?php if ( !empty($settings['TS_desctiption']) ) : ?>
-                    <p><?php echo TS_kses( $settings['TS_desctiption'] ); ?></p>
-                <?php endif; ?>
+                  <?php if ( !empty($settings['TS_desctiption']) ) : ?>
+                  <p>
+                    <?php echo TS_kses( $settings['TS_desctiption'] ); ?>
+                  </p>
+                   <?php endif; ?>
             </div>
+
+
+         
         <?php endif; ?>
 
         <?php endif; ?>

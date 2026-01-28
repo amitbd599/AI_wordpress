@@ -285,3 +285,8 @@ footer {
   margin-top: 0 !important;
   margin-bottom: 10px;
 }
+
+/* custom plugin css */
+.w-100px {
+  width: 80px;
+}
