@@ -1,6 +1,6 @@
 <?php
 
-namespace TSCore\Widgets;
+namespace tsCore\Widgets;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
@@ -20,10 +20,10 @@ if (! defined('ABSPATH')) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TS_About extends Widget_Base
+class ts_About extends Widget_Base
 {
 
-    use TS_Style_Trait;
+    use ts_Style_Trait;
 
     /**
      * Retrieve the widget name.
@@ -122,13 +122,13 @@ class TS_About extends Widget_Base
 
         // layout Panel
         $this->start_controls_section(
-            'TS_layout',
+            'ts_layout',
             [
                 'label' => esc_html__('Design Layout', 'TScore'),
             ]
         );
         $this->add_control(
-            'TS_design_style',
+            'ts_design_style',
             [
                 'label' => esc_html__('Select Layout', 'TScore'),
                 'type' => Controls_Manager::SELECT,
@@ -145,62 +145,52 @@ class TS_About extends Widget_Base
 
         $this->end_controls_section();
 
-        // TS_section_title
+        // ts_section_title
         $this->start_controls_section(
-            'TS_section_title',
+            'ts_section_title',
             [
                 'label' => esc_html__('Title & Content', 'TScore'),
             ]
         );
 
-        $this->add_control(
-            'TS_section_title_show',
-            [
-                'label' => esc_html__('Section Title & Content', 'TScore'),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Show', 'TScore'),
-                'label_off' => esc_html__('Hide', 'TScore'),
-                'return_value' => 'yes',
-                'default' => 'yes',
-            ]
-        );
+
 
         $this->add_control(
-            'TS_sub_title',
+            'ts_sub_title',
             [
                 'label' => esc_html__('Sub Title', 'TScore'),
-                'description' => TS_get_allowed_html_desc('basic'),
+                'description' => ts_get_allowed_html_desc('basic'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('TS Sub Title', 'TScore'),
+                'default' => esc_html__('ts Sub Title', 'TScore'),
                 'placeholder' => esc_html__('Type Sub Heading Text', 'TScore'),
                 'label_block' => true,
             ]
         );
         $this->add_control(
-            'TS_title',
+            'ts_title',
             [
                 'label' => esc_html__('Title', 'TScore'),
-                'description' => TS_get_allowed_html_desc('intermediate'),
+                'description' => ts_get_allowed_html_desc('intermediate'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('TS Title Here', 'TScore'),
+                'default' => esc_html__('ts Title Here', 'TScore'),
                 'placeholder' => esc_html__('Type Heading Text', 'TScore'),
                 'label_block' => true,
             ]
         );
 
         $this->add_control(
-            'TS_desctiption',
+            'ts_desctiption',
             [
                 'label' => esc_html__('Description', 'TScore'),
-                'description' => TS_get_allowed_html_desc('intermediate'),
+                'description' => ts_get_allowed_html_desc('intermediate'),
                 'type' => Controls_Manager::TEXTAREA,
-                'default' => esc_html__('TS section description here', 'TScore'),
+                'default' => esc_html__('ts section description here', 'TScore'),
                 'placeholder' => esc_html__('Type section description here', 'TScore'),
             ]
         );
 
         $this->add_control(
-            'TS_title_tag',
+            'ts_title_tag',
             [
                 'label' => esc_html__('Title HTML Tag', 'TScore'),
                 'type' => Controls_Manager::CHOOSE,
@@ -236,7 +226,7 @@ class TS_About extends Widget_Base
         );
 
         $this->add_responsive_control(
-            'TS_align',
+            'ts_align',
             [
                 'label' => esc_html__('Alignment', 'TScore'),
                 'type' => Controls_Manager::CHOOSE,
@@ -262,7 +252,7 @@ class TS_About extends Widget_Base
 
         // Features group
         $this->start_controls_section(
-            'TS_features',
+            'ts_features',
             [
                 'label' => esc_html__('Features List', 'TScore'),
                 'description' => esc_html__('Control all the style settings from Style tab', 'TScore'),
@@ -289,7 +279,7 @@ class TS_About extends Widget_Base
 
 
         $repeater->add_control(
-            'TS_features_icon_type',
+            'ts_features_icon_type',
             [
                 'label' => esc_html__('Select Icon Type', 'TScore'),
                 'type' => \Elementor\Controls_Manager::SELECT,
@@ -302,7 +292,7 @@ class TS_About extends Widget_Base
         );
 
         $repeater->add_control(
-            'TS_features_image',
+            'ts_features_image',
             [
                 'label' => esc_html__('Upload Icon Image', 'TScore'),
                 'type' => Controls_Manager::MEDIA,
@@ -310,28 +300,28 @@ class TS_About extends Widget_Base
                     'url' => Utils::get_placeholder_image_src(),
                 ],
                 'condition' => [
-                    'TS_features_icon_type' => 'image'
+                    'ts_features_icon_type' => 'image'
                 ]
 
             ]
         );
 
-        if (TS_is_elementor_version('<', '2.6.0')) {
+        if (ts_is_elementor_version('<', '2.6.0')) {
             $repeater->add_control(
-                'TS_features_icon',
+                'ts_features_icon',
                 [
                     'show_label' => false,
                     'type' => Controls_Manager::ICON,
                     'label_block' => true,
                     'default' => 'fa-solid fa-check',
                     'condition' => [
-                        'TS_features_icon_type' => 'icon'
+                        'ts_features_icon_type' => 'icon'
                     ]
                 ]
             );
         } else {
             $repeater->add_control(
-                'TS_features_selected_icon',
+                'ts_features_selected_icon',
                 [
                     'show_label' => false,
                     'type' => Controls_Manager::ICONS,
@@ -342,17 +332,17 @@ class TS_About extends Widget_Base
                         'library' => 'solid',
                     ],
                     'condition' => [
-                        'TS_features_icon_type' => 'icon'
+                        'ts_features_icon_type' => 'icon'
                     ]
                 ]
             );
         }
 
         $repeater->add_control(
-            'TS_features_title',
+            'ts_features_title',
             [
                 'label' => esc_html__('Title', 'TScore'),
-                'description' => TS_get_allowed_html_desc('basic'),
+                'description' => ts_get_allowed_html_desc('basic'),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'default' => esc_html__('Service Title', 'TScore'),
                 'label_block' => true,
@@ -360,10 +350,10 @@ class TS_About extends Widget_Base
         );
 
         $repeater->add_control(
-            'TS_features_description',
+            'ts_features_description',
             [
                 'label' => esc_html__('Description', 'TScore'),
-                'description' => TS_get_allowed_html_desc('basic'),
+                'description' => ts_get_allowed_html_desc('basic'),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'default' => esc_html__('Service Description', 'TScore'),
                 'label_block' => true,
@@ -371,42 +361,42 @@ class TS_About extends Widget_Base
         );
 
         $this->add_control(
-            'TS_features_list',
+            'ts_features_list',
             [
                 'label' => esc_html__('Services - List', 'TScore'),
                 'type' => \Elementor\Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'TS_features_title' => esc_html__('Discover', 'TScore'),
-                        'TS_features_description' => esc_html__('Features Description', 'TScore'),
+                        'ts_features_title' => esc_html__('Discover', 'TScore'),
+                        'ts_features_description' => esc_html__('Features Description', 'TScore'),
                     ],
                     [
-                        'TS_features_title' => esc_html__('Define', 'TScore'),
-                        'TS_features_description' => esc_html__('Features Description', 'TScore'),
+                        'ts_features_title' => esc_html__('Define', 'TScore'),
+                        'ts_features_description' => esc_html__('Features Description', 'TScore'),
                     ],
                     [
-                        'TS_features_title' => esc_html__('Develop', 'TScore'),
-                        'TS_features_description' => esc_html__('Features Description', 'TScore'),
+                        'ts_features_title' => esc_html__('Develop', 'TScore'),
+                        'ts_features_description' => esc_html__('Features Description', 'TScore'),
                     ]
                 ],
-                'title_field' => '{{{ TS_features_title }}}',
+                'title_field' => '{{{ ts_features_title }}}',
             ]
         );
         $this->end_controls_section();
 
 
         $this->start_controls_section(
-            '_TS_icon',
+            '_ts_icon',
             [
                 'label' => esc_html__('Icon', 'TScore'),
                 'condition' => [
-                    'TS_design_style' => 'layout-5'
+                    'ts_design_style' => 'layout-5'
                 ],
             ]
         );
         $this->add_control(
-            'TS_icon_type',
+            'ts_icon_type',
             [
                 'label' => esc_html__('Select Icon Type', 'TScore'),
                 'type' => \Elementor\Controls_Manager::SELECT,
@@ -419,7 +409,7 @@ class TS_About extends Widget_Base
         );
 
         $this->add_control(
-            'TS_icon_image',
+            'ts_icon_image',
             [
                 'label' => esc_html__('Upload Image', 'TScore'),
                 'type' => Controls_Manager::MEDIA,
@@ -427,27 +417,27 @@ class TS_About extends Widget_Base
                     'url' => Utils::get_placeholder_image_src(),
                 ],
                 'condition' => [
-                    'TS_icon_type' => 'image'
+                    'ts_icon_type' => 'image'
                 ]
 
             ]
         );
-        if (TS_is_elementor_version('<', '2.6.0')) {
+        if (ts_is_elementor_version('<', '2.6.0')) {
             $this->add_control(
-                'TS_icon',
+                'ts_icon',
                 [
                     'show_label' => false,
                     'type' => Controls_Manager::ICON,
                     'label_block' => true,
                     'default' => 'fa fa-star',
                     'condition' => [
-                        'TS_icon_type' => 'icon'
+                        'ts_icon_type' => 'icon'
                     ]
                 ]
             );
         } else {
             $this->add_control(
-                'TS_selected_icon',
+                'ts_selected_icon',
                 [
                     'show_label' => false,
                     'type' => Controls_Manager::ICONS,
@@ -458,23 +448,23 @@ class TS_About extends Widget_Base
                         'library' => 'solid',
                     ],
                     'condition' => [
-                        'TS_icon_type' => 'icon'
+                        'ts_icon_type' => 'icon'
                     ]
                 ]
             );
         }
         $this->end_controls_section();
 
-        // TS_btn_button_group
+        // ts_btn_button_group
         $this->start_controls_section(
-            'TS_btn_button_group',
+            'ts_btn_button_group',
             [
                 'label' => esc_html__('Button', 'TScore'),
             ]
         );
 
         $this->add_control(
-            'TS_btn_button_show',
+            'ts_btn_button_show',
             [
                 'label' => esc_html__('Show Button', 'TScore'),
                 'type' => Controls_Manager::SWITCHER,
@@ -486,7 +476,7 @@ class TS_About extends Widget_Base
         );
 
         $this->add_control(
-            'TS_btn_text',
+            'ts_btn_text',
             [
                 'label' => esc_html__('Button Text', 'TScore'),
                 'type' => Controls_Manager::TEXT,
@@ -494,12 +484,12 @@ class TS_About extends Widget_Base
                 'title' => esc_html__('Enter button text', 'TScore'),
                 'label_block' => true,
                 'condition' => [
-                    'TS_btn_button_show' => 'yes'
+                    'ts_btn_button_show' => 'yes'
                 ],
             ]
         );
         $this->add_control(
-            'TS_btn_link_type',
+            'ts_btn_link_type',
             [
                 'label' => esc_html__('Button Link Type', 'TScore'),
                 'type' => Controls_Manager::SELECT,
@@ -510,13 +500,13 @@ class TS_About extends Widget_Base
                 'default' => '1',
                 'label_block' => true,
                 'condition' => [
-                    'TS_btn_button_show' => 'yes'
+                    'ts_btn_button_show' => 'yes'
                 ],
             ]
         );
 
         $this->add_control(
-            'TS_btn_link',
+            'ts_btn_link',
             [
                 'label' => esc_html__('Button link', 'TScore'),
                 'type' => Controls_Manager::URL,
@@ -532,36 +522,36 @@ class TS_About extends Widget_Base
                     'custom_attributes' => '',
                 ],
                 'condition' => [
-                    'TS_btn_link_type' => '1',
-                    'TS_btn_button_show' => 'yes'
+                    'ts_btn_link_type' => '1',
+                    'ts_btn_button_show' => 'yes'
                 ],
                 'label_block' => true,
             ]
         );
         $this->add_control(
-            'TS_btn_page_link',
+            'ts_btn_page_link',
             [
                 'label' => esc_html__('Select Button Page', 'TScore'),
                 'type' => Controls_Manager::SELECT2,
                 'label_block' => true,
-                'options' => TS_get_all_pages(),
+                'options' => ts_get_all_pages(),
                 'condition' => [
-                    'TS_btn_link_type' => '2',
-                    'TS_btn_button_show' => 'yes'
+                    'ts_btn_link_type' => '2',
+                    'ts_btn_button_show' => 'yes'
                 ]
             ]
         );
         $this->end_controls_section();
 
-        // _TS_image Thumbnail
+        // _ts_image Thumbnail
         $this->start_controls_section(
-            '_TS_image',
+            '_ts_image',
             [
                 'label' => esc_html__('Thumbnail', 'TScore'),
             ]
         );
         $this->add_control(
-            'TS_image',
+            'ts_image',
             [
                 'label' => esc_html__('Choose Image', 'TScore'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
@@ -574,7 +564,7 @@ class TS_About extends Widget_Base
         $this->add_group_control(
             Group_Control_Image_Size::get_type(),
             [
-                'name' => 'TS_image_size',
+                'name' => 'ts_image_size',
                 'default' => 'full',
                 'exclude' => [
                     'custom'
@@ -583,12 +573,12 @@ class TS_About extends Widget_Base
         );
 
         $this->add_control(
-            'TS_thum_icon_image',
+            'ts_thum_icon_image',
             [
                 'label' => esc_html__('Upload Image', 'TScore'),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
-                    'url' => Utils::get_placeholder_image_src(),
+                    'url' =>  \Elementor\Utils::get_placeholder_image_src(),
                 ],
 
 
@@ -596,10 +586,10 @@ class TS_About extends Widget_Base
         );
 
         $this->add_control(
-            'TS_about_thum_title',
+            'ts_about_thum_title',
             [
                 'label' => esc_html__('Title', 'TScore'),
-                'description' => TS_get_allowed_html_desc('basic'),
+                'description' => ts_get_allowed_html_desc('basic'),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'default' => esc_html__('Impressive Works Since 2010', 'TScore'),
                 'label_block' => true,
@@ -607,25 +597,30 @@ class TS_About extends Widget_Base
         );
 
         $this->add_control(
-            'TS_about_video_info',
+            'ts_about_video_title',
             [
-                'label' => esc_html__('Video Custom HTML', 'TScore'),
-                'description' =>
-                '<strong>Default Video Custom HTML:</strong><br><code>' .
-                    esc_html__('<div class="video-intro">
-                        <a href="https://www.youtube.com/watch?v=Ke90Tje7VS0" class="popup-video">
-                          <span class="icon">
-                            <i class="fa-solid fa-play"></i>
-                          </span>
-                          <span class="text">Watch Intro</span>
-                        </a>
-                      </div>', 'TScore') .
-                    '</code>',
-                'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => esc_html__('Impressive Works Since 2010', 'TScore'),
+                'label' => esc_html__('Video Title', 'TScore'),
+                'description' => ts_get_allowed_html_desc('basic'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => esc_html__('Watch Intro', 'TScore'),
                 'label_block' => true,
             ]
         );
+
+
+
+        $this->add_control(
+            'ts_about_video_title_link',
+            [
+                'label' => esc_html__('Video Link', 'TScore'),
+                'description' => ts_get_allowed_html_desc('basic'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => esc_html__('https://www.youtube.com/watch?v=Ke90Tje7VS0', 'TScore'),
+                'label_block' => true,
+            ]
+        );
+
+
 
 
 
@@ -635,15 +630,15 @@ class TS_About extends Widget_Base
     // style_tab_content
     protected function style_tab_content()
     {
-        $this->TS_section_style_controls('about_section', 'Section', '.ts-el-sec');
-        $this->TS_basic_style_controls('heading_title', 'Title', '.ts-el-title');
-        $this->TS_basic_style_controls('heading_subtitle', 'Subtitle', '.ts-el-subtitle');
-        $this->TS_basic_style_controls('heading_desc', 'Description', '.ts-el-content');
-        $this->TS_link_controls_style('', 'b_btn1_style', 'Button', '.ts-el-btn');
+        $this->ts_section_style_controls('about_section', 'Section', '.ts-el-sec');
+        $this->ts_basic_style_controls('heading_title', 'Title', '.ts-el-title');
+        $this->ts_basic_style_controls('heading_subtitle', 'Subtitle', '.ts-el-subtitle');
+        $this->ts_basic_style_controls('heading_desc', 'Description', '.ts-el-content');
+        $this->ts_link_controls_style('', 'b_btn1_style', 'Button', '.ts-el-btn');
     }
 
     /**
-     * Render the widget ouTSut on the frontend.
+     * Render the widget outsut on the frontend.
      *
      * Written in PHP and used to generate the final HTML.
      *
@@ -657,22 +652,22 @@ class TS_About extends Widget_Base
 
 ?>
 
-        <?php if ($settings['TS_design_style']  == 'layout-2'):
-            if (!empty($settings['TS_image']['url'])) {
-                $TS_image = !empty($settings['TS_image']['id']) ? wp_get_attachment_image_url($settings['TS_image']['id'], $settings['TS_image_size_size']) : $settings['TS_image']['url'];
-                $TS_image_alt = get_post_meta($settings["TS_image"]["id"], "_wp_attachment_image_alt", true);
+        <?php if ($settings['ts_design_style']  == 'layout-2'):
+            if (!empty($settings['ts_image']['url'])) {
+                $ts_image = !empty($settings['ts_image']['id']) ? wp_get_attachment_image_url($settings['ts_image']['id'], $settings['ts_image_size_size']) : $settings['ts_image']['url'];
+                $ts_image_alt = get_post_meta($settings["ts_image"]["id"], "_wp_attachment_image_alt", true);
             }
             $this->add_render_attribute('title_args', 'class', 'sectionTitle__big ts-el-title');
 
             // Link
-            if ('2' == $settings['TS_btn_link_type']) {
-                $this->add_render_attribute('ts-button-arg', 'href', get_permalink($settings['TS_btn_page_link']));
+            if ('2' == $settings['ts_btn_link_type']) {
+                $this->add_render_attribute('ts-button-arg', 'href', get_permalink($settings['ts_btn_page_link']));
                 $this->add_render_attribute('ts-button-arg', 'target', '_self');
                 $this->add_render_attribute('ts-button-arg', 'rel', 'nofollow');
                 $this->add_render_attribute('ts-button-arg', 'class', ' btn btn--styleOne btn--secondary it-btn');
             } else {
-                if (! empty($settings['TS_btn_link']['url'])) {
-                    $this->add_link_attributes('ts-button-arg', $settings['TS_btn_link']);
+                if (! empty($settings['ts_btn_link']['url'])) {
+                    $this->add_link_attributes('ts-button-arg', $settings['ts_btn_link']);
                     $this->add_render_attribute('ts-button-arg', 'class', ' btn btn--styleOne btn--secondary it-btn ts-el-btn');
                 }
             }
@@ -686,58 +681,58 @@ class TS_About extends Widget_Base
                             <div class="aboutContent aboutContent--style2">
                                 <!-- Section Heading/Title -->
                                 <div class="sectionTitle mb-20">
-                                    <?php if (!empty($settings['TS_sub_title'])) : ?>
+                                    <?php if (!empty($settings['ts_sub_title'])) : ?>
                                         <span class="sectionTitle__small ts-el-subtitle">
                                             <i class="fa-solid fa-heart btn__icon"></i>
-                                            <?php echo TS_kses($settings['TS_sub_title']); ?>
+                                            <?php echo ts_kses($settings['ts_sub_title']); ?>
                                         </span>
                                     <?php endif; ?>
 
                                     <?php
-                                    if (!empty($settings['TS_title'])) :
+                                    if (!empty($settings['ts_title'])) :
                                         printf(
                                             '<%1$s %2$s>%3$s</%1$s>',
-                                            tag_escape($settings['TS_title_tag']),
+                                            tag_escape($settings['ts_title_tag']),
                                             $this->get_render_attribute_string('title_args'),
-                                            TS_kses($settings['TS_title'])
+                                            ts_kses($settings['ts_title'])
                                         );
                                     endif;
                                     ?>
                                 </div>
                                 <!-- Section Heading/Title End -->
-                                <?php if (!empty($settings['TS_desctiption'])) : ?>
+                                <?php if (!empty($settings['ts_desctiption'])) : ?>
                                     <p class="aboutContent__text ts-el-content">
-                                        <?php echo TS_kses($settings['TS_desctiption']); ?>
+                                        <?php echo ts_kses($settings['ts_desctiption']); ?>
                                     </p>
                                 <?php endif; ?>
 
-                                <?php if (!empty($settings['TS_short_desctiption'])) : ?>
-                                    <span class="aboutContent__quote"><?php echo TS_kses($settings['TS_short_desctiption']); ?></span>
+                                <?php if (!empty($settings['ts_short_desctiption'])) : ?>
+                                    <span class="aboutContent__quote"><?php echo ts_kses($settings['ts_short_desctiption']); ?></span>
                                 <?php endif; ?>
 
-                                <?php if (!empty($settings['TS_btn_text'])) : ?>
+                                <?php if (!empty($settings['ts_btn_text'])) : ?>
                                     <div class="ts-hero-btn">
                                         <a <?php echo $this->get_render_attribute_string('ts-button-arg'); ?>>
-                                            <span class="btn__text"><?php echo $settings['TS_btn_text']; ?></span>
+                                            <span class="btn__text"><?php echo $settings['ts_btn_text']; ?></span>
                                             <i class="fa-solid fa-heart btn__icon"></i>
                                         </a>
                                     </div>
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <?php if ($settings['TS_image']['url'] || $settings['TS_image']['id']) : ?>
+                        <?php if ($settings['ts_image']['url'] || $settings['ts_image']['id']) : ?>
                             <div class="col-lg-5">
                                 <div class="aboutThumb">
                                     <div class="aboutThumb__text">
                                         <?php if (!empty($settings['exp_title'])) : ?>
-                                            <span class="aboutThumb__text__title"><?php echo TS_kses($settings['exp_title']); ?></span>
+                                            <span class="aboutThumb__text__title"><?php echo ts_kses($settings['exp_title']); ?></span>
                                         <?php endif; ?>
                                         <?php if (!empty($settings['exp_num'])) : ?>
-                                            <span class="aboutThumb__text__year"><?php echo TS_kses($settings['exp_num']); ?></span>
+                                            <span class="aboutThumb__text__year"><?php echo ts_kses($settings['exp_num']); ?></span>
                                         <?php endif; ?>
                                     </div>
                                     <figure class="aboutThumb__figure m-0">
-                                        <img src="<?php echo esc_url($TS_image); ?>" alt="<?php echo esc_attr($TS_image_alt); ?>">
+                                        <img src="<?php echo esc_url($ts_image); ?>" alt="<?php echo esc_attr($ts_image_alt); ?>">
                                     </figure>
                                 </div>
                             </div>
@@ -746,21 +741,21 @@ class TS_About extends Widget_Base
                 </div>
             </section>
 
-        <?php elseif ($settings['TS_design_style']  == 'layout-3'):
-            if (!empty($settings['TS_image']['url'])) {
-                $TS_image = !empty($settings['TS_image']['id']) ? wp_get_attachment_image_url($settings['TS_image']['id'], $settings['TS_image_size_size']) : $settings['TS_image']['url'];
-                $TS_image_alt = get_post_meta($settings["TS_image"]["id"], "_wp_attachment_image_alt", true);
+        <?php elseif ($settings['ts_design_style']  == 'layout-3'):
+            if (!empty($settings['ts_image']['url'])) {
+                $ts_image = !empty($settings['ts_image']['id']) ? wp_get_attachment_image_url($settings['ts_image']['id'], $settings['ts_image_size_size']) : $settings['ts_image']['url'];
+                $ts_image_alt = get_post_meta($settings["ts_image"]["id"], "_wp_attachment_image_alt", true);
             }
             $this->add_render_attribute('title_args', 'class', 'sectionTitle__big ts-el-title');
             // Link
-            if ('2' == $settings['TS_btn_link_type']) {
-                $this->add_render_attribute('ts-button-arg', 'href', get_permalink($settings['TS_btn_page_link']));
+            if ('2' == $settings['ts_btn_link_type']) {
+                $this->add_render_attribute('ts-button-arg', 'href', get_permalink($settings['ts_btn_page_link']));
                 $this->add_render_attribute('ts-button-arg', 'target', '_self');
                 $this->add_render_attribute('ts-button-arg', 'rel', 'nofollow');
                 $this->add_render_attribute('ts-button-arg', 'class', 'btn btn--styleOne btn--primary it-btn');
             } else {
-                if (! empty($settings['TS_btn_link']['url'])) {
-                    $this->add_link_attributes('ts-button-arg', $settings['TS_btn_link']);
+                if (! empty($settings['ts_btn_link']['url'])) {
+                    $this->add_link_attributes('ts-button-arg', $settings['ts_btn_link']);
                     $this->add_render_attribute('ts-button-arg', 'class', 'btn btn--styleOne btn--primary it-btn ts-el-btn');
                 }
             }
@@ -771,13 +766,13 @@ class TS_About extends Widget_Base
                     <div class="volunteer">
                         <div class="container">
                             <div class="row align-items-center">
-                                <?php if ($settings['TS_image']['url'] || $settings['TS_image']['id']) : ?>
+                                <?php if ($settings['ts_image']['url'] || $settings['ts_image']['id']) : ?>
                                     <div class="col-lg-6 mb-30">
                                         <div class="volunteerUser">
                                             <div class="volunteerUser__box">
                                                 <div class="volunteerUser__thumb">
-                                                    <img class="hero__figure__thumbs" src="<?php echo esc_url($TS_image); ?>"
-                                                        alt="<?php echo esc_attr($TS_image_alt); ?>">
+                                                    <img class="hero__figure__thumbs" src="<?php echo esc_url($ts_image); ?>"
+                                                        alt="<?php echo esc_attr($ts_image_alt); ?>">
                                                 </div>
                                                 <div class="volunteerUser__profile">
                                                     <ul>
@@ -819,43 +814,43 @@ class TS_About extends Widget_Base
                                 <?php endif; ?>
                                 <div class="col-lg-6 mb-30">
                                     <div class="aboutContent aboutContent--style3">
-                                        <?php if (!empty($settings['TS_section_title_show'])) : ?>
+                                        <?php if (!empty($settings['ts_section_title_show'])) : ?>
                                             <!-- Section Heading/Title -->
                                             <div class="sectionTitle mb-20">
-                                                <?php if (!empty($settings['TS_sub_title'])) : ?>
+                                                <?php if (!empty($settings['ts_sub_title'])) : ?>
                                                     <span class="sectionTitle__small ts-el-subtitle">
                                                         <i class="fa-solid fa-heart btn__icon"></i>
-                                                        <?php echo TS_kses($settings['TS_sub_title']); ?>
+                                                        <?php echo ts_kses($settings['ts_sub_title']); ?>
                                                     </span>
                                                 <?php endif; ?>
 
                                                 <?php
-                                                if (!empty($settings['TS_title'])) :
+                                                if (!empty($settings['ts_title'])) :
                                                     printf(
                                                         '<%1$s %2$s>%3$s</%1$s>',
-                                                        tag_escape($settings['TS_title_tag']),
+                                                        tag_escape($settings['ts_title_tag']),
                                                         $this->get_render_attribute_string('title_args'),
-                                                        TS_kses($settings['TS_title'])
+                                                        ts_kses($settings['ts_title'])
                                                     );
                                                 endif;
                                                 ?>
                                             </div>
                                             <!-- Section Heading/Title End -->
-                                            <?php if (!empty($settings['TS_short_desctiption'])) : ?>
+                                            <?php if (!empty($settings['ts_short_desctiption'])) : ?>
                                                 <span
-                                                    class="aboutContent__quote text-uppercase"><?php echo TS_kses($settings['TS_short_desctiption']); ?></span>
+                                                    class="aboutContent__quote text-uppercase"><?php echo ts_kses($settings['ts_short_desctiption']); ?></span>
                                             <?php endif; ?>
-                                            <?php if (!empty($settings['TS_desctiption'])) : ?>
+                                            <?php if (!empty($settings['ts_desctiption'])) : ?>
                                                 <p class="aboutContent__text ts-el-content">
-                                                    <?php echo TS_kses($settings['TS_desctiption']); ?>
+                                                    <?php echo ts_kses($settings['ts_desctiption']); ?>
                                                 </p>
                                             <?php endif; ?>
                                         <?php endif; ?>
 
-                                        <?php if (!empty($settings['TS_btn_text'])) : ?>
+                                        <?php if (!empty($settings['ts_btn_text'])) : ?>
                                             <div class="aboutContent__buttons">
                                                 <a <?php echo $this->get_render_attribute_string('ts-button-arg'); ?>>
-                                                    <span class="btn__text"><?php echo $settings['TS_btn_text']; ?></span>
+                                                    <span class="btn__text"><?php echo $settings['ts_btn_text']; ?></span>
                                                     <i class="fa-solid fa-heart btn__icon"></i>
                                                 </a>
                                             </div>
@@ -868,54 +863,54 @@ class TS_About extends Widget_Base
                 </div>
             </section>
 
-        <?php elseif ($settings['TS_design_style']  == 'layout-4'):
-            if (!empty($settings['TS_image']['url'])) {
-                $TS_image = !empty($settings['TS_image']['id']) ? wp_get_attachment_image_url($settings['TS_image']['id'], $settings['TS_image_size_size']) : $settings['TS_image']['url'];
-                $TS_image_alt = get_post_meta($settings["TS_image"]["id"], "_wp_attachment_image_alt", true);
+        <?php elseif ($settings['ts_design_style']  == 'layout-4'):
+            if (!empty($settings['ts_image']['url'])) {
+                $ts_image = !empty($settings['ts_image']['id']) ? wp_get_attachment_image_url($settings['ts_image']['id'], $settings['ts_image_size_size']) : $settings['ts_image']['url'];
+                $ts_image_alt = get_post_meta($settings["ts_image"]["id"], "_wp_attachment_image_alt", true);
             }
             $this->add_render_attribute('title_args', 'class', 'sectionTitle__big ts-el-title');
             // Link
-            if ('2' == $settings['TS_btn_link_type']) {
-                $this->add_render_attribute('ts-button-arg', 'href', get_permalink($settings['TS_btn_page_link']));
+            if ('2' == $settings['ts_btn_link_type']) {
+                $this->add_render_attribute('ts-button-arg', 'href', get_permalink($settings['ts_btn_page_link']));
                 $this->add_render_attribute('ts-button-arg', 'target', '_self');
                 $this->add_render_attribute('ts-button-arg', 'rel', 'nofollow');
                 $this->add_render_attribute('ts-button-arg', 'class', 'btn btn--styleOne btn--secondary it-btn');
             } else {
-                if (! empty($settings['TS_btn_link']['url'])) {
-                    $this->add_link_attributes('ts-button-arg', $settings['TS_btn_link']);
+                if (! empty($settings['ts_btn_link']['url'])) {
+                    $this->add_link_attributes('ts-button-arg', $settings['ts_btn_link']);
                     $this->add_render_attribute('ts-button-arg', 'class', 'btn btn--styleOne btn--secondary it-btn ts-el-btn');
                 }
             }
         ?>
 
             <section class="joinSection position-relative overflow-hidden ts-el-sec">
-                <?php if ($settings['TS_image']['url'] || $settings['TS_image']['id']) : ?>
+                <?php if ($settings['ts_image']['url'] || $settings['ts_image']['id']) : ?>
                     <div class="joinSectionThumb d-none d-lg-block">
-                        <img src="<?php echo esc_url($TS_image); ?>" alt="<?php echo esc_attr($TS_image_alt); ?>">
+                        <img src="<?php echo esc_url($ts_image); ?>" alt="<?php echo esc_attr($ts_image_alt); ?>">
                     </div>
                 <?php endif; ?>
                 <div class="container">
                     <div class="row justify-content-end">
                         <div class="col-lg-6">
                             <div class="joinContent">
-                                <?php if (!empty($settings['TS_section_title_show'])) : ?>
+                                <?php if (!empty($settings['ts_section_title_show'])) : ?>
                                     <div class="row justify-content-end">
                                         <div class="col-10">
                                             <!-- Section Heading/Title -->
                                             <div class="sectionTitle mb-20">
-                                                <?php if (!empty($settings['TS_sub_title'])) : ?>
+                                                <?php if (!empty($settings['ts_sub_title'])) : ?>
                                                     <span class="sectionTitle__small justify-content-end ts-el-subtitle">
                                                         <i
-                                                            class="fa-solid fa-heart btn__icon"></i><?php echo TS_kses($settings['TS_sub_title']); ?>
+                                                            class="fa-solid fa-heart btn__icon"></i><?php echo ts_kses($settings['ts_sub_title']); ?>
                                                     </span>
                                                 <?php endif; ?>
                                                 <?php
-                                                if (!empty($settings['TS_title'])) :
+                                                if (!empty($settings['ts_title'])) :
                                                     printf(
                                                         '<%1$s %2$s>%3$s</%1$s>',
-                                                        tag_escape($settings['TS_title_tag']),
+                                                        tag_escape($settings['ts_title_tag']),
                                                         $this->get_render_attribute_string('title_args'),
-                                                        TS_kses($settings['TS_title'])
+                                                        ts_kses($settings['ts_title'])
                                                     );
                                                 endif;
                                                 ?>
@@ -924,15 +919,15 @@ class TS_About extends Widget_Base
                                         </div>
                                     </div>
 
-                                    <?php if (!empty($settings['TS_desctiption'])) : ?>
-                                        <p class="joinContent__text ts-el-content"><?php echo TS_kses($settings['TS_desctiption']); ?></p>
+                                    <?php if (!empty($settings['ts_desctiption'])) : ?>
+                                        <p class="joinContent__text ts-el-content"><?php echo ts_kses($settings['ts_desctiption']); ?></p>
                                     <?php endif; ?>
                                 <?php endif; ?>
 
-                                <?php if (!empty($settings['TS_btn_text'])) : ?>
+                                <?php if (!empty($settings['ts_btn_text'])) : ?>
                                     <div class="aboutContent__buttonss">
                                         <a <?php echo $this->get_render_attribute_string('ts-button-arg'); ?>>
-                                            <span class="btn__text"><?php echo $settings['TS_btn_text']; ?></span>
+                                            <span class="btn__text"><?php echo $settings['ts_btn_text']; ?></span>
                                             <i class="fa-solid fa-heart btn__icon"></i>
                                         </a>
                                     </div>
@@ -943,30 +938,30 @@ class TS_About extends Widget_Base
                 </div>
             </section>
 
-        <?php elseif ($settings['TS_design_style']  == 'layout-5'):
-            if (!empty($settings['TS_image']['url'])) {
-                $TS_image = !empty($settings['TS_image']['id']) ? wp_get_attachment_image_url($settings['TS_image']['id'], $settings['TS_image_size_size']) : $settings['TS_image']['url'];
-                $TS_image_alt = get_post_meta($settings["TS_image"]["id"], "_wp_attachment_image_alt", true);
+        <?php elseif ($settings['ts_design_style']  == 'layout-5'):
+            if (!empty($settings['ts_image']['url'])) {
+                $ts_image = !empty($settings['ts_image']['id']) ? wp_get_attachment_image_url($settings['ts_image']['id'], $settings['ts_image_size_size']) : $settings['ts_image']['url'];
+                $ts_image_alt = get_post_meta($settings["ts_image"]["id"], "_wp_attachment_image_alt", true);
             }
             $this->add_render_attribute('title_args', 'class', 'sectionTitle__big ts-el-title');
             // Link
-            if ('2' == $settings['TS_btn_link_type']) {
-                $this->add_render_attribute('ts-button-arg', 'href', get_permalink($settings['TS_btn_page_link']));
+            if ('2' == $settings['ts_btn_link_type']) {
+                $this->add_render_attribute('ts-button-arg', 'href', get_permalink($settings['ts_btn_page_link']));
                 $this->add_render_attribute('ts-button-arg', 'target', '_self');
                 $this->add_render_attribute('ts-button-arg', 'rel', 'nofollow');
                 $this->add_render_attribute('ts-button-arg', 'class', 'btn btn--styleOne btn--primary it-btn');
             } else {
-                if (! empty($settings['TS_btn_link']['url'])) {
-                    $this->add_link_attributes('ts-button-arg', $settings['TS_btn_link']);
+                if (! empty($settings['ts_btn_link']['url'])) {
+                    $this->add_link_attributes('ts-button-arg', $settings['ts_btn_link']);
                     $this->add_render_attribute('ts-button-arg', 'class', 'btn btn--styleOne btn--primary it-btn ts-el-btn');
                 }
             }
         ?>
 
             <section class="about gray-bg about--style3 ts-el-sec">
-                <?php if ($settings['TS_image']['url'] || $settings['TS_image']['id']) : ?>
+                <?php if ($settings['ts_image']['url'] || $settings['ts_image']['id']) : ?>
                     <div class="aboutThumb3 d-none d-lg-block">
-                        <img src="<?php echo esc_url($TS_image); ?>" alt="<?php echo esc_attr($TS_image_alt); ?>">
+                        <img src="<?php echo esc_url($ts_image); ?>" alt="<?php echo esc_attr($ts_image_alt); ?>">
                     </div>
                 <?php endif; ?>
                 <div class="container">
@@ -974,41 +969,40 @@ class TS_About extends Widget_Base
                         <div class="col-lg-6 mb-30">
                             <div class="aboutContent aboutContent--style2">
                                 <!-- Section Heading/Title -->
-                                <?php if (!empty($settings['TS_section_title_show'])) : ?>
+                                <?php if (!empty($settings['ts_section_title_show'])) : ?>
                                     <div class="sectionTitle mb-20">
-                                        <?php if (!empty($settings['TS_sub_title'])) : ?>
+                                        <?php if (!empty($settings['ts_sub_title'])) : ?>
                                             <span class="sectionTitle__small ts-el-subtitle">
-                                                <i
-                                                    class="fa-solid fa-heart btn__icon"></i><?php echo TS_kses($settings['TS_sub_title']); ?>
+                                                <i class="fa-solid fa-heart btn__icon"></i><?php echo ts_kses($settings['ts_sub_title']); ?>
                                             </span>
                                         <?php endif; ?>
                                         <?php
-                                        if (!empty($settings['TS_title'])) :
+                                        if (!empty($settings['ts_title'])) :
                                             printf(
                                                 '<%1$s %2$s>%3$s</%1$s>',
-                                                tag_escape($settings['TS_title_tag']),
+                                                tag_escape($settings['ts_title_tag']),
                                                 $this->get_render_attribute_string('title_args'),
-                                                TS_kses($settings['TS_title'])
+                                                ts_kses($settings['ts_title'])
                                             );
                                         endif;
                                         ?>
                                     </div>
                                     <!-- Section Heading/Title End -->
-                                    <?php if (!empty($settings['TS_desctiption'])) : ?>
-                                        <p class="aboutContent__text ts-el-content"><?php echo TS_kses($settings['TS_desctiption']); ?>
+                                    <?php if (!empty($settings['ts_desctiption'])) : ?>
+                                        <p class="aboutContent__text ts-el-content"><?php echo ts_kses($settings['ts_desctiption']); ?>
                                         </p>
                                     <?php endif; ?>
                                 <?php endif; ?>
 
-                                <?php if (!empty($settings['TS_short_desctiption'])) : ?>
-                                    <span class="aboutContent__quote"><?php echo TS_kses($settings['TS_short_desctiption']); ?></span>
+                                <?php if (!empty($settings['ts_short_desctiption'])) : ?>
+                                    <span class="aboutContent__quote"><?php echo ts_kses($settings['ts_short_desctiption']); ?></span>
                                 <?php endif; ?>
 
 
-                                <?php if (!empty($settings['TS_btn_text'])) : ?>
+                                <?php if (!empty($settings['ts_btn_text'])) : ?>
                                     <div class="aboutContent__buttons">
                                         <a <?php echo $this->get_render_attribute_string('ts-button-arg'); ?>>
-                                            <span class="btn__text"><?php echo $settings['TS_btn_text']; ?></span>
+                                            <span class="btn__text"><?php echo $settings['ts_btn_text']; ?></span>
                                             <i class="fa-solid fa-heart btn__icon"></i>
                                         </a>
                                     </div>
@@ -1019,10 +1013,10 @@ class TS_About extends Widget_Base
                             <div class="aboutThumb aboutThumb--style3">
                                 <div class="aboutThumb__text d-none d-lg-block">
                                     <?php if (!empty($settings['exp_title'])) : ?>
-                                        <span class="aboutThumb__text__title"><?php echo TS_kses($settings['exp_title']); ?></span>
+                                        <span class="aboutThumb__text__title"><?php echo ts_kses($settings['exp_title']); ?></span>
                                     <?php endif; ?>
                                     <?php if (!empty($settings['exp_num'])) : ?>
-                                        <span class="aboutThumb__text__year"><?php echo TS_kses($settings['exp_num']); ?></span>
+                                        <span class="aboutThumb__text__year"><?php echo ts_kses($settings['exp_num']); ?></span>
                                     <?php endif; ?>
                                 </div>
                             </div>
@@ -1032,24 +1026,24 @@ class TS_About extends Widget_Base
             </section>
 
         <?php else:
-            if (!empty($settings['TS_image']['url'])) {
-                $TS_image = !empty($settings['TS_image']['id']) ? wp_get_attachment_image_url($settings['TS_image']['id'], $settings['TS_image_size_size']) : $settings['TS_image']['url'];
-                $TS_image_alt = get_post_meta($settings["TS_image"]["id"], "_wp_attachment_image_alt", true);
+            if (!empty($settings['ts_image']['url'])) {
+                $ts_image = !empty($settings['ts_image']['id']) ? wp_get_attachment_image_url($settings['ts_image']['id'], $settings['ts_image_size_size']) : $settings['ts_image']['url'];
+                $ts_image_alt = get_post_meta($settings["ts_image"]["id"], "_wp_attachment_image_alt", true);
             }
 
 
 
-            $this->add_render_attribute('title_args', 'class', 'section__title ts-el-title');
+            $this->add_render_attribute('title', 'class', 'section__title ts-el-title');
 
             // Link
-            if ('2' == $settings['TS_btn_link_type']) {
-                $this->add_render_attribute('ts-button-arg', 'href', get_permalink($settings['TS_btn_page_link']));
+            if ('2' == $settings['ts_btn_link_type']) {
+                $this->add_render_attribute('ts-button-arg', 'href', get_permalink($settings['ts_btn_page_link']));
                 $this->add_render_attribute('ts-button-arg', 'target', '_self');
                 $this->add_render_attribute('ts-button-arg', 'rel', 'nofollow');
                 $this->add_render_attribute('ts-button-arg', 'class', ' default-btn');
             } else {
-                if (! empty($settings['TS_btn_link']['url'])) {
-                    $this->add_link_attributes('ts-button-arg', $settings['TS_btn_link']);
+                if (! empty($settings['ts_btn_link']['url'])) {
+                    $this->add_link_attributes('ts-button-arg', $settings['ts_btn_link']);
                     $this->add_render_attribute('ts-button-arg', 'class', ' default-btn');
                 }
             }
@@ -1061,91 +1055,97 @@ class TS_About extends Widget_Base
                         <div class="col-lg-6">
                             <div class="left-wrapper">
 
+                                <div class="img-file">
+                                    <?php if ($settings['ts_image']['url'] || $settings['ts_image']['id']) : ?>
+                                        <img class="img-fluid wow animated fadeInLeft" src="<?php echo esc_url($ts_image); ?>"
+                                            alt="<?php echo esc_attr($ts_image_alt); ?>">
+                                    <?php endif; ?>
 
 
-                                <?php if ($settings['TS_image']['url'] || $settings['TS_image']['id']) : ?>
-                                    <div class="img-file">
 
-                                        <img class="img-fluid wow animated fadeInLeft" src="<?php echo esc_url($TS_image); ?>" alt="<?php echo esc_attr($TS_image_alt); ?>">
-                                        <div class="shape-overlay">
-                                            <div
-                                                class="overlay wow animated fadeInUp"
-                                                data-wow-duration="1.5s"
-                                                data-wow-delay="0.3s">
+                                    <div class="shape-overlay">
+                                        <div class="overlay wow animated fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s">
 
-                                                <?php if (!empty($settings['TS_thum_icon_image']['url'])) : ?>
-                                                    <span>
-                                                        <img src="<?php echo esc_url($settings['TS_thum_icon_image']['url']); ?>" alt="" />
-                                                    </span>
-                                                <?php endif; ?>
+                                            <?php if (!empty($settings['ts_thum_icon_image']['url'])) : ?>
+                                                <span>
+                                                    <img src="<?php echo esc_url($settings['ts_thum_icon_image']['url']); ?>"
+                                                        alt="<?php echo get_post_meta($settings["ts_thum_icon_image"]["id"], "_wp_attachment_image_alt", true); ?>" />
+                                                </span>
+                                            <?php endif; ?>
 
-                                                <?php if (!empty($settings['TS_about_thum_title'])) : ?>
-                                                    <h3>
-                                                        <?php echo esc_html($settings['TS_about_thum_title']); ?>
-                                                    </h3>
-                                                <?php endif; ?>
-                                                <?php if (!empty($settings['TS_about_video_info'])) : ?>
 
-                                                    <?php echo wp_kses_post($settings['TS_about_video_info']); ?>
+                                            <?php if (!empty($item['ts_features_image']['url'])): ?>
+                                                <img class="light" src="<?php echo $item['ts_features_image']['url']; ?>"
+                                                    alt="<?php echo get_post_meta(attachment_url_to_postid($item['ts_features_image']['url']), '_wp_attachment_image_alt', true); ?>">
+                                            <?php endif; ?>
 
-                                                <?php endif; ?>
-                                            </div>
-                                        </div>
-                                        <div class="shape-7 poa">
-                                            <img src="./assets/img/icon/69_icon.svg" alt="" />
+                                            <?php if (!empty($settings['ts_about_thum_title'])) : ?>
+                                                <h3>
+                                                    <?php echo esc_html($settings['ts_about_thum_title']); ?>
+                                                </h3>
+                                            <?php endif; ?>
+                                            <?php if (!empty($settings['ts_about_video_title'])) : ?>
+
+                                                <div class="video-intro">
+                                                    <a href="<?php echo $settings['ts_about_video_title_link']; ?>" class="popup-video">
+                                                        <span class="icon">
+                                                            <i class="fa-solid fa-play"></i>
+                                                        </span>
+                                                        <span class="text"><?php echo ts_kses($settings['ts_about_video_title']) ?></span>
+                                                    </a>
+                                                </div>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
-                                <?php endif; ?>
+                                </div>
+
 
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div
-                                class="right-wrapper wow animated fadeInRight"
-                                data-wow-duration="1.5s"
-                                data-wow-delay="0.3s">
+                            <div class="right-wrapper wow animated fadeInRight" data-wow-duration="1.5s" data-wow-delay="0.3s">
                                 <div class="section-title-shape-one">
-                                    <?php if (!empty($settings['TS_sub_title'])) : ?>
-                                        <h3><?php echo TS_kses($settings['TS_sub_title']); ?></h3>
+                                    <?php if (!empty($settings['ts_sub_title'])) : ?>
+                                        <h3><?php echo ts_kses($settings['ts_sub_title']); ?></h3>
                                     <?php endif; ?>
                                     <h2>
                                         <?php
-                                        if (!empty($settings['TS_title'])) :
+                                        if (!empty($settings['ts_title'])) :
                                             printf(
                                                 '<%1$s %2$s>%3$s</%1$s>',
-                                                tag_escape($settings['TS_title_tag']),
-                                                $this->get_render_attribute_string('title_args'),
-                                                TS_kses($settings['TS_title'])
+                                                tag_escape($settings['ts_title_tag']),
+                                                $this->get_render_attribute_string('title'),
+                                                ts_kses($settings['ts_title'])
                                             );
                                         endif;
                                         ?>
                                     </h2>
-                                    <?php if (!empty($settings['TS_desctiption'])) : ?>
+                                    <?php if (!empty($settings['ts_desctiption'])) : ?>
                                         <p>
-                                            <?php echo TS_kses($settings['TS_desctiption']); ?>
+                                            <?php echo ts_kses($settings['ts_desctiption']); ?>
                                         </p>
                                     <?php endif; ?>
                                 </div>
                                 <div class="inner-list">
                                     <ul>
-                                        <?php foreach ($settings['TS_features_list'] as $item) : ?>
+                                        <?php foreach ($settings['ts_features_list'] as $item) : ?>
                                             <li>
-                                                <?php if ($item['TS_features_icon_type'] !== 'image') : ?>
-                                                    <?php if (!empty($item['TS_features_icon']) || !empty($item['TS_features_selected_icon']['value'])) : ?>
-                                                        <span><?php TS_render_icon($item, 'TS_features_icon', 'TS_features_selected_icon'); ?></span>
+                                                <?php if ($item['ts_features_icon_type'] !== 'image') : ?>
+                                                    <?php if (!empty($item['ts_features_icon']) || !empty($item['ts_features_selected_icon']['value'])) : ?>
+                                                        <span><?php ts_render_icon($item, 'ts_features_icon', 'ts_features_selected_icon'); ?></span>
                                                     <?php endif; ?>
                                                 <?php else : ?>
                                                     <span class="img-file">
-                                                        <?php if (!empty($item['TS_features_image']['url'])): ?>
-                                                            <img class="light w-100px" src="<?php echo $item['TS_features_image']['url']; ?>"
-                                                                alt="<?php echo get_post_meta(attachment_url_to_postid($item['TS_features_image']['url']), '_wp_attachment_image_alt', true); ?>">
+                                                        <?php if (!empty($item['ts_features_image']['url'])): ?>
+                                                            <img class="light w-100px" src="<?php echo $item['ts_features_image']['url']; ?>"
+                                                                alt="<?php echo get_post_meta(attachment_url_to_postid($item['ts_features_image']['url']), '_wp_attachment_image_alt', true); ?>">
                                                         <?php endif; ?>
                                                     </span>
                                                 <?php endif; ?>
                                                 <div>
-                                                    <h4><?php echo TS_kses($item['TS_features_title']); ?></h4>
+                                                    <h4><?php echo ts_kses($item['ts_features_title']); ?></h4>
                                                     <p>
-                                                        <?php echo TS_kses($item['TS_features_description']); ?>
+                                                        <?php echo ts_kses($item['ts_features_description']); ?>
                                                     </p>
                                                 </div>
                                             </li>
@@ -1154,11 +1154,11 @@ class TS_About extends Widget_Base
                                     </ul>
 
                                 </div>
-                                <?php if (!empty($settings['TS_btn_text'])) : ?>
+                                <?php if (!empty($settings['ts_btn_text'])) : ?>
                                     <div class="inner-btn">
                                         <div>
                                             <a <?php echo $this->get_render_attribute_string('ts-button-arg'); ?>>
-                                                <?php echo $settings['TS_btn_text']; ?>
+                                                <?php echo $settings['ts_btn_text']; ?>
                                             </a>
                                         </div>
                                     </div>
@@ -1171,22 +1171,22 @@ class TS_About extends Widget_Base
                 </div>
                 <div class="shape-img">
                     <div class="shape-1 poa">
-                        <img src="./assets/img/icon/10_icon.png" alt="" />
+                        <img src="<?php echo get_template_directory_uri(); ?> /assets/img/icon/10_icon.png" alt="" />
                     </div>
                     <div class="shape-2 poa">
-                        <img src="./assets/img/icon/09_icon.png" alt="" />
+                        <img src="<?php echo get_template_directory_uri(); ?> /assets/img/icon/09_icon.png" alt="" />
                     </div>
                     <div class="shape-3 poa">
-                        <img src="./assets/img/shape/01_shape.svg" alt="" />
+                        <img src=" <?php echo get_template_directory_uri(); ?> /assets/img/shape/01_shape.svg" alt="" />
                     </div>
                     <div class="shape-4 poa">
-                        <img src="./assets/img/icon/63_icon.png" alt="" />
+                        <img src="<?php echo get_template_directory_uri(); ?> /assets/img/icon/63_icon.png" alt="" />
                     </div>
                     <div class="shape-5 poa">
-                        <img src="./assets/img/icon/66_icon.png" alt="" />
+                        <img src="<?php echo get_template_directory_uri(); ?> /assets/img/icon/66_icon.png" alt="" />
                     </div>
                     <div class="shape-6 poa">
-                        <img src="./assets/img/icon/68_icon.png" alt="" />
+                        <img src="<?php echo get_template_directory_uri(); ?> /assets/img/icon/68_icon.png" alt="" />
                     </div>
                 </div>
             </div>
@@ -1208,80 +1208,80 @@ class TS_About extends Widget_Base
                                         alt="img">
                                 </div>
                                 <div class="about__thumb-left mr-10">
-                                    <?php if ($settings['TS_image']['url'] || $settings['TS_image']['id']) : ?>
+                                    <?php if ($settings['ts_image']['url'] || $settings['ts_image']['id']) : ?>
                                         <div class="about__thumb-1 mb-10">
-                                            <img src="<?php echo esc_url($TS_image); ?>" alt="<?php echo esc_attr($TS_image_alt); ?>">
+                                            <img src="<?php echo esc_url($ts_image); ?>" alt="<?php echo esc_attr($ts_image_alt); ?>">
                                         </div>
                                     <?php endif; ?>
-                                    <?php if ($settings['TS_image_2']['url'] || $settings['TS_image_2']['id']) : ?>
+                                    <?php if ($settings['ts_image_2']['url'] || $settings['ts_image_2']['id']) : ?>
                                         <div class="about__thumb-1 mb-10 text-end">
-                                            <img src="<?php echo esc_url($TS_image_2); ?>"
-                                                alt="<?php echo esc_attr($TS_image_2_alt); ?>">
+                                            <img src="<?php echo esc_url($ts_image_2); ?>"
+                                                alt="<?php echo esc_attr($ts_image_2_alt); ?>">
                                         </div>
                                     <?php endif; ?>
                                 </div>
-                                <?php if ($settings['TS_image_3']['url'] || $settings['TS_image_3']['id']) : ?>
+                                <?php if ($settings['ts_image_3']['url'] || $settings['ts_image_3']['id']) : ?>
                                     <div class="about__thumb-2 mb-10">
-                                        <img src="<?php echo esc_url($TS_image_3); ?>" alt="<?php echo esc_attr($TS_image_3_alt); ?>">
+                                        <img src="<?php echo esc_url($ts_image_3); ?>" alt="<?php echo esc_attr($ts_image_3_alt); ?>">
                                     </div>
                                 <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-xxl-5 col-xl-5 col-lg-5">
                             <div class="about__content pl-70 pr-25">
-                                <?php if (!empty($settings['TS_section_title_show'])) : ?>
+                                <?php if (!empty($settings['ts_section_title_show'])) : ?>
 
                                     <div class="section__title-wrapper mb-15">
-                                        <?php if (!empty($settings['TS_sub_title'])) : ?>
+                                        <?php if (!empty($settings['ts_sub_title'])) : ?>
                                             <span class="section__title-pre ts-el-subtitle ">
-                                                <?php echo TS_kses($settings['TS_sub_title']); ?>
+                                                <?php echo ts_kses($settings['ts_sub_title']); ?>
                                             </span>
                                         <?php endif; ?>
 
                                         <?php
-                                        if (!empty($settings['TS_title'])) :
+                                        if (!empty($settings['ts_title'])) :
                                             printf(
                                                 '<%1$s %2$s>%3$s</%1$s>',
-                                                tag_escape($settings['TS_title_tag']),
+                                                tag_escape($settings['ts_title_tag']),
                                                 $this->get_render_attribute_string('title_args'),
-                                                TS_kses($settings['TS_title'])
+                                                ts_kses($settings['ts_title'])
                                             );
                                         endif;
                                         ?>
                                     </div>
 
-                                    <?php if (!empty($settings['TS_desctiption'])) : ?>
-                                        <p class="ts-el-content"><?php echo TS_kses($settings['TS_desctiption']); ?></p>
+                                    <?php if (!empty($settings['ts_desctiption'])) : ?>
+                                        <p class="ts-el-content"><?php echo ts_kses($settings['ts_desctiption']); ?></p>
                                     <?php endif; ?>
 
                                 <?php endif; ?>
 
                                 <div class="about__list mb-40">
                                     <ul>
-                                        <?php foreach ($settings['TS_features_list'] as $item) : ?>
+                                        <?php foreach ($settings['ts_features_list'] as $item) : ?>
                                             <li>
-                                                <?php if ($item['TS_features_icon_type'] !== 'image') : ?>
-                                                    <?php if (!empty($item['TS_features_icon']) || !empty($item['TS_features_selected_icon']['value'])) : ?>
-                                                        <span><?php TS_render_icon($item, 'TS_features_icon', 'TS_features_selected_icon'); ?></span>
+                                                <?php if ($item['ts_features_icon_type'] !== 'image') : ?>
+                                                    <?php if (!empty($item['ts_features_icon']) || !empty($item['ts_features_selected_icon']['value'])) : ?>
+                                                        <span><?php ts_render_icon($item, 'ts_features_icon', 'ts_features_selected_icon'); ?></span>
                                                     <?php endif; ?>
                                                 <?php else : ?>
                                                     <span class="keyFeatureBlock__icon">
-                                                        <?php if (!empty($item['TS_features_image']['url'])): ?>
-                                                            <img class="light" src="<?php echo $item['TS_features_image']['url']; ?>"
-                                                                alt="<?php echo get_post_meta(attachment_url_to_postid($item['TS_features_image']['url']), '_wp_attachment_image_alt', true); ?>">
+                                                        <?php if (!empty($item['ts_features_image']['url'])): ?>
+                                                            <img class="light" src="<?php echo $item['ts_features_image']['url']; ?>"
+                                                                alt="<?php echo get_post_meta(attachment_url_to_postid($item['ts_features_image']['url']), '_wp_attachment_image_alt', true); ?>">
                                                         <?php endif; ?>
                                                     </span>
                                                 <?php endif; ?>
-                                                <?php echo TS_kses($item['TS_features_title']); ?>
+                                                <?php echo ts_kses($item['ts_features_title']); ?>
                                             </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
 
-                                <?php if (!empty($settings['TS_btn_text'])) : ?>
+                                <?php if (!empty($settings['ts_btn_text'])) : ?>
                                     <div class="about__btn">
                                         <a <?php echo $this->get_render_attribute_string('ts-button-arg'); ?>>
-                                            <?php echo $settings['TS_btn_text']; ?>
+                                            <?php echo $settings['ts_btn_text']; ?>
                                         </a>
                                     </div>
                                 <?php endif; ?>
@@ -1297,4 +1297,4 @@ class TS_About extends Widget_Base
     }
 }
 
-$widgets_manager->register(new TS_About());
+$widgets_manager->register(new ts_About());

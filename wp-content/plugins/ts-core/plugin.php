@@ -164,6 +164,7 @@ class TS_Core_Plugin
 		return [
 			'heading',
 			'about',
+			'ts-btn',
 			// 'slider',
 			// 'hero-banner',
 			// 'pricing',
@@ -185,7 +186,6 @@ class TS_Core_Plugin
 			// 'iconbox',
 			// 'big-text',
 			// 'live-donation',
-			// 'ts-btn',
 			// 'stories',
 			// 'mission',
 			// 'faq',

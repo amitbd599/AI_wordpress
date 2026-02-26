@@ -1,4 +1,5 @@
 <?php
+
 namespace TSCore\Widgets;
 
 use Elementor\Widget_Base;
@@ -10,10 +11,10 @@ use \Elementor\Group_Control_Border;
 use \Elementor\Group_Control_Box_Shadow;
 use \Elementor\Group_Control_Text_Shadow;
 use \Elementor\Group_Control_Typography;
-Use \Elementor\Core\Schemes\Typography;
+use \Elementor\Core\Schemes\Typography;
 use \Elementor\Group_Control_Background;
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if (! defined('ABSPATH')) exit; // Exit if accessed directly
 
 /**
  * Ts Core
@@ -22,90 +23,97 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class TS_Heading extends Widget_Base {
+class TS_Heading extends Widget_Base
+{
 
-	/**
-	 * Retrieve the widget name.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access public
-	 *
-	 * @return string Widget name.
-	 */
-	public function get_name() {
-		return 'ts-heading';
-	}
+    /**
+     * Retrieve the widget name.
+     *
+     * @since 1.0.0
+     *
+     * @access public
+     *
+     * @return string Widget name.
+     */
+    public function get_name()
+    {
+        return 'ts-heading';
+    }
 
-	/**
-	 * Retrieve the widget title.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access public
-	 *
-	 * @return string Widget title.
-	 */
-	public function get_title() {
-		return __( 'Heading', 'TScore' );
-	}
+    /**
+     * Retrieve the widget title.
+     *
+     * @since 1.0.0
+     *
+     * @access public
+     *
+     * @return string Widget title.
+     */
+    public function get_title()
+    {
+        return __('Heading', 'TScore');
+    }
 
-	/**
-	 * Retrieve the widget icon.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access public
-	 *
-	 * @return string Widget icon.
-	 */
-	public function get_icon() {
-		return 'ts-icon';
-	}
+    /**
+     * Retrieve the widget icon.
+     *
+     * @since 1.0.0
+     *
+     * @access public
+     *
+     * @return string Widget icon.
+     */
+    public function get_icon()
+    {
+        return 'ts-icon';
+    }
 
-	/**
-	 * Retrieve the list of categories the widget belongs to.
-	 *
-	 * Used to determine where to display the widget in the editor.
-	 *
-	 * Note that currently Elementor supports only one category.
-	 * When multiple categories passed, Elementor uses the first one.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access public
-	 *
-	 * @return array Widget categories.
-	 */
-	public function get_categories() {
-		return [ 'TScore' ];
-	}
+    /**
+     * Retrieve the list of categories the widget belongs to.
+     *
+     * Used to determine where to display the widget in the editor.
+     *
+     * Note that currently Elementor supports only one category.
+     * When multiple categories passed, Elementor uses the first one.
+     *
+     * @since 1.0.0
+     *
+     * @access public
+     *
+     * @return array Widget categories.
+     */
+    public function get_categories()
+    {
+        return ['TScore'];
+    }
 
-	/**
-	 * Retrieve the list of scripts the widget depended on.
-	 *
-	 * Used to set scripts dependencies required to run the widget.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access public
-	 *
-	 * @return array Widget scripts dependencies.
-	 */
-	public function get_script_depends() {
-		return [ 'TScore' ];
-	}
+    /**
+     * Retrieve the list of scripts the widget depended on.
+     *
+     * Used to set scripts dependencies required to run the widget.
+     *
+     * @since 1.0.0
+     *
+     * @access public
+     *
+     * @return array Widget scripts dependencies.
+     */
+    public function get_script_depends()
+    {
+        return ['TScore'];
+    }
 
-	/**
-	 * Register the widget controls.
-	 *
-	 * Adds different input fields to allow the user to change and customize the widget settings.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access protected
-	 */
-	protected function register_controls() {
+    /**
+     * Register the widget controls.
+     *
+     * Adds different input fields to allow the user to change and customize the widget settings.
+     *
+     * @since 1.0.0
+     *
+     * @access protected
+     */
+    protected function register_controls()
+    {
 
         // layout Panel
         $this->start_controls_section(
@@ -141,10 +149,10 @@ class TS_Heading extends Widget_Base {
         $this->add_control(
             'TS_section_title_show',
             [
-                'label' => esc_html__( 'Section Title & Content', 'TScore' ),
+                'label' => esc_html__('Section Title & Content', 'TScore'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Show', 'TScore' ),
-                'label_off' => esc_html__( 'Hide', 'TScore' ),
+                'label_on' => esc_html__('Show', 'TScore'),
+                'label_off' => esc_html__('Hide', 'TScore'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -154,7 +162,7 @@ class TS_Heading extends Widget_Base {
             'TS_sub_title',
             [
                 'label' => esc_html__('Sub Title', 'TScore'),
-                'description' => TS_get_allowed_html_desc( 'basic' ),
+                'description' => TS_get_allowed_html_desc('basic'),
                 'type' => Controls_Manager::TEXT,
                 'default' => esc_html__('TS Sub Title', 'TScore'),
                 'placeholder' => esc_html__('Type Sub Heading Text', 'TScore'),
@@ -165,7 +173,7 @@ class TS_Heading extends Widget_Base {
             'TS_title',
             [
                 'label' => esc_html__('Title', 'TScore'),
-                'description' => TS_get_allowed_html_desc( 'intermediate' ),
+                'description' => TS_get_allowed_html_desc('intermediate'),
                 'type' => Controls_Manager::TEXT,
                 'default' => esc_html__('TS Title Here', 'TScore'),
                 'placeholder' => esc_html__('Type Heading Text', 'TScore'),
@@ -173,11 +181,13 @@ class TS_Heading extends Widget_Base {
             ]
         );
 
+
+
         $this->add_control(
             'TS_desctiption',
             [
                 'label' => esc_html__('Description', 'TScore'),
-                'description' => TS_get_allowed_html_desc( 'intermediate' ),
+                'description' => TS_get_allowed_html_desc('intermediate'),
                 'type' => Controls_Manager::TEXTAREA,
                 'default' => esc_html__('TS section description here', 'TScore'),
                 'placeholder' => esc_html__('Type section description here', 'TScore'),
@@ -248,100 +258,14 @@ class TS_Heading extends Widget_Base {
         );
         $this->end_controls_section();
 
-        // TS_btn_button_group
-        $this->start_controls_section(
-            'TS_btn_button_group',
-            [
-                'label' => esc_html__('Button', 'TScore'),
-            ]
-        );
 
-        $this->add_control(
-            'TS_btn_button_show',
-            [
-                'label' => esc_html__( 'Show Button', 'TScore' ),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Show', 'TScore' ),
-                'label_off' => esc_html__( 'Hide', 'TScore' ),
-                'return_value' => 'yes',
-                'default' => 'yes',
-            ]
-        );
-
-        $this->add_control(
-            'TS_btn_text',
-            [
-                'label' => esc_html__('Button Text', 'TScore'),
-                'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Button Text', 'TScore'),
-                'title' => esc_html__('Enter button text', 'TScore'),
-                'label_block' => true,
-                'condition' => [
-                    'TS_btn_button_show' => 'yes'
-                ],
-            ]
-        );
-        $this->add_control(
-            'TS_btn_link_type',
-            [
-                'label' => esc_html__('Button Link Type', 'TScore'),
-                'type' => Controls_Manager::SELECT,
-                'options' => [
-                    '1' => 'Custom Link',
-                    '2' => 'Internal Page',
-                ],
-                'default' => '1',
-                'label_block' => true,
-                'condition' => [
-                    'TS_btn_button_show' => 'yes'
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'TS_btn_link',
-            [
-                'label' => esc_html__('Button link', 'TScore'),
-                'type' => Controls_Manager::URL,
-                'dynamic' => [
-                    'active' => true,
-                ],
-                'placeholder' => esc_html__('https://your-link.com', 'TScore'),
-                'show_external' => false,
-                'default' => [
-                    'url' => '#',
-                    'is_external' => true,
-                    'nofollow' => true,
-                    'custom_attributes' => '',
-                ],
-                'condition' => [
-                    'TS_btn_link_type' => '1',
-                    'TS_btn_button_show' => 'yes'
-                ],
-                'label_block' => true,
-            ]
-        );
-        $this->add_control(
-            'TS_btn_page_link',
-            [
-                'label' => esc_html__('Select Button Page', 'TScore'),
-                'type' => Controls_Manager::SELECT2,
-                'label_block' => true,
-                'options' => TS_get_all_pages(),
-                'condition' => [
-                    'TS_btn_link_type' => '2',
-                    'TS_btn_button_show' => 'yes'
-                ]
-            ]
-        );
-        $this->end_controls_section();
 
 
         // style tab here
         $this->start_controls_section(
             '_section_style_content',
             [
-                'label' => __( 'Title / Content', 'tocore' ),
+                'label' => __('Title / Content', 'tocore'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -349,11 +273,11 @@ class TS_Heading extends Widget_Base {
         $this->add_responsive_control(
             'content_padding',
             [
-                'label' => __( 'Content Padding', 'tocore' ),
+                'label' => __('Content Padding', 'tocore'),
                 'type' => Controls_Manager::DIMENSIONS,
-                'size_units' => [ 'px', 'em', '%' ],
+                'size_units' => ['px', 'em', '%'],
                 'selectors' => [
-                    '{{WRAPPER}} .ts-el-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .section-title-shape-one' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -362,7 +286,7 @@ class TS_Heading extends Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'content_background',
-                'selector' => '{{WRAPPER}} .ts-el-content',
+                'selector' => '{{WRAPPER}} .section-title-shape-one',
                 'exclude' => [
                     'image'
                 ]
@@ -374,7 +298,7 @@ class TS_Heading extends Widget_Base {
             '_heading_title',
             [
                 'type' => Controls_Manager::HEADING,
-                'label' => __( 'Title', 'tocore' ),
+                'label' => __('Title', 'tocore'),
                 'separator' => 'before'
             ]
         );
@@ -382,7 +306,7 @@ class TS_Heading extends Widget_Base {
         $this->add_responsive_control(
             'title_spacing',
             [
-                'label' => __( 'Bottom Spacing', 'tocore' ),
+                'label' => __('Bottom Spacing', 'tocore'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'selectors' => [
@@ -394,13 +318,15 @@ class TS_Heading extends Widget_Base {
         $this->add_control(
             'title_color',
             [
-                'label' => __( 'Text Color', 'tocore' ),
+                'label' => __('Text Color', 'tocore'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .ts-el-title' => 'color: {{VALUE}}',
                 ],
             ]
         );
+
+
 
         $this->add_group_control(
             Group_Control_Typography::get_type(),
@@ -415,7 +341,7 @@ class TS_Heading extends Widget_Base {
             '_heading_subtitle',
             [
                 'type' => Controls_Manager::HEADING,
-                'label' => __( 'Subtitle', 'tocore' ),
+                'label' => __('Subtitle', 'tocore'),
                 'separator' => 'before'
             ]
         );
@@ -423,7 +349,7 @@ class TS_Heading extends Widget_Base {
         $this->add_responsive_control(
             'subtitle_spacing',
             [
-                'label' => __( 'Bottom Spacing', 'tocore' ),
+                'label' => __('Bottom Spacing', 'tocore'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'selectors' => [
@@ -435,7 +361,7 @@ class TS_Heading extends Widget_Base {
         $this->add_control(
             'subtitle_color',
             [
-                'label' => __( 'Text Color', 'tocore' ),
+                'label' => __('Text Color', 'tocore'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .ts-el-subtitle' => 'color: {{VALUE}}',
@@ -456,7 +382,7 @@ class TS_Heading extends Widget_Base {
             '_content_description',
             [
                 'type' => Controls_Manager::HEADING,
-                'label' => __( 'Description', 'tocore' ),
+                'label' => __('Description', 'tocore'),
                 'separator' => 'before'
             ]
         );
@@ -464,11 +390,11 @@ class TS_Heading extends Widget_Base {
         $this->add_responsive_control(
             'description_spacing',
             [
-                'label' => __( 'Bottom Spacing', 'tocore' ),
+                'label' => __('Bottom Spacing', 'tocore'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'selectors' => [
-                    '{{WRAPPER}} .ts-el-content p' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .ts-el-des' => 'margin-bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -476,10 +402,10 @@ class TS_Heading extends Widget_Base {
         $this->add_control(
             'description_color',
             [
-                'label' => __( 'Text Color', 'tocore' ),
+                'label' => __('Text Color', 'tocore'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .ts-el-content p' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .ts-el-des' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -488,116 +414,108 @@ class TS_Heading extends Widget_Base {
             Group_Control_Typography::get_type(),
             [
                 'name' => 'description',
-                'selector' => '{{WRAPPER}} .ts-el-content p',
+                'selector' => '{{WRAPPER}} .ts-el-des',
             ]
         );
 
 
         $this->end_controls_section();
-	}
+    }
 
-	/**
-	 * Render the widget ouTSut on the frontend.
-	 *
-	 * Written in PHP and used to generate the final HTML.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @access protected
-	 */
-	protected function render() {
-		$settings = $this->get_settings_for_display();
-        // Link
-        if ('2' == $settings['TS_btn_link_type']) {
-            $this->add_render_attribute('ts-button-arg', 'href', get_permalink($settings['TS_btn_page_link']));
-            $this->add_render_attribute('ts-button-arg', 'target', '_self');
-            $this->add_render_attribute('ts-button-arg', 'rel', 'nofollow');
-            $this->add_render_attribute('ts-button-arg', 'class', ' btn btn--styleOne btn--secondary it-btn');
-        } else {
-        	if ( ! empty( $settings['TS_btn_link']['url'] ) ) {
-                $this->add_link_attributes( 'ts-button-arg', $settings['TS_btn_link'] );
-                $this->add_render_attribute('ts-button-arg', 'class', ' btn btn--styleOne btn--secondary it-btn');
-            }
-        }
+    /**
+     * Render the widget ouTSut on the frontend.
+     *
+     * Written in PHP and used to generate the final HTML.
+     *
+     * @since 1.0.0
+     *
+     * @access protected
+     */
+    protected function render()
+    {
+        $settings = $this->get_settings_for_display();
 
-		?>
 
-		<?php if ( $settings['TS_design_style']  == 'layout-2' ):
+?>
+
+        <?php if ($settings['TS_design_style']  == 'layout-2'):
             $this->add_render_attribute('title_args', 'class', 'sponsorsTitle__heading text-uppercase');
         ?>
 
-        <section class="heading-area">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <div class="sponsorsTitle">
-                    <?php if ( !empty($settings['TS_sub_title']) ) : ?>
-                    <span class="sectionTitle__small d-block">
-                        <i class="fa-solid fa-heart btn__icon"></i><?php echo TS_kses( $settings['TS_sub_title'] ); ?>
-                    </span>
-                    <?php endif; ?>
+            <section class="heading-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="sponsorsTitle">
+                                <?php if (!empty($settings['TS_sub_title'])) : ?>
+                                    <span class="sectionTitle__small d-block">
+                                        <i class="fa-solid fa-heart btn__icon"></i><?php echo TS_kses($settings['TS_sub_title']); ?>
+                                    </span>
+                                <?php endif; ?>
 
-                    <br>
+                                <br>
 
-                    <span class="sponsorsTitle__line"></span>
-                    <?php
-                        if ( !empty($settings['TS_title' ]) ) :
-                            printf( '<%1$s %2$s>%3$s</%1$s>',
-                                tag_escape( $settings['TS_title_tag'] ),
-                                $this->get_render_attribute_string( 'title_args' ),
-                                TS_kses( $settings['TS_title' ] )
-                                );
-                        endif;
-                    ?>
-                    <span class="sponsorsTitle__line"></span>
-                    <br>
-                    <?php if ( !empty($settings['TS_desctiption']) ) : ?>
-                        <p class="aboutContent__text p-0"><?php echo TS_kses( $settings['TS_desctiption'] ); ?></p>
-                    <?php endif; ?>
+                                <span class="sponsorsTitle__line"></span>
+                                <?php
+                                if (!empty($settings['TS_title'])) :
+                                    printf(
+                                        '<%1$s %2$s>%3$s</%1$s>',
+                                        tag_escape($settings['TS_title_tag']),
+                                        $this->get_render_attribute_string('title_args'),
+                                        TS_kses($settings['TS_title'])
+                                    );
+                                endif;
+                                ?>
+                                <span class="sponsorsTitle__line"></span>
+                                <br>
+                                <?php if (!empty($settings['TS_desctiption'])) : ?>
+                                    <p class="aboutContent__text p-0"><?php echo TS_kses($settings['TS_desctiption']); ?></p>
+                                <?php endif; ?>
 
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
+            </section>
 
-		<?php else:
-			$this->add_render_attribute('title', 'class', 'section__title section__title-44 ts-el-title');
-		?>
+        <?php else:
+            $this->add_render_attribute('title', 'class', 'section__title section__title-44 ts-el-title');
+        ?>
 
-        <?php if ( !empty($settings['TS_section_title_show']) ) : ?>
+            <?php if (!empty($settings['TS_section_title_show'])) : ?>
 
 
-            <div class="section-title-shape-one">
-                 <?php if ( !empty($settings['TS_sub_title']) ) : ?>
-                  <h3><?php echo TS_kses( $settings['TS_sub_title'] ); ?></h3>
-                   <?php endif; ?>
+                <div class="section-title-shape-one">
+                    <?php if (!empty($settings['TS_sub_title'])) : ?>
+                        <h3 class="ts-el-subtitle"><?php echo TS_kses($settings['TS_sub_title']); ?> </span> </h3>
+                    <?php endif; ?>
 
-                  <h2><?php
-                    if ( !empty($settings['TS_title' ]) ) :
-                        printf( '<%1$s %2$s> %3$s </%1$s>',
-                            tag_escape( $settings['TS_title_tag'] ),
-                            $this->get_render_attribute_string( 'title' ),
-                            TS_kses( $settings['TS_title' ] )
+                    <h2><?php
+                        if (!empty($settings['TS_title'])) :
+                            printf(
+                                '<%1$s %2$s> %3$s </%1$s>',
+                                tag_escape($settings['TS_title_tag']),
+                                $this->get_render_attribute_string('title'),
+                                TS_kses($settings['TS_title'])
                             );
-                    endif;
-                ?></h2>
+                        endif;
+                        ?></h2>
 
-                  <?php if ( !empty($settings['TS_desctiption']) ) : ?>
-                  <p>
-                    <?php echo TS_kses( $settings['TS_desctiption'] ); ?>
-                  </p>
-                   <?php endif; ?>
-            </div>
+                    <?php if (!empty($settings['TS_desctiption'])) : ?>
+                        <p class="ts-el-des">
+                            <?php echo TS_kses($settings['TS_desctiption']); ?>
+                        </p>
+                    <?php endif; ?>
+                </div>
 
 
-         
+
+            <?php endif; ?>
+
         <?php endif; ?>
 
-        <?php endif; ?>
-
-        <?php
-	}
+<?php
+    }
 }
 
-$widgets_manager->register( new TS_Heading() );
+$widgets_manager->register(new TS_Heading());
